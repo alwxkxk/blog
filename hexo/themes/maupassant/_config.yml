@@ -10,12 +10,12 @@ gitment:
   client_id: ## GitHub client ID, e.g. 75752dafe7907a897619
   client_secret: ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
 gitalk:
-  enable: false ## If you want to use Gitment comment system please set the value to true.
-  owner:  ## Your GitHub ID, e.g. username
-  repo:  ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
-  client_id:  ## GitHub client ID, e.g. 75752dafe7907a897619
-  client_secret:  ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
-  admin:  ## Github repo owner and collaborators, only these guys can initialize github issues.
+  enable: true ## If you want to use Gitment comment system please set the value to true.
+  owner:  alwxkxk ## Your GitHub ID, e.g. username
+  repo: soft-and-hard ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
+  client_id: b2658d53fef2772bfb97 ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret: 6992bc1d20a2f738343c9526d957e4e7b5e64c9e ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+  admin: ['alwxkxk'] ## Github repo owner and collaborators, only these guys can initialize github issues.
 valine: ## https://valine.js.org
   enable: false ## If you want to use Valine comment system, please set the value to true.
   appid: ## Your LeanCloud application App ID, e.g. pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
@@ -61,18 +61,18 @@ post_copyright:
   copyright_text: ## Your copyright text, e.g. The author owns the copyright, please indicate the source reproduced.
 
 menu:
-  - page: home
-    directory: .
+  - page: soft_and_hard
+    directory: /posts/44755/
     icon: fa-home
   - page: archive
     directory: archives/
     icon: fa-archive
-  - page: about
-    directory: about/
-    icon: fa-user
-  - page: rss
-    directory: atom.xml
-    icon: fa-rss
+  # - page: about
+  #   directory: about/
+  #   icon: fa-user
+  # - page: rss
+  #   directory: atom.xml
+  #   icon: fa-rss
 
 widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.
   - search

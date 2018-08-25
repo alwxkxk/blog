@@ -1502,6 +1502,8 @@ figure.highlight,
 
 /* toc*/
 .toc-article {
+  position: fixed;
+  right: 1px;
   border: 1px solid #bbb;
   border-radius: 7px;
   margin: 1.1em 0 0 2em;
@@ -1531,7 +1533,7 @@ figure.highlight,
 /* table*/
 table {
     margin: auto auto 15px;
-    width: 100%;
+    width: 90%;
     background: transparent;
     border-collapse: collapse;
     border-spacing: 0;

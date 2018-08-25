@@ -1,4 +1,4 @@
-extends base
+extends base-without-sidebar
 
 block title
   title= page.title + ' | ' + config.title
@@ -65,7 +65,7 @@ block content
       a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
 
     include _partial/tag.pug
-    include _partial/post_nav.pug
+    //- include _partial/post_nav.pug
 
     if page.comments
       include _partial/comments.pug

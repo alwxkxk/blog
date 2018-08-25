@@ -24,16 +24,31 @@ var tree = [
     {
         text:"网络",
         selectable: false,
+        state:{expanded:false},
         nodes:[
-            {text: "TCP/IP基础",href:"/posts/37707/"}
+            {text: "TCP/IP基础",href:"/posts/37707"}
         ]
     },
     {
-      text: "ESP8266",
+      text: "网页开发",
+      selectable:false,
+      state:{expanded:false},
+      nodes:[
+        {text: "网页开发基础",href:"/posts/54080"}
+      ]
+    },
+    {
+      text: "硬件",
       selectable: false,
+      state:{expanded:false},
       nodes:[
         {text:'ESP8266基础',href:'/posts/32577'}
       ]
+    },
+    {
+      text: "其它",
+      selectable:false,
+      nodes:[]
     }
   ];
 
