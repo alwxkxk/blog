@@ -1,0 +1,133 @@
+if theme.disqus
+  #disqus_thread
+    .btn_click_load
+      button.disqus_click_btn 阅读评论（请确保 Disqus 可以正常加载）
+    script(type='text/javascript').
+      var disqus_config = function () {
+          this.page.url = '#{config.url}/#{page.path}';
+          this.page.identifier = '#{page.path}';
+          this.page.title = '#{page.title}';
+        };
+    script(type='text/javascript' id='disqus-lazy-load-script').
+      $.ajax({
+      url: 'https://disqus.com/next/config.json',
+      timeout: 2500,
+      type: 'GET',
+      success: function(){
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//#{theme.disqus}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+        $('.disqus_click_btn').css('display', 'none');
+      },
+      error: function() {
+        $('.disqus_click_btn').css('display', 'block');
+      }
+      });
+    script(type='text/javascript' id='disqus-click-load').
+      $('.btn_click_load').click(() => {  //click to load comments
+          (() => { // DON'T EDIT BELOW THIS LINE
+              var d = document;
+              var s = d.createElement('script');
+              s.src = '//#{theme.disqus}.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', + new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+          $('.disqus_click_btn').css('display','none');
+      });
+    script(type='text/javascript' id='disqus-count-script').
+      $(function() {
+           var xhr = new XMLHttpRequest();
+           xhr.open('GET', '//disqus.com/next/config.json', true);
+           xhr.timeout = 2500;
+           xhr.onreadystatechange = function () {
+             if (xhr.readyState === 4 && xhr.status === 200) {
+               $('.post-meta .post-comments-count').show();
+               var s = document.createElement('script');
+               s.id = 'dsq-count-scr';
+               s.src = 'https://#{theme.disqus}.disqus.com/count.js';
+               s.async = true;
+               (document.head || document.body).appendChild(s);
+             }
+           };
+           xhr.ontimeout = function () { xhr.abort(); };
+           xhr.send(null);
+         });
+
+if theme.uyan
+  #uyan_frame
+  script(type='text/javascript' src='//v2.uyan.cc/code/uyan.js?uid=' + theme.uyan)
+
+if theme.changyan
+  div#SOHUCS(sid=page.date.valueOf())
+  script.
+    (function(){var appid='#{theme.changyan}';var conf='#{theme.changyan_conf}';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>')}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})})}})()
+
+if theme.livere
+  div(id='lv-container' data-id='city' data-uid=theme.livere)
+    script.
+      (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+
+if theme.gitment.enable == true
+    #container
+    link(rel='stylesheet', href=url_for(theme.css) + '/default.css' + '?v=' + theme.version)
+    script(src=url_for(theme.js) + '/gitment.browser.js' + '?v=' + theme.version)
+    script.
+      var gitment = new Gitment({
+        owner: '#{theme.gitment.owner}',
+        repo: '#{theme.gitment.repo}',
+        oauth: {
+          client_id: '#{theme.gitment.client_id}',
+          client_secret: '#{theme.gitment.client_secret}',
+        },
+      })
+      gitment.render('container')
+
+if theme.gitalk.enable == true
+    #container
+    link(rel='stylesheet', type='text/css', href='//unpkg.com/gitalk/dist/gitalk.css?v=' + theme.version)
+    script(type='text/javascript' src='//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=' + theme.version)
+    script(type='text/javascript' src='//unpkg.com/gitalk/dist/gitalk.min.js?v=' + theme.version)
+    script.
+      var gitalk = new Gitalk({
+        clientID: '#{theme.gitalk.client_id}',
+        clientSecret: '#{theme.gitalk.client_secret}',
+        repo: '#{theme.gitalk.repo}',
+        owner: '#{theme.gitalk.owner}',
+        admin: ['#{theme.gitalk.admin}'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+      })
+      gitalk.render('container')
+
+if theme.valine.enable == true
+    #vcomment
+    script(src='//cdn1.lncld.net/static/js/3.0.4/av-min.js')
+    script(src='//unpkg.com/valine@latest/dist/Valine.min.js')
+    script.
+      var notify = '#{ theme.valine.notify }' == true ? true : false;
+      var verify = '#{ theme.valine.verify }' == true ? true : false;
+      var GUEST_INFO = ['nick','mail','link'];
+      var guest_info = '#{ theme.valine.guest_info }'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+      });
+      guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+      window.valine = new Valine({
+        el:'#vcomment',
+        notify:notify,
+        verify:verify,
+        appId:'#{theme.valine.appid}',
+        appKey:'#{theme.valine.appkey}',
+        placeholder:'#{theme.valine.placeholder}',
+        avatar:'#{theme.valine.avatar}',
+        guest_info:guest_info,
+        pageSize:'#{theme.valine.pageSize}'
+      })
