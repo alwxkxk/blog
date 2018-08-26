@@ -6,7 +6,10 @@ head
     meta(content='telephone=no', name='format-detection')
     meta(name='description', content=config.description)
     //- 百度网站收录
-    meta(name='baidu-site-verification', content="xsF0k2IpTd")
+    meta(name='baidu-site-verification', content="xsF0k2IpTd") 
+    //- 百度自动推送的脚本要放在最前
+    script(type='text/javascript', src=url_for(theme.js) + '/baidu.js', async)
+
     block title
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css' + '?v=' + theme.version)
     link(rel='stylesheet', type='text/css', href='//cdn.bootcss.com/normalize/8.0.0/normalize.min.css')
