@@ -26,7 +26,7 @@ var tree = [
         selectable: false,
         state:{expanded:false},
         nodes:[
-            {text: "TCP/IP基础",href:"/posts/37707"}
+            {text: "计算机网络基础",href:"/posts/37707"}
         ]
     },
     {
@@ -34,7 +34,7 @@ var tree = [
       selectable:false,
       state:{expanded:false},
       nodes:[
-        {text: "网页开发基础",href:"/posts/54080"}
+        {text: "HTML、CSS、Javascript基础",href:"/posts/54080"}
       ]
     },
     {
