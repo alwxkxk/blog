@@ -24,7 +24,6 @@ var tree = [
     {
         text:"网络",
         selectable: false,
-        state:{expanded:false},
         nodes:[
             {text: "计算机网络基础",href:"/posts/37707"}
         ]
@@ -32,7 +31,6 @@ var tree = [
     {
       text: "客户端开发",
       selectable:false,
-      state:{expanded:false},
       nodes:[
         {text: "HTML、CSS、Javascript基础",href:"/posts/54080"}
       ]
@@ -40,7 +38,6 @@ var tree = [
     {
       text: "服务器开发",
       selectable:false,
-      state:{expanded:false},
       nodes:[
         
       ]
@@ -48,7 +45,6 @@ var tree = [
     {
       text: "硬件",
       selectable: false,
-      state:{expanded:false},
       nodes:[
         {text:'ESP8266基础',href:'/posts/32577'}
       ]
@@ -56,6 +52,7 @@ var tree = [
     {
       text: "其它",
       selectable:false,
+      state:{expanded:false},
       nodes:[]
     }
   ];
