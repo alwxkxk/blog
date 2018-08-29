@@ -312,6 +312,7 @@ div {
         }
         img {
             max-width: 100%;
+            width: 80%;
             padding: 0.5em 0;
             margin: auto;
             display: block;
@@ -498,7 +499,9 @@ pre {
 .hidden1 {
     display: none;
 }
-
+video {
+    width:80%;
+}
 /* back-to-top rocket*/
 @media print, screen and (min-width: 48em) {
 #rocket {
