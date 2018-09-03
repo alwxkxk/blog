@@ -1503,6 +1503,10 @@ figure.highlight,
     }
 }
 
+.node-sidenav{
+    background-color: transparent !important;
+}
+
 /* toc*/
 .toc-article {
   position: fixed;
@@ -1512,6 +1516,7 @@ figure.highlight,
   margin: 1.1em 0 0 2em;
   padding: 0.7em 0.7em 0 0.7em;
   max-width: 40%;
+  top:8vh;
 }
 .toc-title {
   font-size: 120%;
