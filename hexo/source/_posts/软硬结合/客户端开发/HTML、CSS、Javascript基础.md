@@ -7,7 +7,7 @@ tags:
 ---
 
 
-&emsp;我使用的编辑器是[vscode](https://code.visualstudio.com/)(主流的轻量级编辑器)，市场主流浏览器[chrome](https://www.google.cn/intl/zh-CN/chrome/)，教程会一直用这两者。关于HTML、CSS、Javascript，网上有很多也很优秀的教程，我不再重复。在这篇教程里，我只会简单地补充介绍一下HTML、CSS、Javascript的作用，补充一下网上教程没有涉及到的东西。
+&emsp;我使用的编辑器是[vscode](https://code.visualstudio.com/)(主流的轻量级编辑器)，市场主流浏览器[chrome](https://www.google.cn/intl/zh-CN/chrome/)，教程会一直用这两者。关于HTML、CSS、Javascript，网上有很多也很优秀的教程，我不再重复。在这篇教程里，我只会简单地补充介绍一下HTML、CSS、Javascript的作用，补充一下网上教程没有涉及到的东西。别人写的教程会比我写的完整详细，我补充一些观念，务必结合多个教程来学习。（只依赖我这个教程是不行的！）
 
 # HTML
 &emsp;超文本标记语言(HyperText Markup Language),用于创建网页的标准标记语言。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。
@@ -20,18 +20,18 @@ tags:
 __这是一个按钮__ 
 
 &emsp;浏览器内心：“我鬼知道你是要想显示字，还是要显示按钮呀？”
-&emsp;所以，要另外使用一种方法，让浏览器知道，我这是想要显示字，还是想要显示按钮，这就是HTML：
+&emsp;所以，要另外使用一种方法，让浏览器知道，这部分内容要显示成字，还是显示成按钮，这就是HTML的作用：
 ```html
 <button>这是一个按钮</button>
 ```
 &emsp;最终浏览器展示的效果：
 <button>这是一个按钮</button>
 
-&emsp;所以，HTML的本质就是告诉浏览器，这里我要显示为按钮，那里我要显示为标题。
+&emsp;所以，HTML的本质就是告诉浏览器，这里要显示为按钮，那里要显示为文字。
 
 
 ## 在本机写一个最简单的html
-&emsp;其实，完整的页面，还包括一些东西，`<html>和</html>之间的文本描述网页，<body>和</body>之间的文本为可视页面内容`。
+&emsp;完整的html，还包括一些东西，`<html>和</html>之间的文本描述网页，<body>和</body>之间的文本为可视页面内容`。
 
 ```html
 <html>
@@ -43,7 +43,7 @@ __这是一个按钮__
 	</body>
 </html>
 ```
-&emsp;先安装[vscode](https://code.visualstudio.com/)，然后在桌面新建一个文件夹（名字随意，比如叫`example`），然后拖动文件夹到vscode图标上，再创建一个`index.html`文件，里面复制以上代码并保存。点击打开所创建的`index.html`文件，就可以看到你所写的网页。
+&emsp;打开[vscode](https://code.visualstudio.com/)，然后在桌面新建一个文件夹（名字随意，比如叫`example`），然后拖动文件夹到vscode图标上，再创建一个`index.html`文件，里面复制以上代码并保存。点击打开所创建的`index.html`文件，就可以看到你所写的网页。
 
 <video src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E4%BD%BF%E7%94%A8vscode%E7%BC%96%E5%86%99%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84html.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
@@ -166,7 +166,13 @@ your browser does not support the video tag
 《XX天网页制作从入门到精通》（事实上学完也只能算个入门）
 
 
-&emsp;如果你还没学习git，请记得学习它。google是屠龙刀，而git是倚天剑，两者都必须拥有。 git有比较好的教程：[git教程-廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)，我就不再重复。
+# 练习
+&emsp;这里给几个示范，你们能自己亲手完成就代表HTML、CSS、JavaScript到了入门的阶段。
+&emsp;html主要是“一切皆盒子”，CSS主要是“布局”，JS主要是“DOM操作与事件”。
+- 一切皆盒子
+- css布局
+- DOM操作与事件
 
-# 作业
-&emsp;这里给几个作业，你们能自己亲手完成就代表HTML、CSS、JavaScript到了入门的阶段。
+# 后续学习
+- Jquery基础
+- chrome开发者工具

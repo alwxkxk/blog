@@ -39,7 +39,7 @@ var tree = [
       text: "服务器开发",
       selectable:false,
       nodes:[
-        
+        {text:'linux基础',href:'/posts/34982'}
       ]
     },
     {
