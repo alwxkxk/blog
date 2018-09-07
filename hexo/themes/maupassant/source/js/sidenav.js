@@ -53,7 +53,11 @@ var tree = [
       text: "其它",
       selectable:false,
       state:{expanded:false},
-      nodes:[]
+      nodes:[
+        {text:'磨刀不误砍柴功',href:'/posts/61760'},
+        {text:'资源链接',href:'/posts/37993'},
+        {text:'软硬结合',href:'/posts/44755'}
+      ]
     }
   ];
 
