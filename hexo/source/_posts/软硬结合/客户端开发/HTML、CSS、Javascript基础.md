@@ -153,7 +153,7 @@ your browser does not support the video tag
 ```
 <script async src="//jsrun.net/iAgKp/embed/result/light/"></script>
 
-# 后续学习
+# 结给其它教程学习
 &emsp;上面我只是简单地补充说明一下这HTML、CSS、Javascript的作用，里面还有很多需要学习，比较出名的教程有w3school、菜鸟教程、廖雪峰教程。当然，网上的教程还是比较浅，如果你还想要学习得更踏实，就要啃书。大约花费一到两个星期（不同人有不同的学习要求，不同的学习速度，不同的深度所以时间不一样。）
 - 在线教程
 [w3school](http://www.w3school.com.cn/html/index.asp)
