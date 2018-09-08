@@ -1,5 +1,5 @@
 ---
-title: HTML、CSS、Javascript基础
+title: HTML、CSS、JS基础
 toc: true
 abbrlink: 54080
 date: 2018-08-25 17:44:49
@@ -7,7 +7,7 @@ tags:
 ---
 
 
-&emsp;我使用的编辑器是[vscode](https://code.visualstudio.com/)(主流的轻量级编辑器)，市场主流浏览器[chrome](https://www.google.cn/intl/zh-CN/chrome/)，教程会一直用这两者。关于HTML、CSS、Javascript，网上有很多也很优秀的教程，我不再重复。在这篇教程里，我只会简单地补充介绍一下HTML、CSS、Javascript的作用，补充一下网上教程没有涉及到的东西。别人写的教程会比我写的完整详细，我补充一些观念，务必结合多个教程来学习。（只依赖我这个教程是不行的！）
+&emsp;我使用的编辑器是[vscode](https://code.visualstudio.com/)(主流的轻量级编辑器)，市场主流浏览器[chrome](https://www.google.cn/intl/zh-CN/chrome/)，教程会一直用这两者。关于HTML、CSS、JavaScript，网上有很多也很优秀的教程，我不再重复。在这篇教程里，我只会简单地补充介绍一下HTML、CSS、JavaScript的作用，补充一下网上教程没有涉及到的东西。别人写的教程会比我写的完整详细，我补充一些观念，务必结合多个教程来学习。（只依赖我这个教程是不行的！）
 
 # HTML
 &emsp;超文本标记语言(HyperText Markup Language),用于创建网页的标准标记语言。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。
@@ -134,8 +134,8 @@ your browser does not support the video tag
 </html>
 ```
 
-# Javascirpt
-&emsp;HTML告诉了浏览器，要显示什么内容。CSS告诉了浏览器，这些内容的样式（大小颜色等等）。但还缺了一东西，就是动作，要实现动作就要由Javascript来决定。现在，给按钮添加一个动作，当点击时，就会弹出提示：
+# JavaScirpt
+&emsp;HTML告诉了浏览器，要显示什么内容。CSS告诉了浏览器，这些内容的样式（大小颜色等等）。但还缺了一东西，就是动作，要实现动作就要由JavaScript来决定。现在，给按钮添加一个动作，当点击时，就会弹出提示：
 ```javascript
 <html>
   <head>
@@ -154,7 +154,7 @@ your browser does not support the video tag
 <script async src="//jsrun.net/iAgKp/embed/result/light/"></script>
 
 # 结给其它教程学习
-&emsp;上面我只是简单地补充说明一下这HTML、CSS、Javascript的作用，里面还有很多需要学习，比较出名的教程有w3school、菜鸟教程、廖雪峰教程。当然，网上的教程还是比较浅，如果你还想要学习得更踏实，就要啃书。大约花费一到两个星期（不同人有不同的学习要求，不同的学习速度，不同的深度所以时间不一样。）
+&emsp;上面我只是简单地补充说明一下这HTML、CSS、JavaScript的作用，里面还有很多需要学习，比较出名的教程有w3school、菜鸟教程、廖雪峰教程。当然，网上的教程还是比较浅，如果你还想要学习得更踏实，就要啃书。大约花费一到两个星期（不同人有不同的学习要求，不同的学习速度，不同的深度所以时间不一样。）
 - 在线教程
 [w3school](http://www.w3school.com.cn/html/index.asp)
 [菜鸟教程](http://www.runoob.com/js/js-tutorial.html)
