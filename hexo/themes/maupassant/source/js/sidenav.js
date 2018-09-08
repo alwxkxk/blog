@@ -32,7 +32,7 @@ var tree = [
       text: "客户端开发",
       selectable:false,
       nodes:[
-        {text: "HTML、CSS、Javascript基础",href:"/posts/54080"}
+        {text: "HTML、CSS、JS基础",href:"/posts/54080"}
       ]
     },
     {

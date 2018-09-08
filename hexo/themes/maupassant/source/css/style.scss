@@ -61,6 +61,10 @@ h1,h2,h3,h4,h5{
     border-bottom: 1px solid #ccc;
     padding-left: 24px;
 }
+.treeview span.indent{
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+}
 #header {
     padding: 58px 0 0;
     text-align: left;
