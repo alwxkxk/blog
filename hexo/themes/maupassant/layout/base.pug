@@ -21,7 +21,7 @@ html(lang=config.language)
     #header
       .site-name
         h1.hidden= current_title
-        a#logo(href=url_for('.'))= config.title
+        a#logo= config.title
         p.description= config.subtitle
       #nav-menu
         - for (var i in theme.menu)
