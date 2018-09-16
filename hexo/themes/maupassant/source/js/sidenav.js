@@ -25,7 +25,9 @@ var tree = [
         text:"网络",
         selectable: false,
         nodes:[
-            {text: "计算机网络基础",href:"/posts/37707"}
+            {text: "计算机网络基础",href:"/posts/37707"}.
+            {text: "TCP/IP通信基础",href:"/posts/19508"},
+            {text: "计算机网络基础",href:"/posts/34265"}
         ]
     },
     {
@@ -39,6 +41,7 @@ var tree = [
       text: "服务器开发",
       selectable:false,
       nodes:[
+        {text:'nodejs基础',href:'/posts/56793'},
         {text:'linux基础',href:'/posts/34982'}
       ]
     },

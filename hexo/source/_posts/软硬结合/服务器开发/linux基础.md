@@ -25,7 +25,7 @@ tags:
 
 &emsp;有那么多的linux操作系统，到底学哪个呢？答：新手学习用得最多的系统，理应用ubuntu。然而入门教程《鸟哥的linux私房菜》是基于centOS的，两者命令还是有点不一样的，最后决定用 __centOS__ 来演示。学习的时候，切记需要什么学什么，不要一脑子学全部，学不完的。命令行常用的不超过30个，而且都是写在笔记软件中，需要哪个查哪个，反正我又不是运维人员，不是天天都用，所以也没去记。
 # 本地虚拟机安装linux
-&emsp;要学习linux，先学习怎么搭一个环境出来，方便反复折腾。虚拟机软件我以[虚拟机virtualbox-官网](https://www.virtualbox.org/)，[-百度网盘](https://pan.baidu.com/s/1vCcrdepimiI9Pu3A7Zo3rw)演示。（记住一件事，不管你在虚拟机上怎么折腾，都不会把电脑搞坏的，事实上学习Linux的过程中的确是不断地折腾重装linux。）安装为中文版，安装完后新建虚拟机：
+&emsp;要学习linux，先学习怎么搭一个环境出来，方便反复折腾。虚拟机软件我以[虚拟机virtualbox-官网](https://www.virtualbox.org/)，[-百度网盘](https://pan.baidu.com/s/1vCcrdepimiI9Pu3A7Zo3rw)演示。（记住一件事，不管你在虚拟机上怎么折腾，都不会把电脑搞坏的，事实上学习Linux的过程中会不断地折腾重装linux。）安装时选择中文界面，安装完后新建虚拟机：
 <video src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
@@ -35,7 +35,7 @@ your browser does not support the video tag
 </video>
 &emsp;前几次安装linux可以选中文界面，熟悉后就要换成英文的了，切不可对中文产生依赖。
 # 基本操作
-&emsp;先学习基础[《鸟哥的linux私房菜》](http://linux.vbird.org/linux_basic/)，我看了一下在线的目录，学习__前十章__即可。有条件去借或买纸质书，有疑问多搜索。学习的过程中，把命令记到你的笔记软件里，有需要时查找。__千万不要背，用得多的命令自然会记下来，不常用的命令查就能解决了。__ 大约学习一到两个星期吧，学会基本的操作就够了（毕竟又不是要你考试什么的，能满足自己平时操作需要就够了。）万一把Linux玩坏了怎么办？重新在虚拟机上重装一个就行了~
+&emsp;先学习基础[《鸟哥的linux私房菜》](http://linux.vbird.org/linux_basic/)，我看了一下在线的目录，学习 __前十章__ 即可。有条件去借或买纸质书，有疑问多搜索。学习的过程中，把命令记到你的笔记软件里，有需要时查找。__千万不要背，用得多的命令自然会记下来，不常用的命令查就能解决了。__ 大约学习一到两个星期吧，学会基本的操作就够了（毕竟又不是要你考试什么的，能满足自己平时操作需要就够了。）万一把Linux玩坏了怎么办？重新在虚拟机上重装一个就行了~
 # 使用Xshell终端登陆
 &emsp;阅读所需知识：会基本的linux命令与文本编辑（vi操作）
 &emsp;登陆服务器会使用终端，比较方便的工具是Xshell。这里我演示怎么通过Xshell登陆linux。安装[Xshell6个人免费版-百度网盘](https://pan.baidu.com/s/1qE8JSm6eP0uwyUmTjBiH7Q)。要登陆一台服务器，你只需要两样东西：__1.服务器的ip地址。2.拥有登陆服务器所需的密码或钥匙__
