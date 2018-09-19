@@ -26,8 +26,8 @@ var tree = [
         selectable: false,
         nodes:[
             {text: "计算机网络基础",href:"/posts/37707"},
-            {text: "TCP/IP通信基础",href:"/posts/19508"},
-            {text: "计算机网络基础",href:"/posts/34265"}
+            {text: "TCP/IP协议基础",href:"/posts/19508"},
+            {text: "HTTP协议基础",href:"/posts/34265"}
         ]
     },
     {
