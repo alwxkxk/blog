@@ -173,8 +173,8 @@ your browser does not support the video tag
 ![[HTML、CSS、JS基础练习](http://ww1.sinaimg.cn/large/005BIQVbgy1fv3esbxks1g31h20rsh3c.gif)
 &emsp;[示例代码-HTML、CSS、JS基础练习.zip](https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/HTML%E3%80%81CSS%E3%80%81JS%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0.zip)大家参考一下源代码，如果说看一眼就知道怎么做的，就说明基础已经过了，可以进行下一节了。如果还有很多不明白的，那就要继续学习。(要达到这种基础水平，不用一个星期,可以说十分基础了。)一定要记住 __一切皆盒子__ ,HTML在编写的过程中无非是大盒套中盒，中盒套小盒，一直套下去实现元素的基本布局。另外也要学习利用css实现布局。
 
-# 后续学习
+# 下一节
 - Jquery、Bootstrap基础
 Jquery让JS操作DOM更加简单，Bootstrap提供优秀的样式供你直接使用，短时间内就能让页面变得十分漂亮。
-- nodejs基础
+- [nodejs基础](/posts/56793)
 本地打开网页，你可以注意到网址栏的协议是file，而不是http。要想让手机也能访问网页，就需要提供对外http服务，最终让手机访问网页。

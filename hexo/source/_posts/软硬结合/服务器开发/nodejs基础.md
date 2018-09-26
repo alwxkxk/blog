@@ -79,6 +79,6 @@ your browser does not support the video tag
 &emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。
 
 
-# 后续学习
+# 下一节
 - nodejs中error first 回调函数风格
 - [linux基础](/posts/34982)
