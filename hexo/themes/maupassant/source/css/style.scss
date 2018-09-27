@@ -1515,6 +1515,21 @@ figure.highlight,
     background-color: transparent !important;
 }
 
+#sidenav-container{
+    position:absolute;
+    width:14vw;
+    left:1px;
+    top:1px;
+}
+
+@media screen and (max-width: 600px){
+    #sidenav-container{
+        display: none;
+    }
+    .toc-article{
+        display: none;
+    }
+}
 /* toc*/
 .toc-article {
   position: fixed;
