@@ -171,7 +171,7 @@ your browser does not support the video tag
 # 作业
 &emsp;学习完那些线上教程与纸质书里的基础，我们边练边学。这里给一个示例，你们能自己亲手完成就代表HTML、CSS、JavaScript到了入门的阶段。简单例子：[HTML、CSS、JS基础练习.rar](https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/HTML%E3%80%81CSS%E3%80%81JS%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0.rar)
 ![HTML、CSS、JS基础练习](http://ww1.sinaimg.cn/large/005BIQVbgy1fvtnt3j13eg31e80qfx6s.gif)
-&emsp;大家参考一下源代码，如果说看一眼就知道怎么做的，就说明基础已经过了，可以进行下一节了。如果还有很多不明白的，那就要继续学习。一定要记住 __一切皆盒子__ ,HTML在编写的过程中无非是大盒套中盒，中盒套小盒，一直套下去实现元素的基本布局。另外也要学习利用css实现布局。
+&emsp;大家参考一下源代码，如果说看一眼就知道怎么做的，就说明基础已经过了，可以进行下一节了。如果还有很多不明白的，那就要继续学习。
 
 # 下一节
 - Jquery、Bootstrap基础

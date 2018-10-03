@@ -18,21 +18,27 @@ html(lang=config.language)
 
   include _partial/head.pug
 
-  body: .body_container
-    #header
-      .site-name
-        h1.hidden= current_title
-        a#logo= config.title
-        p.description= config.subtitle
-      #nav-menu
-        - for (var i in theme.menu)
-          +a_with_current(theme.menu[i].directory, __(theme.menu[i].page), theme.menu[i].icon)
+  body
+    nav#menu
+      div#sidenav-container
+        #sidenav
 
-    #layout.pure-g
-      .pure-u-1.pure-u-md-4-4: .content_container
-        block content
-      .pure-u-1.pure-u-md-4-4
-        != partial('_partial/footer.pug')
+    main#panel.body_container
+      header
+        button.toggle-button(style="position:absolute;top:1px;left:1px;") 三
+        #header
+          .site-name
+            h1.hidden= current_title
+            a#logo= config.title
+            p.description= config.subtitle
+          #nav-menu
+            - for (var i in theme.menu)
+              +a_with_current(theme.menu[i].directory, __(theme.menu[i].page), theme.menu[i].icon)
+        #layout.pure-g
+          .pure-u-1.pure-u-md-4-4: .content_container
+            block content
+          .pure-u-1.pure-u-md-4-4
+            != partial('_partial/footer.pug')
 
-    include _partial/totop.pug
-    include _partial/after_footer.pug
+        include _partial/totop.pug
+        include _partial/after_footer.pug
