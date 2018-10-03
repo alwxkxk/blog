@@ -64,17 +64,17 @@ var tree = [
 ]
 
 $('#sidenav').treeview({data: tree, showBorder: false, enableLinks: true, backColor: 'transparent'})
-$('#sidenav-container').hide()
-let flag = false
-$('.toggle-button').bind('click', () => {
-  if (flag) {
-    $('#sidenav-container').hide()
-    flag = false
-  } else {
-    $('#sidenav-container').show()
-    flag = true
-  }
-})
+$('#sidenav-container').show()
+// let flag = false
+// $('.toggle-button').bind('click', () => {
+//   if (flag) {
+//     $('#sidenav-container').hide()
+//     flag = false
+//   } else {
+//     $('#sidenav-container').show()
+//     flag = true
+//   }
+// })
 
 var slideout = new Slideout({
   'panel': document.getElementById('panel'),
@@ -87,6 +87,11 @@ var slideout = new Slideout({
 document.querySelector('.toggle-button').addEventListener('click', function () {
   slideout.toggle()
 })
+
+slideout.toggle()
+setTimeout(() => {
+  slideout.toggle()
+}, 1500)
 
   // $( window ).resize(function () {
   //     if(window.innerWidth<1200){
