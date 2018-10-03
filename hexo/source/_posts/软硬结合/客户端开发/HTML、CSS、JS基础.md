@@ -173,8 +173,17 @@ your browser does not support the video tag
 ![HTML、CSS、JS基础练习](http://ww1.sinaimg.cn/large/005BIQVbgy1fvtnt3j13eg31e80qfx6s.gif)
 &emsp;大家参考一下源代码，如果说看一眼就知道怎么做的，就说明基础已经过了，可以进行下一节了。如果还有很多不明白的，那就要继续学习。
 
+## 作业讲解
+### 盒子模型
+&emsp;CSS关键概念之一是盒子模型。
+### flex布局
+
 # 下一节
 - Jquery、Bootstrap基础
 Jquery让JS操作DOM更加简单，Bootstrap提供优秀的样式供你直接使用，短时间内就能让页面变得十分漂亮。
 - [nodejs基础](/posts/56793)
 本地打开网页，你可以注意到网址栏的协议是file，而不是http。要想让手机也能访问网页，就需要提供对外http服务，最终让手机访问网页。
+
+# 附录
+- [CSS1规范文档-Cascading Style Sheets, level 1](https://www.w3.org/TR/CSS1/)
+- [CSS2规范文档-Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification](https://www.w3.org/TR/CSS2/)
