@@ -4,6 +4,7 @@ toc: true
 abbrlink: 56793
 date: 2018-09-08 21:24:50
 tags:
+- nodejs
 ---
 &emsp;nodejs语法是基于JavaScript的，所以要学习nodejs需要拥有基本的JavaScript使用经验。
 
@@ -70,7 +71,7 @@ server.listen(8080);
 console.log('Server is running at http://127.0.0.1:8080/');
 ```
 &emsp;将代码使用nodejs启动起来，就是一个最简单的HTTP服务器。nodejs启动脚本的方法是node + 脚本名称：（示例`node index.js`）
-<video src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/nodejs%E6%9C%80%E7%AE%80HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/nodejs%E6%9C%80%E7%AE%80HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 &emsp;注意了，与本地直接打开网页不同，网址栏是http开头的。（本地直接打开的是file开头）。这时，你可以使用手机连接到同一个WIFI里，找到电脑的IP地址，输入网址就可以访问到网页。
