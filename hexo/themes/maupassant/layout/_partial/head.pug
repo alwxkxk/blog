@@ -9,9 +9,8 @@ head
     meta(name='baidu-site-verification', content="xsF0k2IpTd") 
     //- 百度自动推送的脚本要放在最前
     script(type='text/javascript', src=url_for(theme.js) + '/baidu.js', async)
-    //- sideout样式与脚本  
-    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/index.css')
-    script(type='text/javascript', src=url_for(theme.js)+'/slideout.min.js')
+
+    
 
     block title
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css' + '?v=' + theme.version)
@@ -48,4 +47,10 @@ head
           var s = document.getElementsByTagName("script")[0];
           s.parentNode.insertBefore(hm, s);
           })();
-          
+
+    //- sideout样式与脚本  
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/index.css')
+    script(type='text/javascript', src=url_for(theme.js)+'/slideout.min.js')
+
+
+
