@@ -33,7 +33,8 @@ var tree = [
     text: '客户端开发',
     selectable: false,
     nodes: [
-        {text: 'HTML、CSS、JS基础', href: '/posts/54080'}
+        {text: 'HTML、CSS、JS基础', href: '/posts/54080'},
+        {text: 'chrome开发者工具', href: '/posts/52429'}
     ]
   },
   {
@@ -65,16 +66,6 @@ var tree = [
 
 $('#sidenav').treeview({data: tree, showBorder: false, enableLinks: true, backColor: 'transparent'})
 $('#sidenav-container').show()
-// let flag = false
-// $('.toggle-button').bind('click', () => {
-//   if (flag) {
-//     $('#sidenav-container').hide()
-//     flag = false
-//   } else {
-//     $('#sidenav-container').show()
-//     flag = true
-//   }
-// })
 
 var slideout = new Slideout({
   'panel': document.getElementById('panel'),
@@ -92,14 +83,3 @@ slideout.toggle()
 setTimeout(() => {
   slideout.toggle()
 }, 1500)
-
-  // $( window ).resize(function () {
-  //     if(window.innerWidth<1200){
-  //       //   console.log(window.innerWidth,"hide")
-  //         $('#sidenav-container').hide()
-  //     }
-  //     else{
-  //       // console.log(window.innerWidth,"show")
-  //       $('#sidenav-container').show()
-  //     }
-  // })
