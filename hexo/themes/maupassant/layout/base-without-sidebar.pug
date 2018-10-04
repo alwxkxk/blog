@@ -19,13 +19,15 @@ html(lang=config.language)
   include _partial/head.pug
 
   body
+    include _partial/totop.pug
+
     nav#menu
       div#sidenav-container
         #sidenav
 
     main#panel.body_container
       header
-        button.toggle-button(style="position:absolute;top:1px;left:1px;") 三
+        button.toggle-button(style="position:sticky;top:1px;left:1px;") 三
         #header
           .site-name
             h1.hidden= current_title
@@ -40,7 +42,7 @@ html(lang=config.language)
           .pure-u-1.pure-u-md-4-4
             != partial('_partial/footer.pug')
 
-        include _partial/totop.pug
+        
         include _partial/after_footer.pug
 
       script(type='text/javascript', src=url_for(theme.js)+'/index.js')
