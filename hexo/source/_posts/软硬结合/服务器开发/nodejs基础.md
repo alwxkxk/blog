@@ -4,7 +4,7 @@ toc: true
 abbrlink: 56793
 date: 2018-09-08 21:24:50
 tags:
-- nodejs
+- Nodejs
 ---
 &emsp;nodejs语法是基于JavaScript的，所以要学习nodejs需要拥有基本的JavaScript使用经验。
 
@@ -15,6 +15,15 @@ tags:
 3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功
 ![验证nodejs安装成功](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
 验证安装成功就代表了：1.程序安装成功。2.环境变量（PATH） 设置正确。
+
+# 其它nodejs教程
+&emsp;相关书籍与网上的教程有很多，__我就不重复，大家花时间去学习（大约一到两个星期左右能入门）__，后面我补充一些相关内容。
+
+《深入浅出Node.js》- 朴灵
+[菜鸟教程](http://www.runoob.com/js/js-tutorial.html)
+[廖雪峰教程](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
+[《七天学会NodeJS》](https://github.com/nqdeng/7-days-nodejs)
+[《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
 
 # JavaScript回调函数
 &emsp;nodejs里大量使用回调函数，这里简单讲一下。如果你已经对回调函数比较熟悉（玩过几天JavaScript都应该知道回调函数），那就可以直接跳过。
@@ -48,6 +57,47 @@ playGame();
 
 ```
 
+# 搭建最简TCP服务器
+&emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：[示例代码-tcp1](https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/tcp1.rar)
+
+<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%20tpc1-%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B%E8%BF%9E%E6%8E%A5.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
+
+```javascript
+// 导入net模块:
+const net = require('net')
+const PORT = "9001"
+//创建服务器对象
+const server = net.createServer((socket)=>{
+  //connect
+  let addr = socket.address().address + ':' + socket.address().port
+  let welcome =  addr + ' connected.\n'
+  socket.write(welcome, 'ascii')
+
+  // recieve data
+  socket.on("data",data=>{
+    let str = addr+" receive: " + data.toString('ascii') + '\n'
+    console.log(str)
+    socket.write(str, 'ascii')
+  })
+
+  // close
+  socket.on('close',()=>{
+    console.log(addr,"close")
+  })
+})
+
+server.on("error",(err)=>{
+  console.log(err)
+})
+
+//开启监听
+server.listen({port: PORT,host: '0.0.0.0'}, () => {
+  console.log('tcp1 server running on', server.address())
+})
+```
+
 # 搭建最简HTTP服务器
 &emsp;之前在[HTML、CSS、JS基础](/posts/54080)里所编写的网页，都是以本地打开文件的方式运行，并不是通过HTTP协议访问网页。[HTTP协议基础](/posts/34265)
 &emsp;现在我们做一个最简单的HTTP服务器，以下代码从[廖雪峰教程](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345015296018cac40c198b543fead5c549865b9bd4a000)搬运过来。
@@ -74,10 +124,9 @@ console.log('Server is running at http://127.0.0.1:8080/');
 <video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/nodejs%E6%9C%80%E7%AE%80HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
-&emsp;注意了，与本地直接打开网页不同，网址栏是http开头的。（本地直接打开的是file开头）。这时，你可以使用手机连接到同一个WIFI里，找到电脑的IP地址，输入网址就可以访问到网页。
+&emsp;[nodejs HTTP-API中文文档](http://nodejs.cn/api/http.html)。注意了，与本地直接打开网页不同，网址栏是http开头的。（本地直接打开的是file开头）。这时，你可以使用手机连接到同一个WIFI里，找到电脑的IP地址，输入网址就可以访问到网页。 
 
-# 搭建最简TCP服务器
-&emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。
+
 
 
 # 下一节

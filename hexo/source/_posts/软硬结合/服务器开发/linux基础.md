@@ -5,7 +5,7 @@ abbrlink: 34982
 date: 2018-09-04 11:38:32
 tags:
 - linux
-- centOS
+- CentOS
 ---
 &emsp;搞服务器为什么要学linux，window不行吗？首先来对比两者：
 - [为什么目前web服务器一般用Linux操作系统而不是windows？](https://www.zhihu.com/question/39230864)

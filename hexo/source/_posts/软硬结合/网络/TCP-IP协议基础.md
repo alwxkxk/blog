@@ -7,14 +7,27 @@ tags:
 - TCP
 - IP
 ---
-&emsp;关于TCP/IP协议，先讲一下基本概念，然后搭建一个TCP通信环境，通过抓包分析数据进行讲解。（套路跟 经典书籍《TCP/IP详解 卷一》 大致相同，有条件的朋友直接买一本来啃，会学到很多。）
+&emsp;关于TCP/IP协议，先讲一下基本概念，然后搭建一个TCP通信环境，通过抓包分析数据进行讲解。（套路与经典书籍《TCP/IP详解 卷一》 大致相同，有条件的朋友直接买一本来啃，会学到很多。）
+
+# 网络调试助手
+&emsp;[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)
+&emsp;使用网络调试助手简单示例：
+<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%20%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B-%E6%9C%AC%E5%9C%B0%E5%BC%80%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
+&emsp;在视频中我打开了两个调试助手，左侧是服务器端，右侧是客户端，相互发送数据。
 
 
 # TCP基础
 
-# 网络调试助手
-&emsp;[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)
-# wireshare 分析数据
-
+# wireshark 分析数据
+[wireshark-百度网盘](https://pan.baidu.com/s/17TVX8fxuVopEGAo6sf90Lg)
 # 附录
-《TCP/IP详解 卷一》
+- 《TCP/IP详解 卷一》
+
+- [wireshark不能在window下抓取回环（Loopback）数据](https://wiki.wireshark.org/CaptureSetup/Loopback)
+&emsp;If you are trying to capture traffic from a machine to itself, that traffic will not be sent over a real network interface, even if it's being sent to an address on one of the machine's network adapters. This means that you will not see it if you are trying to capture on, for example, the interface device for the adapter to which the destination address is assigned. You will only see it if you capture on the "loopback interface", if there is such an interface and it is possible to capture on it; see the next section for information on the platforms on which you can capture on the "loopback interface".
+&emsp;See CaptureSetup/NetworkMedia for Wireshark capturing support on various platforms. Summary: you can capture on the loopback interface on Linux, on various BSDs including Mac OS X, and on Digital/Tru64 UNIX, and you might be able to do it on Irix and AIX, but you definitely cannot do so on Solaris, HP-UX, or Windows.
+
+- [What is the loopback device and how do I use it?](https://askubuntu.com/questions/247625/what-is-the-loopback-device-and-how-do-i-use-it)
+&emsp;The loopback device is a special, virtual network interface that your computer uses to communicate with itself. It is used mainly for diagnostics and troubleshooting, and to connect to servers running on the local machine.
