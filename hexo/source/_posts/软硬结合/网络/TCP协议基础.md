@@ -1,5 +1,5 @@
 ---
-title: TCP/IP协议基础
+title: TCP协议基础
 toc: true
 abbrlink: 19508
 date: 2018-09-16 19:45:50
@@ -19,6 +19,11 @@ your browser does not support the video tag
 
 
 # TCP基础
+![TCP/IP协议模型](http://ww1.sinaimg.cn/large/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
+&emsp;TCP与UDP都是基于IP协议之上。与UDP不同，TCP是面向连接的，可靠的，基于字节流的传输层通信协议。
+- 面向连接的：这意味着使用TCP协议的两台设备（服务器端与客户端）在交互数据前必须先建立连接。
+- 可靠的：保证传输不会丢失或出错。（有特定的机制去检测是否丢失或出错，若丢失或出错就会重新发送一次）
+- 基于字节流的：TCP连接使用字节流来交互数据（一字节等于8位）。如果一端的应用先发送10字节，再发送20字节，再发送50字节。另一端的应用可能会读取到4次的20字节。
 
 # wireshark 分析数据
 [wireshark-百度网盘](https://pan.baidu.com/s/17TVX8fxuVopEGAo6sf90Lg)

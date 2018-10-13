@@ -25,7 +25,8 @@ var tree = [
     selectable: false,
     nodes: [
             {text: '计算机网络基础', href: '/posts/37707'},
-            {text: 'TCP/IP协议基础', href: '/posts/19508'},
+            {text: 'IP协议基础', href: '/posts/37286'},
+            {text: 'TCP协议基础', href: '/posts/19508'},
             {text: 'HTTP协议基础', href: '/posts/34265'}
     ]
   },
@@ -49,7 +50,8 @@ var tree = [
     text: '硬件',
     selectable: false,
     nodes: [
-        {text: 'ESP8266基础', href: '/posts/32577'}
+        {text: 'ESP8266基础', href: '/posts/32577'},
+        {text: 'nodemcu基础', href: '/posts/31494'}
     ]
   },
   {
