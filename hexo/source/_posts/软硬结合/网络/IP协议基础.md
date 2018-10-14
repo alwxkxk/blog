@@ -26,7 +26,7 @@ tags:
 ## 数据封装
 &emsp;链路层在接收网络层的数据时，会进行封装（encapsulation）。
 
-
+# IP协议
 
 ## 外网IP与内网IP
 &emsp;首先看看常见的网络类型：
