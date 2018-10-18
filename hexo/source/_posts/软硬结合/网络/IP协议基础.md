@@ -6,7 +6,7 @@ date: 2018-10-11 19:26:41
 tags:
 ---
 
-&emsp;网上快速阅读所获得的知识只是轮廓，要看清知识的面目就要啃书：《计算机网络》。
+&emsp;网上快速阅读所获得的知识只是轮廓，要看清知识的面目就要啃书：《计算机网络》、《TCP/IP详解 卷一》 。
 ![TCP/IP协议模型](http://ww1.sinaimg.cn/large/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
 &emsp;IP协议（Internet Protocol 网际协议）属于第二层网络层，在讨论它之前还得先简单介绍第一层链路层。
 
@@ -24,9 +24,31 @@ tags:
 3. 若结点B的数据链路层收到的帧无差错，则从收到的帧中提取出IP数据报上交给上面的网络层，否则就丢弃这个帧。
 
 ## 数据封装
-&emsp;链路层在接收网络层的数据时，会进行封装（encapsulation）。
+&emsp;链路层在接收网络层的数据时，会进行 __封装（encapsulation）__ 。封装即每一层接收上层数据时，都会添加自己特定的头部数据（有时也会有尾部数据）。 如下图所显，应用层到传输层时，应用数据的基础上添加了TCP的header，它就变成了一个TCP segment。传输层到网络层时，就在TCP segment的基础上添加IP header，整个数据变成了IP datagram。从网络层到链路层，Ip datagram的基础上添加 Ethnet header 与 Ethnet triler数据，整个变成了Ethernet frame。
+![数据封装](http://ww1.sinaimg.cn/large/005BIQVbgy1fw96jkuzd8j30hh0ba3za.jpg)
+
+![通信过程-数据封装](http://ww1.sinaimg.cn/large/005BIQVbgy1fwa14u9cyog30zj0j4acu.gif)
 
 # IP协议
+&emsp;IP协议提供非可靠，无连接的数据报传输服务。（IP provides an unreliable,connectionless datagram delivery service.）
+- 非可靠：这意味着它并不保证所要传输的数据一定会到达目的地。（当路由出错导致某个数据传输失败时，会丢掉此数据并发回一个ICMP信息回去。可靠性需要由更上层的协议提供，如TCP协议）
+- 无连接：这代表IP datagrams（数据报）在传输中没有连接起来，它们是一块一块各自分开的，分开独立处理。（比如需要向某个地方发送两个数据报：A、B，它们两个有可能会经由不同的路径去到达目的地，有可能B要先于A到达。）
+
+![IP协议-数据报字段](http://ww1.sinaimg.cn/large/005BIQVbgy1fwaaneh7nyj30ep0anjs5.jpg)
+&emsp;数据报字段如上图所示，IP头部(IP header)至少有20个字节（1字节等于8位,1 byte = 8 bit），我们一一解释。
+- 4-bit version：是IP协议的版本，当前版本是4。
+- 4-bit header length：代表IP header的长度。
+- 8-bit type of service(TOS)：服务类型，包括：最小延时、最大传输、最大可靠性、最小消耗等。
+- 16-bit total length(in bytes)：整个IP数据报的字节数。
+- 16-bit identification：识别号，主机每发一次都会自动增加
+- 3-bit flags：标记位，用于标记是否被分段。（fragmentation）
+- 13-bit fragment offset：分段号
+- 8-bit time to live(TTL)：生存时间
+- 8-bit protocol：代表此IP数据所运输的是来自哪个上层协议的数据，如TCP、UDP等。
+- 16-bit header checksum：用于校验header数据。
+- 32-bit source IP address：源IP地址。
+- 32-bit detination IP address：目标IP地址。（因为IP数据并不是从主机A直接到主机B，中间还会经过路由C，路由D....若干个中间点，IP路由选择这里就不提了，到时啃书自然会看到。）
+&emsp;可以看到，数据都是01010101.....这样一堆二进制的数据，第几位至第几位代表XX意思。IP协议主要完成寻找网络主机的功能，具体详细请啃书，这里只简单介绍有个感性的大概认识。
 
 ## 外网IP与内网IP
 &emsp;首先看看常见的网络类型：
@@ -57,8 +79,8 @@ C类|√|×|企业网络、家庭网络
 ![打开cmd](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe1tykypj314s0nawr3.jpg)
 ![内网IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fupdzr3nbcj30rl0efwf7.jpg)
 - 查看本机外网IP
-打开百度，搜索ip地址，会直接显示你本机的外网IP。
+打开百度，搜索ip地址，会直接显示你本机的外网IP。（一般每隔一段时间就会变化一次）
 ![百度搜索ip地址](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe5ixmprj31hc0hhq97.jpg)
 - 查看一个网站的IP地址
-可以在命令提示符里ping网站的域名，能显示Ip地址。（部分是不可以的）
+可以在命令提示符里ping网站的域名，能显示Ip地址。（部分是不可以显示IP地址的）
 ![pingQQ网站](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe8csdqhj30rl0ef3yx.jpg)
