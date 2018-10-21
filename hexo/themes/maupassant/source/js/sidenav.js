@@ -35,7 +35,8 @@ var tree = [
     selectable: false,
     nodes: [
         {text: 'HTML、CSS、JS基础', href: '/posts/54080'},
-        {text: 'chrome开发者工具', href: '/posts/52429'}
+        {text: 'chrome开发者工具', href: '/posts/52429'},
+        {text: 'Jquery、Bootstrap基础', href: '/posts/27238'}
     ]
   },
   {

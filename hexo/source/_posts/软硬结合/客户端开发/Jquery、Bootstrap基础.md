@@ -1,5 +1,5 @@
 ---
-title: Jquery. Bootstrap基础
+title: Jquery、Bootstrap基础
 toc: true
 abbrlink: 27238
 date: 2018-10-17 19:31:52

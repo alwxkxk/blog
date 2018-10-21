@@ -50,6 +50,18 @@ tags:
 - 32-bit detination IP address：目标IP地址。（因为IP数据并不是从主机A直接到主机B，中间还会经过路由C，路由D....若干个中间点，IP路由选择这里就不提了，到时啃书自然会看到。）
 &emsp;可以看到，数据都是01010101.....这样一堆二进制的数据，第几位至第几位代表XX意思。IP协议主要完成寻找网络主机的功能，具体详细请啃书，这里只简单介绍有个感性的大概认识。
 
+## 查看IP地址
+- 查看本机内网IP 
+打开命令提示符（win+R 输入cmd，或在菜单里输入cmd搜索）,输入ipconfig。
+![打开cmd](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe1tykypj314s0nawr3.jpg)
+![内网IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fupdzr3nbcj30rl0efwf7.jpg)
+- 查看本机外网IP
+打开百度，搜索ip地址，会直接显示你本机的外网IP。（一般每隔一段时间就会变化一次）
+![百度搜索ip地址](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe5ixmprj31hc0hhq97.jpg)
+- 查看一个网站的IP地址
+可以在命令提示符里ping网站的域名，能显示Ip地址。（部分是不可以显示IP地址的）
+![pingQQ网站](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe8csdqhj30rl0ef3yx.jpg)
+
 ## 外网IP与内网IP
 &emsp;首先看看常见的网络类型：
 ![外网IP与内网IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fuoemhdd56j30rr0iwjs6.jpg)
@@ -72,15 +84,3 @@ C类|√|×|企业网络、家庭网络
 - 192.168.0.0     -   192.168.255.255 (192.168/16 prefix)
 
 &emsp;另外一下，有一个IP地址很特别而且经常用到：127.0.0.1 代表本机IP地址。
-
-## 查看IP地址
-- 查看本机内网IP 
-打开命令提示符（win+R 输入cmd，或在菜单里输入cmd搜索）,输入ipconfig。
-![打开cmd](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe1tykypj314s0nawr3.jpg)
-![内网IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fupdzr3nbcj30rl0efwf7.jpg)
-- 查看本机外网IP
-打开百度，搜索ip地址，会直接显示你本机的外网IP。（一般每隔一段时间就会变化一次）
-![百度搜索ip地址](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe5ixmprj31hc0hhq97.jpg)
-- 查看一个网站的IP地址
-可以在命令提示符里ping网站的域名，能显示Ip地址。（部分是不可以显示IP地址的）
-![pingQQ网站](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe8csdqhj30rl0ef3yx.jpg)
