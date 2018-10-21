@@ -11,11 +11,13 @@ tags:
 
 # 网络调试助手
 &emsp;[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)
-&emsp;使用网络调试助手简单示例：
+&emsp;使用网络调试助手简单示例，在视频中我打开了两个调试助手，左侧是服务器端，右侧是客户端，相互发送数据，这就是TCP通信。
 <video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%20%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B-%E6%9C%AC%E5%9C%B0%E5%BC%80%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
-&emsp;在视频中我打开了两个调试助手，左侧是服务器端，右侧是客户端，相互发送数据，这就是TCP通信。
+
+---
+
 
 # TCP基础
 ![TCP/IP协议模型](http://ww1.sinaimg.cn/large/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
@@ -56,6 +58,9 @@ your browser does not support the video tag
 - 16-bit TCP checksum 检验（检验传输的数据是否正确）
 - 16-bit urgent pointer 当URG标志被设置时有效，传送紧急数据。
 &emsp;写着写着我发现，书本上用了一百多页讨论TCP协议的内容，当年我啃了两个星期，而现在试图用一个网页就想简单介绍完那是异想天开。于是我决定不再细讲，直接抓包讲解示范TCP是怎么传输数据的。大家看过后，从整体上有个感性的认识就行了，知道原来TCP通信时是这样子的。当然，想了解更多更深入那是必须要啃书的。
+
+---
+
 
 # wireshark 分析TCP通信
 &emsp;安装[wireshark-百度网盘](https://pan.baidu.com/s/17TVX8fxuVopEGAo6sf90Lg)，并开启window网卡的抓包服务（否则找不到对应的网卡），进行抓包。之前我们在本机使用两个网络调试助手进行TCP通信，是属于回环数据（可以理解为数据并没有经过真实的网卡流出去，一直在本机里互传），抓包比较麻烦。我在服务器用nodejs写了一个简单的TCP服务器端（119.29.107.47:9001，[源码-nodejs基础-#搭建最简TCP服务器](/posts/56793/#搭建最简TCP服务器)），使用网络调试助手开启客户端进行连接并发送数据，并使用wireshark抓包进行分析。
@@ -101,7 +106,8 @@ your browser does not support the video tag
 0020   6b 2f d0 79 23 29 f8 dd 37 e7 77 c8 fb 5d 50 10   k/Ðy#)øÝ7çwÈû]P.
 0030   01 05 a4 88 00 00                                 ..¤...
 
-4-- 建立TCP连接成功，TCP服务器主动向客户端发送：IP地址:端口号 connected（对应就是最后那一部分，被解析成ASCII就是 10.135.13.174:9001 connected）
+4-- 建立TCP连接成功，TCP服务器主动向客户端发送：IP地址:端口号 connected
+--- （对应就是最后那一部分，被解析成ASCII就是 10.135.13.174:9001 connected）
 0000   8c ec 4b 5e df 31 0c 4b 54 1e 10 b9 08 00 45 00   .ìK^ß1.KT..¹..E.
 0010   00 46 c4 14 40 00 36 06 dc 2f 77 1d 6b 2f c0 a8   .FÄ.@.6.Ü/w.k/À¨
 0020   01 79 23 29 d0 79 77 c8 fb 5d f8 dd 37 e7 50 18   .y#)ÐywÈû]øÝ7çP.
@@ -164,6 +170,9 @@ your browser does not support the video tag
 ![wireshark-1](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfv8bhxxdj31060nwtav.jpg)
 ![wireshark-2](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfv96r0ilj31060nwace.jpg)
 ![wireshark-3](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfv9h0k85j31060nwmzj.jpg)
+
+---
+
 
 ## TCP建立连接与结束连接
 &emsp;上面12条通信数据，第1，2，3条是用于建立TCP连接，第4，5，6，7，8，9条是传输数据与应答，第10，11，12条是TCP结束连接。
