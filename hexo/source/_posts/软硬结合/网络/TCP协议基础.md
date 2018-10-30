@@ -278,7 +278,7 @@ a4 94 ==》TCP检验
 
 # 附录
 - 《TCP/IP详解 卷一》
-
+- linux下可以使用tcpdump来抓包，所抓的包可以使用wireshark加载进行分析。
 - [wireshark不能在window下抓取回环（Loopback）数据](https://wiki.wireshark.org/CaptureSetup/Loopback)
 &emsp;If you are trying to capture traffic from a machine to itself, that traffic will not be sent over a real network interface, even if it's being sent to an address on one of the machine's network adapters. This means that you will not see it if you are trying to capture on, for example, the interface device for the adapter to which the destination address is assigned. You will only see it if you capture on the "loopback interface", if there is such an interface and it is possible to capture on it; see the next section for information on the platforms on which you can capture on the "loopback interface".
 &emsp;See CaptureSetup/NetworkMedia for Wireshark capturing support on various platforms. Summary: you can capture on the loopback interface on Linux, on various BSDs including Mac OS X, and on Digital/Tru64 UNIX, and you might be able to do it on Irix and AIX, but you definitely cannot do so on Solaris, HP-UX, or Windows.

@@ -24,6 +24,7 @@ your browser does not support the video tag
 </video>
 &emsp;如果连接上开发板并可以看到开发板信息，说明都正常了，可以编程了。
 
+# 例程
 ## 最简demo
 &emsp;展示一个定时串口打印信息的最简demo。
 ```c
@@ -46,6 +47,76 @@ void loop() {
 your browser does not support the video tag
 </video>
 
+## TCP通信
+&emsp;注意根据实际情况修改WIFI的标识号与密码（第3、4行），与TCP服务器的IP地址、端口号（第6、7行）。
+
+```c
+#include <ESP8266WiFi.h>
+
+const char* ssid = "wifi-name";
+const char* password = "wifi-password";
+
+const char* host = "192.168.1.121";
+const int port = 2424;
+
+WiFiClient client;
+
+void setup() {
+  //初始化串口
+  Serial.begin(115200);
+  delay(10);
+
+  // Connect to WiFi network
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  //连接WIFI
+  WiFi.begin(ssid, password);
+  //等待WIFI连接成功
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+
+}
+
+void loop() {
+  //连接TCP服务器
+  if (client.connect(host, port))
+  {
+    // 串口打印，连接成功
+    Serial.println("client connected to the host");
+    //发送TCP数据
+    client.println("hello~");
+  }
+  else
+  {
+    // 串口打印，连接失败
+    Serial.println("client connection failure");
+  }
+
+  while (client.connected())
+  {
+    delay(1000);
+    //发送TCP数据
+    client.println("tick");
+
+    //接收到数据
+    if (client.available())
+    {
+      String line = client.readStringUntil('\n');
+      //串口打印所接收到的数据
+      Serial.print("receive:");
+      Serial.println(line);
+    }
+  }
+
+}
+
+
+```
 
 
 
@@ -53,3 +124,4 @@ your browser does not support the video tag
 - [Arduino core for ESP8266 WiFi chip - github](https://github.com/esp8266/Arduino)
 - [在Windows系统上入门Arduino](https://www.arduino.cc/en/Guide/Windows?setlang=cn)
 - [Quick Start to Nodemcu (ESP8266) on Arduino IDE](https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/)
+- [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
