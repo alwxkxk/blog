@@ -21,6 +21,13 @@
 
 var tree = [
   {
+    text: '项目演示',
+    selectable: false,
+    nodes: [
+            {text: 'demo1', href: '/posts/64786'}
+    ]
+  },
+  {
     text: '网络',
     selectable: false,
     nodes: [

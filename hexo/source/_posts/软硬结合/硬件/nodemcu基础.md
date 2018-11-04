@@ -25,8 +25,29 @@ your browser does not support the video tag
 &emsp;如果连接上开发板并可以看到开发板信息，说明都正常了，可以编程了。
 
 # 例程
-## 最简demo
-&emsp;展示一个定时串口打印信息的最简demo。
+
+## 控制LED
+&emsp;ESP-01模块上的蓝灯是直接与GPIO1相连的,对应TXD引脚。用这LED时，也意味着不能进行串口通信。
+
+```c
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);     // Initialize the LED_BUILTIN pin as an output
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, LOW);   // Turn the LED on (Note that LOW is the voltage level
+  // but actually the LED is on; this is because
+  // it is active low on the ESP-01)
+  delay(1000);                      // Wait for a second
+  digitalWrite(LED_BUILTIN, HIGH);  // Turn the LED off by making the voltage HIGH
+  delay(2000);                      // Wait for two seconds (to demonstrate the active low LED)
+}
+```
+
+
+## 串口通信
+&emsp;展示一个定时串口打印信息的简单demo。
 ```c
 void setup() {
   // put your setup code here, to run once:
@@ -125,3 +146,4 @@ void loop() {
 - [在Windows系统上入门Arduino](https://www.arduino.cc/en/Guide/Windows?setlang=cn)
 - [Quick Start to Nodemcu (ESP8266) on Arduino IDE](https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/)
 - [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
+- [arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)

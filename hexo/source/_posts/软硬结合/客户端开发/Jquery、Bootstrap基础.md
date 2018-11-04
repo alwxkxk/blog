@@ -8,7 +8,7 @@ tags:
 
 &emsp;国际惯例，大家请多参考网上的教程，重复的事我就不多做了。我就说一些网上教程没有说的事。
 [jquery教程-菜鸟教程](https://www.runoob.com/jquery/jquery-tutorial.html)
-[Bootstrap教程-菜鸟教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
+[Bootstrap中文网 - 起步](https://v3.bootcss.com/getting-started/)
 
 # 为什么用Jquery?
 &emsp;软件的难点在哪里？软件的难点在于当代码量越来越大的时候，就越来越难驾驭。程序是要不断地被改进，当几万行的代码改起来比几千行的代码改起来要难得多。所以写代码时，追求的是一方面写得灵活些易于重构。另一方面是写得精简一些，下次阅读与修改代码时更省精力。
@@ -20,7 +20,7 @@ tags:
 4. JavaScript特效和动画效果
 5. CSS操作
 6. HTML事件操作
-7. AJAX异步请求方式
+7. __AJAX异步请求方式__
 &emsp;另外，一堆的前端库是基于Jquery来写的，所以必须用这些前端库还必须使用Jquery。__搞网页，必须要学习Jquery。__
 
 # 为什么用Bootstrap？
