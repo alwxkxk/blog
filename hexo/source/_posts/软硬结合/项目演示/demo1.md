@@ -24,6 +24,8 @@ tags:
 
 # 先跑起来
 &emsp;首先你手上先有一块nodemcu（淘宝价十几块），按[nodemcu基础](/posts/44755/)先跑几个例程，保证硬件上没有问题。服务器与界面我已经写好了，并部署到我的服务器上（后面会演示怎么在你本地部署），具体代码自行查看demo1代码。demo1尽量追求简单入门，所以界面不好看，性能也不足，后面会讨论如何优化。整个demo1完成后，你就会对整个物联网的项目有个基本的认识，可以大大地讨论哪个环节需要怎么开发，跟别人吹水一点都不虚。
+- 网址：http://119.29.107.47:8001/
+
 <video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/demo1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
