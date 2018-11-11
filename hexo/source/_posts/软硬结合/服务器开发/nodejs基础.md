@@ -58,7 +58,7 @@ playGame();
 ```
 
 # 搭建最简TCP服务器
-&emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：[示例代码-tcp1](https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/tcp1.rar)
+&emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：（源码可在github上的base/tcp里找到）
 
 <video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%20tpc1-%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B%E8%BF%9E%E6%8E%A5.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
@@ -85,6 +85,10 @@ const server = net.createServer((socket)=>{
   // close
   socket.on('close',()=>{
     console.log(addr,"close")
+  })
+
+  socket.on('error',(err)=>{
+		console.log("error",err)
   })
 })
 

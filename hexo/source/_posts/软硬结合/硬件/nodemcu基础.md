@@ -27,7 +27,7 @@ your browser does not support the video tag
 # 例程
 
 ## 控制LED
-&emsp;ESP-01模块上的蓝灯是直接与GPIO1相连的,对应TXD引脚。用这LED时，也意味着不能进行串口通信。
+&emsp;nodemcu板LED灯闪烁。
 
 ```c
 void setup() {
@@ -68,7 +68,7 @@ void loop() {
 your browser does not support the video tag
 </video>
 
-## TCP通信
+## TCP通信-串口打印
 &emsp;注意根据实际情况修改WIFI的标识号与密码（第3、4行），与TCP服务器的IP地址、端口号（第6、7行）。
 
 ```c
@@ -139,7 +139,82 @@ void loop() {
 
 ```
 
+## TCP通信-demo1
+&emsp;注意修改WIFI地址与密码。
 
+```c
+#include <ESP8266WiFi.h>
+
+const char* ssid = "you-wifi";
+const char* password = "you-wifi-password";
+
+const char* host = "119.29.107.47";
+const int port = 9002;
+
+const char* id = "1234abcd";
+int tick = 1000;
+
+
+WiFiClient client;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  //连接WIFI
+  WiFi.begin(ssid, password);
+
+  //等待WIFI连接成功
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.println("WiFi connecting...");
+    delay(500);
+  }
+  Serial.println("WiFi connected!.");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (client.connect(host, port))
+  {
+    Serial.println("host connected!");
+    //发送第一条TCP数据，发送ID号
+    client.print(id);
+  }
+  else
+  {
+    // TCP连接异常
+    Serial.println("host connecting...");
+    delay(500);
+  }
+
+  while (client.connected()) {
+    //      接收到TCP数据
+    if (client.available())
+    {
+      String line = client.readStringUntil('\n');
+      if (line == "1") {
+        Serial.println("command:open led.");
+        digitalWrite(LED_BUILTIN, LOW);
+        client.print("OK");
+      }
+      else if (line == "0") {
+        Serial.println("command:close led.");
+        digitalWrite(LED_BUILTIN, HIGH);
+        client.print("OK");
+      }
+    }
+    else {
+      //若没收到TCP数据，每隔一段时间打印并发送tick值
+      Serial.print("tick:");
+      Serial.println(tick);
+      client.print(tick);
+      tick++;
+      delay(1000);
+    }
+  }
+
+}
+```
 
 # 附录
 - [Arduino core for ESP8266 WiFi chip - github](https://github.com/esp8266/Arduino)
