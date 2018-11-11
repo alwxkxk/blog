@@ -65,7 +65,7 @@ var tree = [
   {
     text: '其它',
     selectable: false,
-    state: {expanded: false},
+    // state: {expanded: false},
     nodes: [
         {text: '磨刀不误砍柴功', href: '/posts/61760'},
         {text: '资源链接', href: '/posts/37993'},
@@ -81,16 +81,25 @@ $('#sidenav-container').show()
 var slideout = new Slideout({
   'panel': document.getElementById('panel'),
   'menu': document.getElementById('menu'),
-  'padding': 256,
+  'padding':200,
   'tolerance': 70
 })
 
-// Toggle button
-document.querySelector('.toggle-button').addEventListener('click', function () {
-  slideout.toggle()
+slideout.on("open",()=>{
+  $('#open-menu').hide();
 })
 
-slideout.toggle()
-setTimeout(() => {
-  slideout.toggle()
-}, 1500)
+slideout.on("close",()=>{
+  $('#open-menu').show();
+})
+
+$('#close-menu').click(()=>{
+  slideout.close();
+})
+
+$('#open-menu').click(()=>{
+  slideout.open();
+})
+
+
+

@@ -21,13 +21,18 @@ html(lang=config.language)
   body
     include _partial/totop.pug
 
-    nav#menu
+    nav#menu(style="background-color:#5bc0de;font-size: medium;font-weight: 600;")
       div#sidenav-container
+        button#close-menu.btn.btn-primary(style="margin-left: 2em;")
+          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
         #sidenav
 
     main#panel.body_container
       header
-        button.toggle-button(style="position:sticky;top:1px;left:1px;") 三
+        button#open-menu.btn.btn-info(style="position:sticky;top:1px;left:1px;") 
+          span.glyphicon.glyphicon-align-left(aria-hidden='true')
         #header
           .site-name
             h1.hidden= current_title
