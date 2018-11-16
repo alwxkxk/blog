@@ -32,6 +32,11 @@ your browser does not support the video tag
 &emsp;如果你才下单刚买nodemcu还没到手，可以先粗略快速地浏览一下其它教程，在没有硬件的情况下都可以先学习。demo1流程图：
 ![demo1流程图](http://ww1.sinaimg.cn/large/005BIQVbgy1fx3yhijxgkj30fb0b7aa6.jpg)
 
+&emsp;先不用急着学，让这个项目能在你手上完整地跑起来，先拥有它，能不能驾驭是另一回事。完整的源代码可以到github[软硬结合项目地址](https://github.com/alwxkxk/soft-and-hard)里下载。
+![获取全部源码](http://ww1.sinaimg.cn/large/005BIQVbgy1fxa4jvz5xtj30ty0lvwi8.jpg)
+&emsp;服务器代码是用nodejs写的，所以要先安装nodejs。
+
+
 
 # 怎么做
 &emsp;具体的技术选型不再讨论，可阅读[软硬结合](/posts/44755/)，结论就是：

@@ -11,10 +11,14 @@ tags:
 
 
 &emsp;我使用的编辑器是[vscode](https://code.visualstudio.com/)(主流的轻量级编辑器)，市场主流浏览器[chrome](https://www.google.cn/intl/zh-CN/chrome/)，教程会一直用这两者。关于HTML、CSS、JavaScript，网上有很多也很优秀的教程，我不再重复。在这篇教程里，我只会简单地补充介绍一下HTML、CSS、JavaScript的作用，补充一下网上教程没有涉及到的东西。别人写的教程会比我写的完整详细，我补充一些观念，务必结合多个教程来学习。（只依赖我这个教程是不行的！）
+
+![不再重复造轮子](http://ww1.sinaimg.cn/large/005BIQVbgy1fxa63z5bylj30ms0bmq5j.jpg)
+
 &emsp;先放结论：
 - HTML用于描述网页内容。
 - CSS用于描述网页样式。
 - JavaScript用于实现互动。
+
 
 # HTML
 &emsp;超文本标记语言(HyperText Markup Language),用于创建网页的标准标记语言。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。
