@@ -17,10 +17,13 @@ tags:
 &emsp;先放结论：
 - HTML用于描述网页内容。
 - CSS用于描述网页样式。
-- JavaScript用于实现互动。
+- JavaScript用于实现交互行为。
 
 
 # HTML
+>1980年，物理学家蒂姆·伯纳斯-李在欧洲核子研究中心（CERN）在承包工程期间，为使CERN的研究人员使用并共享文档，他提出并创建原型系统ENQUIRE。1989年，伯纳斯-李在一份备忘录中提出一个基于互联网的超文本系统。他规定HTML并在1990年底写出浏览器和服务器软件。自1996年起，HTML规范一直由万维网联盟（W3C）维护，并由商业软件厂商出资。不过在2000年，HTML也成为国际标准（ISO/ IEC15445：2000）。2004年，网页超文本应用技术工作小组（WHATWG）开始开发HTML5，并在2008年与W3C共同交付，2014年10月28日完成标准化。
+超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计令人赏心悦目的网页、网页应用程序以及移动应用程序的用户界面。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。HTML描述了一个网站的结构语义随着线索的呈现，使之成为一种标记语言而非编程语言。 ——维基百科
+
 &emsp;超文本标记语言(HyperText Markup Language),用于创建网页的标准标记语言。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。
 &emsp;手机浏览器请求我的网页时，我想显示一个按钮，于是我代码里返回了一个数据：
 ```html
@@ -63,6 +66,9 @@ your browser does not support the video tag
 
 
 # CSS
+>HTML规范虽然规定了网页中的标题、段落应该使用的标签，但是没有涉及这些内容应该以何种样式(比如大小、位置、间距、缩进等属性)呈现在浏览器中。从1990年代初HTML被发明开始，样式表就以各种形式出现了。不同的浏览器结合了它们各自的样式语言，读者(也就是浏览网页的用户)可以使用这些样式语言来调节网页的显示方式。一开始样式表是给读者用的，最初的HTML版本只含有很少的显示属性，读者来决定网页应该怎样被显示。于1994年，哈肯·维姆·莱和伯特·波斯合作设计CSS。他们在1994年首次在芝加哥的一次会议上第一次展示了CSS的建议。
+层叠样式表（英语：Cascading Style Sheets，简写CSS），一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言，由W3C定义和维护。——维基百科
+
 &emsp;HTML负责确定网页中有哪些内容，CSS确定以何种外观(大小、粗细、颜色、对齐和位置)展现这些元素。CSS可以用于设定页面布局、设定页面元素样式、设定适用于所有网页的全局样式。[css-维基百科](https://zh.wikipedia.org/wiki/%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8)
 ```html
 <html>
@@ -148,6 +154,9 @@ your browser does not support the video tag
 ```
 
 # JavaScirpt
+>1993年，伊利诺伊大学厄巴纳-香槟分校的国家超级计算机应用中心（NCSA）发表了NCSA Mosaic，这是最早流行的图形接口网页浏览器，它在万维网的普及上发挥了重要作用。1994年，一家名为Mosaic Communications的公司在加州山景城成立了，并雇用了许多原来的NCSA Mosaic开发者用来开发Mosaic Netscape，该公司的目标是取代NCSA Mosaic成为世界第一的网页浏览器。第一个版本的网页浏览器Mosaic Netscape 0.9于1994年底发布。在四个月内，已经占据了四分之三的浏览器市场，并成为1990年代互联网的主要浏览器。为避免NCSA的商标所有权问题，该浏览器于同年更名为Netscape Navigator，该公司命名为Netscape Communications。网景预见到网上需要变得更动态。公司的创始人马克·安德森认为HTML需要一种胶水语言，让网页设计师和兼职程序员可以很容易地使用它来组装图片和插件之类的组件，且代码可以直接编写在网页标记中。1995年，网景招募了布兰登·艾克，目标是把Scheme语言嵌入到Netscape Navigator浏览器当中。但更早之前，网景已经跟昇阳合作在Netscape Navigator中支持Java，这时网景内部产生激烈的争论。后来网景决定发明一种与Java搭配使用的辅助脚本语言并且语法上有些类似，这个决策导致排除了采用现有的语言，例如Perl、Python、Tcl或Scheme。为了在其他竞争提案中捍卫JavaScript这个想法，公司需要有一个可以运作的原型。艾克在1995年5月仅花了十天时间就把原型设计出来了。最初命名为Mocha，1995年9月在Netscape Navigator 2.0的Beta版中改名为LiveScript，同年12月，Netscape Navigator 2.0 Beta 3中部署时被重命名为JavaScript，当时网景公司与昇阳计算机公司组成的开发联盟为了让这门语言搭上Java这个编程语言“热词”，因此将其临时改名为JavaScript，日后这成为大众对这门语言有诸多误解的原因之一。JavaScript推出后在浏览器上大获成功.1996年11月，网景正式向ECMA（欧洲计算机制造商协会）提交语言标准。——维基百科
+
+
 &emsp;HTML告诉了浏览器，要显示什么内容。CSS告诉了浏览器，这些内容的样式（大小颜色等等）。但还缺了一东西，就是动作，要实现动作就要由JavaScript来决定。现在，给按钮添加一个动作，当点击时，就会弹出提示：
 ```html
 <html>
@@ -168,7 +177,7 @@ your browser does not support the video tag
 <button onclick="alert('你点击了按钮')">这是一个按钮</button> 
 
 # 结给其它教程学习
-&emsp;上面我只是简单地补充说明一下这HTML、CSS、JavaScript的作用，里面还有很多需要学习，比较出名的教程有w3school、菜鸟教程、廖雪峰教程。当然，网上的教程还是比较浅，如果你还想要学习得更踏实，就要啃书。大约花费 __一到两个星期__ （不同人有不同的学习要求，不同的学习速度，不同的深度所以时间不一样。）
+&emsp;上面我只是简单地补充说明一下这HTML、CSS、JavaScript的起源与作用，里面还有很多需要学习，比较出名的教程有w3school、菜鸟教程、廖雪峰教程。当然，网上的教程还是比较浅，如果你还想要学习得更踏实，就要啃书。大约花费 __一到两个星期__ （PS:一天按八小时计算，不同人有不同的学习要求，不同的学习速度，不同的深度所以时间不一样。）
 - 在线教程
 [w3school](http://www.w3school.com.cn/html/index.asp)
 [菜鸟教程](http://www.runoob.com/js/js-tutorial.html)
@@ -203,6 +212,7 @@ __答：找一些简单的自己喜欢的网页，然后使用 [chrome开发者�
 &emsp;本地打开网页，你可以注意到网址栏的协议是file，而不是http。要想让手机也能访问网页，就需要提供对外http服务，最终让手机访问网页。
 
 # 附录
+- [HTML规范文档](https://www.w3.org/TR/html/)
 - [CSS1规范文档-Cascading Style Sheets, level 1](https://www.w3.org/TR/CSS1/)
 - [CSS2规范文档-Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification](https://www.w3.org/TR/CSS2/)
 

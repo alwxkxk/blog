@@ -1,8 +1,8 @@
 disqus: ## Your disqus_shortname, e.g. username
 uyan: ## Your uyan_id. e.g. 1234567
 livere: ## Your livere data-uid, e.g. MTAyMC8zMDAxOC78NTgz
-changyan: ## Your changyan appid, e.g. cyrALsXc8
-changyan_conf: ## Your changyan conf, e.g. prod_d8a508c2825ab57eeb43e7c69bba0e8b
+changyan:  ## Your changyan appid, e.g. cyrALsXc8
+changyan_conf:  ## Your changyan conf, e.g. prod_d8a508c2825ab57eeb43e7c69bba0e8b
 gitment:
   enable: false ## If you want to use Gitment comment system please set the value to true.
   owner: ## Your GitHub ID, e.g. username
@@ -10,19 +10,19 @@ gitment:
   client_id: ## GitHub client ID, e.g. 75752dafe7907a897619
   client_secret: ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
 gitalk:
-  enable: true ## If you want to use Gitment comment system please set the value to true.
+  enable: false ## If you want to use Gitment comment system please set the value to true.
   owner:  alwxkxk ## Your GitHub ID, e.g. username
   repo: soft-and-hard ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
   client_id: b2658d53fef2772bfb97 ## GitHub client ID, e.g. 75752dafe7907a897619
   client_secret: 6992bc1d20a2f738343c9526d957e4e7b5e64c9e ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
   admin: ['alwxkxk'] ## Github repo owner and collaborators, only these guys can initialize github issues.
 valine: ## https://valine.js.org
-  enable: false ## If you want to use Valine comment system, please set the value to true.
-  appid: ## Your LeanCloud application App ID, e.g. pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
-  appkey: ## Your LeanCloud application App Key, e.g. tjczHpDfhjYDSYddzymYK1JJ
+  enable: true ## If you want to use Valine comment system, please set the value to true.
+  appid: dibwgE5SQgKyFS1KqM3C2WmQ-gzGzoHsz ## Your LeanCloud application App ID, e.g. pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
+  appkey: G24uL9Fw9oNCfheBorc3GjVB ## Your LeanCloud application App Key, e.g. tjczHpDfhjYDSYddzymYK1JJ
   notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
   verify: false ## Validation code.
-  placeholder: Just so so ## Comment box placeholders.
+  placeholder: 有任何问题或建议欢迎留言 ## Comment box placeholders.
   avatar: 'mm' ## Gravatar type, see https://github.com/xCss/Valine/wiki/avatar-setting-for-valine
   pageSize: 10 ## Number of comments per page.
   guest_info: nick,mail,link ## Attributes of reviewers.
