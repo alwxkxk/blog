@@ -7,7 +7,6 @@ tags:
 - IOT
 ---
 
-# 简介
 &emsp;搭建一个最简单的物联网项目：通过手机控制LED灯开关。
 &emsp;从程序上来讲，nodemcu（TCP客户端）与TCP服务器通信，手机浏览器（HTTP客户端）与HTTP服务器通信，最终实现通过网页控制nodemcu的LED。
 ![demo1示例](http://ww1.sinaimg.cn/large/005BIQVbgy1fwstl5y6srj30il0950tp.jpg)
@@ -22,29 +21,63 @@ tags:
 &emsp;从IP地址与端口号的角度来看，三台设备之间通信（这里IP地址与端口是随意配的以作演示），示意是这样的：
 ![demo1通信示意](http://ww1.sinaimg.cn/large/005BIQVbgy1fwtxx9phabj30jk095jse.jpg)
 
-# 先跑起来
+## 先跑起来
 &emsp;首先你手上先有一块nodemcu（淘宝价十几块），按[nodemcu基础](/posts/44755/)先跑几个例程，保证硬件上没有问题。服务器与界面我已经写好了，并部署到我的服务器上（后面会演示怎么在你本地部署），具体代码自行查看demo1代码。demo1尽量追求简单入门，所以界面不好看，性能也不足，后面会讨论如何优化。整个demo1完成后，你就会对整个物联网的项目有个基本的认识，可以大大地讨论哪个环节需要怎么开发，跟别人吹水一点都不虚。
 - 网址：http://119.29.107.47:8001/
 
 <video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/demo1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
-&emsp;如果你才下单刚买nodemcu还没到手，可以先粗略快速地浏览一下其它教程，在没有硬件的情况下都可以先学习。demo1流程图：
+&emsp;如果你才下单刚买nodemcu还没到手，可以先粗略快速地浏览一下其它教程，在没有硬件的情况下都可以先学习，特别是网络知识部分。demo1流程图：
+
 ![demo1流程图](http://ww1.sinaimg.cn/large/005BIQVbgy1fx3yhijxgkj30fb0b7aa6.jpg)
 
-&emsp;先不用急着学，让这个项目能在你手上完整地跑起来，先拥有它，能不能驾驭是另一回事。完整的源代码可以到github[软硬结合项目地址](https://github.com/alwxkxk/soft-and-hard)里下载。
+## 在自己电脑上跑起来
+&emsp;先不用急着学，让这个项目能在你手上完整地跑起来，先拥有它，能不能驾驭是另一回事。下面傻瓜式演示怎么把demo1在自己电脑上跑起来。
+### 获取源码
+&emsp;完整的源代码可以到[github](https://github.com/alwxkxk/soft-and-hard)里下载，并解压。
 ![获取全部源码](http://ww1.sinaimg.cn/large/005BIQVbgy1fxa4jvz5xtj30ty0lvwi8.jpg)
+### 安装环境
 &emsp;服务器代码是用nodejs写的，所以要先安装nodejs。
+1. 搜索nodejs官网
+2. 下载nodejs，大家下载稳定版本（LTS: Long Term Support ）。安装一直点下一步即可。
+![下载nodejs](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmhyji22j30xk0rn0v5.jpg)
+3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功
+![验证nodejs安装成功](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
+### 安装依赖包并运行
+&emsp;如果你有nodejs与git的使用经验就会知道，默认的作法是只上传源码，而依赖包自行安装以减少git文件体积。注意需要进入到对应的目录，可以看视频操作：
+<video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/demo1%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
+&emsp;整个过程因为没有相关基础知识，所以并不懂，很正常，经过后面的学习就会了解整个过程。readme是以MarkDown语法写的。
 
-
-
-# 怎么做
+### 瞎折腾
+&emsp;虽然说读者可能到现在什么都不懂，但这里演示如何瞎折腾，让读者获得一下拥有感，演示一下修改网页内容：
+<video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/demo1%E7%9E%8E%E6%8A%98%E8%85%BE%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
+## 怎么做
 &emsp;具体的技术选型不再讨论，可阅读[软硬结合](/posts/44755/)，结论就是：
 - 硬件：nodemcu，使用Arduino IDE进行开发，与服务器使用TCP通信
 - 服务器：Nodejs，使用express4.x框架
 - 界面：HTML+CSS+JavaScript，Jquery与Bootstrap
 
-# 下一个demo
+### 学习过程
+- [计算机网络基础](/posts/37707)
+&emsp;先了解基本的网络知识，半个小时吧。
+- [nodemcu基础](/posts/31494)
+&emsp;了解nodemcu与开发，两三个小时吧。
+- [HTML、CSS、JS基础](/posts/54080)
+&emsp;了解界面开发的三件套基础知识，__结合其它教程自学，大约两三个星期__，能做出基本的网页界面。
+- [chrome开发者工具](/posts/52429)
+&emsp;学习怎么调试网页，分析别人网页，__拥有分析并模仿别人的网页的能力__。
+- [Jquery、Bootstrap基础](/posts/27238)
+&emsp;学习Jquery、Bootstrap基础。__并尝试模仿别人网页，检验学习成果。__
+- [nodejs基础](/posts/56793)
+&emsp;了解nodejs开发、ES6语法、express框架，__结合其它教程自学，大约两个星期__。
+- 模仿demo1，尽可能地自行实现demo1效果，大约几天。
+
+## 下一个demo
 &emsp;demo1尽量追求简单入门，所以界面不好看（帅是第一生产力），性能也不足。先说说demo1的问题：
 - 每次刷新页面才会显示最新的tick值。（讨论HTTP轮询以及websocket协议）
 - 界面丑（优化并会引入图表库Echart，实现数据可视化）

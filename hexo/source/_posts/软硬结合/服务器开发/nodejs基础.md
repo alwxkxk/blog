@@ -8,15 +8,15 @@ tags:
 ---
 &emsp;nodejs语法是基于JavaScript的，所以要学习nodejs需要拥有基本的JavaScript使用经验。
 
-# 安装nodejs
+## 安装nodejs
 1. 搜索nodejs官网
-2. 下载nodejs，大家下载稳定版本。（LTS: Long Term Support ）
+2. 下载nodejs，大家下载稳定版本（LTS: Long Term Support ）。安装一直点下一步即可。
 ![下载nodejs](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmhyji22j30xk0rn0v5.jpg)
-3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功
+3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功。
 ![验证nodejs安装成功](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
 验证安装成功就代表了：1.程序安装成功。2.环境变量（PATH） 设置正确。
 
-# 其它nodejs教程
+## 其它nodejs教程
 &emsp;相关书籍与网上的教程有很多，__我就不重复，大家花时间去学习（大约一到两个星期左右能入门）__，后面我补充一些相关内容。
 
 《深入浅出Node.js》- 朴灵
@@ -25,7 +25,7 @@ tags:
 [《七天学会NodeJS》](https://github.com/nqdeng/7-days-nodejs)
 [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
 
-# JavaScript回调函数
+## JavaScript回调函数
 &emsp;nodejs里大量使用回调函数，这里简单讲一下。如果你已经对回调函数比较熟悉（玩过几天JavaScript都应该知道回调函数），那就可以直接跳过。
 &emsp;要明白回调函数，首先要明白两件事：1.在JavaScript里，函数也是可以作为一个参数传入到另一个函数中。2.JavaScript的异步机制。
 &emsp;去煮水（1分钟），等待水煮开（10分钟），装好热水（1分钟）。这里实际动作只用了共2分钟，而等待用了10分钟，这是很浪费时间的。__只有上一件事做完了，才能做下一件事，这是同步__
@@ -57,7 +57,7 @@ playGame();
 
 ```
 
-# 搭建最简TCP服务器
+## 搭建最简TCP服务器
 &emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：（源码可在github上的base/tcp里找到）
 
 <video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%20tpc1-%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B%E8%BF%9E%E6%8E%A5.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
@@ -102,7 +102,7 @@ server.listen({port: PORT,host: '0.0.0.0'}, () => {
 })
 ```
 
-# 搭建最简HTTP服务器
+## 搭建最简HTTP服务器
 &emsp;之前在[HTML、CSS、JS基础](/posts/54080)里所编写的网页，都是以本地打开文件的方式运行，并不是通过HTTP协议访问网页。[HTTP协议基础](/posts/34265)
 &emsp;现在我们做一个最简单的HTTP服务器，以下代码从[廖雪峰教程](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345015296018cac40c198b543fead5c549865b9bd4a000)搬运过来。
 ```javascript
@@ -133,6 +133,6 @@ your browser does not support the video tag
 
 
 
-# 下一节
+## 下一节
 - nodejs中error first 回调函数风格
 - [linux基础](/posts/34982)
