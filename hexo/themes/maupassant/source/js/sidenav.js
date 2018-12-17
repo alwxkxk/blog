@@ -34,7 +34,8 @@ var tree = [
             {text: '计算机网络基础', href: '/posts/37707'},
             {text: 'IP协议基础', href: '/posts/37286'},
             {text: 'TCP协议基础', href: '/posts/19508'},
-            {text: 'HTTP协议基础', href: '/posts/34265'}
+            {text: 'HTTP协议基础', href: '/posts/34265'},
+            {text: 'MQTT协议基础', href: '/posts/20945'}
     ]
   },
   {
@@ -52,7 +53,8 @@ var tree = [
     selectable: false,
     nodes: [
         {text: 'nodejs基础', href: '/posts/56793'},
-        {text: 'linux基础', href: '/posts/34982'}
+        {text: 'linux基础', href: '/posts/34982'},
+        {text: '数据库基础', href: '/posts/41347'}
     ]
   },
   {

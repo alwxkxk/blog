@@ -90,6 +90,11 @@ your browser does not support the video tag
 - 引入数据库
 &emsp;在实现下一个demo之前会讨论解决以上问题，之后会做出一个能看能用的demo，同时会介绍其它东西比如docker，electron等技术。这个demo2估计需要比较长的时间进行准备。
 
+## FAQ
+1. 为什么我点击按钮没能控制LED灯亮灭？
+__答：可打开开发者调试工具查看是否有报错，IE浏览器，360浏览器内核太旧无法支持新版的JQuery而报错，大家请改用chrome浏览器。__
+
+
 
 
 

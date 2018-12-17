@@ -25,37 +25,6 @@ tags:
 [《七天学会NodeJS》](https://github.com/nqdeng/7-days-nodejs)
 [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
 
-## JavaScript回调函数
-&emsp;nodejs里大量使用回调函数，这里简单讲一下。如果你已经对回调函数比较熟悉（玩过几天JavaScript都应该知道回调函数），那就可以直接跳过。
-&emsp;要明白回调函数，首先要明白两件事：1.在JavaScript里，函数也是可以作为一个参数传入到另一个函数中。2.JavaScript的异步机制。
-&emsp;去煮水（1分钟），等待水煮开（10分钟），装好热水（1分钟）。这里实际动作只用了共2分钟，而等待用了10分钟，这是很浪费时间的。__只有上一件事做完了，才能做下一件事，这是同步__
-&emsp;去煮水（1分钟），去打游戏（10分钟），通知我水开了，装好热水（1分钟）。这样就免去了等待水开所浪费的时间，充分地提高了效率。__在空闲的等待里做其它事，而不必一直纠结于一定要做完这件事才能做下一件事，这就是异步。__
-&emsp;为了让我知道水开了，这电热水壶就必须有个铃，当水开了就响铃，通知我去装好热水。__某件事完成后，再回过头来执行函数，这就是回调函数。__
-
-
-```javascript
-
-function fillWater(){
-    console.log("装热水")
-}
-
-function boilWater(){
-    console.log("去煮水");   
-    //1秒钟后执行回调 
-    setTimeout(fillWater,1000) 
-}
-
-function playGame(){
-    console.log("玩游戏");
-}
-
-boilWater();
-playGame();
-//去煮水
-//玩游戏
-//装热水
-
-```
 
 ## 搭建最简TCP服务器
 &emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：（源码可在github上的base/tcp里找到）
@@ -131,7 +100,9 @@ your browser does not support the video tag
 &emsp;[nodejs HTTP-API中文文档](http://nodejs.cn/api/http.html)。注意了，与本地直接打开网页不同，网址栏是http开头的。（本地直接打开的是file开头）。这时，你可以使用手机连接到同一个WIFI里，找到电脑的IP地址，输入网址就可以访问到网页。 
 
 
-
+## 作业
+1. 搜索并搞懂JS事件回调，nodejs的使用error first回调风格的原因。
+2. 搜索并学习如何打断点调试自己的nodejs程序。
 
 ## 下一节
 - nodejs中error first 回调函数风格
