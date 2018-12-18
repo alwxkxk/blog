@@ -24,7 +24,8 @@ var tree = [
     text: '项目演示',
     selectable: false,
     nodes: [
-            {text: 'demo1', href: '/posts/64786'}
+            {text: 'demo1', href: '/posts/64786'},
+            {text: 'demo2', href: '/posts/64594'}
     ]
   },
   {

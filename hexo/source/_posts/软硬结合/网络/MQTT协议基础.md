@@ -6,9 +6,44 @@ date: 2018-12-14 19:39:28
 tags:
 ---
 
-&emsp;有读者问我MQTT相关问题，我使用百度搜索MQTT竟然没发现比较好的教程，只能自己写详细点了。
+&emsp;有读者问我MQTT相关问题，我搜索MQTT教程竟然没发现比较好的教程，想偷懒都不行，只能自己写详细点了。
+&emsp;MQTT是基于发布/订阅范式（后面亲自跟着实际操作后就会明白什么是发布/订阅）的消息协议。
+&emsp;Eclipse基金会开源的MQTT网关[mosquitto](https://mosquitto.org/)，[mqttfx](https://mqttfx.jensd.de/index.php)是开源的MQTT客户端（[mqttfx-1.6.0-windows-x64-百度网盘](https://pan.baidu.com/s/19yiEDjpLCpS_2Yew_4GcKA)）
+[mosquitto网关官方在线测试网址](https://test.mosquitto.org/)：`https://test.mosquitto.org/`。下面我会同时打开三个客户端ABC连接到mosquitto网关，A发布消息，BC分别订阅不同的主题：
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4eozcg9j30pd0i63z4.jpg)
+
+&emsp;安装客户端mqttfx后，打开设置，配置MQTT网关地址，MQTT端口号默认使用1883，注意要自动生成一个客户端ID。然后保存，建立连接。服务器在国外，连接可能有点慢。
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4omlaknj30zr0m2t9v.jpg)
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4u8w5e5j30sw0kxjsm.jpg)
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4sbqm1rj30zr0m23zn.jpg)
+
+&emsp;打开三个客户端并连接后，让BC分别订阅主题`a/b`、`a/c`，然后让A分别发布主题`a/b`、`a/c`,可以看到客户端BC分别接收到消息。其实一个客户端能同时订阅多个主题，并进行发布，这里只是为了方便展示而开了三个。大家实际操作时可以只开一个客户端，订阅主题，然后回到发布窗口发布消息，再回到订阅窗口看是否接收到消息。大家亲自操作一次体验一下。
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb560jei2j31be0qpqn1.jpg)
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb567papmj31bx0qu1ds.jpg)
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb56d6l9yj31bj0qqnhl.jpg)
+
+## MQTT消息
+&emsp;通过以上操作，相信大家已经明白什么叫发布/订阅。MQTT所发的消息包含：主题+内容，客户端订阅可以任意主题，若有其它客户端发布主题时符合所订阅的主题，就会由网关发送到客户端。注意整个操作中，网关是没有对消息做任何修改的，只是负责管理复制消息转发给已经订阅主题的客户端。主题使用`/`是层次分隔符，可以使主题变得更多层次。
+&emsp;客户端在订阅时所输入的是“主题过滤器”，是允许使用通配符（wildcards）进行订阅。
+
+- `+`是单级通配符，可以放任意层次位置。
+如订阅`“sport/tennis/+`，则会订阅到如`sport/tennis/player1`、`sport/tennis/player2`等，但不会订阅到`sport/tennis/player1/ranking`
+如订阅`a/+/c`，能订阅到`a/b/c`、`a/abc/c`等消息。
+
+- `#`是多级通配符，只能放末尾。
+如订阅`#`，则会接收到所有消息。（除了以`$`开头的主题）
+如订阅`sport/tennis/player1/#`，则会订阅到如`sport/tennis/player1`、`sport/tennis/player1/ranking`、`sport/tennis/player1/score/wimbledon`等。
+
+## MQTT其它特性
+&emsp;服务级别（Quality of Service，简写QoS）提供三种，供开发者根据不同的情景选择不同的服务级别：
+- QoS 0
+- QoS 1
+- QoS 2
+
+&emsp;QoS 0代表最多发送一次，最简单最省流量。QoS 1至少发送接收到一次（即有可能重复接收到多次）。QoS 2保证只接收到一次，代价最大。
+&emsp;消息可选择是否保留（retained），常用于传递代表状态的消息。某主题若被设置为retained，客户端订阅该主题时会马上接收到该retained消息。
+&emsp;在实际生产环境，一般会使用国人开源的MQTT网关——[EMQTT](http://www.emqtt.com/)，它拥有更多的辅助功能。我有空整理一下实际使用时会出现的问题。
 
 
 ## 附录
-
 - [MQTT规范文档 Version 3.1.1](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html)
