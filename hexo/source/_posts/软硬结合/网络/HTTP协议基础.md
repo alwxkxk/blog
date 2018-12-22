@@ -57,15 +57,19 @@ Cookie: Hm_lvt_646acd4e6c74eb119c3d5d93c5bfde70=1543030512; connect.sid=s%3AFxuA
 - DELETE /user：删除帐号
 - POST /user：创建或更新帐号信息
 
-## Websocket协议
-&emsp;建立TCP通信之后，服务器端是能向客户端随时随地主动发数据。但HTTP协议的设计就是无连接，“一问一答，不问不答”，客户端不发起请求，服务器不能主动向客户端发送数据。在一些追求实时性的应用场景下，硬是使用HTTP轮询的办法去获取最新的数据，这就有严重的性能问题。如果轮询时间太短，机器扛不住。如果轮询太长，那么数据更新得太慢。即HTTP协议缺乏实时性，能不能像TCP socket通信一样，建立通信后不断开连接，并且能让服务器主动向客户端发送数据。基于这样的理念，就诞生了Websocket协议，允许在上HTTP协议基础之上，达到TCP socket通信一样的效果。
-&emsp;在追求实时性应用场景里，比如说聊天室，物联网应用，都会用到Websocket协议，赋予界面实时更新数据的能力。举个例子，现在我想实时显示温度，若使用HTTP协议轮询，要更新十次数据就需要发起十次请求，“十问十答”。使用Websocket协议只需要发起一次请求，就可以做到“一问十答”，由服务器主动推送数据给浏览器：
+## WebSocket协议
+&emsp;建立TCP通信之后，服务器端是能向客户端随时随地主动发数据。但HTTP协议的设计就是无连接，“一问一答，不问不答”，客户端不发起请求，服务器不能主动向客户端发送数据。在一些追求实时性的应用场景下，硬是使用HTTP轮询的办法去获取最新的数据，这就有严重的性能问题。如果轮询时间太短，机器扛不住。如果轮询太长，那么数据更新得太慢。即HTTP协议缺乏实时性，能不能像TCP socket通信一样，建立通信后不断开连接，并且能让服务器主动向客户端发送数据。基于这样的理念，就诞生了WebSocket协议，允许在上HTTP协议基础之上，达到TCP socket通信一样的效果。
+&emsp;在追求实时性应用场景里，比如说聊天室，物联网应用，都会用到WebSocket协议，赋予界面实时更新数据的能力。举个例子，现在我想实时显示温度，若使用HTTP协议轮询，要更新十次数据就需要发起十次请求，“十问十答”。使用WebSocket协议只需要发起一次请求，就可以做到“一问十答”，由服务器主动推送数据给浏览器：
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb439gt6pj30fj0eat9x.jpg)
 
-<!-- ## HTTP最简例子分析
-&emsp;这里我们再做一个简单的实验，使用[nodejs基础](/posts/19508/)里的HTTP最简服务器作例子，从更多不同的角度去看HTTP具体做了什么。 -->
+&emsp;`http://websocket.org/`提供了一个websocket测试网址，会回复所接收的数据(echo:回声)，源代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`\基础教程\HTTP协议基础\WebSocket例子`找到:
 
-<!-- ## Websocket最简例子分析 -->
+<img class="lazy" alt="WebSocket" data-src="http://ww1.sinaimg.cn/large/005BIQVbgy1fydgd0oltfg31gy0ri4qp.gif">
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fydgb1rhp2j31hc0t4goc.jpg)
+
+&emsp;服务器端可以使用[ws模块](https://github.com/websockets/ws)搭建WebSocket服务器，然后就可以使用从浏览器直接调用 WebSocket API进行连接。而在平时开发使用，一般开发者会使用[socket.io模块](https://github.com/socketio/socket.io)，这个是在WebSocket协议基础之上，增加了一系列功能如：支持命名空间、超时重连、若浏览器不支持WebSocket则自动降级使用HTTP轮询等等。使用socket.io时，并不能直接使用浏览器的WebSocket API连接，必须使用socket.io库。为方便学习，不增加太多新概念，服务器端我们使用ws模块进行演示。具体代码可查看[源代码](https://github.com/alwxkxk/soft-and-hard)`\基础教程\HTTP协议基础\Websocket服务器端例子`，运行前先阅读该目录下的`README`。
+
+
 
 
 

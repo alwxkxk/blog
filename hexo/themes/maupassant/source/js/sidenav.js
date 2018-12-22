@@ -105,5 +105,20 @@ $('#open-menu').click(()=>{
   slideout.open();
 })
 
+// 当浏览次数少于3时，自动弹出菜单栏
+let menuFlag=localStorage.getItem("menu-flag")
+if(!menuFlag){
+  menuFlag = 0
+}
+else{
+  menuFlag = Number(menuFlag)
+}
 
-
+if(menuFlag<3){
+  menuFlag += 1
+  localStorage.setItem("menu-flag",menuFlag);
+  slideout.open();
+  setTimeout(() => {
+    slideout.close();
+  }, 1500);
+}

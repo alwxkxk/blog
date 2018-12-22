@@ -103,7 +103,8 @@ your browser does not support the video tag
 ## 作业
 1. 搜索并搞懂JS事件回调，nodejs的使用error first回调风格的原因。
 2. 搜索并学习如何打断点调试自己的nodejs程序。
+3. 学习ES6语法。
+4. 学习Express框架。
 
 ## 下一节
-- nodejs中error first 回调函数风格
 - [linux基础](/posts/34982)
