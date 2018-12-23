@@ -46,7 +46,8 @@ var tree = [
         {text: 'HTML、CSS、JS基础', href: '/posts/54080'},
         {text: 'chrome开发者工具', href: '/posts/52429'},
         {text: 'Jquery、Bootstrap基础', href: '/posts/27238'},
-        {text: '数据可视化基础', href: '/posts/18173'}
+        {text: '数据可视化基础', href: '/posts/18173'},
+        {text: '微信小程序基础', href: '/posts/15341'}
     ]
   },
   {
