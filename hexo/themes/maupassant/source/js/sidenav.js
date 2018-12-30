@@ -56,6 +56,7 @@ var tree = [
     nodes: [
         {text: 'nodejs基础', href: '/posts/56793'},
         {text: 'linux基础', href: '/posts/34982'},
+        {text: 'nginx基础', href: '/posts/19114'},
         {text: '数据库基础', href: '/posts/41347'}
     ]
   },

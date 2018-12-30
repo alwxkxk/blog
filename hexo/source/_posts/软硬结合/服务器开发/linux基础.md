@@ -65,4 +65,10 @@ your browser does not support the video tag
 <video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E4%BD%BF%E7%94%A8WinSCP%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
-## 下一节
+
+## 云服务器
+&emsp;在虚拟机里玩linux一段时间后，就应该玩云服务器了。新注册用户有一段免费时间可以使用，如果你是学生党，免费时间后务必购买学生机，大约10元/月，绝对划算。阿里云或腾讯云都行。两个都有在线实验室可体验：
+- [阿里云-开放实验室](https://edu.aliyun.com/lab/)
+- [腾讯云-在线实验室](https://cloud.tencent.com/developer/labs)
+
+

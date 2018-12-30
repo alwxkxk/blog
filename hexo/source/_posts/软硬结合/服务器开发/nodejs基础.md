@@ -104,7 +104,7 @@ your browser does not support the video tag
 1. 搜索并搞懂JS事件回调，nodejs的使用error first回调风格的原因。
 2. 搜索并学习如何打断点调试自己的nodejs程序。
 3. 学习ES6语法。
-4. 学习Express框架。
+4. 学习Express框架，学习pug模板（旧版叫jade，搜索这个名字能找到比较多的教程），我时常使用[工具](https://html2jade.org/)将HTML转成jade。
 
 ## 下一节
 - [linux基础](/posts/34982)

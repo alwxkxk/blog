@@ -277,7 +277,7 @@ a4 94 ==》TCP检验
 &emsp;使用wireshark亲自分析一次TCP通信，会分析TCP header。建立连接时的三次握手，传输数据，接收应答，关闭连接。只有这样，才会真实地感受到协议是怎么跑的，以后就可以大胆地看协议相关的内容，什么HTTP呀什么MQTT呀，一点都不虚。
 
 # 附录
-- 《TCP/IP详解 卷一》
+- [《TCP/IP详解 卷一》 在线阅读](http://www.52im.net/topic-tcpipvol1.html?mobile=no)
 - linux下可以使用tcpdump来抓包，所抓的包可以使用wireshark加载进行分析。
 - [wireshark不能在window下抓取回环（Loopback）数据](https://wiki.wireshark.org/CaptureSetup/Loopback)
 &emsp;If you are trying to capture traffic from a machine to itself, that traffic will not be sent over a real network interface, even if it's being sent to an address on one of the machine's network adapters. This means that you will not see it if you are trying to capture on, for example, the interface device for the adapter to which the destination address is assigned. You will only see it if you capture on the "loopback interface", if there is such an interface and it is possible to capture on it; see the next section for information on the platforms on which you can capture on the "loopback interface".

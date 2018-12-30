@@ -18,7 +18,7 @@ tags:
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4u8w5e5j30sw0kxjsm.jpg)
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4sbqm1rj30zr0m23zn.jpg)
 
-&emsp;打开三个客户端并连接后，让BC分别订阅主题`a/b`、`a/c`，然后让A分别发布主题`a/b`、`a/c`,可以看到客户端BC分别接收到消息。其实一个客户端能同时订阅多个主题，并进行发布，这里只是为了方便展示而开了三个。大家实际操作时可以只开一个客户端，订阅主题，然后回到发布窗口发布消息，再回到订阅窗口看是否接收到消息。大家亲自操作一次体验一下。
+&emsp;打开三个客户端并连接后，让BC分别订阅主题`a/b`、`a/c`，然后让A分别发布主题`a/b`、`a/c`,可以看到客户端BC分别接收到消息。__其实一个客户端能同时订阅多个主题，并进行发布，这里只是为了方便展示而开了三个。大家实际操作时可以只开一个客户端，订阅主题，然后回到发布窗口发布消息，再回到订阅窗口看是否接收到消息__。大家亲自操作一次验证一下。
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb560jei2j31be0qpqn1.jpg)
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb567papmj31bx0qu1ds.jpg)
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb56d6l9yj31bj0qqnhl.jpg)
@@ -35,6 +35,8 @@ tags:
 如订阅`#`，则会接收到所有消息。（除了以`$`开头的主题）
 如订阅`sport/tennis/player1/#`，则会订阅到如`sport/tennis/player1`、`sport/tennis/player1/ranking`、`sport/tennis/player1/score/wimbledon`等。
 
+&emsp;另外注意，MQTT所发的消息是UTF-8，所以说那你想发个字符串`AA`那是随便发，但想发`0xAA`这种十六进制的，还真可能发不了，因为`0xAA`转不成UTF-8。（之前有个读者问我相关问题，我简单研究了一下，没有投太多时间深入研究，如果是错的欢迎指正。）
+
 ## MQTT其它特性
 &emsp;服务级别（Quality of Service，简写QoS）提供三种，供开发者根据不同的情景选择不同的服务级别：
 - QoS 0
@@ -48,3 +50,4 @@ tags:
 
 ## 附录
 - [MQTT规范文档 Version 3.1.1](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html)
+- [十六进制转UTF-8 在线转换工具](https://onlinehextools.com/convert-hex-to-utf8)
