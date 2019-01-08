@@ -60,7 +60,7 @@ __这是一个按钮__
 
 &emsp;打开[vscode](https://code.visualstudio.com/)，然后在桌面新建一个文件夹（名字随意，比如叫`example`），然后拖动文件夹到vscode图标上，再创建一个`index.html`文件，里面复制以上代码并保存。点击打开所创建的`index.html`文件，就可以看到你所写的HTML代码。（直接点击打开index.html是浏览器打开，会被渲染成网页。而用编辑器打开，才会显示HTML代码。）
 
-<video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E4%BD%BF%E7%94%A8vscode%E7%BC%96%E5%86%99%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84html.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/%E4%BD%BF%E7%94%A8vscode%E7%BC%96%E5%86%99%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84html.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 
@@ -191,7 +191,7 @@ your browser does not support the video tag
 
 ## 作业
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fxqbd2o44uj30gv07qt9o.jpg)
-&emsp;先自行学习完那些线上教程与纸质书里的基础知识 __(大约一两个星期)__ 。如果是看纸质书的话，会有作业。如果只看网上教程，没有作业，很容易让大家以为自己轻松撑握了。这里给一个示例，你们能自己亲手完成就代表HTML、CSS、JavaScript到了入门的阶段。简单例子及源代码：[HTML、CSS、JS基础练习.rar](https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/HTML%E3%80%81CSS%E3%80%81JS%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0.rar)
+&emsp;先自行学习完那些线上教程与纸质书里的基础知识 __(大约一两个星期)__ 。如果是看纸质书的话，会有作业。如果只看网上教程，没有作业，很容易让大家以为自己轻松撑握了。这里给一个示例，你们能自己亲手完成就代表HTML、CSS、JavaScript到了入门的阶段。简单例子及源代码：[HTML、CSS、JS基础练习.rar](https://test-1251805228.file.myqcloud.com/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/HTML%E3%80%81CSS%E3%80%81JS%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0.rar)
 其中用到了flex布局，网上的基础教程可能没有介绍，需要自行百度了解一下。
 
 

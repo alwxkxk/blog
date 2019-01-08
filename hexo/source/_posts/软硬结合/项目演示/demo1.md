@@ -26,7 +26,7 @@ tags:
 - 网址：http://119.29.107.47:8001/
 - TCP服务器：119.29.107.47:9002
 
-<video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/demo1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 &emsp;如果你才下单刚买nodemcu还没到手，可以先粗略快速地浏览一下其它教程，在没有硬件的情况下都可以先学习，特别是网络知识部分。demo1流程图：
@@ -51,14 +51,14 @@ your browser does not support the video tag
 ![验证nodejs安装成功](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
 ### 安装依赖包并运行
 &emsp;如果你有nodejs与git的使用经验就会知道，默认的作法是只上传源码，而依赖包自行安装以减少git文件体积。注意需要进入到对应的目录，可以看视频操作：
-<video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/demo1%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 &emsp;整个过程因为没有相关基础知识，所以并不懂，很正常，经过后面的学习就会了解整个过程。readme是以MarkDown语法写的。
 
 ### 瞎折腾
 &emsp;虽然说读者可能到现在什么都不懂，但这里演示如何瞎折腾，让读者获得一下拥有感，演示一下修改网页内容：
-<video class="lazy" controls data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/demo1%E7%9E%8E%E6%8A%98%E8%85%BE%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1%E7%9E%8E%E6%8A%98%E8%85%BE%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 ## 怎么做

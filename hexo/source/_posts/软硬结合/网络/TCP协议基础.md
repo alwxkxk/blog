@@ -12,7 +12,7 @@ tags:
 # 网络调试助手
 &emsp;[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)
 &emsp;使用网络调试助手简单示例，在视频中我打开了两个调试助手，左侧是服务器端，右侧是客户端，相互发送数据，这就是TCP通信。
-<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%20%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B-%E6%9C%AC%E5%9C%B0%E5%BC%80%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%20%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B-%E6%9C%AC%E5%9C%B0%E5%BC%80%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 
@@ -71,12 +71,12 @@ net start npf
 #启动 wireshark
 ```
 &emsp;开启抓包服务并启动wireshark：
-<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%E5%BC%80%E5%90%AF%E6%8A%93%E5%8C%85%E6%9C%8D%E5%8A%A1%E5%B9%B6%E5%90%AF%E5%8A%A8wireshark.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%E5%BC%80%E5%90%AF%E6%8A%93%E5%8C%85%E6%9C%8D%E5%8A%A1%E5%B9%B6%E5%90%AF%E5%8A%A8wireshark.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 
 &emsp;wireshark抓包时，会显示所有抓到的数据，为了过滤出我们想要的东西，使用过虑IP的语法：`ip.addr == x.x.x.x`，这代表目标地址与源地址包含x.x.x.x的数据显示出来。
-<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/wireshark%E6%8A%93%E5%8C%85%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/wireshark%E6%8A%93%E5%8C%85%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 

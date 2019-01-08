@@ -29,7 +29,7 @@ tags:
 ## 搭建最简TCP服务器
 &emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：（源码可在github上的base/tcp里找到）
 
-<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/%20tpc1-%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B%E8%BF%9E%E6%8E%A5.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%20tpc1-%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B%E8%BF%9E%E6%8E%A5.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 
@@ -94,7 +94,7 @@ server.listen(8080);
 console.log('Server is running at http://127.0.0.1:8080/');
 ```
 &emsp;将代码使用nodejs启动起来，就是一个最简单的HTTP服务器。nodejs启动脚本的方法是node + 脚本名称：（示例`node index.js`）
-<video class="lazy" data-src="https://test-1251805228.cos.ap-guangzhou.myqcloud.com/nodejs%E6%9C%80%E7%AE%80HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/nodejs%E6%9C%80%E7%AE%80HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
 &emsp;[nodejs HTTP-API中文文档](http://nodejs.cn/api/http.html)。注意了，与本地直接打开网页不同，网址栏是http开头的。（本地直接打开的是file开头）。这时，你可以使用手机连接到同一个WIFI里，找到电脑的IP地址，输入网址就可以访问到网页。 
