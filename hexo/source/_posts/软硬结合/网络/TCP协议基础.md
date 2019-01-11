@@ -9,6 +9,8 @@ tags:
 ---
 &emsp;关于TCP/IP协议，先讲一下基本概念，然后搭建一个TCP通信环境，通过抓包分析数据进行讲解。__套路以及大部分内容是来自于经典书籍《TCP/IP详解 卷一》 ，只是具体实验不同，书上在Linux环境下进行抓包，这里给出window下的抓包过程，更容易实现，有条件的朋友直接买一本来啃，会学到很多。__
 
+![TCP/IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vnupc6dj30t10dj0w1.jpg)
+
 # 网络调试助手
 &emsp;[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)
 &emsp;使用网络调试助手简单示例，在视频中我打开了两个调试助手，左侧是服务器端，右侧是客户端，相互发送数据，这就是TCP通信。

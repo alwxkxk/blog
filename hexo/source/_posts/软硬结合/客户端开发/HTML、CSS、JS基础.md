@@ -184,9 +184,11 @@ your browser does not support the video tag
 [廖雪峰教程](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
 - 相关书籍
 《Head First HTML与CSS》
-《DOM 编程艺术》
-《javascript 高级程序设计》
+《JavaScript DOM编程艺术》
+《JavaScript高级程序设计》
 《XX天网页制作从入门到精通》（事实上学完也只能算个入门）
+
+![网页制作入门 推荐书籍](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vbiidchj30sd0li7d7.jpg)
 
 
 ## 作业

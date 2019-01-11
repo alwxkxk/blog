@@ -25,6 +25,10 @@ tags:
 - [《快乐的 Linux 命令行》-在线版](http://billie66.github.io/TLCL/book/index.html)
 - [马哥的linux视频教程](https://ke.qq.com/course/119808)
 
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vlzdrkbj30ss0dfad2.jpg)
+
+
+
 &emsp;有那么多的linux操作系统，到底学哪个呢？答：新手学习用得最多的系统，理应用ubuntu。然而入门教程《鸟哥的linux私房菜》是基于centOS的，两者命令还是有点不一样的，最后决定用 __centOS__ 来演示。学习的时候，切记需要什么学什么，不要一脑子学全部，学不完的。命令行常用的不超过30个，而且都是写在笔记软件中，需要哪个查哪个，反正我又不是运维人员，不是天天都用，所以也没去记。
 ## 本地虚拟机安装linux
 &emsp;要学习linux，先学习怎么搭一个环境出来，方便反复折腾。虚拟机软件我以[虚拟机virtualbox-官网](https://www.virtualbox.org/)，[-百度网盘](https://pan.baidu.com/s/1vCcrdepimiI9Pu3A7Zo3rw)演示。（记住一件事，不管你在虚拟机上怎么折腾，都不会把电脑搞坏的，事实上学习Linux的过程中会不断地折腾重装linux。）安装时选择中文界面，安装完后新建虚拟机：

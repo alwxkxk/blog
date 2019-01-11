@@ -25,6 +25,7 @@ tags:
 [《七天学会NodeJS》](https://github.com/nqdeng/7-days-nodejs)
 [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
 
+![nodejs入门](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vwu5kckj30sq0dlacr.jpg)
 
 ## 搭建最简TCP服务器
 &emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：（源码可在github上的base/tcp里找到）
