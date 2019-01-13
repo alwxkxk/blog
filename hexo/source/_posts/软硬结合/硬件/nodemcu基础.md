@@ -75,9 +75,9 @@ your browser does not support the video tag
 
 ```c
 #include <ESP8266WiFi.h>
-
-const char* ssid = "wifi-name";
-const char* password = "wifi-password";
+//必须修改：填写你的WIFI帐号密码
+const char* ssid = "you-wifi";
+const char* password = "you-wifi-password";
 
 const char* host = "192.168.1.121";
 const int port = 2424;
@@ -146,12 +146,12 @@ void loop() {
 
 ```c
 #include <ESP8266WiFi.h>
-
+//必须修改：填写你的WIFI帐号密码
 const char* ssid = "you-wifi";
 const char* password = "you-wifi-password";
 
 const char* host = "119.29.107.47";
-const int port = 9002;
+const int port = 9002;//demo1 tcp 使用 9002端口
 
 const char* id = "1234abcd";
 int tick = 1000;

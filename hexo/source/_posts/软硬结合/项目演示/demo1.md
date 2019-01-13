@@ -50,10 +50,11 @@ your browser does not support the video tag
 3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功
 ![验证nodejs安装成功](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
 ### 安装依赖包并运行
-&emsp;如果你有nodejs与git的使用经验就会知道，默认的作法是只上传源码，而依赖包自行安装以减少git文件体积。注意需要进入到对应的目录，可以看视频操作：
+&emsp;如果你有nodejs与git的使用经验就会知道，默认的作法是只上传源码，而依赖包自行安装以减少git文件体积。注意需要进入到对应的目录，使用命令`npm install`安装依赖，`npm start`运行，可以看视频操作：
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
+
 &emsp;整个过程因为没有相关基础知识，所以并不懂，很正常，经过后面的学习就会了解整个过程。readme是以MarkDown语法写的。
 
 ### 瞎折腾
@@ -82,11 +83,61 @@ your browser does not support the video tag
 &emsp;了解nodejs开发、ES6语法、express框架，__结合其它教程自学，大约两个星期__。
 - 模仿demo1，尽可能地自行实现demo1效果，大约几天。
 
+## demo1程序讲解
+&emsp;demo1代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo1/myapp`里找到。整个代码就是由[Express 手脚架](http://www.expressjs.com.cn/starter/generator.html)使用`express --view=pug myapp`一健生成的。整个程序的入口启动文件就是`myapp/bin/www`，界面的代码是`myapp/views/index.pug`，其JS代码是`myapp/public/javascripts/index.js`。同时添加了TCP服务器的代码`myapp/bin/tcp-server.js`，用于接收TCP客户端的数据。
+&emsp;当使用硬件连接到服务器时，硬件发出的第一条数据成为其设备id，所有数据都会存放到`socket.lastValue`中。为了防止不同的读者使用同一个设备ID操作时数据串扰，所以我还额外添加了IP地址以区分。所有超过10秒没有发数据的都会删除设备。（对应代码`myapp/bin/tcp-server.js`）
+```javascript
+  // receive data
+  socket.on("data",data=>{
+		let str = addr+" receive: " + data.toString('ascii')
+		socket.lastValue = data.toString('ascii')
+		console.log(str)
+
+    // demo1中，我们定义了，接收的第一条数据为设备id
+    if(!socket.id){
+			socket.id = data.toString('ascii')
+			socket.addr = addr
+			addEquipment(socket)
+    }
+  })
+```
+&emsp;当浏览器打开网页时，发起HTTP请求（GET /），服务器代码进入到`myapp/routes/index.js`进行渲染，将已经连接到TCP服务器的设备数据都传入到模板`myapp/views/index.pug`中，渲染出对应的HTML页面并发送给浏览器进行显示。
+```javascript
+router.get('/', function(req, res, next) {
+  res.render('index', { title: '软硬结合demo1',tcpServer:tcpServer });
+});
+```
+&emsp;当浏览器选择某个设备，并发起开/关灯控制时，就会触发到界面的JS代码（对应`myapp/public/javascripts/index.js`），发出POST请求（POST /）：
+```javascript
+// 点击按钮事件
+$("#open").click(function(){
+  var equipment = getEquipmentInfo()
+  $.post("/", { action:"open",addr: equipment.addr, id: equipment.id } );
+});
+ 
+$("#close").click(function(){
+  var equipment = getEquipmentInfo()
+  $.post("/", { action:"close",addr: equipment.addr, id: equipment.id } );
+});
+```
+&emsp;浏览器发出POST请求后，由服务器端代码`myapp/routes/index.js`进行处理，找到对应的设备，并发送控制命令，此时硬件接收到命令进行开关灯：
+```javascript
+// POST / 控制设备开关灯
+router.post('/',function(req, res, next) {
+  let addr = req.body.addr
+  let id = req.body.id
+  let action = req.body.action
+  if(action === 'open' || action === 'close'){
+    tcpServer.sentCommand(id,addr,action)
+  }
+  res.json(req.body);
+})
+```
+
 ## 下一个demo
 &emsp;demo1尽量追求简单入门，所以界面不好看（帅是第一生产力），性能也不足。先说说demo1的问题：
 - 每次刷新页面才会显示最新的tick值。（讨论HTTP轮询以及websocket协议）
 - 界面丑（优化并会引入图表库Echart，实现数据可视化）
-- 硬件与服务器之间改用MQTT协议进行通信
 - 引入数据库
 &emsp;在实现下一个demo之前会讨论解决以上问题，之后会做出一个能看能用的demo，同时会介绍其它技术。
 

@@ -27,6 +27,9 @@ Cookie: Hm_lvt_646acd4e6c74eb119c3d5d93c5bfde70=1543030512; connect.sid=s%3AFxuA
 &emsp;很明显，HTTP协议就是在TCP协议之上，按照一定的规则传输一些字符串。同理，反过来，如果你使用TCP客户端向HTTP服务器端发送类似的字符串，一样能被当作HTTP协议内容进行解析。具体这几行代表什么，可以看 __《图解HTTP协议》__ ，不再多讲。我就只简单讲一下前两行：第一行代表，访问根目录，通信协议是HTTP1.1版本。第二行代表，客户端的地址是`127.0.0.1:2424`。
 &emsp;这就是基于TCP协议，如果你之前有学习过[TCP协议基础](/posts/19508/)就知道，我们控制硬件开关灯，用`1`代表开灯，用`0`代表关灯，这就是我们定义的内容，而HTTP内容比较多，它定义的东西也就多了。
 
+## 相关书籍
+![HTTP入门](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vras1z6j30ss0d7413.jpg)
+
 ## HTTP两大特点
 - 无连接：限制每次连接只处理一个请求，处理完就断开连接。
 &emsp;简单来讲，就是你发一个HTTP请求只能得到一个回应，我经常简称为“一问一答”，不可能出现你请求一次，它回应N次的情况。所以要想实时更新内容，就必须轮询（HTTP轮询），每隔一段时间就发起一次请求，“现在最新温度是多少呀？”，它才会响应一次“现在最新温度是XX度。”。这造成了性能问题，后面会进一步讨论。
@@ -67,9 +70,9 @@ Cookie: Hm_lvt_646acd4e6c74eb119c3d5d93c5bfde70=1543030512; connect.sid=s%3AFxuA
 
 &emsp;服务器端可以使用[ws模块](https://github.com/websockets/ws)搭建WebSocket服务器，然后就可以使用从浏览器直接调用 WebSocket API进行连接。而在平时开发使用，一般开发者会使用[socket.io模块](https://github.com/socketio/socket.io)，这个是在WebSocket协议基础之上，增加了一系列功能如：支持命名空间、超时重连、若浏览器不支持WebSocket则自动降级使用HTTP轮询等等。使用socket.io时，并不能直接使用浏览器的WebSocket API连接，必须使用socket.io库。为方便学习，不增加太多新概念，服务器端我们使用ws模块进行演示。具体代码可查看[源代码](https://github.com/alwxkxk/soft-and-hard)`\基础教程\HTTP协议基础\Websocket服务器端例子`，运行前先阅读该目录下的`README`。
 
-
-## 相关书籍
-![HTTP入门](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vras1z6j30ss0d7413.jpg)
+## 作业
+1. 学习使用postman模拟HTTP请求，并了解POST提交数据方式。
+[四种常见的 POST 提交数据方式](https://imququ.com/post/four-ways-to-post-data-in-http.html)
 
 
 ## 附录
