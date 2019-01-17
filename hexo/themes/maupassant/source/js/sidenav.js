@@ -75,7 +75,7 @@ var tree = [
     nodes: [
         {text: '磨刀不误砍柴功', href: '/posts/61760'},
         {text: '资源链接', href: '/posts/37993'},
-        {text: '对物联网的思考', href: '/posts/41995'},
+        {text: '最后的讨论', href: '/posts/41995'},
         {text: '软硬结合', href: '/posts/44755'}
     ]
   }
