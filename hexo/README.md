@@ -1,4 +1,5 @@
 # README
+个人博客（基于hexo）
 ```bash
 npm install hexo -g
 npm install -g hexo-cli
