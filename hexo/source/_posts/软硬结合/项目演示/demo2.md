@@ -25,7 +25,7 @@ your browser does not support the video tag
 ## demo2主要流程图
 ### 整体
 &emsp;相对于demo1，demo2添加了数据库、websocket协议、图表库Echart。demo2代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo2/myapp`里找到。
-![demo2主要流程图](http://ww1.sinaimg.cn/large/005BIQVbgy1fz5028sx4uj30qo0aj75r.jpg)
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fzbotaayifj30lu0coab7.jpg)
 
 ### 硬件变化
 &emsp;nodemcu代码相对于demo1没有太大改动，主要是改变了TCP端口以及每秒发送随机数（模拟传感器实时取得的温度值）。此代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`demo2/nodemcu`找到。

@@ -225,6 +225,7 @@ void loop() {
 ```
 
 # 附录
+- [arduino 中文社区](https://www.arduino.cn/forum.php)
 - [Arduino core for ESP8266 WiFi chip - github](https://github.com/esp8266/Arduino)
 - [在Windows系统上入门Arduino](https://www.arduino.cc/en/Guide/Windows?setlang=cn)
 - [Quick Start to Nodemcu (ESP8266) on Arduino IDE](https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/)
