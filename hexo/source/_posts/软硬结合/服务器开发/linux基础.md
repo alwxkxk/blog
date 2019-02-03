@@ -29,7 +29,8 @@ tags:
 
 
 
-&emsp;有那么多的linux操作系统，到底学哪个呢？答：新手学习用得最多的系统，理应用ubuntu。然而入门教程《鸟哥的linux私房菜》是基于centOS的，两者命令还是有点不一样的，最后决定用 __centOS__ 来演示。学习的时候，切记需要什么学什么，不要一脑子学全部，学不完的。命令行常用的不超过30个，而且都是写在笔记软件中，需要哪个查哪个，反正我又不是运维人员，不是天天都用，所以也没去记。
+&emsp;有那么多的linux操作系统，到底学哪个呢？答：新手学习用得最多的系统，理应用ubuntu。然而入门教程《鸟哥的linux私房菜》是基于centOS的，两者命令还是有点不一样的，最后决定用 __centOS__ 来演示。（ubuntu用起来更方便，而centOS更稳定所以商业上主要用它。）学习的时候，切记需要什么学什么，不要一脑子学全部，学不完的。命令行常用的不超过30个，而且都是写在笔记软件中，需要哪个查哪个，反正我又不是运维人员，不是天天都用，所以也没去记。
+
 ## 本地虚拟机安装linux
 &emsp;要学习linux，先学习怎么搭一个环境出来，方便反复折腾。虚拟机软件我以[虚拟机virtualbox-官网](https://www.virtualbox.org/)，[-百度网盘](https://pan.baidu.com/s/1vCcrdepimiI9Pu3A7Zo3rw)演示。（记住一件事，不管你在虚拟机上怎么折腾，都不会把电脑搞坏的，事实上学习Linux的过程中会不断地折腾重装linux。）安装时选择中文界面，安装完后新建虚拟机：
 <video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
@@ -41,8 +42,10 @@ your browser does not support the video tag
 your browser does not support the video tag
 </video>
 &emsp;前几次安装linux可以选中文界面，熟悉后就要换成英文的了，切不可对中文产生依赖。
+
 ## 基本操作
 &emsp;先学习基础[《鸟哥的linux私房菜》](http://linux.vbird.org/linux_basic/)，我看了一下在线的目录，学习 __前十章__ 即可。有条件去借或买纸质书，有疑问多搜索。学习的过程中，把命令记到你的笔记软件里，有需要时查找。__千万不要背，用得多的命令自然会记下来，不常用的命令查就能解决了。__ 大约学习一到两个星期吧，学会基本的操作就够了（毕竟又不是要你考试什么的，能满足自己平时操作需要就够了。）万一把Linux玩坏了怎么办？重新在虚拟机上重装一个就行了~
+
 ## 使用Xshell终端登陆
 &emsp;阅读所需知识：会基本的linux命令与文本编辑（vi操作）
 &emsp;登陆服务器会使用终端，比较方便的工具是Xshell。这里我演示怎么通过Xshell登陆linux。安装[Xshell6个人免费版-百度网盘](https://pan.baidu.com/s/1qE8JSm6eP0uwyUmTjBiH7Q)。要登陆一台服务器，你只需要两样东西：__1.服务器的ip地址。2.拥有登陆服务器所需的密码或钥匙__
@@ -64,11 +67,62 @@ vi 网卡名
 your browser does not support the video tag
 </video>
 &emsp;Xshell十分方便，复制粘贴功能十分有用，出了问题直接把它复制到搜索栏，太长的命令直接复制进去。还能用它来上传文件，有兴趣可搜索一下。
+
 ## 使用WinSCP上传下载文件
 &emsp;给服务器上传下载文件，一般是用winSCP:
 <video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%E4%BD%BF%E7%94%A8WinSCP%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
+
+## centOs安装Nodejs
+&emsp;我发现官网并没有讲yum安装，搜索了一下别人是直接下载二进制包并配置PATH进行使用。
+![](http://ww1.sinaimg.cn/large/005BIQVbgy1fztfgilm70j31hc0o5gn5.jpg)
+```bash
+yum install wget 
+cd ~
+
+# 使用wget下载bin文件，链接如图所示复制，在xshell终端 可粘贴
+wget https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz
+
+# 解压
+xz -d node-v10.15.1-linux-x64.tar.xz
+tar -xf node-v10.15.1-linux-x64.tar
+
+#添加node bin目录到PATH，使其命令以及全局安装的模块命令 能直接在bash使用
+vi /etc/profile
+# 在最后一行添加目录并退出
+PATH=$PATH:~/node-v10.15.1-linux-x64/bin
+# 启用
+source /etc/profile
+
+#检查路径是否在里面
+echo $PATH
+
+# 验证
+node -v
+npm -v
+```
+
+## centOS 7防火墙相关命令
+&emsp;在centOS里，必须要先设置开放端口否则无法在这个端口通信（即使你运行了demo1，demo2，你没有开放9002，9003端口，硬件仍然无法连接上服务器。）。注意centOS 6与centOS 7 的防火墙是不一样的，这里只写centsOS 7。
+&emsp;Centos 7 firewall 命令：
+```bash
+
+#查看已经开放的端口：
+firewall-cmd --list-ports
+
+#开启端口
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+#命令含义：
+#–zone #作用域
+#–add-port=80/tcp #添加端口，格式为：端口/通讯协议
+#–permanent #永久生效，没有此参数重启后失效
+
+firewall-cmd --reload #重启firewall
+systemctl stop firewalld.service #停止firewall
+systemctl disable firewalld.service #禁止firewall开机启动
+```
+
 
 ## 云服务器
 &emsp;在虚拟机里玩linux一段时间后，就应该玩云服务器了。新注册用户有一段免费时间可以使用，如果你是学生党，免费时间后务必购买学生机，大约10元/月，绝对划算。阿里云或腾讯云都行，新用户使用推广链接购买能再便宜一点点:
@@ -80,5 +134,6 @@ your browser does not support the video tag
 两个都有在线实验室可体验，方便新手学习入门，教程是相当地好，十分推荐：
 - [阿里云-开放实验室](https://edu.aliyun.com/lab/)
 - [腾讯云-在线实验室](https://cloud.tencent.com/developer/labs)
+
 
 
