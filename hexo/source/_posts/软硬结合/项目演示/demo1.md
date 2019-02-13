@@ -86,6 +86,8 @@ your browser does not support the video tag
 - [nodejs基础](/posts/56793)
 &emsp;了解nodejs开发、ES6语法、express框架，__结合其它教程自学，大约两个星期__。
 - 模仿demo1，尽可能地自行实现demo1效果，大约几天。
+&emsp;为了让后端程序部署到云服务器里，你还需要学习linux基础并购买云服务器。
+- [linux基础](/posts/34982)
 
 ## demo1程序讲解
 &emsp;demo1代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo1/myapp`里找到。整个代码就是由[Express 手脚架](http://www.expressjs.com.cn/starter/generator.html)使用`express --view=pug myapp`一健生成的。整个程序的入口启动文件就是`myapp/bin/www`，界面的代码是`myapp/views/index.pug`，其JS代码是`myapp/public/javascripts/index.js`。同时添加了TCP服务器的代码`myapp/bin/tcp-server.js`，用于接收TCP客户端的数据。
@@ -152,6 +154,8 @@ __答：可打开开发者调试工具查看是否有报错，IE浏览器，360�
 2. 把项目部署到云服务器linux中，但把SSH一关网站就访问不了了，怎么才能一直打开?
 __答：学习 nodejs部署工具 PM2，可以让程序一直跑着。另外在linux系统里关闭SSH后，系统会给这个pty所关联的session中的所有进程发送SIGHUP信号，SIGHUP的默认信号处理程序是终止进程，除非进程自己处理了 SIGHUP。可以学习并使用linux 命令 `screen` ，解决这个问题。__
 
+3. 如何使ESP8266与手机不在同一局域网也能通信?
+__答：这就需要把后端程序部署到云服务器。__
 
 
 
