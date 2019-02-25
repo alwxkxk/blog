@@ -140,11 +140,39 @@ router.post('/',function(req, res, next) {
 })
 ```
 
+### 不使用pug模板
+&emsp;pug模板以前叫做jade，可能搜索pug相关内容较少，可以搜索jade进行学习。在撑握html基础知识的前提下，学习使用pug模板不过是几个小时的事，十分简单。但毕竟是入门教程，理应引入较少的内容让新手尽快做出效果，以进入正循环，所以在demo1中还提供了不使用pug模板，直接使用html的做法。
+```js
+// demo1/myapp/routes/index.js
+// GET /no-pug-index 不使用pug模板，直接发送html文件
+router.get('/no-pug-index',function(req, res, next) {
+  //root 传入文件所在的目录路径
+  res.sendFile('no-pug-index.html',{root:"views"});
+});
+```
+&emsp;大家可以访问`/no-pug-index`即可看到效果。在demo1中，pug模板的作用是将后台的数据渲染（render）成html文件。而一旦使用html文件，要么自己通过JS代码根据数据拼装成html文件再发送（本质上pug模板的作用就是简化这个拼接过程），要么发送一份不包含数据的html文件，由前端向后端再进行请求数据进而把数据写入到页面当中（有点前后端分离的味道）。这里我演示了第二种做法。
+&emsp;大家看`demo1/myapp/views/no-pug-index.html`这个html文件，除了不包含数据其它内容基本与`index.pug`一致（pug语法更为简洁）。`no-pug-index.html`所引用的JS文件`demo1/myapp/public/javascripts/no-pug-index.js`，相对于`index.js`也仅仅是多了请求后台数据并写入到html文件的代码：
+```js
+$.get("/equipmentArray",(res)=>{
+  res.forEach(equipment => {
+    //将设备数据转换成html元素添加到页面中
+    //添加到选项中
+    $('select').append('<option>'+equipment.addr+' - '+equipment.id+'</option>')
+
+    //添加到列表中
+    $('table').append('<tbody><tr><td>0</td><td>'+equipment.addr+
+    '</td><td>'+equipment.id+' </td><td style="overflow: hidden;">'+equipment.lastValue||'无'+'</td></tr></tbody>')
+  });
+});
+```
+
+
+
 ## 下一个demo
 &emsp;demo1尽量追求简单入门，所以界面不好看（帅是第一生产力），性能也不足。先说说demo1的问题：
-- 每次刷新页面才会显示最新的tick值。（讨论HTTP轮询以及websocket协议）
+- 每次刷新页面才会显示最新的tick值。（讨论HTTP轮询以及引入websocket协议）
 - 界面丑（优化并会引入图表库Echart，实现数据可视化）
-- 引入数据库
+- 不能显示历史数据（引入数据库）
 &emsp;在实现下一个demo之前会讨论解决以上问题，之后会做出一个能看能用的demo，同时会介绍其它技术。
 
 ## FAQ
