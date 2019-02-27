@@ -8,7 +8,7 @@ tags:
 
 &emsp;最近发现arduino IDE可以开发nodemcu，惊喜若狂，因为在以前，开发是十分麻烦的。先买一块nodemcu（超便宜的，最便宜十几块钱就能在淘宝上买到）,安装驱动精灵（用于安装串口驱动的），安装arduino-1.8版本以上[arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)
 
-# nodemcu简介
+## nodemcu简介
 &emsp;nodemcu本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
 ![nodemcu引脚图](http://ww1.sinaimg.cn/large/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买一条线：
@@ -26,13 +26,13 @@ your browser does not support the video tag
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/nodemcu%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83arduino%20IDE%E9%85%8D%E7%BD%AE.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
-&emsp;安装完扩展开发板信息后，记得选择开发板为nodemcu。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。
+&emsp;安装完扩展开发板信息后，记得选择开发板为nodemcu。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。**大家不要急着跑demo1例程，应该先跑第一个例程：控制LED，上传代码后LED灯会一直闪烁，这就证明硬件没问题。如果LED灯不一直闪烁可能是V3版本，需要定义引脚或者硬件有问题。**
 
-# 例程
+## 例程
 
-## 控制LED
+### 控制LED
 &emsp;nodemcu板LED灯闪烁。
-&emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
+&emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`，即把第二行代码取消注释。__
 ```c
 //如果是nodemcu V3版，需要另外定义LED引脚
 //#define LED_BUILTIN 2 
@@ -52,7 +52,7 @@ void loop() {
 ```
 
 
-## 串口通信
+### 串口通信
 &emsp;展示一个定时串口打印信息的简单demo。
 ```c
 void setup() {
@@ -74,7 +74,7 @@ void loop() {
 your browser does not support the video tag
 </video>
 
-## TCP通信-串口打印
+### TCP通信-串口打印
 &emsp;注意根据实际情况修改WIFI的标识号与密码（第3、4行），与TCP服务器的IP地址、端口号（第6、7行）。
 
 ```c
@@ -145,7 +145,7 @@ void loop() {
 
 ```
 
-## TCP通信-demo1
+### TCP通信-demo1
 &emsp;注意修改WIFI地址与密码。
 &emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
 ```c
@@ -223,8 +223,11 @@ void loop() {
 
 }
 ```
+## FAQ
+1. 错误提示：ESP8266WiFi.h:No such file or directory？
+__答：说明没有安装ESP8266扩展开发板信息或者没选择nodemcu开发板，导致找不到相关文件。__
 
-# 附录
+## 附录
 - [arduino 中文社区](https://www.arduino.cn/forum.php)
 - [Arduino core for ESP8266 WiFi chip - github](https://github.com/esp8266/Arduino)
 - [在Windows系统上入门Arduino](https://www.arduino.cc/en/Guide/Windows?setlang=cn)
