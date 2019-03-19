@@ -75,19 +75,30 @@ your browser does not support the video tag
 ### 学习过程
 - [计算机网络基础](/posts/37707)
 &emsp;先了解基本的网络知识，半个小时吧。
+
 - [nodemcu基础](/posts/31494)
 &emsp;了解nodemcu与开发，两三个小时吧。
+
 - [HTML、CSS、JS基础](/posts/54080)
 &emsp;了解界面开发的三件套基础知识，__结合其它教程自学，大约两三个星期__，能做出基本的网页界面。
-- [chrome开发者工具](/posts/52429)
-&emsp;学习怎么调试网页，分析别人网页，__拥有分析并模仿别人的网页的能力__。
-- [Jquery、Bootstrap基础](/posts/27238)
-&emsp;学习Jquery、Bootstrap基础。__并尝试模仿别人网页，检验学习成果。__
+
 - [nodejs基础](/posts/56793)
 &emsp;了解nodejs开发、ES6语法、express框架，__结合其它教程自学，大约两个星期__。
-- 模仿demo1，尽可能地自行实现demo1效果，大约几天。
-&emsp;为了让后端程序部署到云服务器里，你还需要学习linux基础并购买云服务器。
+
+- 学习并模仿[demo0.1](/posts/38208)
+&emsp;demo0.1是demo1的简化版，简化功能与不使用express框架，降低学习成本。
+
+- [chrome开发者工具](/posts/52429)
+&emsp;学习怎么调试网页，分析别人网页，__拥有分析并模仿别人的网页的能力__。
+
+- [Jquery、Bootstrap基础](/posts/27238)
+&emsp;学习Jquery、Bootstrap基础。__并尝试模仿别人网页，检验学习成果。__
+
+- 学习并模仿[demo1](/posts/64786)
+&emsp;尽可能地自行实现demo1效果，大约几天。
+
 - [linux基础](/posts/34982)
+&emsp;为了让后端程序部署到云服务器里，你还需要学习linux基础并购买云服务器。
 
 ## demo1程序讲解
 &emsp;demo1代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo1/myapp`里找到。整个代码就是由[Express 手脚架](http://www.expressjs.com.cn/starter/generator.html)使用`express --view=pug myapp`一健生成的。整个程序的入口启动文件就是`myapp/bin/www`，界面的代码是`myapp/views/index.pug`，其JS代码是`myapp/public/javascripts/index.js`。同时添加了TCP服务器的代码`myapp/bin/tcp-server.js`，用于接收TCP客户端的数据。

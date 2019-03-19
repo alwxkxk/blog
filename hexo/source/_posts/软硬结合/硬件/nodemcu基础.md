@@ -22,7 +22,7 @@ tags:
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/%E4%BD%BF%E7%94%A8%E9%A9%B1%E5%8A%A8%E7%B2%BE%E7%81%B5%E5%AE%89%E8%A3%85%E4%B8%B2%E5%8F%A3%E9%A9%B1%E5%8A%A8.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
-- 安装arduino-1.8版本以上[arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`
+- 安装arduino-1.8版本以上[arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢，如果实在安装不了有其它办法安装，详情看文末FAQ中的问题2。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/nodemcu%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83arduino%20IDE%E9%85%8D%E7%BD%AE.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
@@ -226,6 +226,13 @@ void loop() {
 ## FAQ
 1. 错误提示：ESP8266WiFi.h:No such file or directory？
 __答：说明没有安装ESP8266扩展开发板信息或者没选择nodemcu开发板，导致找不到相关文件。__
+2. 在开发板管理器安装esp8266 by ES8266 Community 十分缓慢，有其它办法吗？
+__答：因为国外的文件一般都是存放在亚马逊s3服务上，国内很难访问，可能需要梯子，或者有空我写个脚本，能将想转存的文件都下载下来，再把它们都转存到我的服务器，并自动修改下载路径。__
+3. 哪里可以看到API文档？
+答：
+- [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
+- [arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)
+
 
 ## 附录
 - [arduino 中文社区](https://www.arduino.cn/forum.php)

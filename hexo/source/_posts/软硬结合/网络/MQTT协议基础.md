@@ -50,7 +50,7 @@ tags:
 &emsp;MQTT客户端连接MQTT网关时，可以注册遗言，当客户端断开连接时，MQTT网关会把这条遗言发布出来，常用于通知这个客户端下线了。
 
 ## 基于MQTT协议通信设计
-&emsp;为了不让这往篇文章太长，另开文章讨论如何基于MQTT协议设计自己的通信协议：[基于MQTT协议的通信设计](/posts/31151/)
+&emsp;为了不让这篇文章太长，另开文章讨论如何基于MQTT协议设计自己的通信协议：[基于MQTT协议的通信设计](/posts/31151/)
 
 ## 附录
 - [MQTT规范文档 Version 3.1.1](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html)

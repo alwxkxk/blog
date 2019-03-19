@@ -11,7 +11,7 @@ tags:
 
 ![TCP/IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vnupc6dj30t10dj0w1.jpg)
 
-# 网络调试助手
+## 网络调试助手
 &emsp;[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)
 &emsp;使用网络调试助手简单示例，在视频中我打开了两个调试助手，左侧是服务器端，右侧是客户端，相互发送数据，这就是TCP通信。
 <video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%20%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B-%E6%9C%AC%E5%9C%B0%E5%BC%80%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
@@ -21,7 +21,7 @@ your browser does not support the video tag
 ---
 
 
-# TCP基础
+## TCP基础
 ![TCP/IP协议模型](http://ww1.sinaimg.cn/large/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
 &emsp;TCP（Transmission Control Protocol 传输控制协议）与UDP都是基于IP协议之上。与UDP不同，TCP提供一个面向连接的，可靠的，基于字节流的传输服务（TCP provides a connection-oriented,reliable,byte stream service.）。
 - 面向连接的：这意味着使用TCP协议的两台设备（服务器端与客户端）在交互数据前必须先建立连接。
@@ -64,7 +64,7 @@ your browser does not support the video tag
 ---
 
 
-# wireshark 分析TCP通信
+## wireshark 分析TCP通信
 &emsp;安装[wireshark-百度网盘](https://pan.baidu.com/s/17TVX8fxuVopEGAo6sf90Lg)，并开启window网卡的抓包服务（否则找不到对应的网卡），进行抓包。之前我们在本机使用两个网络调试助手进行TCP通信，是属于回环数据（可以理解为数据并没有经过真实的网卡流出去，一直在本机里互传），抓包比较麻烦。我在服务器用nodejs写了一个简单的TCP服务器端（119.29.107.47:9001，[源码-nodejs基础-#搭建最简TCP服务器](/posts/56793/#搭建最简TCP服务器)），使用网络调试助手开启客户端进行连接并发送数据，并使用wireshark抓包进行分析。
 &emsp;开启windows抓包服务：
 ```bash
@@ -176,7 +176,7 @@ your browser does not support the video tag
 ---
 
 
-## TCP建立连接与结束连接
+### TCP建立连接与结束连接
 &emsp;上面12条通信数据，第1，2，3条是用于建立TCP连接，第4，5，6，7，8，9条是传输数据与应答，第10，11，12条是TCP结束连接。
 &emsp;在分析协议之前，简单说一下建立连接时所需要做的 __三次握手__ ：
 1. 客户端首先向服务器发起连接请求，标志SYN。
@@ -233,7 +233,7 @@ a4 94 ==》TCP检验
 ---
 
 
-# 自定义应用协议
+## 自定义应用协议
 &emsp;这里我们讨论一下，在TCP协议基础之上，到底要传些什么内容？
 &emsp;要传什么内容，完全是由要做什么事情决定的。比如说我手上有个设备用来控制一个LED开关的，由于LED灯只有两个状态（开与关，分别可以用1跟0代表），我们可以只用一位来进行表示，那么我们就可以定义，客户端向服务器端发送的数据：
 - `0x00`代表LED处于关灯状态
@@ -275,10 +275,10 @@ a4 94 ==》TCP检验
 ## TVL格式
 &emsp;自行百度搜索吧....
 
-# 作业
+## 作业
 &emsp;使用wireshark亲自分析一次TCP通信，会分析TCP header。建立连接时的三次握手，传输数据，接收应答，关闭连接。只有这样，才会真实地感受到协议是怎么跑的，以后就可以大胆地看协议相关的内容，什么HTTP呀什么MQTT呀，一点都不虚。
 
-# 附录
+## 附录
 - [《TCP/IP详解 卷一》 在线阅读](http://www.52im.net/topic-tcpipvol1.html?mobile=no)
 - linux下可以使用tcpdump来抓包，所抓的包可以使用wireshark加载进行分析。
 - [wireshark不能在window下抓取回环（Loopback）数据](https://wiki.wireshark.org/CaptureSetup/Loopback)
