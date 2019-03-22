@@ -22,15 +22,15 @@ head
     
 
     block title
-    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css' + '?v=' + theme.version)
-    link(rel='stylesheet', type='text/css', href='//cdn.bootcss.com/normalize/8.0.0/normalize.min.css')
-    link(rel='stylesheet', type='text/css', href='//cdn.bootcss.com/pure/1.0.0/pure-min.css')
-    link(rel='stylesheet', type='text/css', href='//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css')
-    link(rel='stylesheet', href='//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css')
-    script(type='text/javascript', src='//cdn.bootcss.com/jquery/3.3.1/jquery.min.js')
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/style.css' + '?v=' + theme.version)
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/normalize.min.css')
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/pure-min.css')
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/grids-responsive-min.css')
+    link(rel='stylesheet', href=url_for(theme.css) + '/font-awesome.min.css')
+    script(type='text/javascript', src=url_for(theme.js)+'/jquery-3.3.1.min.js')
 
-    link(rel='stylesheet', type='text/css', href='//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    script(type='text/javascript', src='//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/bootstrap.min.css')
+    script(type='text/javascript', src=url_for(theme.js) + '/bootstrap.min.js')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/bootstrap-treeview.min.css')
     script(type='text/javascript', src=url_for(theme.js) + '/bootstrap-treeview.min.js' )
 
