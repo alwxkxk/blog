@@ -25,3 +25,7 @@ your browser does not support the video tag
 ## 其它问题
 &emsp;如果出现其它报错提示，尝试将`Arduino15`删除，再重复步骤尝试。
 
+## 附录
+- [Arduino-IDE-1.6.x-package_index.json-format-specification](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.6.x-package_index.json-format-specification)
+注意文件名必须是`package_YOURNAME_PACKAGENAME_index.json`才能让IDE正常识别。
+

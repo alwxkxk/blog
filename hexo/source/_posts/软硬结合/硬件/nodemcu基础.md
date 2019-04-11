@@ -173,6 +173,9 @@ void setup() {
   //连接WIFI
   WiFi.begin(ssid, password);
 
+  //设置读取socket数据时等待时间为100ms（默认值为1000ms，会显得硬件响应很慢）
+  client.setTimeout(100);
+
   //等待WIFI连接成功
   while (WiFi.status() != WL_CONNECTED) {
     Serial.println("WiFi connecting...");
@@ -228,7 +231,7 @@ void loop() {
 1. 错误提示：ESP8266WiFi.h:No such file or directory？
 __答：说明没有安装ESP8266扩展开发板信息或者没选择nodemcu开发板，导致找不到相关文件。__
 2. 在开发板管理器安装esp8266 by ES8266 Community 十分缓慢，有其它办法吗？
-__答：因为国外的文件一般都是存放在亚马逊s3服务上，国内很难访问，可能需要梯子，或者有空我写个脚本，能将想转存的文件都下载下来，再把它们都转存到我的服务器，并自动修改下载路径。__
+__答：有解决办法，请看[Arduino开发板管理安装失败解决办法](/posts/10960)__
 3. 哪里可以看到API文档？
 答：
 - [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
