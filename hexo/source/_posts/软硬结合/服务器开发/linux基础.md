@@ -74,7 +74,7 @@ your browser does not support the video tag
 your browser does not support the video tag
 </video>
 
-## centOs安装Nodejs
+## centOS安装Nodejs
 &emsp;我发现官网并没有讲yum安装，搜索了一下别人是直接下载二进制包并配置PATH进行使用。
 ![](http://ww1.sinaimg.cn/large/005BIQVbgy1fztfgilm70j31hc0o5gn5.jpg)
 ```bash

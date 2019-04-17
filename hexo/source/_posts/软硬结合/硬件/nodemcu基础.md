@@ -4,6 +4,9 @@ toc: true
 abbrlink: 31494
 date: 2018-10-13 17:05:22
 tags:
+- Arduino
+- ESP8266
+- nodemcu
 ---
 
 &emsp;最近发现arduino IDE可以开发nodemcu，惊喜若狂，因为在以前，开发是十分麻烦的。先买一块nodemcu（超便宜的，最便宜十几块钱就能在淘宝上买到）,安装驱动精灵（用于安装串口驱动的），安装arduino-1.8版本以上[arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)
@@ -27,7 +30,7 @@ your browser does not support the video tag
 your browser does not support the video tag
 </video>
 &emsp;如果实在速度太慢安装不了有其它办法安装，请看另一文章：[Arduino开发板管理安装失败解决办法](/posts/10960)。
-&emsp;安装完扩展开发板信息后，记得选择开发板为nodemcu。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。**大家不要急着跑demo1例程，应该先跑第一个例程：控制LED，上传代码后LED灯会一直闪烁，这就证明硬件没问题。如果LED灯不一直闪烁可能是V3版本，需要定义引脚或者硬件有问题。**
+&emsp;安装完扩展开发板信息后，记得选择开发板为nodemcu。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。**大家不要急着跑demo1例程，应该先跑第一个例程：控制LED，上传代码后LED灯会一直闪烁，这就证明硬件没问题。如果LED灯不一直闪烁可能是V3版本，需要定义引脚或者硬件有问题。其次要学会看串口打印信息，根据打印信息判断代码执行到哪里，哪一环节出现异常。**
 
 ## 例程
 
@@ -54,7 +57,7 @@ void loop() {
 
 
 ### 串口通信
-&emsp;展示一个定时串口打印信息的简单demo。
+&emsp;展示一个定时串口打印信息的简单demo。**Arduino串口信息窗口：IDE菜单栏->工具->串口监视器。**
 ```c
 void setup() {
   // put your setup code here, to run once:

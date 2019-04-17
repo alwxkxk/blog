@@ -1,9 +1,13 @@
 ---
-title: Arduino开发板管理安装失败解决办法
+title: Arduino开发板管理安装package_esp8266com_index.json失败的解决办法
 toc: true
 abbrlink: 10960
 date: 2019-04-11 19:58:54
 tags:
+- Arduino
+- ESP8266
+- nodemcu
+- package_esp8266com_index.json
 ---
 
 &emsp;有读者学习nodemcu时，通过Arduino IDE开发板管理器安装esp8266开发板时发现安装速度极慢，甚至安装不下来。
