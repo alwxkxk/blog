@@ -11,16 +11,16 @@ tags:
 &emsp;MQTT是基于发布/订阅范式（后面亲自跟着实际操作后就会明白什么是发布/订阅）的消息协议。
 &emsp;Eclipse基金会开源的MQTT网关[mosquitto](https://mosquitto.org/)，[mqttfx](https://mqttfx.jensd.de/index.php)是开源的MQTT客户端（[mqttfx-1.6.0-windows-x64-百度网盘](https://pan.baidu.com/s/19yiEDjpLCpS_2Yew_4GcKA)）
 [mosquitto网关官方在线测试网址](https://test.mosquitto.org/)：`https://test.mosquitto.org/`。下面我会同时打开三个客户端ABC连接到mosquitto网关，A发布消息，BC分别订阅不同的主题：
-<img alt="MQTT订阅" data-src="http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4eozcg9j30pd0i63z4.jpg" style="width:500px;height:400px;">
+<img alt="MQTT订阅" data-src="/blog_images/005BIQVbgy1fyb4eozcg9j30pd0i63z4.jpg" style="width:500px;height:400px;">
 &emsp;安装客户端mqttfx后，打开设置，配置MQTT网关地址，MQTT端口号默认使用1883，注意要自动生成一个客户端ID。然后保存，建立连接。服务器在国外，连接可能有点慢。
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4omlaknj30zr0m2t9v.jpg)
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4u8w5e5j30sw0kxjsm.jpg)
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb4sbqm1rj30zr0m23zn.jpg)
+![](/blog_images/005BIQVbgy1fyb4omlaknj30zr0m2t9v.jpg)
+![](/blog_images/005BIQVbgy1fyb4u8w5e5j30sw0kxjsm.jpg)
+![](/blog_images/005BIQVbgy1fyb4sbqm1rj30zr0m23zn.jpg)
 
 &emsp;打开三个客户端并连接后，让BC分别订阅主题`a/b`、`a/c`，然后让A分别发布主题`a/b`、`a/c`,可以看到客户端BC分别接收到消息。__其实一个客户端能同时订阅多个主题，并进行发布，这里只是为了方便展示而开了三个。大家实际操作时可以只开一个客户端，订阅主题，然后回到发布窗口发布消息，再回到订阅窗口看是否接收到消息__。大家亲自操作一次验证一下。
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb560jei2j31be0qpqn1.jpg)
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb567papmj31bx0qu1ds.jpg)
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb56d6l9yj31bj0qqnhl.jpg)
+![](/blog_images/005BIQVbgy1fyb560jei2j31be0qpqn1.jpg)
+![](/blog_images/005BIQVbgy1fyb567papmj31bx0qu1ds.jpg)
+![](/blog_images/005BIQVbgy1fyb56d6l9yj31bj0qqnhl.jpg)
 
 ## MQTT消息
 &emsp;通过以上操作，相信大家已经明白什么叫发布/订阅（如果还不太懂就多搜索再看一下其它文章继续学习）。MQTT所发的消息包含：主题+内容，客户端订阅可以任意主题，若有其它客户端发布主题时符合所订阅的主题，就会由网关发送到客户端。注意整个操作中，网关是没有对消息做任何修改的，只是负责管理复制消息转发给已经订阅主题的客户端。主题使用`/`是层次分隔符，可以使主题变得更多层次。

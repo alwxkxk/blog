@@ -9,7 +9,7 @@ tags:
 ---
 &emsp;关于TCP/IP协议，先讲一下基本概念，然后搭建一个TCP通信环境，通过抓包分析数据进行讲解。__套路以及大部分内容是来自于经典书籍《TCP/IP详解 卷一》 ，只是具体实验不同，书上在Linux环境下进行抓包，这里给出window下的抓包过程，更容易实现，有条件的朋友直接买一本来啃，会学到很多。__
 
-![TCP/IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vnupc6dj30t10dj0w1.jpg)
+![TCP/IP](/blog_images/005BIQVbgy1fz2vnupc6dj30t10dj0w1.jpg)
 
 ## 网络调试助手
 &emsp;[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)
@@ -22,7 +22,7 @@ your browser does not support the video tag
 
 
 ## TCP基础
-![TCP/IP协议模型](http://ww1.sinaimg.cn/large/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
+![TCP/IP协议模型](/blog_images/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
 &emsp;TCP（Transmission Control Protocol 传输控制协议）与UDP都是基于IP协议之上。与UDP不同，TCP提供一个面向连接的，可靠的，基于字节流的传输服务（TCP provides a connection-oriented,reliable,byte stream service.）。
 - 面向连接的：这意味着使用TCP协议的两台设备（服务器端与客户端）在交互数据前必须先建立连接。
 - 可靠的：保证传输不会丢失或出错。（有特定的机制去检测是否丢失或出错，若丢失或出错就会重新发送一次）
@@ -41,9 +41,9 @@ your browser does not support the video tag
 
 ---
 
-![TCP数据封装在IP数据中](http://ww1.sinaimg.cn/large/005BIQVbgy1fwdr99chz2j30ru060glj.jpg)
+![TCP数据封装在IP数据中](/blog_images/005BIQVbgy1fwdr99chz2j30ru060glj.jpg)
 &emsp;我们从上一节IP协议基础知道，TCP数据是会封装到IP数据当中，我们现在看看TCP协议的头部数据定义：
-![TCP头部](http://ww1.sinaimg.cn/large/005BIQVbgy1fwdrcbdccjj30sg0lcwfs.jpg)
+![TCP头部](/blog_images/005BIQVbgy1fwdrcbdccjj30sg0lcwfs.jpg)
 - 16-bit source port number 16位源端口号 
 - 16-bit destination prot number 16位目标端口号 
 - 32-bit sequence number 32位顺序号 
@@ -85,7 +85,7 @@ your browser does not support the video tag
 ---
 
 &emsp;首先我们回想一下我们具体做了什么：示例的TCP服务器脚本的逻辑是：当有TCP客户端连接成功时，服务器马上发送`IP地址:端口号 connected`。客户端发送任意数据时，服务器马上响应数据`IP地址:端口号 receive : 客户端所发数据`。所抓的12条通信数据如下所示，我们一条条来分析。下方数据显示，左侧是序号，中间是具体数据，右侧是被数据对应的ASCII码。
-![wireshark抓包图](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfkehuv4lj31020nxgon.jpg)
+![wireshark抓包图](/blog_images/005BIQVbgy1fwfkehuv4lj31020nxgon.jpg)
 
 ```
 1-- TCP建立连接的第一次握手
@@ -169,9 +169,9 @@ your browser does not support the video tag
 
 ```
 &emsp;数据分析时注意分层，最后那一层才是TCP协议的内容：
-![wireshark-1](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfv8bhxxdj31060nwtav.jpg)
-![wireshark-2](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfv96r0ilj31060nwace.jpg)
-![wireshark-3](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfv9h0k85j31060nwmzj.jpg)
+![wireshark-1](/blog_images/005BIQVbgy1fwfv8bhxxdj31060nwtav.jpg)
+![wireshark-2](/blog_images/005BIQVbgy1fwfv96r0ilj31060nwace.jpg)
+![wireshark-3](/blog_images/005BIQVbgy1fwfv9h0k85j31060nwmzj.jpg)
 
 ---
 
@@ -197,9 +197,9 @@ your browser does not support the video tag
 0040   04 02   
 ```
 &emsp;这里我们直接从TCP协议开始分析：
-![tcp-1](http://ww1.sinaimg.cn/large/005BIQVbgy1fwfvcp6nakj31060nwacu.jpg)
+![tcp-1](/blog_images/005BIQVbgy1fwfvcp6nakj31060nwacu.jpg)
 
-![TCP头部](http://ww1.sinaimg.cn/large/005BIQVbgy1fwdrcbdccjj30sg0lcwfs.jpg)
+![TCP头部](/blog_images/005BIQVbgy1fwdrcbdccjj30sg0lcwfs.jpg)
 - 16-bit source port number 16位源端口号 
 - 16-bit destination prot number 16位目标端口号 
 - 32-bit sequence number 32位顺序号 

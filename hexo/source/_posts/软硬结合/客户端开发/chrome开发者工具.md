@@ -11,10 +11,10 @@ tags:
 - 在Chrome菜单中选择 更多工具 > 开发者工具
 - 在页面元素上右键点击，选择 “检查”
 - 使用 快捷键 Ctrl+Shift+I (Windows) 或 Cmd+Opt+I (Mac)
-<img class="lazy" alt="打开Chrome开发者工具" data-src="http://ww1.sinaimg.cn/large/005BIQVbgy1fvvxm3vficg31gx0ryqv9.gif">
+<img class="lazy" alt="打开Chrome开发者工具" data-src="/blog_images/005BIQVbgy1fvvxm3vficg31gx0ryqv9.gif">
 
 &emsp;调整位置：
-<img class="lazy" alt="调整位置" data-src="http://ww1.sinaimg.cn/large/005BIQVbgy1fvw8rfomjjg31go0rae83.gif">
+<img class="lazy" alt="调整位置" data-src="/blog_images/005BIQVbgy1fvw8rfomjjg31go0rae83.gif">
 
 # 元素面板
 &emsp;元素面板（Element）功能是：
@@ -43,11 +43,11 @@ your browser does not support the video tag
 
 &emsp;除了JS代码可以打断点,还有DOM变化，XHR请求，事件监听：
 - DOM变化
-![DOM变化](http://ww1.sinaimg.cn/large/005BIQVbgy1fvwaplemvsj317q0vjac6.jpg)
+![DOM变化](/blog_images/005BIQVbgy1fvwaplemvsj317q0vjac6.jpg)
 - XHR请求
-![XHR请求](http://ww1.sinaimg.cn/large/005BIQVbgy1fvwaqkg61oj30yw0ug75i.jpg)
+![XHR请求](/blog_images/005BIQVbgy1fvwaqkg61oj30yw0ug75i.jpg)
 - 事件监听
-![事件监听](http://ww1.sinaimg.cn/large/005BIQVbgy1fvwar6o2vfj318w0ug40c.jpg)
+![事件监听](/blog_images/005BIQVbgy1fvwar6o2vfj318w0ug40c.jpg)
 
 # 网络面板
 &emsp;网络面板（Network）功能是：

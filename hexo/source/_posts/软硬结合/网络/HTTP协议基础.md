@@ -10,7 +10,7 @@ tags:
 &emsp;HTTP协议是基于TCP/IP协议之上的应用层协议，用于创建网页的标准标记语言。
 &emsp;何为基于TCP协议呢？我们这里做一个小实验，使用网络调试助手本地开启一个TCP服务器，再使用浏览器去访问。如下图所示，TCP服务器监听`0.0.0.0:2424`，使用浏览器访问网址`127.0.0.1:2424`：
 
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fxqbygl67lg31gy0rix65.gif)
+![](/blog_images/005BIQVbgy1fxqbygl67lg31gy0rix65.gif)
 
 ```
 GET / HTTP/1.1
@@ -28,7 +28,7 @@ Cookie: Hm_lvt_646acd4e6c74eb119c3d5d93c5bfde70=1543030512; connect.sid=s%3AFxuA
 &emsp;这就是基于TCP协议，如果你之前有学习过[TCP协议基础](/posts/19508/)就知道，我们控制硬件开关灯，用`1`代表开灯，用`0`代表关灯，这就是我们定义的内容，而HTTP内容比较多，它定义的东西也就多了。
 
 ## 相关书籍
-![HTTP入门](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vras1z6j30ss0d7413.jpg)
+![HTTP入门](/blog_images/005BIQVbgy1fz2vras1z6j30ss0d7413.jpg)
 
 ## HTTP两大特点
 - 无连接：限制每次连接只处理一个请求，处理完就断开连接。
@@ -36,7 +36,7 @@ Cookie: Hm_lvt_646acd4e6c74eb119c3d5d93c5bfde70=1543030512; connect.sid=s%3AFxuA
 - 无状态：HTTP协议本身没有记忆能力。
 &emsp;没有记忆能力代表HTTP协议本身并不知道你是新访问者还是旧访问者，这会导致一个问题，很多网站必须要记住已经登陆过的用户，总不能每刷新一次页面就要求用户重新输入帐号密码。为了能实现这个功能，HTTP服务器开发者还必须额外利用cookies与session来实现记忆功能，对于cookies与session网上有很多相关资料，有兴趣自行搜索，不再详说。
 
-![自行搜索](http://ww1.sinaimg.cn/large/005BIQVbgy1fxs888urn6j30nv0amwg5.jpg)
+![自行搜索](/blog_images/005BIQVbgy1fxs888urn6j30nv0amwg5.jpg)
 
 ## Ajax
 &emsp;Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。如果每次HTTP请求都把整个网页都刷新一次的话，代价太高了，用户体验太差，所以就需要利用Ajax技术。网上有很多相关资料，有兴趣自行搜索，不再详说。
@@ -61,12 +61,12 @@ Cookie: Hm_lvt_646acd4e6c74eb119c3d5d93c5bfde70=1543030512; connect.sid=s%3AFxuA
 ## WebSocket协议
 &emsp;建立TCP通信之后，服务器端是能向客户端随时随地主动发数据。但HTTP协议的设计就是无连接，“一问一答，不问不答”，客户端不发起请求，服务器不能主动向客户端发送数据。在一些追求实时性的应用场景下，硬是使用HTTP轮询的办法去获取最新的数据，这就有严重的性能问题。如果轮询时间太短，机器扛不住。如果轮询太长，那么数据更新得太慢。即HTTP协议缺乏实时性，能不能像TCP socket通信一样，建立通信后不断开连接，并且能让服务器主动向客户端发送数据。基于这样的理念，就诞生了WebSocket协议，允许在上HTTP协议基础之上，达到TCP socket通信一样的效果。
 &emsp;在追求实时性应用场景里，比如说聊天室，物联网应用，都会用到WebSocket协议，赋予界面实时更新数据的能力。举个例子，现在我想实时显示温度，若使用HTTP协议轮询，要更新十次数据就需要发起十次请求，“十问十答”。使用WebSocket协议只需要发起一次请求，就可以做到“一问十答”，由服务器主动推送数据给浏览器：
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fyb439gt6pj30fj0eat9x.jpg)
+![](/blog_images/005BIQVbgy1fyb439gt6pj30fj0eat9x.jpg)
 
 &emsp;`http://websocket.org/`提供了一个websocket测试网址，会回复所接收的数据(echo:回声)，源代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`\基础教程\HTTP协议基础\WebSocket例子`找到:
 
-<img class="lazy" alt="WebSocket" data-src="http://ww1.sinaimg.cn/large/005BIQVbgy1fydgd0oltfg31gy0ri4qp.gif">
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fydgb1rhp2j31hc0t4goc.jpg)
+<img class="lazy" alt="WebSocket" data-src="/blog_images/005BIQVbgy1fydgd0oltfg31gy0ri4qp.gif">
+![](/blog_images/005BIQVbgy1fydgb1rhp2j31hc0t4goc.jpg)
 
 &emsp;服务器端可以使用[ws模块](https://github.com/websockets/ws)搭建WebSocket服务器，然后就可以使用从浏览器直接调用 WebSocket API进行连接。而在平时开发使用，一般开发者会使用[socket.io模块](https://github.com/socketio/socket.io)，这个是在WebSocket协议基础之上，增加了一系列功能如：支持命名空间、超时重连、若浏览器不支持WebSocket则自动降级使用HTTP轮询等等。使用socket.io时，并不能直接使用浏览器的WebSocket API连接，必须使用socket.io库。为方便学习，不增加太多新概念，服务器端我们使用ws模块进行演示。具体代码可查看[源代码](https://github.com/alwxkxk/soft-and-hard)`\基础教程\HTTP协议基础\Websocket服务器端例子`，运行前先阅读该目录下的`README`。
 

@@ -7,7 +7,7 @@ tags:
 ---
 
 &emsp;网上快速阅读所获得的知识只是轮廓，要看清知识的面目就要啃书：《计算机网络》、《TCP/IP详解 卷一》 。
-![TCP/IP协议模型](http://ww1.sinaimg.cn/large/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
+![TCP/IP协议模型](/blog_images/005BIQVbgy1fvi66culs3j30if0d674z.jpg)
 
 >互联网的目标是隐藏不同物理网络的细节以便各互联网络中的所有主机呈现一个统一的网络架构，这意味着使用单个地址格式来标识互联网上的所有主机。——《linux系统编程手册》
 
@@ -19,7 +19,7 @@ tags:
 - 帧：数据链路层的协议数据单元。
 
 &emsp;数据链路层把网络层交下来的数据构成帧发送到链路上，以及把接收到的帧中的数据去除并交给网络层。
-![《计算机网络》-数据链路层](http://ww1.sinaimg.cn/large/005BIQVbgy1fw4jh07kotj30f704vdg5.jpg)
+![《计算机网络》-数据链路层](/blog_images/005BIQVbgy1fw4jh07kotj30f704vdg5.jpg)
 
 &emsp;点对点信道的数据链路层在进行通信时的主要步骤如下：
 1. 结点A的数据链路层把网络层交下来的IP数据报添加到首部和尾部封装成帧。
@@ -32,16 +32,16 @@ tags:
 ——《linux系统编程手册》
 
 &emsp;链路层在接收网络层的数据时，会进行 __封装（encapsulation）__ 。封装即每一层接收上层数据时，都会添加自己特定的头部数据（有时也会有尾部数据）。 如下图所显，应用层到传输层时，应用数据的基础上添加了TCP的header，它就变成了一个TCP segment。传输层到网络层时，就在TCP segment的基础上添加IP header，整个数据变成了IP datagram。从网络层到链路层，Ip datagram的基础上添加 Ethnet header 与 Ethnet triler数据，整个变成了Ethernet frame。
-![数据封装](http://ww1.sinaimg.cn/large/005BIQVbgy1fw96jkuzd8j30hh0ba3za.jpg)
+![数据封装](/blog_images/005BIQVbgy1fw96jkuzd8j30hh0ba3za.jpg)
 
-![通信过程-数据封装](http://ww1.sinaimg.cn/large/005BIQVbgy1fwa14u9cyog30zj0j4acu.gif)
+![通信过程-数据封装](/blog_images/005BIQVbgy1fwa14u9cyog30zj0j4acu.gif)
 
 ## IP协议
 &emsp;IP协议提供非可靠，无连接的数据报传输服务。（IP provides an unreliable,connectionless datagram delivery service.）
 - 非可靠：这意味着它并不保证所要传输的数据一定会到达目的地。（当路由出错导致某个数据传输失败时，会丢掉此数据并发回一个ICMP信息回去。可靠性需要由更上层的协议提供，如TCP协议）
 - 无连接：这代表IP datagrams（数据报）在传输中没有连接起来，它们是一块一块各自分开的，分开独立处理。（比如需要向某个地方发送两个数据报：A、B，它们两个有可能会经由不同的路径去到达目的地，有可能B要先于A到达。）
 
-![IP协议-数据报字段](http://ww1.sinaimg.cn/large/005BIQVbgy1fwaaneh7nyj30ep0anjs5.jpg)
+![IP协议-数据报字段](/blog_images/005BIQVbgy1fwaaneh7nyj30ep0anjs5.jpg)
 &emsp;数据报字段如上图所示，IP头部(IP header)至少有20个字节（1字节等于8位,1 byte = 8 bit），我们一一解释。
 - 4-bit version：是IP协议的版本，当前版本是4。
 - 4-bit header length：代表IP header的长度。
@@ -61,18 +61,18 @@ tags:
 ### 查看IP地址
 - 查看本机内网IP 
 打开命令提示符（win+R 输入cmd，或在菜单里输入cmd搜索）,输入ipconfig。
-![打开cmd](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe1tykypj314s0nawr3.jpg)
-![内网IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fupdzr3nbcj30rl0efwf7.jpg)
+![打开cmd](/blog_images/005BIQVbgy1fupe1tykypj314s0nawr3.jpg)
+![内网IP](/blog_images/005BIQVbgy1fupdzr3nbcj30rl0efwf7.jpg)
 - 查看本机外网IP
 打开百度，搜索ip地址，会直接显示你本机的外网IP。（一般每隔一段时间就会变化一次）
-![百度搜索ip地址](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe5ixmprj31hc0hhq97.jpg)
+![百度搜索ip地址](/blog_images/005BIQVbgy1fupe5ixmprj31hc0hhq97.jpg)
 - 查看一个网站的IP地址
 可以在命令提示符里ping网站的域名，能显示Ip地址。（部分是不可以显示IP地址的）
-![pingQQ网站](http://ww1.sinaimg.cn/large/005BIQVbgy1fupe8csdqhj30rl0ef3yx.jpg)
+![pingQQ网站](/blog_images/005BIQVbgy1fupe8csdqhj30rl0ef3yx.jpg)
 
 ### 外网IP与内网IP
 &emsp;首先看看常见的网络类型：
-![外网IP与内网IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fuoemhdd56j30rr0iwjs6.jpg)
+![外网IP与内网IP](/blog_images/005BIQVbgy1fuoemhdd56j30rr0iwjs6.jpg)
 &emsp;想一下我们电脑怎么连接上网的。喊电信移动给家里装宽带，工作人员就会给你家里安装一台拨号器与路由器，路由器与拨号器相连，电脑与路由器相连。公司也一样，不过是电脑多一些，可能会有几台路由器，而这些路由器最终都会连接到拨号器。对应上图的C类。
 
 场景|是否接入互联网|是否向外提供服务|例子
@@ -94,5 +94,5 @@ C类|√|×|企业网络、家庭网络
 &emsp;另外一下，有一个IP地址很特别而且经常用到：__127.0.0.1__ ，__回环地址__，它通常分配给主机名localhost。发送到这个地址的数据报实际上不会到达网络，它会自动回环变成发送主机的输入。
 
 
-![计算机网络基础 入门书籍](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2viksb8vj30ss0exq8m.jpg)
-![TCP/IP](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vnupc6dj30t10dj0w1.jpg)
+![计算机网络基础 入门书籍](/blog_images/005BIQVbgy1fz2viksb8vj30ss0exq8m.jpg)
+![TCP/IP](/blog_images/005BIQVbgy1fz2vnupc6dj30t10dj0w1.jpg)

@@ -13,11 +13,11 @@ tags:
 
 ## nodemcu简介
 &emsp;nodemcu本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
-![nodemcu引脚图](http://ww1.sinaimg.cn/large/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
+![nodemcu引脚图](/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买一条线：
-![淘宝nodemcu](http://ww1.sinaimg.cn/large/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg)
+![淘宝nodemcu](/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg)
 &emsp;__特别注意：nodemcu分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
+![](/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
 # 使用Arduino编程
 &emsp;这里演示一下开发环境的搭建以及最简demo。
 ## 搭建开发环境

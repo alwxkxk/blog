@@ -11,9 +11,9 @@ tags:
 ## 安装nodejs
 1. 搜索nodejs官网
 2. 下载nodejs，大家下载稳定版本（LTS: Long Term Support ）。安装一直点下一步即可。
-![下载nodejs](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmhyji22j30xk0rn0v5.jpg)
+![下载nodejs](/blog_images/005BIQVbgy1fvbmhyji22j30xk0rn0v5.jpg)
 3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功。
-![验证nodejs安装成功](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
+![验证nodejs安装成功](/blog_images/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
 验证安装成功就代表了：1.程序安装成功。2.环境变量（PATH） 设置正确。
 
 ## 其它nodejs教程
@@ -25,7 +25,7 @@ tags:
 [《七天学会NodeJS》](https://github.com/nqdeng/7-days-nodejs)
 [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
 
-![nodejs入门](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vwu5kckj30sq0dlacr.jpg)
+![nodejs入门](/blog_images/005BIQVbgy1fz2vwu5kckj30sq0dlacr.jpg)
 
 ## 搭建最简TCP服务器
 &emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：（源码可在github上的base/tcp里找到）

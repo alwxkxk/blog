@@ -13,7 +13,7 @@ date: 2018-11-03 10:05:02
 
 ## 先跑起来
 &emsp;demo2我已经部署到我自己的服务器，大家可在线浏览：[http://sh.scaugreen.cn/equipmentId/123456](http://sh.scaugreen.cn/equipmentId/123456)
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fz4sstfxyxj31hc0t4npd.jpg)
+![](/blog_images/005BIQVbgy1fz4sstfxyxj31hc0t4npd.jpg)
 &emsp;这里的`123456`就是客户端ID。如果结合demo2里的nodemcu程序（程序中id设置为`1234abcd`），就需要访问[http://sh.scaugreen.cn/equipmentId/1234abcd](http://sh.scaugreen.cn/equipmentId/1234abcd)。结合硬件的演示如下：
 
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo2%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
@@ -25,7 +25,7 @@ your browser does not support the video tag
 ## demo2主要流程图
 ### 整体
 &emsp;相对于demo1，demo2添加了数据库、websocket协议、图表库Echart。demo2代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo2/myapp`里找到。
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fzbotaayifj30lu0coab7.jpg)
+![](/blog_images/005BIQVbgy1fzbotaayifj30lu0coab7.jpg)
 
 ### 硬件变化
 &emsp;nodemcu代码相对于demo1没有太大改动，主要是改变了TCP端口以及每秒发送随机数（模拟传感器实时取得的温度值）。此代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`demo2/nodemcu`找到。
@@ -39,7 +39,7 @@ client.print(20+random(0,10));
 ### HTTP客户端变化
 &emsp;demo1的界面是将所有连接的设备显示出来，手动刷新获取最新值，选中某个设备发送开/关灯命令。
 &emsp;demo2的界面是进入网页时就已经指定了某个单一设备，只要设备不断地上传数据，界面就实时地把数据在图表中显示出来，点击按钮发送开/关灯命令。
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fz50jf130yj31co0qfqv5.jpg)
+![](/blog_images/005BIQVbgy1fz50jf130yj31co0qfqv5.jpg)
 &emsp;界面为了追求一定程序的美化，所以加了很多没有实质性作用只是单纯为了更好看的内容。此代码是在express框架内，可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`demo2/myapp/views/index.pug`找到界面代码，`demo2/myapp/public/javascripts/index.js`找到JS代码。JS代码主要做了几件事：
 1. 创建websocket连接，接收该设备的实时数据。
 2. 给开/关按钮添加POST请求代码。
@@ -123,5 +123,5 @@ router.get('/history/:id', function(req, res, next) {
 - [MQTT协议基础](/posts/20945)
 
 &emsp;demo2学习完后，整个教程就到了尾声，所有关键技术都已经介绍完了，各位读者已经可以自行编写整个物联网系统，剩下的无非是业务逻辑代码编写（比如帐号注册登陆、页面设计等等，不同的业务不同的设计）。__整个教程看似内容很少，实质上是需要读者阅读七八本书以及结合其它教程一起学习，其实需要读者学习的内容是极其之多，本教程只是演示最简单的实例给大家一个例子以参考，有利于进行正确有效的学习，少走弯路。__ 如果大家在阅读教程的过程中感受到某一块学习上有困难，尽管提出来，我会完善对应的内容。本教程到此为止，很荣幸能够帮到大家。
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fz52yl0wqhj30f3044aa4.jpg)
+![](/blog_images/005BIQVbgy1fz52yl0wqhj30f3044aa4.jpg)
 

@@ -25,7 +25,7 @@ tags:
 - [《快乐的 Linux 命令行》-在线版](http://billie66.github.io/TLCL/book/index.html)
 - [马哥的linux视频教程](https://ke.qq.com/course/119808)
 
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vlzdrkbj30ss0dfad2.jpg)
+![](/blog_images/005BIQVbgy1fz2vlzdrkbj30ss0dfad2.jpg)
 
 
 
@@ -76,7 +76,7 @@ your browser does not support the video tag
 
 ## centOS安装Nodejs
 &emsp;我发现官网并没有讲yum安装，搜索了一下别人是直接下载二进制包并配置PATH进行使用。
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fztfgilm70j31hc0o5gn5.jpg)
+![](/blog_images/005BIQVbgy1fztfgilm70j31hc0o5gn5.jpg)
 ```bash
 yum install wget 
 cd ~

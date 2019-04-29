@@ -9,7 +9,7 @@ tags:
 
 &emsp;搭建一个最简单的物联网项目：通过手机控制LED灯开关。
 &emsp;从程序上来讲，nodemcu（TCP客户端）与TCP服务器通信，手机浏览器（HTTP客户端）与HTTP服务器通信，最终实现通过网页控制nodemcu的LED。
-![demo1示例](http://ww1.sinaimg.cn/large/005BIQVbgy1fwstl5y6srj30il0950tp.jpg)
+![demo1示例](/blog_images/005BIQVbgy1fwstl5y6srj30il0950tp.jpg)
 
 &emsp;搞物联网，首先要懂网，属于最重要的基础知识：网络相关有三节教程：[计算机网络基础](/posts/37707/)、[IP协议基础](/posts/37286/)、[TCP协议基础](/posts/19508/)。当然，要搞东西并不需要完成理解100%才动手，一般开始只需要快速浏览大概留个印象即可，暂时我们只要明白几个知识点：
 - IP地址：代表一个设备在网络中的地址
@@ -18,7 +18,7 @@ tags:
 - 客户-服务器模型（client-server model）
 
 &emsp;从IP地址与端口号的角度来看，三台设备之间通信（这里IP地址与端口是随意配的以作演示），示意是这样的：
-![demo1通信示意](http://ww1.sinaimg.cn/large/005BIQVbgy1fwtxx9phabj30jk095jse.jpg)
+![demo1通信示意](/blog_images/005BIQVbgy1fwtxx9phabj30jk095jse.jpg)
 
 ## 先跑起来
 &emsp;首先你手上先有一块nodemcu（淘宝价十几块），按[nodemcu基础](/posts/31494)先跑那几个例程，熟悉并保证硬件上没有问题。服务器与界面我已经写好了，并部署到我的服务器上（后面会演示怎么在你本地部署），具体代码自行查看demo1代码。demo1尽量追求简单入门，所以界面不好看，性能也不足，后面会讨论如何优化。整个demo1完成后，你就会对整个物联网的项目有个基本的认识，可以大大地讨论哪个环节需要怎么开发，跟别人吹水一点都不虚。
@@ -30,24 +30,24 @@ your browser does not support the video tag
 </video>
 &emsp;如果你才下单刚买nodemcu还没到手，可以先粗略快速地浏览一下其它教程，在没有硬件的情况下都可以先学习，特别是网络知识部分。demo1流程图：
 
-![demo1流程图](http://ww1.sinaimg.cn/large/005BIQVbgy1fx3yhijxgkj30fb0b7aa6.jpg)
+![demo1流程图](/blog_images/005BIQVbgy1fx3yhijxgkj30fb0b7aa6.jpg)
 
 &emsp;当然，如果你说不想买硬件，想通过直接通过软件模拟，看看效果，也是可以的。只需要用网络调试助手[（百度网盘下载）](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)，连接到demo1服务器端，连接成功后发送一条字符串当作设备id，也是可以模拟出来，只是没有硬件能直接控制LED灯开关那么直观而已。__大家一定要建立一种等效替换的意识，不管你手上是nodemcu还是单片机+ESP8266，还是什么其它比如4G模块、NB-IOT模块，对于服务器来说本质都是TCP客户端，没有任何区别，所以在调试时完全可以单纯地使用软件来等效替换。__ 在实际调试开发中，经常都需要把硬件与软件各自分开来调试，直到两者都调试正常验证正确之后，才会把软件硬件一起联调。
 
-<img class="lazy" alt="网络调试助手模拟demo1" data-src="http://ww1.sinaimg.cn/large/005BIQVbgy1fxuzdtrbasg31gy0rib2a.gif">
+<img class="lazy" alt="网络调试助手模拟demo1" data-src="/blog_images/005BIQVbgy1fxuzdtrbasg31gy0rib2a.gif">
 
 ## 在自己电脑上跑起来
 &emsp;先不用急着学，让这个项目能在你手上完整地跑起来，先拥有它，能不能驾驭是另一回事。下面傻瓜式演示怎么把demo1在自己电脑上跑起来。
 ### 获取源码
 &emsp;完整的源代码可以到[github](https://github.com/alwxkxk/soft-and-hard)里下载，并解压。
-![获取全部源码](http://ww1.sinaimg.cn/large/005BIQVbgy1fxa4jvz5xtj30ty0lvwi8.jpg)
+![获取全部源码](/blog_images/005BIQVbgy1fxa4jvz5xtj30ty0lvwi8.jpg)
 ### 安装环境
 &emsp;服务器代码是用nodejs写的，所以要先安装nodejs。
 1. 搜索nodejs官网
 2. 下载nodejs，大家下载稳定版本（LTS: Long Term Support ）。安装一直点下一步即可。
-![下载nodejs](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmhyji22j30xk0rn0v5.jpg)
+![下载nodejs](/blog_images/005BIQVbgy1fvbmhyji22j30xk0rn0v5.jpg)
 3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功
-![验证nodejs安装成功](http://ww1.sinaimg.cn/large/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
+![验证nodejs安装成功](/blog_images/005BIQVbgy1fvbmigtxlcj31hc0t4jw0.jpg)
 ### 安装依赖包并运行
 &emsp;如果你有nodejs与git的使用经验就会知道，默认的作法是只上传源码，而依赖包自行安装以减少git文件体积。注意需要进入到对应的目录，使用命令`npm install`安装依赖，`npm start`运行，可以看视频操作：
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">

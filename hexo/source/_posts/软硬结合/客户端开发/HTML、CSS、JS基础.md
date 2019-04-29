@@ -12,7 +12,7 @@ tags:
 
 &emsp;我使用的编辑器是[vscode](https://code.visualstudio.com/)(主流的轻量级编辑器)，市场主流浏览器[chrome](https://www.google.cn/intl/zh-CN/chrome/)，教程会一直用这两者。关于HTML、CSS、JavaScript，网上有很多也很优秀的教程，我不再重复。别人写的教程会比我写的完整详细，我补充一些观念，务必结合多个教程来学习。（只依赖我这个教程是不行的！）
 
-![不再重复造轮子](http://ww1.sinaimg.cn/large/005BIQVbgy1fxa63z5bylj30ms0bmq5j.jpg)
+![不再重复造轮子](/blog_images/005BIQVbgy1fxa63z5bylj30ms0bmq5j.jpg)
 
 &emsp;先放结论：
 - HTML用于描述网页内容。
@@ -80,16 +80,16 @@ your browser does not support the video tag
 《JavaScript高级程序设计》
 《XX天网页制作从入门到精通》（事实上学完也只能算个入门）
 
-![网页制作入门 推荐书籍](http://ww1.sinaimg.cn/large/005BIQVbgy1fz2vbiidchj30sd0li7d7.jpg)
+![网页制作入门 推荐书籍](/blog_images/005BIQVbgy1fz2vbiidchj30sd0li7d7.jpg)
 
 
 ## 作业
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fxqbd2o44uj30gv07qt9o.jpg)
+![](/blog_images/005BIQVbgy1fxqbd2o44uj30gv07qt9o.jpg)
 &emsp;先自行学习完那些线上教程与纸质书里的基础知识 __(大约一两个星期)__ 。如果是看纸质书的话，会有作业。如果只看网上教程，没有作业，很容易让大家以为自己轻松撑握了。这里给一个示例，你们能自己亲手完成就代表HTML、CSS、JavaScript到了入门的阶段。简单例子及源代码：[HTML、CSS、JS基础练习.rar](https://test-1251805228.file.myqcloud.com/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/HTML%E3%80%81CSS%E3%80%81JS%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0.rar)
 其中用到了flex布局，网上的基础教程以及旧的书籍可能没有介绍，需要自行百度了解一下。
 
 
-<img class="lazy" alt="HTML、CSS、JS基础练习" data-src="http://ww1.sinaimg.cn/large/005BIQVbgy1fvtnt3j13eg31e80qfx6s.gif">
+<img class="lazy" alt="HTML、CSS、JS基础练习" data-src="/blog_images/005BIQVbgy1fvtnt3j13eg31e80qfx6s.gif">
 
 &emsp;大家参考一下源代码，如果说看一眼就知道怎么做的，就说明基础已经过了，可以进行下一节了。如果还有很多不明白的，那就要继续学习。
 

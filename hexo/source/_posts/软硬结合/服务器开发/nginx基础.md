@@ -56,10 +56,10 @@ GET /index.html
 # 空行 回车 以发送 telnet命令
 ```
 &emsp;正常时会返回一串HTML文本，说明nginx正常运行、如图所示：
-![](http://ww1.sinaimg.cn/large/005BIQVbly1g25x07y1iaj31bo0l9dgu.jpg)
+![](/blog_images/005BIQVbly1g25x07y1iaj31bo0l9dgu.jpg)
 &emsp;若不正常说明nginx启动失败，检查哪一步出错了。
 &emsp;使用浏览器访问其IP地址，一样能显示网页如图所示：
-![](http://ww1.sinaimg.cn/large/005BIQVbly1g25x21ncjdj31hc0o3dgo.jpg)
+![](/blog_images/005BIQVbly1g25x21ncjdj31hc0o3dgo.jpg)
 &emsp;若本地测试正常，但浏览器却无法正常访问，请检查服务器是否能连接（ping通）、防火墙设置、云服务器安全组是否开放了端口。
 
 ## 常用配置

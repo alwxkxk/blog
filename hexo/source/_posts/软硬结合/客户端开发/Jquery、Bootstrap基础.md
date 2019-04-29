@@ -26,12 +26,12 @@ tags:
 ## 为什么用Bootstrap？
 &emsp;写CSS的时候，你是否会烦恼，挑什么颜色好看？字体要多大才合适？如此等等的问题，有没有最优的方案直接使用？有，那就是使用别人设计好的UI库，其中最流行的UI库是Bootstrap。（当然，各人有不同的审美观，所以有不同的设计方案，特别是大公司往往有自己的UI库。）学习Bootstrap是因为网上资源及相关讨论最多，方便自学。
 &emsp;[Bootstrap效果](https://v3.bootcss.com/examples/theme/)：
-![Bootstrap效果](http://ww1.sinaimg.cn/large/005BIQVbgy1fwcmtp4nuoj30y60pl769.jpg)
+![Bootstrap效果](/blog_images/005BIQVbgy1fwcmtp4nuoj30y60pl769.jpg)
 &emsp;[Bootstrap中文网](http://www.bootcss.com/)
 
 ## 作业
 &emsp;模仿一个网站是最好的学习，新手先挑一个简单的进行模仿：[bootcdn](https://www.bootcdn.cn/)。
-![bootcdn网页](http://ww1.sinaimg.cn/large/005BIQVbgy1fwcmwryxnxj31hc0q2409.jpg)
+![bootcdn网页](/blog_images/005BIQVbgy1fwcmwryxnxj31hc0q2409.jpg)
 &emsp;这个网页使用Bootstrap进行布局的，自行模仿整个网页布局（要求相似度80%以上），具体的样式跟着用Bootstrap就行了。没搞明白怎么他是怎么做到的，就利用chrome开发者工具进行网页分析（如果还没学先学[chrome开发者工具](/posts/52429)）。
 &emsp;__当你完成这个作业时，你基本已经拥有简单页面的制作能力，已经满足了此教程的前端技能要求。__ 如果你想继续往前端这个方向发展学习，就去学习三大主流框架之一[Vue](https://cn.vuejs.org/)。
 &emsp;遇到什么困难或疑问的，欢迎提出讨论。
@@ -44,8 +44,8 @@ tags:
 
 1. 怎么区分某个样式是来自于Bootstrap，还是来自于自己写的样式？
 __答：使用chrome开发者工具分析可以看到具体的CSS是来自于哪个文件。__
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fxqb0tbdchj31hc0q20wf.jpg)
+![](/blog_images/005BIQVbgy1fxqb0tbdchj31hc0q20wf.jpg)
 
 2. 那个bootcdn网站上的有一些图片，我没有呀，怎么模仿？
 __答：能在网页上展示出来的都可以从chrome开发者工具里找到，包含图片。__
-![](http://ww1.sinaimg.cn/large/005BIQVbgy1fxqb4omlslj31hc0t40ww.jpg)
+![](/blog_images/005BIQVbgy1fxqb4omlslj31hc0t40ww.jpg)
