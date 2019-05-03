@@ -11,7 +11,7 @@ tags:
 &emsp;MQTT是基于发布/订阅范式（后面亲自跟着实际操作后就会明白什么是发布/订阅）的消息协议。
 &emsp;Eclipse基金会开源的MQTT网关[mosquitto](https://mosquitto.org/)，[mqttfx](https://mqttfx.jensd.de/index.php)是开源的MQTT客户端（[mqttfx-1.6.0-windows-x64-百度网盘](https://pan.baidu.com/s/19yiEDjpLCpS_2Yew_4GcKA)）
 [mosquitto网关官方在线测试网址](https://test.mosquitto.org/)：`https://test.mosquitto.org/`。下面我会同时打开三个客户端ABC连接到mosquitto网关，A发布消息，BC分别订阅不同的主题：
-<img alt="MQTT订阅" data-src="/blog_images/005BIQVbgy1fyb4eozcg9j30pd0i63z4.jpg" style="width:500px;height:400px;">
+<img alt="MQTT订阅" src="/blog_images/005BIQVbgy1fyb4eozcg9j30pd0i63z4.jpg" style="width:500px;height:400px;">
 &emsp;安装客户端mqttfx后，打开设置，配置MQTT网关地址，MQTT端口号默认使用1883，注意要自动生成一个客户端ID。然后保存，建立连接。服务器在国外，连接可能有点慢。
 ![](/blog_images/005BIQVbgy1fyb4omlaknj30zr0m2t9v.jpg)
 ![](/blog_images/005BIQVbgy1fyb4u8w5e5j30sw0kxjsm.jpg)
