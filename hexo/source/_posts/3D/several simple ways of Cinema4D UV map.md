@@ -23,8 +23,10 @@ date: 2019-06-27 15:19:56
 3. Select one polygon and drag the material.
 
 
-YouTube video:
+&emsp;YouTube video:
 <iframe width="100%" height="600" src="https://www.youtube.com/embed/kJwfIFE2Gzo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+&emsp;We can [bake object](https://www.youtube.com/watch?v=kBj2V4MGqUQ) to make all pictures into one.
 
 ## change UV map the picture
 &emsp;Many UV map tutorial is show how to unwrap model, export UV map and edit the picture to suit the UV map.Actually,We can edit UV suit the picture.In this way,We can pick what we want from the picture.([polygonalmind](http://www.polygonalmind.com/downloadcentre.html) make many model only by a picture texture.)
