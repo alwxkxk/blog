@@ -92,4 +92,15 @@ ipcRenderer.on('asynchronous-reply', (event, arg) => {
 ipcRenderer.send('asynchronous-message', 'ping')
 ```
 
+## FAQ 
+1. 安装时总是卡在安装electron怎么办？
+答：可能是墙的原因，国内淘宝官方做出了相关镜像：
+在根目录新建文件`.npmrc`，填入：
+```
+registry=https://registry.npm.taobao.org
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs
+ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+```
+
 
