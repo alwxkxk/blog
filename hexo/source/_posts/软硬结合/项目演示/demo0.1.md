@@ -6,6 +6,7 @@ date: 2019-03-17 09:49:12
 tags:
 ---
 
+&emsp;大家尽量使用chrome浏览器，其它浏览器可能会出现问题。（比如说IE内核的浏览器不支持ES6。）
 &emsp;demo0.1是demo1的简化版：
 - 只支持一个TCP连接，简化了TCP服务器的代码。
 - 简陋的网页，无需先学习Jquery、Bootstrap。

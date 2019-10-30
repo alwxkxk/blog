@@ -6,7 +6,7 @@ date: 2018-11-01 19:57:07
 tags:
 - IOT
 ---
-
+&emsp;大家尽量使用chrome浏览器，其它浏览器可能会出现问题。（比如说IE内核的浏览器不支持ES6。）
 &emsp;搭建一个最简单的物联网项目：通过手机控制LED灯开关。
 &emsp;从程序上来讲，nodemcu（TCP客户端）与TCP服务器通信，手机浏览器（HTTP客户端）与HTTP服务器通信，最终实现通过网页控制nodemcu的LED。
 ![demo1示例](/blog_images/005BIQVbgy1fwstl5y6srj30il0950tp.jpg)
