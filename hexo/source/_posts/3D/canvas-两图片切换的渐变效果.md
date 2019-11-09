@@ -74,7 +74,6 @@ document.getElementById("alter").addEventListener("click",()=>{
 
 ## 附录
 
-- 能翻墙访问codepen的，可以看一下在线效果：
-[https://codepen.io/alwxkxk/pen/MWgQWxx](https://codepen.io/alwxkxk/pen/MWgQWxx)
+- 能翻墙访问codepen的，可以看一下在线效果：[https://codepen.io/alwxkxk/pen/MWgQWxx](https://codepen.io/alwxkxk/pen/MWgQWxx)
 
 
