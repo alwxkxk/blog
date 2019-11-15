@@ -177,6 +177,7 @@ void setup() {
   WiFi.begin(ssid, password);
 
   //设置读取socket数据时等待时间为100ms（默认值为1000ms，会显得硬件响应很慢）
+  
   client.setTimeout(100);
 
   //等待WIFI连接成功
@@ -206,6 +207,7 @@ void loop() {
     //      接收到TCP数据
     if (client.available())
     {
+      // 有网友反应，使用client.read()速度会更快。我没实践过。
       String line = client.readStringUntil('\n');
       if (line == "1") {
         Serial.println("command:open led.");
@@ -239,7 +241,6 @@ __答：有解决办法，请看[Arduino开发板管理安装失败解决办法]
 答：
 - [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
 - [arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)
-
 
 ## 附录
 - [arduino 中文社区](https://www.arduino.cn/forum.php)

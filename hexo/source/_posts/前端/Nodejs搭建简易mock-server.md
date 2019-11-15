@@ -84,25 +84,31 @@ app.listen(3000, function () {
 
 ```
 &emsp; 运行上面的mock-server代码，就会mock 所有options请求以及 `POST /proxy/user/login`与`GET /proxy/user/info`这两个接口，其它请求都会正常请求后端接口（`www.host.com:port/api`）。
-&emsp; 利用SQL语句`FOR JSON`，从数据库里直接拿数据生成JSON，再放到mock-server代码里mock出数据来：
+&emsp; 利用以下SQL语句，从数据库里直接拿数据生成JSON，再放到mock-server代码里mock出数据来：（使用mysql图形化客户时，点击查询，然后执行SQL命令，复制出来就能当数据。）
 
 ```SQL
-SELECT name, surname  
-FROM emp  
-FOR JSON AUTO;
+SELECT CONCAT(
+    '[', 
+    GROUP_CONCAT(JSON_OBJECT('name', name, 'phoneNumber', phone_number)),
+    ']'
+) 
+FROM person;
 ```
 
 ```json
 [{
-	"name": "John"
+	"name": "John",
+  "phoneNumber":"110"
 }, {
 	"name": "Jane",
-	"surname": "Doe"
+	"phoneNumber": "120"
 }]
 ```
 
+&emsp;再配合nodemon模块实现自重启功能，一个简单又好用的mock-server就诞生了。
+
 ## 附录
 - [mock-server](http://www.mock-server.com/)
-- [Format Query Results as JSON with FOR JSON (SQL Server)](https://docs.microsoft.com/en-us/sql/relational-databases/json/format-query-results-as-json-with-for-json-sql-server?view=sql-server-ver15)
+- [How to convert result table to JSON array in MySQL](https://stackoverflow.com/questions/41758870/how-to-convert-result-table-to-json-array-in-mysql)
 
 
