@@ -152,6 +152,9 @@ void loop() {
 ### TCP通信-demo1
 &emsp;注意修改WIFI地址与密码。
 &emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
+&emsp;有网友问到，WIFI连接成功了，但提示连接失败，这个IP地址是需要填什么？ IP地址是需要填写TCP服务端的IP址，前期调试可以使用网络调试助手来充当TCP服务端：
+![物联网项目](/blog_images/nodemcu与网络调试助手联调.jpg)
+
 ```c
 //如果是nodemcu V3版，需要另外定义LED引脚
 //#define LED_BUILTIN 2 

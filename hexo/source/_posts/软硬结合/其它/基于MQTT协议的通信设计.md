@@ -1,5 +1,6 @@
 ---
 title: 基于MQTT协议的通信设计
+hidden: true
 toc: true
 tags:
   - MQTT
