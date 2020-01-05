@@ -8,3 +8,6 @@ hexo new 新文章
 ```
 修改菜单：
 hexo\themes\maupassant\source\js\sidenav.js
+
+## 启动
+`hexo s -p 3000`
