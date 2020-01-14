@@ -54,7 +54,7 @@ your browser does not support the video tag
 your browser does not support the video tag
 </video>
 
-&emsp;整个过程因为没有相关基础知识，所以并不懂，很正常，经过后面的学习就会了解整个过程。
+&emsp;整个过程因为没有相关基础知识，所以并不懂，很正常，经过后面的学习就会了解整个过程。(如果执行`npm install`安装依赖库时等待很久提示安装失败，可以尝试设置由淘宝提供的[国内镜像](https://npm.taobao.org/)，`npm config set registry https://registry.npm.taobao.org`，验证：`npm config get registry`，如果返回`https://registry.npm.taobao.org`说明设置成功，再次尝试安装`npm install`。)
 &emsp;__特别注意，把代码部署到自己电脑上，只能够在局域网内访问，简单来讲就是电脑、硬件、手机等都必须是连在同一个WIFI里。当你使用手机换成流量模式而不是连接WIFI，你会发现网页无法访问。这是因为你电脑是没有公网IP（亦可称外网IP）的，只能在同一局域网里使用内网IP访问。要想让全世界的人都能访问到，让世界各地的硬件都能连接上，你必须要使用一台拥有公网IP的电脑，然后把这套代码部署上去。具体做法是租一台云服务器，安装linux系统，部署代码，设置安全组等等。__ 上面提到的demo1在线示范就是我租用了一个云服务器，并部署以供参考：
 - 网址：http://119.29.107.47:8001/
 - TCP服务器：119.29.107.47:9002
@@ -199,6 +199,8 @@ __答：这就需要把后端程序部署到云服务器。__
 4. 将服务部署到云服务器后，硬件/网关如何上传数据？
 __答：本质上是一样的，在自己电脑部署时硬件通过IP地址给电脑传输数据，这个IP地址是内网的。而部署到云服务器，就拥有外网IP地址，只要硬件/网关能访问外网（WIFI、4G等）一样能给外网传略数据。云服务器注意配置安全组与防火墙开放端口，具体知识请学习[网络知识](/posts/37707)与[Linux知识](/posts/34982)。__
 
+5. `npm install` 安装依赖库等了很久，没成功安装，怎么办？
+__答：如果执行`npm install`安装依赖库时等待很久提示安装失败，可以尝试设置由淘宝提供的[国内镜像](https://npm.taobao.org/)，`npm config set registry https://registry.npm.taobao.org`，验证：`npm config get registry`，如果返回`https://registry.npm.taobao.org`说明设置成功，再次尝试安装`npm install`。__
 
 
 
