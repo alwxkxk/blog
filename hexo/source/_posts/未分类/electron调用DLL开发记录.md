@@ -15,7 +15,7 @@ date: 2020-01-22 20:58:44
 
 &emsp;为了排除DLL的问题，我自己还特意做了一个最简DLL来给自己测试：[dll最简例子：demo-dll](https://github.com/alwxkxk/demo-dll)（我编译了64位的DLL，在项目里的[/x64/Release/demo-dll.dll](https://github.com/alwxkxk/demo-dll/blob/master/x64/Release/demo-dll.dll)），编写了三个简单的函数用于验证，`returnNumber2`返回数字2，`returnString`返回字符串returnString，`sum`将两个整数相加。如何在Visual studio，用 C++ 编写一个DLL网上有很多文章，我就不再细说，选择X64后生成解决方案就会生成DLL。（注意选择32位还是64位，选错会导致报错:`Error: Dynamic Linking Error: Win32 error 193`）
 
-![issuehunt提交](/blog_images/未分类/issuehunt提交.png)
+![生成DLL](/blog_images/未分类/生成DLL.png)
 
 &emsp;nodejs代码测试，正常打印出所期望的结果说明调用DLL成功：
 
