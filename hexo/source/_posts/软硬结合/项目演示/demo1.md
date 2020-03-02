@@ -28,20 +28,27 @@ tags:
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
+
 &emsp;如果你才下单刚买nodemcu还没到手，可以先粗略快速地浏览一下其它教程，在没有硬件的情况下都可以先学习，特别是网络知识部分。demo1流程图：
 
 ![demo1流程图](/blog_images/005BIQVbgy1fx3yhijxgkj30fb0b7aa6.jpg)
 
 &emsp;当然，如果你说不想买硬件，想通过直接通过软件模拟，看看效果，也是可以的。只需要用网络调试助手[（百度网盘下载）](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)，连接到demo1服务器端，连接成功后发送一条字符串当作设备id，也是可以模拟出来，只是没有硬件能直接控制LED灯开关那么直观而已。__大家一定要建立一种等效替换的意识，不管你手上是nodemcu还是单片机+ESP8266，还是什么其它比如4G模块、NB-IOT模块，对于服务器来说本质都是TCP客户端，没有任何区别，所以在调试时完全可以单纯地使用软件来等效替换。__ 在实际调试开发中，经常都需要把硬件与软件各自分开来调试，直到两者都调试正常验证正确之后，才会把软件硬件一起联调。
 
-<img class="lazy" alt="网络调试助手模拟demo1" data-src="/blog_images/005BIQVbgy1fxuzdtrbasg31gy0rib2a.gif">
+<img class="lazy" alt="网络调试助手模拟demo1" data-src="/blog_images/005BIQVbgy1fxuzdtrbasg31gy0rib2a.gif"></img>
+
 
 ## 在自己电脑上跑起来
+
 &emsp;先不用急着学，让这个项目能在你手上完整地跑起来，先拥有它，能不能驾驭是另一回事。下面傻瓜式演示怎么把demo1在自己电脑上跑起来。
+
 ### 获取源码
+
 &emsp;完整的源代码可以到[github](https://github.com/alwxkxk/soft-and-hard)里下载，并解压。
 ![获取全部源码](/blog_images/005BIQVbgy1fxa4jvz5xtj30ty0lvwi8.jpg)
+
 ### 安装环境
+
 &emsp;服务器代码是用nodejs写的，所以要先安装nodejs。
 1. 搜索nodejs官网
 2. 下载nodejs，大家下载稳定版本（LTS: Long Term Support ）。安装一直点下一步即可。

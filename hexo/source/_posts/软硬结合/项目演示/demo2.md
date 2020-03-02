@@ -24,7 +24,7 @@ your browser does not support the video tag
 &emsp;具体部署与demo1类似，进入到对应的目录，使用命令`npm install`安装依赖，`npm start`运行，不过需要安装MongoDB才能正常运行。
 
 ## demo2主要流程图
-### 整体
+
 &emsp;相对于demo1，demo2添加了数据库、websocket协议、图表库Echart。demo2代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo2/myapp`里找到。
 ![](/blog_images/005BIQVbgy1fzbotaayifj30lu0coab7.jpg)
 
