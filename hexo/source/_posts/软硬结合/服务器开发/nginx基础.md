@@ -18,10 +18,13 @@ date: 2018-12-30 11:28:10
 ```bash
 sudo yum install yum-utils -y
 
-# 添加yum源，创建并编辑 /etc/yum.repos.d/nginx.repo
+# 先检查yum源 是否包含nginx安装包，若没有内容显示出来，则按以下操作添加yum源
+yum list | grep nginx
+
+# 添加yum源：，创建并编辑 /etc/yum.repos.d/nginx.repo
 vi /etc/yum.repos.d/nginx.repo
 
-# 将以下内容添加到 文本中
+# 添加yum源：将以下内容添加到 文本中
 [nginx-stable]
 name=nginx stable repo
 baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
@@ -37,7 +40,9 @@ enabled=0
 gpgkey=https://nginx.org/keys/nginx_signing.key
 
 # 保存文本并退出，开始安装
+# 再次使用命令： yum list | grep nginx 检查，成功后开始安装：
 sudo yum install nginx -y
+# 若提示No package nginx available. 说明yum源不存在，检查上面的操作是否正确。
 
 # 检验nginx安装成功，并可运行
 nginx -v

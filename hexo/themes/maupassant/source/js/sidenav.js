@@ -19,7 +19,16 @@
 //     ]
 //   }
 
+
+var pathName = window.location.pathname
+
+
+// 软硬结合的菜单栏
 var tree = [
+  {
+    text: '软硬结合导读',
+    href:'/posts/44755'
+  },
   {
     text: '项目演示',
     selectable: false,
@@ -82,47 +91,104 @@ var tree = [
     ]
   }
 ]
-
-$('#sidenav').treeview({data: tree, showBorder: false, enableLinks: true, backColor: 'transparent'})
-$('#sidenav-container').show()
-
-var slideout = new Slideout({
-  'panel': document.getElementById('panel'),
-  'menu': document.getElementById('menu'),
-  'padding':200,
-  'tolerance': 70
+var treeList = []
+tree.forEach((item)=>{
+  if(item.nodes){
+    item.nodes.forEach(node=>{
+      treeList.push(node.href)
+    })
+  }else{
+    treeList.push(item.href)
+  }
+})
+var treeFlag = false
+treeList.forEach(item=>{
+  if(pathName === item || pathName === item+'/'){
+    treeFlag = true
+  }
 })
 
-slideout.on("open",()=>{
-  $('#open-menu').hide();
+// 3D可视化 的菜单栏
+var tree3d = [
+  {
+    text: '3D可视化导读',
+    href:'/posts/30679'
+  },
+  {
+    text: '基础',
+    selectable: false,
+    nodes: [
+      {text: '1-模型', href: '/posts/42378'},
+    ]
+  }
+]
+
+var tree3dList = []
+tree3d.forEach((item)=>{
+  if(item.nodes){
+    item.nodes.forEach(node=>{
+      tree3dList.push(node.href)
+    })
+  }else{
+    tree3dList.push(item.href)
+  }
+})
+var tree3dFlag = false
+tree3dList.forEach(item=>{
+  if(pathName === item || pathName === item+'/'){
+    tree3dFlag = true
+  }
 })
 
-slideout.on("close",()=>{
-  $('#open-menu').show();
-})
+var treeData = tree3dFlag ? tree3d : tree
+console.log(treeData,tree3dFlag)
 
-$('#close-menu').click(()=>{
-  slideout.close();
-})
 
-$('#open-menu').click(()=>{
-  slideout.open();
-})
+setTimeout(() => {
+  $('#sidenav').treeview({data: treeData, showBorder: false, enableLinks: true, backColor: 'transparent'})
+  $('#sidenav-container').show()
 
-// 当浏览次数少于3时，自动弹出菜单栏
-let menuFlag=localStorage.getItem("menu-flag")
-if(!menuFlag){
-  menuFlag = 0
-}
-else{
-  menuFlag = Number(menuFlag)
-}
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding':200,
+    'tolerance': 70
+  })
 
-if(menuFlag<3){
-  menuFlag += 1
-  localStorage.setItem("menu-flag",menuFlag);
-  slideout.open();
-  setTimeout(() => {
+  slideout.on("open",()=>{
+    $('#open-menu').hide();
+  })
+
+  slideout.on("close",()=>{
+    $('#open-menu').show();
+  })
+
+  $('#close-menu').click(()=>{
     slideout.close();
-  }, 1500);
-}
+  })
+
+  $('#open-menu').click(()=>{
+    slideout.open();
+  })
+
+  // 当浏览次数少于3时，自动弹出菜单栏
+  var menuFlag=localStorage.getItem("menu-flag")
+  if(!menuFlag){
+    menuFlag = 0
+  }
+  else{
+    menuFlag = Number(menuFlag)
+  }
+
+  if(menuFlag<3){
+    menuFlag += 1
+    localStorage.setItem("menu-flag",menuFlag);
+    slideout.open();
+    setTimeout(() => {
+      slideout.close();
+    }, 1500);
+  }
+}, 200);
+
+
+

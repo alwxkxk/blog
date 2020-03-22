@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 软硬结合——从零打造物联网
-subtitle: 写给硬件工程师的Web开发教程
-description: 零基础实践完整的物联网项目
-keywords: IOT
+title: 生子当如哈士奇的个人博客
+subtitle: 生子当如哈士奇的个人博客，包含若干技术文章，以及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。
+description: 生子当如哈士奇的个人博客，包含若干技术文章，以及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。
+keywords: JavaScript
 author: alwxkxk
 language: zh-CN
 timezone:
