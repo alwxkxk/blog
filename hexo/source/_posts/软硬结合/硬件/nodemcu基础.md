@@ -235,6 +235,155 @@ void loop() {
 
 }
 ```
+
+### DHT11
+&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11可以网上淘宝一下。有位读者提供了相关的代码供大家参考，[相关博客](https://blog.csdn.net/weixin_42385626/article/details/81096211)：
+
+```c
+#include <dht11.h>
+dht11 DHT11;
+// 这里定义了DHT11 要连接 的引脚
+#define DHT11_PIN 13
+
+void setup() {
+  Serial.println("init");
+}
+
+void loop() {
+  // 读取数值并打印到串口
+  int chk = DHT11.read(DHT11_PIN);
+  Serial.print("Temperature = ");//温度
+  Serial.println(DHT11.temperature);
+    Serial.print("Humidity = ");//湿度
+  Serial.println(DHT11.humidity);
+  delay(1000);
+}
+```
+&emsp;在demo2中，我们只传一个模拟生成的数值，如果要传两个值的话，就要想个办法让服务器识别出这两个不同类型的数据。方法有很多种，我举一个例子：上传时`temprature:24`,`humidity:30`，服务器解析时用 `msg.data.split(":")` 就能得到一个数组 `["humidity","30"]`，这样就能识别出这个30是来自于humidity的值。
+&emsp;要使用`<dht11.h>`，就要装第三方库或自行手动添加以下库文件，[Arduino IDE 库文件如何添加？](http://yfrobot.com/thread-11842-1-1.html)，将库文件放到至arduino IDE 所在文件夹的libraries文件夹中，如（/arduino/libraries）：
+
+```H
+#ifndef dht11_h
+#define dht11_h
+
+#if defined(ARDUINO) && (ARDUINO >= 100)
+#include <Arduino.h>
+#else
+#include <WProgram.h>
+#endif
+
+#define DHT11LIB_VERSION "0.4.1"
+
+#define DHTLIB_OK				0
+#define DHTLIB_ERROR_CHECKSUM	-1
+#define DHTLIB_ERROR_TIMEOUT	-2
+
+class dht11
+{
+public:
+    int read(int pin);
+	int humidity;
+	int temperature;
+};
+#endif
+//
+// END OF FILE
+//
+```
+
+```c
+//
+//    FILE: dht11.cpp
+// VERSION: 0.4.1
+// PURPOSE: DHT11 Temperature & Humidity Sensor library for Arduino
+// LICENSE: GPL v3 (http://www.gnu.org/licenses/gpl.html)
+//
+// DATASHEET: http://www.micro4you.com/files/sensor/DHT11.pdf
+//
+// HISTORY:
+// George Hadjikyriacou - Original version (??)
+// Mod by SimKard - Version 0.2 (24/11/2010)
+// Mod by Rob Tillaart - Version 0.3 (28/03/2011)
+// + added comments
+// + removed all non DHT11 specific code
+// + added references
+// Mod by Rob Tillaart - Version 0.4 (17/03/2012)
+// + added 1.0 support
+// Mod by Rob Tillaart - Version 0.4.1 (19/05/2012)
+// + added error codes
+//
+
+#include "dht11.h"
+
+// Return values:
+// DHTLIB_OK
+// DHTLIB_ERROR_CHECKSUM
+// DHTLIB_ERROR_TIMEOUT
+int dht11::read(int pin)
+{
+	// BUFFER TO RECEIVE
+	uint8_t bits[5];
+	uint8_t cnt = 7;
+	uint8_t idx = 0;
+
+	// EMPTY BUFFER
+	for (int i=0; i< 5; i++) bits[i] = 0;
+
+	// REQUEST SAMPLE
+	pinMode(pin, OUTPUT);
+	digitalWrite(pin, LOW);
+	delay(18);
+	digitalWrite(pin, HIGH);
+	delayMicroseconds(40);
+	pinMode(pin, INPUT);
+
+	// ACKNOWLEDGE or TIMEOUT
+	unsigned int loopCnt = 10000;
+	while(digitalRead(pin) == LOW)
+		if (loopCnt-- == 0) return DHTLIB_ERROR_TIMEOUT;
+
+	loopCnt = 10000;
+	while(digitalRead(pin) == HIGH)
+		if (loopCnt-- == 0) return DHTLIB_ERROR_TIMEOUT;
+
+	// READ OUTPUT - 40 BITS => 5 BYTES or TIMEOUT
+	for (int i=0; i<40; i++)
+	{
+		loopCnt = 10000;
+		while(digitalRead(pin) == LOW)
+			if (loopCnt-- == 0) return DHTLIB_ERROR_TIMEOUT;
+
+		unsigned long t = micros();
+
+		loopCnt = 10000;
+		while(digitalRead(pin) == HIGH)
+			if (loopCnt-- == 0) return DHTLIB_ERROR_TIMEOUT;
+
+		if ((micros() - t) > 40) bits[idx] |= (1 << cnt);
+		if (cnt == 0)   // next byte?
+		{
+			cnt = 7;    // restart at MSB
+			idx++;      // next byte!
+		}
+		else cnt--;
+	}
+
+	// WRITE TO RIGHT VARS
+        // as bits[1] and bits[3] are allways zero they are omitted in formulas.
+	humidity    = bits[0]; 
+	temperature = bits[2]; 
+
+	uint8_t sum = bits[0] + bits[2];  
+
+	if (bits[4] != sum) return DHTLIB_ERROR_CHECKSUM;
+	return DHTLIB_OK;
+}
+//
+// END OF FILE
+//
+```
+
+
 ## FAQ
 1. 错误提示：ESP8266WiFi.h:No such file or directory？
 __答：说明没有安装ESP8266扩展开发板信息或者没选择nodemcu开发板，导致找不到相关文件。__
