@@ -115,6 +115,13 @@ var tree3d = [
     href:'/posts/30679'
   },
   {
+    text: '项目示例',
+    selectable: false,
+    nodes: [
+      {text: 'a-模型拆解', href: '/posts/2544'},
+    ]
+  },
+  {
     text: '基础',
     selectable: false,
     nodes: [
