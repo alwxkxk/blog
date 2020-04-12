@@ -125,7 +125,7 @@ var tree3d = [
     text: '基础',
     selectable: false,
     nodes: [
-      {text: '1-模型', href: '/posts/42378'},
+      {text: '1-模型制作与展示', href: '/posts/42378'},
     ]
   }
 ]
