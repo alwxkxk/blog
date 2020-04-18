@@ -163,19 +163,17 @@ setTimeout(() => {
   })
 
   slideout.on("open",()=>{
-    $('#open-menu').hide();
+    $('#open-menu').css('position','fixed')
+    $('#open-menu').css('left','260px')
   })
 
   slideout.on("close",()=>{
-    $('#open-menu').show();
-  })
-
-  $('#close-menu').click(()=>{
-    slideout.close();
+    $('#open-menu').css('position','sticky')
+    $('#open-menu').css('left','2px')
   })
 
   $('#open-menu').click(()=>{
-    slideout.open();
+    slideout.toggle();
   })
 
   // 当浏览次数少于3时，自动弹出菜单栏
