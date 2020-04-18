@@ -73,6 +73,7 @@ your browser does not support the video tag
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1%E7%9E%8E%E6%8A%98%E8%85%BE%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
 </video>
+
 ## 怎么做
 &emsp;具体的技术选型不再讨论，可阅读[软硬结合](/posts/44755/)，结论就是：
 - 硬件：nodemcu，使用Arduino IDE进行开发，与服务器使用TCP通信
@@ -125,7 +126,7 @@ your browser does not support the video tag
     }
   })
 ```
-&emsp;当浏览器打开网页时，发起HTTP请求（GET /），服务器代码进入到`myapp/routes/index.js`进行渲染，将已经连接到TCP服务器的设备数据都传入到模板`myapp/views/index.pug`中，渲染出对应的HTML页面并发送给浏览器进行显示。
+&emsp;当浏览器打开网页时，发起HTTP请求（GET /），服务器代码进入到`myapp/routes/index.js`进行渲染，将已经连接到TCP服务器的设备数据都传入到模板`myapp/views/index.pug`中，渲染出对应的HTML页面再发送给浏览器进行显示。
 ```javascript
 router.get('/', function(req, res, next) {
   res.render('index', { title: '软硬结合demo1',tcpServer:tcpServer });
@@ -144,10 +145,11 @@ $("#close").click(function(){
   $.post("/", { action:"close",addr: equipment.addr, id: equipment.id } );
 });
 ```
-&emsp;浏览器发出POST请求后，由服务器端代码`myapp/routes/index.js`进行处理，找到对应的设备，并发送控制命令，此时硬件接收到命令进行开关灯：
+&emsp;浏览器发出POST请求后，由服务器端代码`myapp/routes/index.js`进行处理，找到对应的设备，并发送控制命令，此时硬件接收到命令进行开关灯。`req.body.addr，req.body.id，req.body.action`这些数据就是来源于上面的代码，前端点击按钮后向后端发送的数据：
 ```javascript
 // POST / 控制设备开关灯
 router.post('/',function(req, res, next) {
+  // req.body.addr，req.body.id，req.body.action这些是来源于上面刚提到的前端代码
   let addr = req.body.addr
   let id = req.body.id
   let action = req.body.action
@@ -209,7 +211,13 @@ __答：本质上是一样的，在自己电脑部署时硬件通过IP地址给�
 5. `npm install` 安装依赖库等了很久，没成功安装，怎么办？
 __答：如果执行`npm install`安装依赖库时等待很久提示安装失败，可以尝试设置由淘宝提供的[国内镜像](https://npm.taobao.org/)，`npm config set registry https://registry.npm.taobao.org`，验证：`npm config get registry`，如果返回`https://registry.npm.taobao.org`说明设置成功，再次尝试安装`npm install`。__
 
+6. 请问这个demo1是前后端分离的吗？
+__答：不是。前后端分离可以理解为 一个静态网页作为前端展示+ 一个只提供数据的后端，浏览器先加载出静态页面，然后通过HTTP请求向后端拿数据并展示。这样做的最大特点就是：前端与后端可以分别部署到两台不同的服务器上（当然也可以部署到同一台），这样有利于优化。而这个demo1，网页是先在后端拼出HTML（pug模板渲染的作用），再发送到浏览器显示，所以不能分开部署，不属于前后端分离的项目。__
 
+7. 为什么我本地运行的demo1没有看到我的设备，但在博主的demo1示例网站上能看到我的设备？
+__答：根本原因是你的设备“没有连接到你本地电脑的demo1，而是连接到我云服务器上的demo1。”，请检查硬件代码是否连接到你本地的demo1。（保证在同一网络之中，这样硬件才能连接到你本地的demo1。）__
 
+8. 我自己创建的项目，运行`npm run start`时报错`ENOENT: no such file or directory, open '...\package.json'`
+__答：实现认真看一下报错信息就容易看到哪里出问题了，这报错就是说无法打开`package.json`文件。如果有学node.js就知道，`npm run start`其实是根据`package.json`里配置的来执行对应的命令。__
 
 
