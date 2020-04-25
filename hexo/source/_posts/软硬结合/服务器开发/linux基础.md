@@ -125,11 +125,10 @@ systemctl disable firewalld.service #禁止firewall开机启动
 
 
 ## 云服务器
-&emsp;在虚拟机里玩linux一段时间后，就应该玩云服务器了。新注册用户有一段免费时间可以使用，如果你是学生党，免费时间后务必购买学生机，大约10元/月，绝对划算。阿里云或腾讯云都行，新用户使用推广链接购买能再便宜一点点:
+&emsp;在虚拟机里玩linux一段时间后，就应该玩云服务器了。新注册用户有一段免费时间可以使用，如果你是学生党，免费时间后务必购买学生机，大约10元/月(比一杯奶茶还便宜，基本上对于云服务商来说是亏本生意，绝对划算。)。阿里云或腾讯云都行（可以先免费用一家，用完后再免费用另一家），新用户使用推广链接购买能再便宜一点点:
 - [腾讯云新用户推广](https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=baa84ded7a9778d3aa1addcd4fbb8b24&from=console)
-![](https://upload-dianshi-1255598498.file.myqcloud.com/%E6%96%B0%E7%94%A8%E6%88%B7%E4%B8%93%E5%B1%9E%E5%A4%A7%E7%A4%BC%E5%8C%85345x200-40fddedb235328c59779ae071cf378deab547ba5.jpg)
+
 - [阿里云新用户推广](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=pkzf7btf)
-![](https://img.alicdn.com/tfs/TB17qJhXpzqK1RjSZFvXXcB7VXa-200-126.jpg)
 
 两个都有在线实验室可体验，方便新手学习入门，教程是相当地好，十分推荐：
 - [阿里云-开放实验室](https://edu.aliyun.com/lab/)
