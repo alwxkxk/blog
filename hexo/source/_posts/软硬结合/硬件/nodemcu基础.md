@@ -237,7 +237,7 @@ void loop() {
 ```
 
 ### DHT11
-&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11可以网上淘宝一下。有位读者提供了相关的代码供大家参考，[相关博客](https://blog.csdn.net/weixin_42385626/article/details/81096211)：
+&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11可以网上淘宝一下。有位读者提供了相关的代码供大家参考：
 
 ```c
 #include <dht11.h>
@@ -254,12 +254,26 @@ void loop() {
   int chk = DHT11.read(DHT11_PIN);
   Serial.print("Temperature = ");//温度
   Serial.println(DHT11.temperature);
-    Serial.print("Humidity = ");//湿度
+  Serial.print("Humidity = ");//湿度
   Serial.println(DHT11.humidity);
   delay(1000);
 }
 ```
-&emsp;在demo2中，我们只传一个模拟生成的数值，如果要传两个值的话，就要想个办法让服务器识别出这两个不同类型的数据。方法有很多种，我举一个例子：上传时`temprature:24`,`humidity:30`，服务器解析时用 `msg.data.split(":")` 就能得到一个数组 `["humidity","30"]`，这样就能识别出这个30是来自于humidity的值。
+&emsp;在demo2中，我们只传一个模拟生成的数值，如果要传两个值的话，就要想个办法让服务器识别出这两个不同类型的数据。方法有很多种，我举一个例子：上传时`temprature:24`,`humidity:30`，服务器解析时用 `split()`函数来拆解字符串，代码例子：
+```js
+let humidityValue = 0
+let temperatureValue = 0
+const valueString = 'humidity:30' // 从硬件上传的数据得到这个字符串
+const arr = valueString.split(':') // 此时arr = ['humidity','30']
+if(arr[0] === 'humidity'){
+  humidityValue = arr[1] // 判断 是湿度
+}else{
+  temperatureValue = arr[1] // 是温度
+}
+
+// 这样就能识别出这个30是来自于humidity的值，继续做其它的事.....
+```
+
 &emsp;要使用`<dht11.h>`，就要装第三方库或自行手动添加以下库文件，[Arduino IDE 库文件如何添加？](http://yfrobot.com/thread-11842-1-1.html)，将库文件放到至arduino IDE 所在文件夹的libraries文件夹中，如（/arduino/libraries）：
 
 ```H
