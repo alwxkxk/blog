@@ -9,9 +9,9 @@ tags:
 
 ## 效果
 &emsp;这是3D可视化教程系列的文章，如果第一次阅读请先阅读[《3D可视化教程导读》](/posts/30679)，这里展示简单的模型拆解效果，可访问[a-dismantling 展示网址](http://3d.scaugreen.cn/a-dismantling.html)：
-<img alt="3D模型拆解" src="/blog_images/3d/3D模型拆解.gif">
+<img alt="3D模型拆解" src="/blog_images/3d/3D模型拆解2.gif">
 
-&emsp;华为的网站上也有这种拆解效果，比我做的例子好看多了（毕竟我的模型是网上随便找的，不是用心做的），原理基本上是一样的，可以看：[华为服务器拆解效果](https://support.huawei.com/onlinetoolweb/server-3D/res/server/1288hv5/index.html?lang=cn)
+&emsp;华为的网站上也有这种拆解效果，比我做的例子好看多了（毕竟我的模型是网上找的，该模型的物体分组有点问题，而我又懒得自己做一个，这个问题并不影响大家学习。），原理基本上是一样的，可以看：[华为服务器拆解效果](https://support.huawei.com/onlinetoolweb/server-3D/res/server/1288hv5/index.html?lang=cn)
 
 ## 原理
 &emsp;拆解模型的原理就在于，让各模型向不同方向移动。
@@ -54,6 +54,42 @@ document.getElementById("dismantling").onclick=()=>{
 
 ```
 &emsp;拆解效果至此就完成了，十分简单。
+
+## 其它
+&emsp;整个项目还用到其它功能，在three example上都能找到例子，不再细说，点右下角可以看到源码:
+- 用于实现移动视角的[orbitControl](https://threejs.org/examples/?q=orbi#misc_controls_orbit)
+- 用于识别选中物体的[raycast](https://threejs.org/examples/?q=raycas#webgl_instancing_raycast)
+- 用于描边物体的[outline](https://threejs.org/examples/?q=outline#webgl_postprocessing_outline)
+- 显示物体名称的原理是：如果检测到选中物体，就修改HTML对就的样式与内容：
+```html
+		<style>
+			#name-box{
+				position:absolute;
+				color: white;
+				background-color: rgba(15, 15, 200, 0.774);
+				font-size: 32px;
+				font-weight: 600;
+				pointer-events: none;
+				padding: 15px;
+				border-radius: 10px;
+			}
+		</style>
+
+<div id="name-box">test</div>
+```
+```js
+const nameBox = document.getElementById("name-box");
+// 名称提示
+nameBox.innerHTML = intersection[0].object.name.replace("Object_","零件");
+nameBox.style.display = "block";
+nameBox.style.top = mousePosition.y; // 跟随鼠标的位置
+nameBox.style.left = mousePosition.x + 30;
+```
+
+## 源码及3D项目文件
+&emsp; 源码及工程项目都放到github上。
+&emsp; 源码：[threejs-example](https://github.com/alwxkxk/threejs-example)
+&emsp; Blender工程项目：[threejs-example-blender-project](https://github.com/alwxkxk/threejs-example-blender-project)。
 
 
 
