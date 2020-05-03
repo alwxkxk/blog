@@ -1,0 +1,101 @@
+
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
+a, dd, td, li, ul, dt, dl { 
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-style: normal; 
+	font-weight: normal; 
+	line-height: 150%; 
+	text-indent: 0em;
+}
+
+p {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+   font-style: normal;
+   font-weight: normal;
+   line-height: 150%;
+   text-indent: 0em;
+}
+
+b {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+   font-style: normal;
+   font-weight: bold;
+   line-height: 150%;
+   text-indent: 0em;
+}
+
+A:link {text-decoration: none; color: #0000aa;}
+A:visited {text-decoration: none; color: #007733;}
+A:active {text-decoration: none; color: #0000aa;}
+A:hover {text-decoration: none; color: #aa0000;}
+
+body { 
+	background-color: #ffffff;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+blockquote {
+	padding-top: 15px;
+	padding-bottom: 15px;
+   line-height: 130%;
+   font-family: Times, serif;
+   color: #880000;
+}
+
+pre, code {
+	line-height: 120%;
+	font-family: Courier, monospace;
+	font-size: small;
+	color: #000000;
+}
+
+H1 { 
+	line-height: 125%;
+	color: #000000; 
+	font-family: "Times New Roman", Times, serif;
+	letter-spacing: 0.2em;
+	font-size: x-large;
+}
+
+H2 {                    
+   color: #000000;
+   font-family: "Times New Roman", Times, serif;
+	letter-spacing: 0.1em;
+	font-size: large;
+}
+
+H3 {                    
+   color: #000000;
+	letter-spacing: 0.1em;
+   font-family: "Times New Roman", Times, serif;
+	font-size: large;
+}
+
+H4 {
+	font-size: medium;
+}
+
+H5 {
+   font-size: medium;
+}
+
+H6 {
+   font-size: normal;
+	font-weight: bold;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+

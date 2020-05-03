@@ -118,14 +118,15 @@ var tree3d = [
     text: '项目示例',
     selectable: false,
     nodes: [
-      {text: 'a-模型拆解', href: '/posts/2544'},
+      {text: 'a-模型拆解示例', href: '/posts/2544'},
     ]
   },
   {
-    text: '基础',
+    text: '基础示例',
     selectable: false,
     nodes: [
       {text: '1-模型制作与展示', href: '/posts/42378'},
+      {text: '2-模型数据', href: '/posts/45270'},
     ]
   }
 ]
