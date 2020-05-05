@@ -128,6 +128,13 @@ var tree3d = [
       {text: '1-模型制作与展示', href: '/posts/42378'},
       {text: '2-模型数据', href: '/posts/45270'},
     ]
+  },
+  {
+    text: '其它',
+    selectable: false,
+    nodes: [
+      {text: 'blender常用操作', href: '/posts/46886'}
+    ]
   }
 ]
 
