@@ -84,6 +84,7 @@ var tree = [
     selectable: false,
     // state: {expanded: false},
     nodes: [
+        {text: '调试技巧', href: '/posts/54436'},
         {text: '工具推荐', href: '/posts/61760'},
         {text: '资源链接', href: '/posts/37993'},
         {text: '最后的讨论', href: '/posts/41995'},

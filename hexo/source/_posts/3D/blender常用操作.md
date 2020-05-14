@@ -9,10 +9,15 @@ date: 2020-05-05 09:17:45
 ---
 
 ## blender常用操作
-&emsp;这里展示一些常用操作但基础教程视频里又没有提到的技巧。
+&emsp;这里展示一些常用操作但基础教程视频里又没有提到的技巧。若还没学习基本操作，请看视频：
+- [blender 2.8 官方 基础视频教程 （youtube 英文）](https://www.youtube.com/watch?v=MF1qEhBSfq4&list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6&index=2&t=0s)
+- [blender 2.8 官方 基础视频教程 （有网友添加了中文字幕并放到了B站）](https://www.bilibili.com/video/BV1nt411J7SE?p=1)
+
+### 设置支持中文路径
+&emsp;blender在显示中文路径上会出现问题，如下设置：
+![blender设置支持中文文件名](/blog_images/3d/blender设置支持中文文件名.png)
 
 ### 顶点融合
-
 &emsp;通过各种方式创建的复杂物体，极有可能出现重复的点(比如说两个顶点都是位于(1,2,3)，那么可以优化成一个顶点。)，优化方法为：进入编辑模式，全选点，然后mesh->clean up -> merge by distance,自动将近距离的点融合，左下角可调整融合距离。对于复杂的模型来说，顶点融合能优化不少顶点，减少数据量。
 ![顶点融合](/blog_images/3d/顶点融合.png)
 
