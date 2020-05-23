@@ -39,7 +39,12 @@ block content
     .post-content
       != page.content
     if theme.donate.enable == true || page.donate == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
+      h1 打赏支持
+      p(style="font-size: 24px;text-indent: 2em;") 你的支持会让我拥有更多的时间精力去维护更新教程、解答问题。
+      div(style="display:flex;justify-content: space-around;")
+        img(src=theme.donate.alipay_qr, alt="", srcset="" style="width:340px;")
+        img(src=theme.donate.wechat_qr, alt="", srcset="" style="width:340px;")
+      //- iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
 
     if theme.post_copyright.enable == true
       div
