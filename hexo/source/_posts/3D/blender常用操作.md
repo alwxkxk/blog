@@ -29,7 +29,6 @@ date: 2020-05-05 09:17:45
 ### 复制实例
 &emsp;`shift + d` 代表duplicate object，能复制对象出来，然后`shift + r`能够重复 复制操作，很方便。特别地，`alt + d`代表 duplicate linked，复制实例(instance) ,它们共享geometry数据，大大减少数据量。geometry如果越少，在three.js渲染计算量就越少，使用instanceBufferGeometry也能生成实例。
 
-
 ### 分离/隔离 物体
 &emsp;`split` 能将相互关联的顶点分离开来，修改不会影响到关联的顶点同时变化。`separate` 能将把选中的物体隔离出来，形成另一个Mesh。
 ![blender分离与隔离](/blog_images/3d/blender分离与隔离.JPG)
@@ -41,3 +40,9 @@ date: 2020-05-05 09:17:45
 ### 其它组的模型充当子模型会变成连接
 &emsp;blender可以按住`Shift`键拖动模型去其它模型下，充当其子模型。特别地，若这个模型是在其它组(collection)，拖动到其它组充当子模型时，是以连接形式（link，灰色字体）存在。若不想以link的形式，则必须把先把模型拉到同一个组里。
 ![blender其它组link过去](/blog_images/3d/blender其它组link过去.png)
+
+### 修改不动点
+&emsp;先用3D cursor设置想要的不动点位置（可以n 调出参数面板，view 里使用参数来修改 3D cursor 坐标）。
+&emsp;然后 object mode 下， 选择Object -> set origin -> origin to 3D cursor。
+
+- [Blender 2.8-如何更改枢轴点 - YouTube](https://www.youtube.com/watch?v=RGrXpBB_ekk)

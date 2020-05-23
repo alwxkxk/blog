@@ -135,7 +135,8 @@ var tree3d = [
     text: '其它',
     selectable: false,
     nodes: [
-      {text: 'blender常用操作', href: '/posts/46886'}
+      {text: 'blender常用操作', href: '/posts/46886'},
+      {text: 'blender导入城市建筑', href: '/posts/20949'}
     ]
   }
 ]

@@ -21,6 +21,7 @@ head
     
 
     block title
+    script(type='text/javascript', src=url_for(theme.js)+'/sw-init.js')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/style.css' + '?v=' + theme.version)
     link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/normalize.min.css')
     link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/pure-min.css')
@@ -47,15 +48,15 @@ head
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create','#{theme.google_analytics}','auto');ga('send','pageview');
 
-    if theme.baidu_analytics
-      script.
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = 'https://hm.baidu.com/hm.js?' + '#{theme.baidu_analytics}';
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-          })();
+    //- if theme.baidu_analytics
+    //-   script.
+    //-     var _hmt = _hmt || [];
+    //-     (function() {
+    //-       var hm = document.createElement("script");
+    //-       hm.src = 'https://hm.baidu.com/hm.js?' + '#{theme.baidu_analytics}';
+    //-       var s = document.getElementsByTagName("script")[0];
+    //-       s.parentNode.insertBefore(hm, s);
+    //-       })();
 
     //- slideout样式与脚本  
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/index.css')
