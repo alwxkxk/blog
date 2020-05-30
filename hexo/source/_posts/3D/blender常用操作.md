@@ -13,6 +13,19 @@ date: 2020-05-05 09:17:45
 - [blender 2.8 官方 基础视频教程 （youtube 英文）](https://www.youtube.com/watch?v=MF1qEhBSfq4&list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6&index=2&t=0s)
 - [blender 2.8 官方 基础视频教程 （有网友添加了中文字幕并放到了B站）](https://www.bilibili.com/video/BV1nt411J7SE?p=1)
 
+&emsp;主要操作与快捷键包括：
+- 移动(`g`)、缩放(`s`)、旋转(`r`)物体的操作，及操作时指定方向（`x`,`y`,`z`）
+- 设置材质
+- Edit Mode 与 object Mode 的模式切换(`Tab`)，Edit Mode 下选择并编辑点线面
+- 设置物体的parent关系。（`Shift + 拖动物体`）
+- UV贴图
+- `e` extredu 拉伸能拉出新平面
+
+### 没提到但很常用的快捷键
+- `F9`能调出 上次动作的参数调整面板，用于调整参数。
+- `/`(Slash)斜杠，切换全局视野/当地视野，当地视野能隐藏其它物体，十分方便。
+
+
 ### 设置支持中文路径
 &emsp;blender在显示中文路径上会出现问题，如下设置：
 ![blender设置支持中文文件名](/blog_images/3d/blender设置支持中文文件名.png)
@@ -34,8 +47,8 @@ date: 2020-05-05 09:17:45
 ![blender分离与隔离](/blog_images/3d/blender分离与隔离.JPG)
 
 ### 导出透明效果
-&emsp;经测试blender 2.82版本并不能导出 alpha map图像（我估计以后的版本会修复这种问题），发现了另一种做法可以导出透明效果：使用 transparent BSDF 拉到Mix Shader 进行混合，Mix Shader 的Fac 使用 Add 来修改比例即可，最终会得到 在three.js opacity的调整值。可以参考这个模型的材质设置：
-[Pc Gaming Ryzen Nvidia 1660 - Sketchfab](https://sketchfab.com/3d-models/pc-gaming-ryzen-nvidia-1660-a8477b1bcafa46ffb66af25e287fd098)
+&emsp;经测试blender 2.82版本并不能导出 alpha map图像（我估计以后的版本会修复这种问题），注意透明效果需要设置使用cycles引擎或材质里设置 setting - Blend Mode 修改成 Alpha ...才能在blender渲染出来。three.js里的opacity对应颜色的透明度：
+![导出透明度](/blog_images/3d/导出透明度.png)
 
 ### 其它组的模型充当子模型会变成连接
 &emsp;blender可以按住`Shift`键拖动模型去其它模型下，充当其子模型。特别地，若这个模型是在其它组(collection)，拖动到其它组充当子模型时，是以连接形式（link，灰色字体）存在。若不想以link的形式，则必须把先把模型拉到同一个组里。
