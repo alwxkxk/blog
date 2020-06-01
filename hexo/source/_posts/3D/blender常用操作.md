@@ -42,6 +42,9 @@ date: 2020-05-05 09:17:45
 ### 复制实例
 &emsp;`shift + d` 代表duplicate object，能复制对象出来，然后`shift + r`能够重复 复制操作，很方便。特别地，`alt + d`代表 duplicate linked，复制实例(instance) ,它们共享geometry数据，大大减少数据量。geometry如果越少，在three.js渲染计算量就越少，使用instanceBufferGeometry也能生成实例。
 
+### 绘制曲线并转换成Mesh
+&emsp;`shift+a -> Curve -> Bezier`添加曲线，若节点不够，按`e`添加新节点。参数设置的`Resolution Preview U`决定横向环数。`Bevel`中的`Depth`决定大小，`Resolution`决定每环的点数。
+
 ### 分离/隔离 物体
 &emsp;`split` 能将相互关联的顶点分离开来，修改不会影响到关联的顶点同时变化。`separate` 能将把选中的物体隔离出来，形成另一个Mesh。
 ![blender分离与隔离](/blog_images/3d/blender分离与隔离.JPG)

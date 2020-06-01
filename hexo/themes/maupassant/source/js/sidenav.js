@@ -145,6 +145,7 @@ var tree3d = [
     text: '其它',
     selectable: false,
     nodes: [
+      {text: 'three.js性能优化', href: '/posts/5200'},
     ]
   }
 ]

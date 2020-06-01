@@ -17,7 +17,7 @@ tags:
 - blender安装插件[MapsModelsImporter](https://github.com/eliemichel/MapsModelsImporter)，用于导入rdc文件。
 
 ### 生成rdc文件
-&emsp;无法访问google就无法生成rdc文件，只能用我提供的[rdc示例文件(百度网盘-提取码：q76h)](https://pan.baidu.com/s/1XYv93CE6ktg1QXFRFUjSRQ)来看看。
+&emsp;无法访问google就无法生成rdc文件，只能用跳过此步骤，使用我提供的[rdc示例文件(百度网盘-提取码：q76h)](https://pan.baidu.com/s/1XYv93CE6ktg1QXFRFUjSRQ)来导入。
 &emsp;启动cmd，并执行以下命令。路径注意是你Chrome应用的路径。
 ```bash
 set RENDERDOC_HOOK_EGL=0
