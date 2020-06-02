@@ -129,8 +129,10 @@ var tree3d = [
       {text: '1-模型制作与展示', href: '/posts/42378'},
       {text: '2-模型数据', href: '/posts/45270'},
       {text: '3-光线痕迹', href: '/posts/5988'},
+      {text: '4-动画', href: '/posts/60366'},
     ]
   },
+  
   {
     text: 'Blender',
     selectable: false,
@@ -146,6 +148,8 @@ var tree3d = [
     selectable: false,
     nodes: [
       {text: 'three.js性能优化', href: '/posts/5200'},
+      {text: '线性代数基础知识归纳', href: '/posts/1192'}, 
+      {text: '3D温场效果', href: '/posts/44479'}, 
     ]
   }
 ]
