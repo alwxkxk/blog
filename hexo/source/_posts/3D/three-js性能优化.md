@@ -30,6 +30,14 @@ scene.overrideMaterial = new THREE.MeshBasicMaterial( { color: 'green' } );
 &emsp;不使用的资源要及时释放，防止内存泄露。
 - [How to dispose of objects](https://threejs.org/docs/index.html#manual/en/introduction/How-to-dispose-of-objects)
 
+### WebGL2
+&emsp;WebGL2拥有更好的性能，但更少的浏览器支持。
+
+
+### OffscreenCanvas
+&emsp;利用worker来运算，更少的浏览器支持。
+[Three.js OffscreenCanvas](https://threejsfundamentals.org/threejs/lessons/threejs-offscreencanvas.html)
+
 ## 附录
 - [THE BIG LIST OF three.js TIPS AND TRICKS!](https://discoverthreejs.com/tips-and-tricks/)
 - [unity 性能优化建议](https://docs.unity3d.com/Manual/OptimizingGraphicsPerformance.html)
