@@ -148,6 +148,7 @@ var tree3d = [
     selectable: false,
     nodes: [
       {text: '3D案例收集', href: '/posts/31929'}, 
+      {text: 'PS常用技巧', href: '/posts/27566'}, 
       {text: 'three.js性能优化', href: '/posts/5200'},
       {text: '线性代数基础知识归纳', href: '/posts/1192'}, 
       {text: '3D温场效果', href: '/posts/44479'}, 
