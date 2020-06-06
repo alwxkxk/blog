@@ -14,6 +14,8 @@ date: 2020-06-05 20:04:02
 ### 调整图像大小
 &emsp; webGL1需要调整图片为POW大小（Power Of Two），即像素大小符合2的倍数（`32*32,64*64,128*128,...,1024*1024,...`）以获取更好的性能。
 &emsp;做法：1.创建时就指定像素。2.菜单栏：图像->图像大小。
+<img alt="POT" src="/blog_images/3d/photoshop-POT.png" style="width:50%;">
+<img alt="POT" src="/blog_images/3d/photoshop-POT2.png" style="width:50%;">
 
 
 ### 缩放图层
