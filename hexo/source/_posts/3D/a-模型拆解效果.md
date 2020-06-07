@@ -3,6 +3,7 @@ title: a-模型拆解效果
 toc: true
 abbrlink: 2544
 date: 2020-04-12 18:07:32
+donate: true
 tags:
 - three.js
 - 3D

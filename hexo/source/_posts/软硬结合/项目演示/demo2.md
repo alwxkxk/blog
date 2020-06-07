@@ -4,6 +4,7 @@ toc: true
 tags:
   - IOT
 abbrlink: 64594
+donate: true
 date: 2018-11-03 10:05:02
 ---
 &emsp;大家尽量使用chrome浏览器，其它浏览器可能会出现问题。（比如说IE内核的浏览器不支持ES6。）
