@@ -130,6 +130,9 @@ var tree3d = [
       {text: '2-模型数据', href: '/posts/45270'},
       {text: '3-光线痕迹', href: '/posts/5988'},
       {text: '4-动画', href: '/posts/60366'},
+      {text: '5-显示动态图', href: '/posts/52736'},
+
+      
     ]
   },
   
