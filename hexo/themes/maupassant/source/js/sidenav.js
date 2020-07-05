@@ -120,6 +120,7 @@ var tree3d = [
     selectable: false,
     nodes: [
       {text: 'a-模型拆解示例', href: '/posts/2544'},
+      {text: 'b-智慧城市', href: '/posts/46791'},
     ]
   },
   {
@@ -131,6 +132,7 @@ var tree3d = [
       {text: '3-光线痕迹', href: '/posts/5988'},
       {text: '4-动画', href: '/posts/60366'},
       {text: '5-显示动态图', href: '/posts/52736'},
+      {text: '6-屏幕坐标转换', href: '/posts/56155'},
 
       
     ]

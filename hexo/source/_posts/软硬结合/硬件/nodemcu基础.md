@@ -14,9 +14,9 @@ tags:
 ## nodemcu简介
 &emsp;nodemcu本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
 ![nodemcu引脚图](/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
-&emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ,[淘宝购买连接，建议挑V3 CH340那款，最便宜。](https://m.tb.cn/h.Vl3Eyow)：
+&emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
 
-<img alt="淘宝nodemcu" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" onclick="window.open('https://m.tb.cn/h.Vl3Eyow')" style="cursor:pointer;">
+<img alt="淘宝nodemcu" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
 
 &emsp;__特别注意：nodemcu分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
 ![](/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
@@ -239,7 +239,7 @@ void loop() {
 ```
 
 ### DHT11
-&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11([淘宝购买连接](https://m.tb.cn/h.VPlO4YX))。DHT11总共有三个引脚（电源、数据、地），电源与地分别接nodemcu的VCC（或3.3V）与地线，数据线所接引脚要与代码相符合。有位读者提供了相关的代码供大家参考：
+&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11。DHT11总共有三个引脚（电源、数据、地），电源与地分别接nodemcu的VCC（或3.3V）与地线，数据线所接引脚要与代码相符合。有位读者提供了相关的代码供大家参考：
 
 ```c
 #include <dht11.h>
