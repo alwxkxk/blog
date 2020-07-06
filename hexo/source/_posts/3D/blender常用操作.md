@@ -45,6 +45,10 @@ date: 2020-05-05 09:17:45
 ### 绘制曲线并转换成Mesh
 &emsp;`shift+a -> Curve -> Bezier`添加曲线，若节点不够，按`e`添加新节点。参数设置的`Resolution Preview U`决定横向环数。`Bevel`中的`Depth`决定大小，`Resolution`决定每环的点数。
 
+<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com//3D/blender%E5%88%B6%E4%BD%9C%E6%9B%B2%E7%BA%BF%E5%8F%98Mesh.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
+
 ### 分离/隔离 物体
 &emsp;`split` 能将相互关联的顶点分离开来，修改不会影响到关联的顶点同时变化。`separate` 能将把选中的物体隔离出来，形成另一个Mesh。
 ![blender分离与隔离](/blog_images/3d/blender分离与隔离.JPG)

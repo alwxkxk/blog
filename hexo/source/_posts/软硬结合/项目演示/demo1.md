@@ -22,10 +22,11 @@ tags:
 ![demo1通信示意](/blog_images/005BIQVbgy1fwtxx9phabj30jk095jse.jpg)
 
 ## 先跑起来
-&emsp;首先你手上先有一块nodemcu（淘宝价十几块），按[nodemcu基础](/posts/31494)先跑那几个例程，熟悉并保证硬件上没有问题。&emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
+&emsp;首先你手上先有一块nodemcu（淘宝价十几块），按[nodemcu基础](/posts/31494)先跑那几个例程，熟悉并保证硬件上没有问题。&emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ，[淘宝链接](https://detail.tmall.com/item.htm?id=600041066899&ali_trackid=2:mm_1201120170_1732850399_110448050250:1594048693_133_171839331&spm=a21wq.12726013.1000.1&scm=20140618.1.01010001.s101c6&ut_sk=1.utdid_null_1594048672862.TaoPassword-Outside.lianmeng-app)：
 
-<img alt="淘宝nodemcu" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
-服务器与界面我已经写好了，并部署到我的服务器上（后面会演示怎么在你本地部署），具体代码自行查看demo1代码。demo1尽量追求简单入门，所以界面不好看，性能也不足，后面会讨论如何优化。整个demo1完成后，你就会对整个物联网的项目有个基本的认识，可以大大地讨论哪个环节需要怎么开发，跟别人吹水一点都不虚。
+<img alt="淘宝nodemcu" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;" onclick="window.open('https://detail.tmall.com/item.htm?id=600041066899&ali_trackid=2:mm_1201120170_1732850399_110448050250:1594048693_133_171839331&spm=a21wq.12726013.1000.1&scm=20140618.1.01010001.s101c6&ut_sk=1.utdid_null_1594048672862.TaoPassword-Outside.lianmeng-app')">
+
+&emsp;服务器与界面我已经写好了，并部署到我的服务器上（后面会演示怎么在你本地部署），具体代码自行查看demo1代码。demo1尽量追求简单入门，所以界面不好看，性能也不足，后面会讨论如何优化。整个demo1完成后，你就会对整个物联网的项目有个基本的认识，可以大大地讨论哪个环节需要怎么开发，跟别人吹水一点都不虚。
 - 网址：http://119.29.107.47:8001/
 - TCP服务器：119.29.107.47:9002
 

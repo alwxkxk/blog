@@ -43,8 +43,11 @@ function change2BasicMat(object3d){
 
 ## 光轨效果
 &emsp;光轨效果是构建科技感的最重要最常见的效果，另开了一篇文章单独讲这个：[3-光线痕迹](/posts/5988)
-&emsp;与该文章不同的是，这个项目光轨的模型不是通过JS生成的，而是在3D建模软件里建模的管道，JS给这些管道添加光流动的效果：
+&emsp;与该文章不同的是，这个项目光轨的模型不是通过JS生成的，而是在3D建模软件里建模的管道，JS给这些管道添加光流动的效果。在blender构建管道的例子：
 
+<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com//3D/blender%E5%88%B6%E4%BD%9C%E6%9B%B2%E7%BA%BF%E5%8F%98Mesh.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
 
 ## 动画(animate)
 &emsp;在第一个演示项目里（[a-模型拆解效果](/posts/2544)），演示的是电器烟爆炸拆开的效果，里面的物体移动是通过JS来实现的。而在这里是通过在3D建模软件里制作动画，然后导出时带有动画数据，加载到three.js里运行即可。在这个项目里，电梯的上下移动就是通过动画导出实现的。动画的教程对应:[4-动画](/posts/60366)。
