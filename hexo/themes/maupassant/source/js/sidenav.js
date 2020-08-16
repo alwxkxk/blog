@@ -133,6 +133,7 @@ var tree3d = [
       {text: '4-动画', href: '/posts/60366'},
       {text: '5-显示动态图', href: '/posts/52736'},
       {text: '6-屏幕坐标转换', href: '/posts/56155'},
+      {text: '7-开关门(不动点)', href: '/posts/48386'},
 
       
     ]

@@ -64,5 +64,6 @@ your browser does not support the video tag
 ### 修改不动点
 &emsp;先用3D cursor设置想要的不动点位置（可以n 调出参数面板，view 里使用参数来修改 3D cursor 坐标）。
 &emsp;然后 object mode 下， 选择Object -> set origin -> origin to 3D cursor。
+&emsp;在[7-开关门(不动点)](/posts/48386)，有详细的操作视频。
 
 - [Blender 2.8-如何更改枢轴点 - YouTube](https://www.youtube.com/watch?v=RGrXpBB_ekk)
