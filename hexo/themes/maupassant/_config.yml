@@ -22,7 +22,7 @@ valine: ## https://valine.js.org
   appkey: G24uL9Fw9oNCfheBorc3GjVB ## Your LeanCloud application App Key, e.g. tjczHpDfhjYDSYddzymYK1JJ
   notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
   verify: false ## Validation code.
-  placeholder: 有任何问题或建议欢迎留言 ## Comment box placeholders.
+  placeholder: 欢迎留言交流 ## Comment box placeholders.
   avatar: 'mm' ## Gravatar type, see https://github.com/xCss/Valine/wiki/avatar-setting-for-valine
   pageSize: 10 ## Number of comments per page.
   guest_info: nick,mail,link ## Attributes of reviewers.
@@ -56,7 +56,7 @@ donate:
   btc_key: ## Bitcoin key, e.g. 1KuK5eK2BLsqpsFVXXSBG5wbSAwZVadt6L
   paypal_url: ## Paypal URL, e.g. https://www.paypal.me/tufu9441
 post_copyright:
-  enable: true ## If you want to display the copyright info after each post, please set the value to true and fill the following items on your need.
+  enable: false ## If you want to display the copyright info after each post, please set the value to true and fill the following items on your need.
   author: 生子当如哈士奇 ## Your author name, e.g. tufu9441
   copyright_text: 转载请附带原文链接，本博客内容可在我的github上找到。 ## Your copyright text, e.g. The author owns the copyright, please indicate the source reproduced.
 
@@ -66,6 +66,9 @@ menu:
     icon: fa-home
   - page: 3d-tutorial
     directory: /posts/30679/
+    icon: fa-home
+  - page: rambling
+    directory: /posts/2077/
     icon: fa-home
   - page: archive
     directory: archives/
