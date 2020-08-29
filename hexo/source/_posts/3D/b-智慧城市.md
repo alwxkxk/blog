@@ -49,6 +49,8 @@ function change2BasicMat(object3d){
 your browser does not support the video tag
 </video>
 
+&emsp;制作曲线时你会发现，这曲线到底要怎么调？大家可以通过[The Bezier Game](https://bezier.method.ac/)这个在线学习网站学习练习一下，PS的钢笔工具。
+
 ## 动画(animate)
 &emsp;在第一个演示项目里（[a-模型拆解效果](/posts/2544)），演示的是电器烟爆炸拆开的效果，里面的物体移动是通过JS来实现的。而在这里是通过在3D建模软件里制作动画，然后导出时带有动画数据，加载到three.js里运行即可。在这个项目里，电梯的上下移动就是通过动画导出实现的。动画的教程对应:[4-动画](/posts/60366)。
 &emsp;为了让电梯的模型更突出，更有科技感，我给电梯模型添加了透明与浅蓝的边框：

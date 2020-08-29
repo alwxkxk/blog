@@ -17,6 +17,8 @@ date: 2020-06-05 20:04:02
 <img alt="POT" src="/blog_images/3d/photoshop-POT.png" style="width:50%;">
 <img alt="POT" src="/blog_images/3d/photoshop-POT2.png" style="width:50%;">
 
+### 钢笔工具练习
+&emsp; 大家可以通过[The Bezier Game](https://bezier.method.ac/)这个在线学习网站学习练习一下，PS的钢笔工具。
 
 ### 缩放图层
 &emsp;复制过来的图层经常会出现图像太大的情况，所以要缩小图层。做法：选中图层后，按`Ctrl+T`，再用鼠标在其边界拖拉缩放。
