@@ -31,7 +31,21 @@ your browser does not support the video tag
 ```
 
 ## 光感效果
-&emsp;光感效果（内发光，外发光，点高光，渐变色）也是重要效果，也是在混合选项里就可以调出来。其中点高光可以使用画笔画一点，调整尺寸压平，放到边框上，就能做出点高光效果。
+&emsp;光感效果（内发光，外发光，点高光，渐变色）也是重要效果，也是在混合选项里就可以调出来。这些效果除了点高光在CSS里做比较烦恼些，其它都很容易做出来。PS里点高光可以使用画笔画一点，调整尺寸压平，放到边框上，就能做出点高光效果。一般PS里只放一个比较透明的底色，而内发光，外发光，渐变色则自行利用CSS来控制。
+&emsp;CSS中内发光：`box-shadow: 0px 0px 16px #00ffff96 inset;`
+
+## 利用CSS实现响应式
+&emsp;要想将背景图片变成响应式，算出图片的高宽比，比如说我绘制了一张480*360的图片，高宽比为3:4，那么使用时CSS保证其是3:4就能保证利用CSS实现图片响应式缩放，代码如下：
+
+```css
+  .board{
+    width: 20vw;
+    height: 15vw;
+    background-image: url('/static/img//board.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+```
 
 
 ## 附录
