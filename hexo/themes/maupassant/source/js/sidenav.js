@@ -121,6 +121,7 @@ var tree3d = [
     nodes: [
       {text: 'a-模型拆解示例', href: '/posts/2544'},
       {text: 'b-智慧城市', href: '/posts/46791'},
+      {text: 'c-数据中心', href: '/posts/19890'}
     ]
   },
   {
