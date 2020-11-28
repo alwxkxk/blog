@@ -14,9 +14,9 @@ date: 2018-11-03 10:05:02
 - 引入数据库，保存数据。
 
 ## 先跑起来
-&emsp;demo2我已经部署到我自己的服务器，大家可在线浏览：[http://sh.scaugreen.cn/equipmentId/123456](http://sh.scaugreen.cn/equipmentId/123456)
+&emsp;demo2我已经部署到我自己的服务器，大家可在线浏览：[http://42.192.168.165:8002/equipmentId/123456](http://42.192.168.165:8002/equipmentId/123456)
 ![](/blog_images/005BIQVbgy1fz4sstfxyxj31hc0t4npd.jpg)
-&emsp;这里的`123456`就是客户端ID。如果结合demo2里的nodemcu程序（程序中id设置为`1234abcd`），就需要访问[http://sh.scaugreen.cn/equipmentId/1234abcd](http://sh.scaugreen.cn/equipmentId/1234abcd)。结合硬件的演示如下：
+&emsp;这里的`123456`就是客户端ID。如果结合demo2里的nodemcu程序（程序中id设置为`1234abcd`），就需要访问[http://42.192.168.165:8002/equipmentId/1234abcd](http://42.192.168.165:8002/equipmentId/1234abcd)。结合硬件的演示如下：
 
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo2%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag

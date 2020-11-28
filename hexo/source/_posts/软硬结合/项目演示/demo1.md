@@ -27,8 +27,8 @@ tags:
 <img alt="淘宝nodemcu" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;" onclick="window.open('https://detail.tmall.com/item.htm?id=600041066899&ali_trackid=2:mm_1201120170_1732850399_110448050250:1594048693_133_171839331&spm=a21wq.12726013.1000.1&scm=20140618.1.01010001.s101c6&ut_sk=1.utdid_null_1594048672862.TaoPassword-Outside.lianmeng-app')">
 
 &emsp;服务器与界面我已经写好了，并部署到我的服务器上（后面会演示怎么在你本地部署），具体代码自行查看demo1代码。demo1尽量追求简单入门，所以界面不好看，性能也不足，后面会讨论如何优化。整个demo1完成后，你就会对整个物联网的项目有个基本的认识，可以大大地讨论哪个环节需要怎么开发，跟别人吹水一点都不虚。
-- 网址：http://119.29.107.47:8001/
-- TCP服务器：119.29.107.47:9002
+- 网址：http://42.192.168.165:8001/
+- TCP服务器：42.192.168.165:9002
 
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
@@ -68,8 +68,8 @@ your browser does not support the video tag
 
 &emsp;整个过程因为没有相关基础知识，所以并不懂，很正常，经过后面的学习就会了解整个过程。(如果执行`npm install`安装依赖库时等待很久提示安装失败，可以尝试设置由淘宝提供的[国内镜像](https://npm.taobao.org/)，`npm config set registry https://registry.npm.taobao.org`，验证：`npm config get registry`，如果返回`https://registry.npm.taobao.org`说明设置成功，再次尝试安装`npm install`。)
 &emsp;__特别注意，把代码部署到自己电脑上，只能够在局域网内访问，简单来讲就是电脑、硬件、手机等都必须是连在同一个WIFI里。当你使用手机换成流量模式而不是连接WIFI，你会发现网页无法访问。这是因为你电脑是没有公网IP（亦可称外网IP）的，只能在同一局域网里使用内网IP访问。要想让全世界的人都能访问到，让世界各地的硬件都能连接上，你必须要使用一台拥有公网IP的电脑，然后把这套代码部署上去。具体做法是租一台云服务器，安装linux系统，部署代码，设置安全组等等。__ 上面提到的demo1在线示范就是我租用了一个云服务器，并部署以供参考：
-- HTTP服务器，网址：http://119.29.107.47:8001/
-- TCP服务器：119.29.107.47:9002
+- HTTP服务器，网址：http://42.192.168.165:8001/
+- TCP服务器：42.192.168.165:9002
 
 &emsp;__注意区分 HTTP服务器与TCP服务器，HTTP服务器对应浏览器打开的网页，而TCP服务器对应的是硬件/网络调试助手建立TCP连接所用。__
 
