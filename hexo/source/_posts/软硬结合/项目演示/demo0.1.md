@@ -27,6 +27,10 @@ tags:
 &emsp;了解nodejs开发、ES6语法、express框架，__结合其它教程自学，大约两个星期__。
 
 ## 先跑起来
+<iframe src="//player.bilibili.com/player.html?bvid=BV1H54y147cu&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video "> </iframe>   
+
+
+
 &emsp;先安装Nodejs环境，[nodejs基础](/posts/56793)。然后跑起来，按`README.md`里操作，执行`node index`启动程序，打开浏览器访问`127.0.0.1:8000`就能看到页面，使用网络调试助手TCP客户端连接上`127.0.0.1:9000`，就可以进行数据传输，如果要使用硬件连接注意IP地址要写内网地址。效果如视频所示：
 <video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo0.1.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
 your browser does not support the video tag
