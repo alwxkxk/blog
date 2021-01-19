@@ -30,6 +30,14 @@ var tree = [
     href:'/posts/44755'
   },
   {
+    text: '视频教程',
+    selectable: false,
+    nodes: [
+      {text: '1.导读', href: '/posts/2650'},
+      {text: '2.JS开发环境搭建', href: '/posts/54426'},
+    ]
+  },
+  {
     text: '项目演示',
     selectable: false,
     nodes: [
@@ -211,23 +219,23 @@ setTimeout(() => {
     slideout.toggle();
   })
 
-  // 当浏览次数少于3时，自动弹出菜单栏
-  var menuFlag=localStorage.getItem("menu-flag")
-  if(!menuFlag){
-    menuFlag = 0
-  }
-  else{
-    menuFlag = Number(menuFlag)
-  }
+  // // 当浏览次数少于3时，自动弹出菜单栏
+  // var menuFlag=localStorage.getItem("menu-flag")
+  // if(!menuFlag){
+  //   menuFlag = 0
+  // }
+  // else{
+  //   menuFlag = Number(menuFlag)
+  // }
 
-  if(menuFlag<3){
-    menuFlag += 1
-    localStorage.setItem("menu-flag",menuFlag);
-    slideout.open();
-    setTimeout(() => {
-      slideout.close();
-    }, 1500);
-  }
+  // if(menuFlag<3){
+  //   menuFlag += 1
+  //   localStorage.setItem("menu-flag",menuFlag);
+  //   slideout.open();
+  //   setTimeout(() => {
+  //     slideout.close();
+  //   }, 1500);
+  // }
 }, 200);
 
 
