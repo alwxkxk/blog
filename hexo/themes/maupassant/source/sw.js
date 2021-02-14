@@ -1,5 +1,5 @@
-var CACHE_NAME = 'my-site-cache-v1';
-var regExp = new RegExp(/\.(png|jpg|css|svg|mp4|gif|json|mtn|woff|tff|moc|min.js|ico)/)
+var CACHE_NAME = 'my-site-cache-2021-02-14';
+var regExp = new RegExp(/\.(png|jpg|svg|mp4|gif|json|mtn|woff|tff|moc|min.js|ico)/)
 
 self.addEventListener('fetch', function(event) {
   if (event.request.method != 'GET') return;

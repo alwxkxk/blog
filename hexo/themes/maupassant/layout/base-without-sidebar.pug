@@ -20,34 +20,26 @@ html(lang=config.language)
 
   body
     include _partial/totop.pug
-    button#open-menu.btn.btn-info(style="position:sticky;top:50vh;left:2px;") 
-      div 菜
-      div 单
-      div 栏
 
-    nav#menu(style="font-size: medium;font-weight: 600;")
-      div#sidenav-container
+    include _widget/navbar.pug
+    main.body_container
+        header
 
-        #sidenav
+          #header
+            .site-name
+              h1.hidden= current_title
+              a#logo= config.title
+              p.description= config.subtitle
+            #nav-menu
+              - for (var i in theme.menu)
+                +a_with_current(theme.menu[i].directory, __(theme.menu[i].page), theme.menu[i].icon)
+          #layout.pure-g
+            .pure-u-1.pure-u-md-4-4: .content_container
+              block content
+            .pure-u-1.pure-u-md-4-4
+              != partial('_partial/footer.pug')
 
-    main#panel.body_container
-      header
-
-        #header
-          .site-name
-            h1.hidden= current_title
-            a#logo= config.title
-            p.description= config.subtitle
-          #nav-menu
-            - for (var i in theme.menu)
-              +a_with_current(theme.menu[i].directory, __(theme.menu[i].page), theme.menu[i].icon)
-        #layout.pure-g
-          .pure-u-1.pure-u-md-4-4: .content_container
-            block content
-          .pure-u-1.pure-u-md-4-4
-            != partial('_partial/footer.pug')
-
-        
-        include _partial/after_footer.pug
-        script(type='text/javascript', src=url_for(theme.js)+'/index.js')
+          
+          include _partial/after_footer.pug
+          script(type='text/javascript', src=url_for(theme.js)+'/index.js')
 
