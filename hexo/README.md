@@ -7,9 +7,12 @@ npm install
 hexo new 新文章标题
 hexo generate
 
+# 运行
+hexo s
 ```
-修改菜单：
-hexo\themes\maupassant\source\js\sidenav.js
+
+修改领航栏：
+hexo\themes\maupassant\layout\_widget\navbar.pug
 
 ## 启动
 `hexo s -p 3000`
