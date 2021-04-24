@@ -31,9 +31,7 @@ tags:
 &emsp;，就可以正常安装。
 &emsp;文件有点大，1.3G，可用其它插件或工具来加速下载，如[速盘](https://www.speedpan.com/)等。（[百度网盘链接](https://pan.baidu.com/s/114253X4j4GJPgOKEHdlAbw) ，提取码：3d3c ），完整视频如下：
 
-<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com//%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%90%86%E5%AE%89%E8%A3%85arduino%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E5%8F%91%E6%9D%BF.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1XU4y1h79q&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 ## 其它问题
 &emsp;如果出现其它报错提示，尝试将`Arduino15`删除，再重复步骤尝试。

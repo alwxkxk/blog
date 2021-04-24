@@ -11,9 +11,8 @@ tags:
 &emsp;在做3D可视化时，有时需要一堆建筑来衬托，现在演示一下如何导入城市建筑，操作视频如下：
 ![导入osm效果](/blog_images/3d/导入osm效果.png)
 
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/3D/blender%E5%AF%BC%E5%85%A5osm%E6%96%87%E4%BB%B6.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1XK4y1o7rS&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 ## 下载osm文件
 &emsp;先在openstreetmap里导出得到osm文件，[导出 \| OpenStreetMap](https://www.openstreetmap.org/export#map=15/23.1181/113.3204)。

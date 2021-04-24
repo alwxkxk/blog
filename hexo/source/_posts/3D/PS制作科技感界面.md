@@ -15,9 +15,8 @@ tags:
 ## 制作六角形图标
 &emsp;六角形图标很符合机甲风格，首先去[iconfont 阿里巴巴图标库](https://www.iconfont.cn/collections)下个图标，然后再利用PS套一个六角形外壳，如视频操作所示：
 
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com//3D/PS%E5%88%B6%E4%BD%9C%E5%85%AD%E8%BE%B9%E5%BD%A2%E5%9B%BE%E6%A0%87.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1z5411c7Wi&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 
 &emsp;注意导出png格式的文件，这样图片才有透明度，CSS上可以这样配置：

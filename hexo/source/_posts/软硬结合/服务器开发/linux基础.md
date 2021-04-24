@@ -34,12 +34,13 @@ tags:
 ## 本地虚拟机安装linux
 &emsp;要学习linux，先学习怎么搭一个环境出来，方便反复折腾。虚拟机软件我以[虚拟机virtualbox-官网](https://www.virtualbox.org/)，[-百度网盘](https://pan.baidu.com/s/1vCcrdepimiI9Pu3A7Zo3rw)演示。（记住一件事，不管你在虚拟机上怎么折腾，都不会把电脑搞坏的，事实上学习Linux的过程中会不断地折腾重装linux。）安装时选择中文界面，安装完后新建虚拟机：
 
-<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">your browser does not support the video tag</video>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Xi4y1A7CY&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 
 &emsp;[centos镜像下载-官网](https://www.centos.org/download/):使用迅雷下载比较快。(超8G了不能放网盘)。安装过程如下：（按右边的Ctrl+鼠标就能让鼠标离开虚拟机的绑定。）
 
-<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%E5%AE%89%E8%A3%85centos.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">your browser does not support the video tag</video>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1q5411c7Pt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 &emsp;前几次安装linux可以选中文界面，熟悉后就要换成英文的了，切不可对中文产生依赖。
 
@@ -123,17 +124,14 @@ vi 网卡名
 3. 重新开启并进入到linux，执行reboot让系统重启。
 4. `ip addr`查看IP地址有没有 192.168.X.X 的，有就是它的ip地址了。
 &emsp;设置完ip后，就能Xshell登陆了，操作过程：
-<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%E8%AE%BE%E7%BD%AEip%E5%B9%B6%E7%94%A8Xshell%E7%99%BB%E9%99%86.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
-&emsp;Xshell十分方便，复制粘贴功能十分有用，出了问题直接把它复制到搜索栏，太长的命令直接复制进去。还能用它来上传文件，有兴趣可搜索一下。
+<iframe src="//player.bilibili.com/player.html?bvid=BV15h411S7wo&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
+&emsp;Xshell十分方便，复制粘贴功能十分有用，出了问题直接把它复制到搜索栏，太长的命令直接复制进去。还能用它来上传文件(我就经常使用命令`rz`、`sz`来上传下载文件，连winSCP都省了。)，有兴趣可搜索一下。
 
 ## 使用WinSCP上传下载文件
 
 &emsp;给服务器上传下载文件，一般是用winSCP:
-<video class="lazy" data-src="https://test-1251805228.file.myqcloud.com/%E4%BD%BF%E7%94%A8WinSCP%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1MK4y1P7Ze&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 ## centOS安装Nodejs
 &emsp;我发现官网并没有讲yum安装，搜索了一下别人是直接下载二进制包并配置PATH进行使用。

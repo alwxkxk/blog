@@ -38,9 +38,9 @@ npm run package
 
 ## 构建打包
 &emsp;对于很多客户来说，一个exe桌面应用才算得上真正的客户端，可以通过构建打包做出exe应用。exe文件运行效果：
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/%E8%BF%90%E8%A1%8Celectron%E7%94%9F%E6%88%90%E7%9A%84exe%E6%96%87%E4%BB%B6.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1xK4y1o77k&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 &emsp;可在百度网盘下载[demo2-electron-app-win32-x64](https://pan.baidu.com/s/1b6SzjqAAXCQuxBnXq5wZyw)，在自己电脑上运行一下。
 &emsp;现在官方文档的[构建步骤（Windows)](https://electronjs.org/docs/development/build-instructions-windows)是需要安装Visual Studio 2017的，心想我电脑硬盘只剩下个几十G不一定能装得下来，同时记得以前不是这样的，所以搜索了一下，可以使用

@@ -21,9 +21,10 @@ tags:
 - 检查和调整页面
 - 编辑样式
 - 编辑DOM
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/devtool%20%E5%85%83%E7%B4%A0%E9%9D%A2%E6%9D%BF%E6%93%8D%E4%BD%9C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1mp4y1t7YT&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
+
 1. 可以分析HTML与CSS内容，分析某个元素是怎么布局与设置样式。（去分析别人的网站怎么做的，提升自己水平）。
 2. 实时修改HTML与CSS马上可以看到效果，__调整至最佳效果再去写代码__。（没学这个的新手会反复修改代码，保存，刷新再看效果再修改，这样效率低下。）
 
@@ -31,14 +32,17 @@ your browser does not support the video tag
 &emsp;控制台面板（Console）功能是：
 - 查看打印信息（有过滤功能）
 - 命令行交互
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/devtool%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%9D%A2%E6%9D%BF%E6%93%8D%E4%BD%9C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1rB4y1A7bk&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
 1. 我经常会在这执行调试代码（需要先将变量引入到全局），以调试JS代码效果。
 
 # 源代码面板
 &emsp;源代码面板（Sources）功能是：
 - 断点调试（可带条件打断点）
 
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/devtool%20%E6%BA%90%E4%BB%A3%E7%A0%81%E9%9D%A2%E6%9D%BF%E6%93%8D%E4%BD%9C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+<iframe src="//player.bilibili.com/player.html?bvid=BV1to4y1f7EE&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
 1. 断点调试是代码调试的重要手段，可以看到变量的实时值。（调试代码两大流派：断点流，打印流）
 
 &emsp;除了JS代码可以打断点,还有DOM变化，XHR请求，事件监听：
@@ -53,7 +57,9 @@ your browser does not support the video tag
 &emsp;网络面板（Network）功能是：
 - 免缓存（Disable cache）
 - 资源请求详情（请求、响应、时间轴）
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/devtool%20%E7%BD%91%E7%BB%9C%E9%9D%A2%E6%9D%BF%E6%93%8D%E4%BD%9C.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1o54y1L7RP&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
 1. 常用来分析请求。
 2. 浏览器有缓存机制（有时修改了代码，浏览器刷新还是使用旧代码），有时需要开启免缓存。
 # 其它

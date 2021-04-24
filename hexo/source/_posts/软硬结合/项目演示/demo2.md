@@ -18,9 +18,8 @@ date: 2018-11-03 10:05:02
 ![](/blog_images/005BIQVbgy1fz4sstfxyxj31hc0t4npd.jpg)
 &emsp;这里的`123456`就是客户端ID。如果结合demo2里的nodemcu程序（程序中id设置为`1234abcd`），就需要访问[http://42.192.168.165:8002/equipmentId/1234abcd](http://42.192.168.165:8002/equipmentId/1234abcd)。结合硬件的演示如下：
 
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com/demo2%E6%BC%94%E7%A4%BA.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1x64y1i7Lt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
 &emsp;在演示中可以看到，手机控制开关灯。（硬件比较慢，大约一两秒才响应动作，应该是Arduino代码问题，但这并不影响我们示范。）
 &emsp;具体部署与demo1类似，进入到对应的目录，使用命令`npm install`安装依赖，`npm start`运行，不过需要安装MongoDB才能正常运行。
 

@@ -45,9 +45,7 @@ function change2BasicMat(object3d){
 &emsp;光轨效果是构建科技感的最重要最常见的效果，另开了一篇文章单独讲这个：[3-光线痕迹](/posts/5988)
 &emsp;与该文章不同的是，这个项目光轨的模型不是通过JS生成的，而是在3D建模软件里建模的管道，JS给这些管道添加光流动的效果。在blender构建管道的例子：
 
-<video class="lazy" controls data-src="https://test-1251805228.file.myqcloud.com//3D/blender%E5%88%B6%E4%BD%9C%E6%9B%B2%E7%BA%BF%E5%8F%98Mesh.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-your browser does not support the video tag
-</video>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1iA411L7UZ&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 &emsp;制作曲线时你会发现，这曲线到底要怎么调？大家可以通过[The Bezier Game](https://bezier.method.ac/)这个在线学习网站学习练习一下，PS的钢笔工具。
 
