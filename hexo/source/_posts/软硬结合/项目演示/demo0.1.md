@@ -31,10 +31,14 @@ tags:
 
 
 
-&emsp;先安装Nodejs环境，[nodejs基础](/posts/56793)。然后跑起来，按`README.md`里操作，执行`node index`启动程序，打开浏览器访问`127.0.0.1:8000`就能看到页面，使用网络调试助手TCP客户端连接上`127.0.0.1:9000`，就可以进行数据传输，如果要使用硬件连接注意IP地址要写内网地址。效果如视频所示：
+&emsp;先安装Nodejs环境，[nodejs基础](/posts/56793)。然后跑起来，按`README.md`里操作，执行`node server.js`(为了避免歧义，将原本叫index.js的脚本更名为server.js，视频中是旧的做法，依然执行`node index`。)启动程序，打开浏览器访问`127.0.0.1:8000`就能看到页面，使用网络调试助手TCP客户端连接上`127.0.0.1:9000`，就可以进行数据传输，如果要使用硬件连接注意IP地址要写内网地址。效果如视频所示：
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1fb4y1D7PE&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
+
+&emsp;我也部署到我自己的云服务器上，可直接尝试：
+- 网址：http://42.192.168.165:8000/
+- TCP服务器：42.192.168.165:9000
 
 ## 其它说明
 - 在demo0.1里使用了HTTP轮询，所以demo0.1能每秒能刷新出最新数据显示到网页上。而在demo1里，并没有这样做。同样，ESP8266模块使用AT固件也可以这样利用HTTP轮询不断地拿最新数据，粗暴简单地实现远程控制。HTTP轮询的代价是性能差，浪费资源。
