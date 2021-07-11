@@ -13,3 +13,7 @@ npm install
 # 运行
 hexo s
 ```
+
+## 其它
+
+hexo 模板来源于[maupassant-hexo](https://github.com/tufu9441/maupassant-hexo)。

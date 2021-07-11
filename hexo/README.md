@@ -5,7 +5,7 @@ npm install hexo -g
 npm install -g hexo-cli
 npm install
 hexo new 新文章标题
-hexo generate
+hexo generate // hexo V4.2.1 以上才兼容nodeV14，否则生成空白文件。
 
 # 运行
 hexo s
