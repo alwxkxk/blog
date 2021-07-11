@@ -31,7 +31,7 @@ C:\Windows\System32\cmd.exe /c "SET RENDERDOC_HOOK_EGL=0 && START "" ^"C:\Progra
 &emsp;根据提示，使用renderdoc注入到对应进程。注入成功后，在Google Map里找一个有建筑高度的地方抓图（部分地区因政策原因是不能显示高度的），注意要多靠近看看，才能加载出更细致的图片。特别注意，建议使用下面的那个延时捕捉按钮，立刻捕捉所生成的文件可能无法加载出来。
 
 
-<iframe src="//player.bilibili.com/player.html?bvid=BV1qU4y1b7Gq&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1E64y1i7kT&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 ### 导入rdc文件
 &emsp;安装插件后导入即可：
