@@ -11,7 +11,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.my-dialog</span><span class="selector-attr">[data-v-0a1304a6]</span> <span class="selector-class">.el-dialog</span> /deep/ <span class="selector-class">.el-dialog__body</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">600px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>&emsp; 嵌套使用<code>/deep/</code>只会让第一个<code>/deep/</code>生效，第二个是不作处理的，之前没意识到这个问题犯错了。</p>
 <h2 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h2><p>&emsp;为了重现问题，特意下载了便携版chrome(v88)来对比（为了防止中毒，还额外研究了windows下沙盒，在沙盒里运行这软件），如图所示（测试代码附在最后）：</p>
-<p><img src="/blog/blogImages/未分类/chrome89更新带来的问题.png" alt="issuehunt提交"></p>
+<p><img src="/blog/blog_images/未分类/chrome89更新带来的问题.png" alt="issuehunt提交"></p>
 <p>&emsp;可以看到，在v88中，多出一个<code>/deep/</code>并不影响，但在v89里是不行的，搜索了一下，发现<a target="_blank" rel="noopener" href="https://www.chromestatus.com/feature/6750456638341120">chromestatus chromestatus</a>里有：</p>
 <p>&emsp;The /deep/ combinator was a part of Shadow DOM v0, which has been deprecated and removed. Starting in M63, the /deep/ combinator was treated as a no-op, equivalent to a space “ “ combinator. As the code for all of Shadow DOM v0 was removed completely in M89, /deep/ will now throw exceptions in some JS operations, such as querySelectorAll. Simply replace it with “ “ to get pre-M89 behavior back.</p>
 <p>&emsp;翻译过来的意思是，在89之前，chrome浏览器会将<code>/deep/</code> 当作空格字符串来处理，后面就完整删除<code>Shadow DOM v0</code>的内容了。</p>
