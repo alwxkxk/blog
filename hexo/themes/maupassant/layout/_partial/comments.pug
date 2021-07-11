@@ -71,7 +71,7 @@ if theme.livere
          var j, e = d.getElementsByTagName(s)[0];
          if (typeof LivereTower === 'function') { return; }
          j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.src = 'https://cdn-city.livere.com/blog/js/embed.dist.js';
          j.async = true;
          e.parentNode.insertBefore(j, e);
       })(document, 'script');
@@ -110,8 +110,8 @@ if theme.gitalk.enable == true
 
 if theme.valine.enable == true
     #vcomment
-    script(src='/js/av-min.js')
-    script(src='/js/Valine.min.js')
+    script(src='/blog/js/av-min.js')
+    script(src='/blog/js/Valine.min.js')
     script.
       var notify = '#{ theme.valine.notify }' == true ? true : false;
       var verify = '#{ theme.valine.verify }' == true ? true : false;
