@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="生子当如哈士奇的个人博客，包含若干技术文章，以及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。"><meta name="baidu-site-verification" content="xsF0k2IpTd"><meta name="360-site-verification" content="17062a868693e9ab70b4c9543d98059b"><meta name="sogou_site_verification" content="VAcZeTHOK4"><meta name="google-site-verification" content="_1T1ah4LkGnFPqgYs6wQqN27O6PfrXJqG8gbFwh7ClM"><script data-ad-client="ca-pub-5955811496112897" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><title>《数据结构与算法分析》笔记一 | 生子当如哈士奇的个人博客</title><meta name="robots" content="noindex"><script type="text/javascript" src="/sw-init.js"></script><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="/css/normalize.min.css"><link rel="stylesheet" type="text/css" href="/css/pure-min.css"><link rel="stylesheet" type="text/css" href="/css/grids-responsive-min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script><script type="text/javascript" src="/js/lazyload.8.16.0.min.js"></script><link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"><script type="text/javascript" src="/js/bootstrap.min.js"></script><link rel="stylesheet" type="text/css" href="/css/bootstrap-treeview.min.css"><script type="text/javascript" src="/js/bootstrap-treeview.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '646acd4e6c74eb119c3d5d93c5bfde70';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><link rel="stylesheet" type="text/css" href="/css/index.css"><script type="text/javascript" src="/js/slideout.min.js"></script><script type="text/javascript" src="/js/image-fullscreen.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><nav class="navbar navbar-default"><div class="container-fluid navbar-custom"><!-- Brand and toggle get grouped for better mobile display--><div class="navbar-header"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#">导航栏</a></div><!-- Collect the nav links, forms, and other content for toggling--><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav"><li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">软硬结合——从零打造物联网 <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/44755">导读</a></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">项目演示</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/38208">demo0.1</a></li><li><a href="/posts/64786">demo1</a></li><li><a href="/posts/64594">demo2</a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">网络通信</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/37707">计算机网络基础</a></li><li><a href="/posts/37286">IP协议基础</a></li><li><a href="/posts/19508">TCP协议基础</a></li><li><a href="/posts/34265">HTTP协议基础</a></li><li><a href="/posts/20945">MQTT协议基础（选学）</a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">客户端开发</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/54080">HTML、CSS、JS基础</a></li><li><a href="/posts/52429">chrome开发者工具</a></li><li><a href="/posts/27238">Jquery、Bootstrap基础</a></li><li><a href="/posts/18173">数据可视化基础</a></li><li><a href="/posts/15341">微信小程序基础</a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">服务器开发</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/56793">NodeJs基础</a></li><li><a href="/posts/34982">Linux基础</a></li><li><a href="/posts/19114">Nginx基础</a></li><li><a href="/posts/41347">数据库基础</a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">硬件</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/32577">ESP8266基础</a></li><li><a href="/posts/31494">nodemcu基础</a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">其它</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/54436">调试技巧</a></li><li><a href="/posts/61760">工具推荐                  </a></li><li><a href="/posts/37993">资源链接汇总</a></li><li><a href="/posts/41995">最后的讨论     </a></li></ul></li></ul></li><li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">3D可视化教程（Web）<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/30679/">导读</a></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">项目示例</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/2544">a-模型拆解示例</a></li><li><a href="/posts/46791">b-智慧城市                 </a></li><li><a href="/posts/19890">c-数据中心</a></li><li><a href="/posts/3280">d-线框转换效果</a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">基础示例</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/42378">1-模型制作与展示</a></li><li><a href="/posts/45270">2-模型数据                 </a></li><li><a href="/posts/5988">3-光线痕迹</a></li><li><a href="/posts/60366">4-动画</a></li><li><a href="/posts/52736">5-显示动态图               </a></li><li><a href="/posts/56155">6-屏幕坐标转换</a></li><li><a href="/posts/48386">7-开关门(不动点)              </a></li><li><a href="/posts/30581">8-聚焦靠近</a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">Blender相关</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/46886">常用操作</a></li><li><a href="/posts/20949">导入城市建筑(.osm)                </a></li><li><a href="/posts/4195">导入城市建筑(.rdc)     </a></li></ul></li><li class="dropdown-submenu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">其它</span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/31929">3D案例收集</a></li><li><a href="/posts/27566">PS常用技巧              </a></li><li><a href="/posts/47064">PS制作科技感界面  </a></li><li><a href="/posts/5200">three.js性能优化</a></li><li><a href="/posts/1192">线性代数基础知识归纳              </a></li><li><a href="/posts/44479">3D温场效果  </a></li></ul></li></ul></li><li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">杂谈<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/posts/62923/">推荐书籍</a></li><li><a href="/posts/61760/">工具推荐</a></li><li><a href="/posts/44837/">人生一百种失败方法</a></li><li><a href="/posts/25883/">分享当面试官的经验</a></li></ul></li><li><a href="/archives">所有文章<span class="sr-only">(current)</span></a></li><li><a href="/posts/23630">关于<span class="sr-only">(current)</span></a></li></ul></div></div></nav><main class="body_container"><header><div id="header"><div class="site-name"><h1 class="hidden">《数据结构与算法分析》笔记一</h1><a id="logo">生子当如哈士奇的个人博客</a><p class="description">生子当如哈士奇的个人博客，包含若干技术文章，以及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。</p></div><div id="nav-menu"></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-4-4"><div class="content_container"><div class="post"><h1 class="post-title">《数据结构与算法分析》笔记一</h1><div class="post-meta">Jun 15, 2019<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/posts/17102/#vcomment"><span class="valine-comment-count" data-xid="/posts/17102/"></span><span> 条评论</span></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">算法分析</span></a></li></ol></div></div><div class="post-content"><p>&emsp;<a target="_blank" rel="noopener" href="https://book.douban.com/subject/1139426/">《数据结构与算法分析——C语言描述》</a>，第一二章的学习笔记，主要讨论时间复杂度与算法分析的方法。</p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>&emsp;我们日常编写一段代码以解决一个特定问题时，为了判断这段代码效率（或称性能）是否足够快，我们设定每一步代码执行所需要时间为一个时间单元，简单举例：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c=a+b;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;在上面代码中，简单地声明了两个变量并相加得到另一个变量，共三步。所以我们就判断这一代码片段所需要时间为3个时间单元（后面省略时间单元，如简称为3）。当然，这并不是准确的具体的物理时间（比如说几秒钟），其真正的物理时间取决于硬件的性能，编译后的指令等等诸多因素。在对比代码A与代码B的快慢时，我们无需知道准确的物理时间，我们只需要明白时间单元为10的代码会比100的代码更快就可以了，最终目的是比较出谁更快即可。如果代码A需要N个时间单元，我们就说这段代码时间复杂度为N。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function(n)&#123;</span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> result =<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(i&lt;n)&#123;</span><br><span class="line">    result += i;</span><br><span class="line">    i++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;上面代码中，假设传入n为3，代码实际执行步骤为：2,3,4,5,6,4,5,6 ，共执行了9步。当n为N时，共执行<code>2+(N-1)*3+1 = 3N</code>，即这代码的时间复杂度为3N。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">  <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">    k++;</span><br></pre></td></tr></table></figure>
+<p>&emsp;上面代码中两个循环，n为N时，其时间复杂度为<code>N*N=N²</code>。<br>&emsp;除了时间复杂度，还有空间复杂度，指此算法所用的空间多少，一般来说时间复杂度与空间复杂度不可兼得。时间复杂度低的算法往往需要大量空间，能节约空间的算法往往是以时间作为代价，故有“时间换空间，空间换时间”的说法。</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>&emsp;算法就是针对特定问题的解决方案（或说解题思路）。每个问题当然拥有多种解决方案（即多种算法），这几种算法转换成代码后，当然拥有不同的时间复杂度，时间复杂度最低的便是这个问题的最佳算法。<br>&emsp;假设两个函数<code>f(n)</code>与<code>g(n)</code>，<code>f(n)</code>的时间复杂度为<code>1000N</code>而<code>g(n)</code>的时间复杂度为<code>N²</code>。当N取小值时（小于1000），明显<code>1000N</code>比<code>N²</code>的值更大，但是 <strong>在实际使用时N往往是一个极大值,毕竟只有需要大量计算的地方才会思考如何使用更好的算法</strong> ，而计算量小的地方优化的意义并不大。当N取极大值，比如说N取100万，或1千万，明显是<code>N²</code>比<code>1000N</code>更大。<strong>比较两个算法哪个更优秀，默认比的是N取极大值的时哪个所需时间越少，即我们比较的是增长率，增长率越低的算法在后期的所需时间越少</strong>，所以这里我们判断<code>f(n)</code>的时间复杂度比<code>g(n)</code>更低。<br>&emsp;同样的，<strong>由于N取的是极大值，在计算时间复杂度时，我们往往可以忽略小值</strong>，比如时间复杂度为<code>N+1</code>往往写成<code>N</code>,<code>3N</code>也往往写成<code>N</code>，而<code>N²+N</code>则可写成<code>N²</code>。（学过高数的读者应该都知道高数经常用到 忽略小值 这个技巧。）<br>&emsp;典型的时间复杂度从低到高排列如下：</p>
+<table>
+<thead>
+<tr>
+<th>时间复杂度</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>constant</td>
+<td>常数</td>
+</tr>
+<tr>
+<td>Log N</td>
+<td>logarithmic</td>
+<td>对数</td>
+</tr>
+<tr>
+<td>Log² N</td>
+<td>log-squared</td>
+<td></td>
+</tr>
+<tr>
+<td>N</td>
+<td>linear</td>
+<td>线性</td>
+</tr>
+<tr>
+<td>NLog N</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>N²</td>
+<td>quadratic</td>
+<td>平方</td>
+</tr>
+<tr>
+<td>N³</td>
+<td>cubic</td>
+<td>立方</td>
+</tr>
+<tr>
+<td>2ⁿ</td>
+<td>exponential</td>
+<td>指数</td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;验证自己所计算的时间复杂度是否正确，可通过传入N不同值，看执行所需时间是否符合 线性/指数（与时间复杂度大约相符的增长率） 等方式增长。</p>
+<!-- flag of hidden posts --></div><div class="tags"><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a><a href="/tags/C/">C</a></div><div id="vcomment"></div><script src="/js/av-min.js"></script><script src="/js/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'dibwgE5SQgKyFS1KqM3C2WmQ-gzGzoHsz',
+  appKey:'G24uL9Fw9oNCfheBorc3GjVB',
+  placeholder:'欢迎留言交流',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></div></div><div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">生子当如哈士奇的个人博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script><script type="text/javascript" src="/js/index.js"></script></header></main><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"log":false});</script></body></html>
