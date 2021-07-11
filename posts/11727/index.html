@@ -14,19 +14,19 @@
 <li>使用Binary Heap： 插入并排序<code>O(logN)</code>，最小值并排序<code>O(logN)</code>。</li>
 </ul>
 <p>&emsp;先展示一种极其优美的树形结构：完全平衡二叉树（complete binary tree）</p>
-<p><img alt="complete binary tree" src="/blog/blog_images/complete-binary-tree.png" style="width:50%;"></p>
+<p><img alt="complete binary tree" src="/blog/blogImages/complete-binary-tree.png" style="width:50%;"></p>
 <p>&emsp;这棵完全平衡二叉树还必须保证从左到右填充新节点，这就拥有以下特性：对于任意节点，假设其位置值为<code>i</code>的，其右子树的位置必为<code>2i</code>，右子树的位置为<code>2i+1</code>，其父节点位置必为<code>[i/2]</code>。这种特性使其可以放入数据，以其位置关系来取代指针的功能，充分结合了树形结构灵活与数组高性能的优势。（虽然以数组形式来实现，但为了方便讲解仍然会以树的形式表现出来。）</p>
 <h2 id="d-Heaps"><a href="#d-Heaps" class="headerlink" title="d-Heaps"></a>d-Heaps</h2><p>&emsp;与B-Tree类似，增加节点数，降低了高度，使插入效率更高（变成  O( log<sub>d</sub>N)），（同时 取最小值时效率更低，变成 O(d log<sub>d</sub>N) )。</p>
-<p><img alt="d-Heaps" src="/blog/blog_images/d-Heaps.png" style="width:50%;"></p>
+<p><img alt="d-Heaps" src="/blog/blogImages/d-Heaps.png" style="width:50%;"></p>
 <h2 id="解决融合问题"><a href="#解决融合问题" class="headerlink" title="解决融合问题"></a>解决融合问题</h2><p>&emsp;如果有两个优先队列需要整合成一个队列，那么使用数组是不方便的，要改回使用指针的树。书中介绍了三种结构：</p>
 <ul>
 <li>极左堆 Leftist Heaps</li>
 <li>偏堆 Skew Heaps</li>
 <li>二项式队列 Binomial Queue</li>
 </ul>
-<h3 id="极左堆-Leftist-Heaps"><a href="#极左堆-Leftist-Heaps" class="headerlink" title="极左堆 (Leftist Heaps)"></a>极左堆 (Leftist Heaps)</h3><p>&emsp;定义 null path length(Npl) 是指该节点到空位节点的最短路径。极左堆，对于任意节点，保证左子节点的Npl一定大于等于右子节点Npl。<br><img alt="Leftist-Heaps" src="/blog/blog_images/Leftist-Heaps.png" style="width:50%;"><br>&emsp;这种设计使树“左倾”，融合时占用右子树节点的操作比较方便。</p>
+<h3 id="极左堆-Leftist-Heaps"><a href="#极左堆-Leftist-Heaps" class="headerlink" title="极左堆 (Leftist Heaps)"></a>极左堆 (Leftist Heaps)</h3><p>&emsp;定义 null path length(Npl) 是指该节点到空位节点的最短路径。极左堆，对于任意节点，保证左子节点的Npl一定大于等于右子节点Npl。<br><img alt="Leftist-Heaps" src="/blog/blogImages/Leftist-Heaps.png" style="width:50%;"><br>&emsp;这种设计使树“左倾”，融合时占用右子树节点的操作比较方便。</p>
 <h3 id="偏堆-Skew-Heaps"><a href="#偏堆-Skew-Heaps" class="headerlink" title="偏堆(Skew Heaps)"></a>偏堆(Skew Heaps)</h3><p>&emsp;只保证了heap的顺序，而无需再受极左堆的限制条件。</p>
-<h3 id="二项式队列（Binomial-Queue）"><a href="#二项式队列（Binomial-Queue）" class="headerlink" title="二项式队列（Binomial Queue）"></a>二项式队列（Binomial Queue）</h3><p>&emsp;二项式队列不只有一棵树，是很多树组成的森林：<br><img alt="Binomial-Queue" src="/blog/blog_images/Binomial-Queue.png" style="width:50%;"><br>&emsp;第n棵树的节点上限为2<sup>n</sup>，B<sub>0</sub>最多一个节点，B<sub>1</sub>最多两个节点，如此类推。可以用二进制来代表如1101代表拥有B<sub>3</sub>,B<sub>2</sub>,B<sub>0</sub>。这样的结构使得合并的时候很方便，如两棵B<sub>0</sub>合成一棵B<sub>1</sub>，两棵B<sub>1</sub>合成一棵B<sub>2</sub>。</p>
+<h3 id="二项式队列（Binomial-Queue）"><a href="#二项式队列（Binomial-Queue）" class="headerlink" title="二项式队列（Binomial Queue）"></a>二项式队列（Binomial Queue）</h3><p>&emsp;二项式队列不只有一棵树，是很多树组成的森林：<br><img alt="Binomial-Queue" src="/blog/blogImages/Binomial-Queue.png" style="width:50%;"><br>&emsp;第n棵树的节点上限为2<sup>n</sup>，B<sub>0</sub>最多一个节点，B<sub>1</sub>最多两个节点，如此类推。可以用二进制来代表如1101代表拥有B<sub>3</sub>,B<sub>2</sub>,B<sub>0</sub>。这样的结构使得合并的时候很方便，如两棵B<sub>0</sub>合成一棵B<sub>1</sub>，两棵B<sub>1</sub>合成一棵B<sub>2</sub>。</p>
 <!-- flag of hidden posts --></div><div class="tags"><a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a><a href="/blog/tags/C/">C</a></div><div id="vcomment"></div><script src="/blog/js/av-min.js"></script><script src="/blog/js/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
 var verify = 'false' == true ? true : false;
 var GUEST_INFO = ['nick','mail','link'];
