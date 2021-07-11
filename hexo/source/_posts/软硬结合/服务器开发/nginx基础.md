@@ -12,7 +12,7 @@ date: 2018-12-30 11:28:10
 [Nginx 相关介绍(Nginx是什么?能干嘛?) - 蔷薇Nina - 博客园](https://www.cnblogs.com/wcwnina/p/8728391.html)
 
 ## CentOS安装nginx
-&emsp;这里演示一下如何在centOS安装nginx，并且能访问网址。如果是本地虚拟机，注意要先保证能Ping通（保证网络连通），以及开放80端口或者关闭防火墙（可参考[centOS 7防火墙相关命令](/posts/34982/#centOS-7防火墙相关命令)）。
+&emsp;这里演示一下如何在centOS安装nginx，并且能访问网址。如果是本地虚拟机，注意要先保证能Ping通（保证网络连通），以及开放80端口或者关闭防火墙（可参考[centOS 7防火墙相关命令](/blog/posts/34982/#centOS-7防火墙相关命令)）。
 &emsp;根据[官方文档安装指引](http://nginx.org/en/linux_packages.html#RHEL-CentOS)，复制命令即可。
 
 ```bash
@@ -61,10 +61,10 @@ GET /index.html
 # 空行 回车 以发送 telnet命令
 ```
 &emsp;正常时会返回一串HTML文本，说明nginx正常运行、如图所示：
-![](/blog_images/005BIQVbly1g25x07y1iaj31bo0l9dgu.jpg)
+![](/blog/blog_images/005BIQVbly1g25x07y1iaj31bo0l9dgu.jpg)
 &emsp;若不正常说明nginx启动失败，检查哪一步出错了。
 &emsp;使用浏览器访问其IP地址，一样能显示网页如图所示：
-![](/blog_images/005BIQVbly1g25x21ncjdj31hc0o3dgo.jpg)
+![](/blog/blog_images/005BIQVbly1g25x21ncjdj31hc0o3dgo.jpg)
 &emsp;若本地测试正常，但浏览器却无法正常访问，请检查服务器是否能连接（ping通）、防火墙设置、云服务器安全组是否开放了端口。
 
 ## 常用配置

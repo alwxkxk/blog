@@ -15,7 +15,7 @@ date: 2018-11-03 10:05:02
 
 ## 先跑起来
 &emsp;demo2我已经部署到我自己的服务器，大家可在线浏览：[http://42.192.168.165:8002/equipmentId/123456](http://42.192.168.165:8002/equipmentId/123456)
-![](/blog_images/005BIQVbgy1fz4sstfxyxj31hc0t4npd.jpg)
+![](/blog/blog_images/005BIQVbgy1fz4sstfxyxj31hc0t4npd.jpg)
 &emsp;这里的`123456`就是客户端ID。如果结合demo2里的nodemcu程序（程序中id设置为`1234abcd`），就需要访问[http://42.192.168.165:8002/equipmentId/1234abcd](http://42.192.168.165:8002/equipmentId/1234abcd)。结合硬件的演示如下：
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1x64y1i7Lt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
@@ -26,7 +26,7 @@ date: 2018-11-03 10:05:02
 ## demo2主要流程图
 
 &emsp;相对于demo1，demo2添加了数据库、websocket协议、图表库Echart。demo2代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo2/myapp`里找到。
-![](/blog_images/005BIQVbgy1fzbotaayifj30lu0coab7.jpg)
+![](/blog/blog_images/005BIQVbgy1fzbotaayifj30lu0coab7.jpg)
 
 ### 硬件变化
 &emsp;nodemcu代码相对于demo1没有太大改动，主要是改变了TCP端口以及每秒发送随机数（模拟传感器实时取得的温度值）。此代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`demo2/nodemcu`找到。
@@ -40,7 +40,7 @@ client.print(20+random(0,10));
 ### HTTP客户端变化
 &emsp;demo1的界面是将所有连接的设备显示出来，手动刷新获取最新值，选中某个设备发送开/关灯命令。
 &emsp;demo2的界面是进入网页时就已经指定了某个单一设备，只要设备不断地上传数据，界面就实时地把数据在图表中显示出来，点击按钮发送开/关灯命令。
-![](/blog_images/005BIQVbgy1fz50jf130yj31co0qfqv5.jpg)
+![](/blog/blog_images/005BIQVbgy1fz50jf130yj31co0qfqv5.jpg)
 &emsp;界面为了追求一定程序的美化，所以加了很多没有实质性作用只是单纯为了更好看的内容。此代码是在express框架内，可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`demo2/myapp/views/index.pug`找到界面代码，`demo2/myapp/public/javascripts/index.js`找到JS代码。JS代码主要做了几件事：
 1. 创建websocket连接，接收该设备的实时数据。
 2. 给开/关按钮添加POST请求代码。
@@ -112,22 +112,22 @@ router.get('/history/:id', function(req, res, next) {
 
 ## 学习过程
 &emsp;在模仿demo2之前，需要学习：
-- [数据可视化基础](/posts/18173)
-- [HTTP协议基础](/posts/34265)：里面讨论了HTTP轮询的不足与websocket协议的最简例子。
-- [数据库基础](/posts/41347)
+- [数据可视化基础](/blog/posts/18173)
+- [HTTP协议基础](/blog/posts/34265)：里面讨论了HTTP轮询的不足与websocket协议的最简例子。
+- [数据库基础](/blog/posts/41347)
 
 &emsp;当修改了代码不知道怎么调试时，请看：
-- [软件结合调试技巧](/posts/54436)
+- [软件结合调试技巧](/blog/posts/54436)
 
 &emsp;以上是网页的制作，可接着阅读如何跨到其它平台，按需学习：
-- [微信小程序基础](/posts/15341)
-- [electron基础](/posts/1041)
+- [微信小程序基础](/blog/posts/15341)
+- [electron基础](/blog/posts/1041)
 
 &emsp;MQTT协议在物联网应用中十分流行，可单独学习整合（为了不让demo2跨度过大，所以就不整合到demo2里演示）：
-- [MQTT协议基础](/posts/20945)
+- [MQTT协议基础](/blog/posts/20945)
 
 &emsp;demo2学习完后，整个教程就到了尾声，所有关键技术都已经介绍完了，各位读者已经可以自行编写整个物联网系统，剩下的无非是业务逻辑代码编写（比如帐号注册登陆、页面设计等等，不同的业务不同的设计）。__整个教程看似内容很少，实质上是需要读者阅读七八本书以及结合其它教程一起学习，其实需要读者学习的内容是极其之多，本教程只是演示最简单的实例给大家一个例子以参考，有利于进行正确有效的学习，少走弯路。__ 如果大家在阅读教程的过程中感受到某一块学习上有困难，尽管提出来，我会完善对应的内容或编写FAQ。本教程到此为止，很荣幸能够帮到大家。
-![](/blog_images/005BIQVbgy1fz52yl0wqhj30f3044aa4.jpg)
+![](/blog/blog_images/005BIQVbgy1fz52yl0wqhj30f3044aa4.jpg)
 
 
 ## FAQ
@@ -141,4 +141,4 @@ __答：之前可能是浏览器不兼容的问题，最近（19年10月30日）
 __答：[阿里图标库](http://iconfont.cn)。__ 
 
 4. 为什么把demo项目部署到云服务器上，还是无法访问网页？
-__答：整个流程是这样的，1.需要服务器demo项目运行 -> 2.数据需要通过服务器linux自带的防火墙 -> 3.数据需要通过运营商防火墙->网页访问成功。排查时一步步排查，针对1，运行demo后（以demo1为例，8001端口），另开一个窗口使用命令`curl 127.0.0.1:8001`，若返回HTML代码（如`<html......`），说明本地能访问demo项目的网页，1没问题。针对2，参考[linux基础](/posts/34982)，不再多说。针对3，需要去云平台一要配置安全组（可理解为一个安全规则），允许8001端口能流入流出；二要将安全组配置到云服务器（让这台云服务器使用这套安全规则，[阿里云-ECS实例加入安全组](https://help.aliyun.com/document_detail/25443.html?spm=a2c4g.11186623.6.854.1c422976218zlY)，腾讯云也是类似的，多看帮助文档，知道要做这事就好。）。__ 
+__答：整个流程是这样的，1.需要服务器demo项目运行 -> 2.数据需要通过服务器linux自带的防火墙 -> 3.数据需要通过运营商防火墙->网页访问成功。排查时一步步排查，针对1，运行demo后（以demo1为例，8001端口），另开一个窗口使用命令`curl 127.0.0.1:8001`，若返回HTML代码（如`<html......`），说明本地能访问demo项目的网页，1没问题。针对2，参考[linux基础](/blog/posts/34982)，不再多说。针对3，需要去云平台一要配置安全组（可理解为一个安全规则），允许8001端口能流入流出；二要将安全组配置到云服务器（让这台云服务器使用这套安全规则，[阿里云-ECS实例加入安全组](https://help.aliyun.com/document_detail/25443.html?spm=a2c4g.11186623.6.854.1c422976218zlY)，腾讯云也是类似的，多看帮助文档，知道要做这事就好。）。__ 

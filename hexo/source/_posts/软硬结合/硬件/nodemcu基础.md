@@ -13,13 +13,13 @@ tags:
 
 ## nodemcu简介
 &emsp;nodemcu本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
-![nodemcu引脚图](/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
+![nodemcu引脚图](/blog/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
 
-<img alt="淘宝nodemcu" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
+<img alt="淘宝nodemcu" src="/blog/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
 
 &emsp;__特别注意：nodemcu分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
-![](/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
+![](/blog/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
 # 使用Arduino编程
 &emsp;这里演示一下开发环境的搭建以及最简demo。
 ## 搭建开发环境
@@ -32,7 +32,7 @@ tags:
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1dp4y1t75w&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
-&emsp;如果实在速度太慢安装不了有其它办法安装，请看另一文章：[Arduino开发板管理安装失败解决办法](/posts/10960)。
+&emsp;如果实在速度太慢安装不了有其它办法安装，请看另一文章：[Arduino开发板管理安装失败解决办法](/blog/posts/10960)。
 &emsp;安装完扩展开发板信息后，记得选择开发板为nodemcu。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。**大家不要急着跑demo1例程，应该先跑第一个例程：控制LED，上传代码后LED灯会一直闪烁，这就证明硬件没问题。如果LED灯不一直闪烁可能是V3版本，需要定义引脚或者硬件有问题。其次要学会看串口打印信息，根据打印信息判断代码执行到哪里，哪一环节出现异常。**
 
 ## 例程
@@ -156,7 +156,7 @@ void loop() {
 &emsp;注意修改WIFI地址与密码。
 &emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
 &emsp;有网友问到，WIFI连接成功了，但提示连接失败，这个IP地址是需要填什么？ IP地址是需要填写TCP服务端的IP址，前期调试可以使用网络调试助手来充当TCP服务端：
-![物联网项目](/blog_images/nodemcu与网络调试助手联调.jpg)
+![物联网项目](/blog/blog_images/nodemcu与网络调试助手联调.jpg)
 
 ```c
 //如果是nodemcu V3版，需要另外定义LED引脚
@@ -405,7 +405,7 @@ int dht11::read(int pin)
 1. 错误提示：ESP8266WiFi.h:No such file or directory？
 __答：说明没有安装ESP8266扩展开发板信息或者没选择nodemcu开发板，导致找不到相关文件。__
 2. 在开发板管理器安装esp8266 by ES8266 Community 十分缓慢，有其它办法吗？
-__答：有解决办法，请看[Arduino开发板管理安装失败解决办法](/posts/10960)__
+__答：有解决办法，请看[Arduino开发板管理安装失败解决办法](/blog/posts/10960)__
 3. 哪里可以看到API文档？
 答：
 - [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
