@@ -10,7 +10,7 @@ tags:
 ## 示例效果
 &emsp;这是3D可视化教程系列的文章，如果第一次阅读请先阅读[《3D可视化教程导读》](/blog/posts/30679)，这里展示简单的模型拆解效果，可访问[d-wireframe-transfer-effect 展示网址](http://3d.scaugreen.cn/d-wireframe-transfer-effect.html)：
 
-<img alt="d-wireframe-transfer-effect" src="/blog/blog_images/3d/d-wireframe-transfer-effect.gif">
+<img alt="d-wireframe-transfer-effect" src="../../blog_images/3d/d-wireframe-transfer-effect.gif">
 
 ## 源码及3D项目文件
 &emsp; 源码及工程项目都放到github上。

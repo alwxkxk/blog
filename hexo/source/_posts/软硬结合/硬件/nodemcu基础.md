@@ -13,13 +13,13 @@ tags:
 
 ## nodemcu简介
 &emsp;nodemcu本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
-![nodemcu引脚图](/blog/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
+![nodemcu引脚图](../../blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
 
-<img alt="淘宝nodemcu" src="/blog/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
+<img alt="淘宝nodemcu" src="../../blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
 
 &emsp;__特别注意：nodemcu分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
-![](/blog/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
+![](../../blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
 # 使用Arduino编程
 &emsp;这里演示一下开发环境的搭建以及最简demo。
 ## 搭建开发环境
@@ -156,7 +156,7 @@ void loop() {
 &emsp;注意修改WIFI地址与密码。
 &emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
 &emsp;有网友问到，WIFI连接成功了，但提示连接失败，这个IP地址是需要填什么？ IP地址是需要填写TCP服务端的IP址，前期调试可以使用网络调试助手来充当TCP服务端：
-![物联网项目](/blog/blog_images/nodemcu与网络调试助手联调.jpg)
+![物联网项目](../../blog_images/nodemcu与网络调试助手联调.jpg)
 
 ```c
 //如果是nodemcu V3版，需要另外定义LED引脚
