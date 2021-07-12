@@ -34,17 +34,17 @@
 <p>&emsp;从上面对比可以看出，结构体在空间问题上虽然灵活但也对应地需要额外的开销，所以设计数据结构时会根据实际情况选择基于数组还是基于结构体。当然空间问题对于数组来说并不是绝对的，当发现事先声明的数组空间不足时，完全可以再声明另一个数组进行扩充。而第二点操作问题，基于结构体构建的容器以指针操作方便的优势大大胜出数组，可以这样说，只要是需要向任意位置进行操作的，都会更偏向于基于结构体。 <strong>列表由于需要向任意位置进行操作，所以基于结构体的链表（Linked List）更加合理。后面讨论的栈（Stack）由于限定了只对固定位置进行操作，并且在实际使用时并不会使用太大空间，所以反而基于数组性能会更好。</strong></p>
 <p>&emsp;使用数组时注意别超出数组的界限。<br>&emsp;在使用结构体特别注意，删除时记得释放空间否则会把空间全部用完而无法再申请空间，同时要注意处理申请内存失败的情况。</p>
 <h2 id="链表（Linked-List）"><a href="#链表（Linked-List）" class="headerlink" title="链表（Linked List）"></a>链表（Linked List）</h2><p>&emsp;我们经常将相关的数据放在一起以方便某些操作（如遍历），列表List：A₁,A₂,A₃,…,An。对于列表，我们可能会马上联想到数组：[A₁,A₂,A₃,…,An]。除了基于数组之外，我们更偏向于基于结构体定义出一个包含指针与数值的容器，用它来实现列表的功能（使用结构体来构建的被称为链表Linked List），因为它在向任意位置插入/删除数值时开销更少。</p>
-<p><img src="/blog/blog_images/linked-list.png" alt=""></p>
+<p><img src="../../blog_images/linked-list.png" alt=""></p>
 <p>&emsp;在实际编码时，我们往往需要一个头指针，用于指向链表，方便使用。</p>
-<p><img src="/blog/blog_images/linked-list-header.png" alt=""></p>
-<p>&emsp;空链表：<br><img alt="空链表" src="/blog/blog_images/empty-list.png" style="width:30%;"></p>
-<p>&emsp;链表插入/删除数值时，需要修改前面容器的指针，所以往往遍历时会拿两个连接容器A、B，当B就是要操作的地方时，就修改A的指针。而在实际使用时，有时需要不断往向找，这时就需要双向链表（Doubly Linked Lists）,窗口里还包含一个指向上一个容器的指针。<br><img src="/blog/blog_images/doubly-linked-list.png" alt=""></p>
+<p><img src="../../blog_images/linked-list-header.png" alt=""></p>
+<p>&emsp;空链表：<br><img alt="空链表" src="../../blog_images/empty-list.png" style="width:30%;"></p>
+<p>&emsp;链表插入/删除数值时，需要修改前面容器的指针，所以往往遍历时会拿两个连接容器A、B，当B就是要操作的地方时，就修改A的指针。而在实际使用时，有时需要不断往向找，这时就需要双向链表（Doubly Linked Lists）,窗口里还包含一个指向上一个容器的指针。<br><img src="../../blog_images/doubly-linked-list.png" alt=""></p>
 <p>&emsp;书中提到使用链表的例子有：</p>
 <ul>
 <li>polynomial 多项式运算</li>
 <li>radix sort 基数排序</li>
 </ul>
-<h2 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h2><p>&emsp;栈是一种后进先出的列表（LIFO List : last in ,first out）。链表会对任意位置进行操作，而栈只对最后一个数值（Top）进行操作，这种限定使得栈所需要的操作更为简单。<br><img alt="栈" src="/blog/blog_images/stack.png" style="width:30%;"><br>&emsp;栈在实际使用时主要用途是记录函数的调用顺序、局部变量等数据，所需的空间都很少，所以实际使用空间并不会太大，只需要声明一个充足的空间即可。同时又不需要对任意位置进行操作，所以栈一般是基于数组（基于结构体也是可以的）。<br>&emsp;栈的应用例子：</p>
+<h2 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h2><p>&emsp;栈是一种后进先出的列表（LIFO List : last in ,first out）。链表会对任意位置进行操作，而栈只对最后一个数值（Top）进行操作，这种限定使得栈所需要的操作更为简单。<br><img alt="栈" src="../../blog_images/stack.png" style="width:30%;"><br>&emsp;栈在实际使用时主要用途是记录函数的调用顺序、局部变量等数据，所需的空间都很少，所以实际使用空间并不会太大，只需要声明一个充足的空间即可。同时又不需要对任意位置进行操作，所以栈一般是基于数组（基于结构体也是可以的）。<br>&emsp;栈的应用例子：</p>
 <ul>
 <li>balancing symbols 语法检查 [] () 等是否对称</li>
 <li>postfix expressions 四则运算</li>
@@ -55,8 +55,8 @@
 <li>内存分配中，堆与栈的区别。</li>
 </ol>
 <p>&emsp;数据结构中，堆是一种基于结构体的树型结构（书中第六章详细讨论，可看对应笔记），故而不需要连续的在存储空间空间。而栈是一种基于数组的后进先出的列表，需要连续的空间。<br>&emsp;内存分配中，堆被分配在内存的低地址，向上增长。而栈分配在内存的高地址，向下增长。栈保存的是函数调用顺序、局部变量等等，一般由系统进程自主控制。而堆则是一般由程序动态申请内存所用。 <strong>特别注意，内存分配中的堆与数据结构中的堆，只是名字相同而已，其实并不是一样的东西。</strong><br>&emsp;<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap">What and where are the stack and heap?——stackoverflow</a><br>&emsp;<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/276016774">堆内存和数据结构堆之间的关系是什么？——知乎</a></p>
-<p><img src="/blog/blog_images/stack-heap.jpg" alt=""></p>
-<h2 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h2><p>&emsp;与栈相反，队列是一种先进先出的列表（FIFO List : first in ,first out），根据实际情况决定是基于数组还是基于结构体进行设计。队列对应着现实生活中的排队，先进来的先服务，有着广泛的应用场景，<br><img alt="队列" src="/blog/blog_images/queue.png" style="width:50%;"><br>&emsp;书中展示了基于数组的队列，记录队列的头尾位置（front,rear）。当头尾位置超过数组尾部时，位置重新指向数组头部，构建成循环数组。</p>
+<p><img src="../../blog_images/stack-heap.jpg" alt=""></p>
+<h2 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h2><p>&emsp;与栈相反，队列是一种先进先出的列表（FIFO List : first in ,first out），根据实际情况决定是基于数组还是基于结构体进行设计。队列对应着现实生活中的排队，先进来的先服务，有着广泛的应用场景，<br><img alt="队列" src="../../blog_images/queue.png" style="width:50%;"><br>&emsp;书中展示了基于数组的队列，记录队列的头尾位置（front,rear）。当头尾位置超过数组尾部时，位置重新指向数组头部，构建成循环数组。</p>
 <!-- flag of hidden posts --></div><div class="tags"><a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a><a href="/blog/tags/C/">C</a></div><div id="vcomment"></div><script src="/blog/js/av-min.js"></script><script src="/blog/js/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
 var verify = 'false' == true ? true : false;
 var GUEST_INFO = ['nick','mail','link'];
