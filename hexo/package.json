@@ -24,6 +24,6 @@
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.1",
     "live2d-widget-model-hijiki": "^1.0.5",
-    "node-sass": "^5.0.0"
+    "node-sass": "^4.13.1"
   }
 }
