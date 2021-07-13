@@ -3,7 +3,7 @@ name: Pages
 on:
   push:
     branches:
-      - master  # default branch
+      - gh-pages-dev  # default branch
 
 jobs:
   pages:
