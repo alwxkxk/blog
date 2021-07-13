@@ -17,3 +17,6 @@ hexo s
 ## 其它
 
 hexo 模板来源于[maupassant-hexo](https://github.com/tufu9441/maupassant-hexo)。
+
+## 备用网址
+- [gh-pages](https://alwxkxk.github.io/blog/posts/23630/)
