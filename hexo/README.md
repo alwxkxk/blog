@@ -1,4 +1,10 @@
 # README
+`gh-pages-dev`是专门针对部署到`gh-pages`所用的分支，修改处为：
+- `hexo\_config.yml`里的配置路径修改成： `root: /blog/` ，在master分支里是`/`
+- `hexo\themes\maupassant\layout\_widget\navbar.pug` 里的路径路径修改成`/blog/posts/38208`，在master分支里是`/posts/38208`
+
+
+
 个人博客（基于hexo）
 ```bash
 npm install hexo -g
@@ -16,3 +22,4 @@ hexo\themes\maupassant\layout\_widget\navbar.pug
 
 ## 启动
 `hexo s -p 3000`
+
