@@ -9,7 +9,7 @@ tags:
 
 ## 示例效果
 &emsp;这是3D可视化教程系列的文章，如果第一次阅读请先阅读[《3D可视化教程导读》](/blog/posts/30679)，这里展示的项目效果可访问[b-city 展示网址](http://3d.scaugreen.cn/b-city.html)：
-<img alt="3D模型拆解" src="../../blog_images/3d/b-city.gif">
+<img alt="3D模型拆解" src="https://media.githubusercontent.com/media/alwxkxk/blog/gh-pages/blog_images/3d/b-city.gif">
 
 
 ## 源码及3D项目文件

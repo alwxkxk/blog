@@ -11,7 +11,7 @@ tags:
 
 ## 示例效果
 &emsp;这是3D可视化教程系列的文章，如果第一次阅读请先阅读[《3D可视化教程导读》](/blog/posts/30679)，这里展示简单的数据中心3D可视化，界面是响应式的（即可以缩放大小基本保持一致），可访问[c-datacenter 展示网址](http://3d.scaugreen.cn/c-datacenter.html)：
-<img alt="数据中心" src="../../blog_images/3d/c-数据中心.gif">
+<img alt="数据中心" src="https://media.githubusercontent.com/media/alwxkxk/blog/gh-pages/blog_images/3d/c-数据中心.gif">
 
 ## 源码及3D项目文件
 &emsp; 源码及工程项目都放到github上。
@@ -27,7 +27,7 @@ tags:
 &emsp;浏览器的响应式设计，比较简单，利用CSS中`vh`与`vw`便可实现动态计算浏览器界面的高宽，我利用PS制作了一张背景图是4：3比例的，所以按以下CSS代码即可实现响应式缩放。
 
 
-<img alt="board" src="../../blog_images/3d/board.png">
+<img alt="board" src="https://media.githubusercontent.com/media/alwxkxk/blog/gh-pages/blog_images/3d/board.png">
 ```css
 width: 20vw;
 height: 15vw;

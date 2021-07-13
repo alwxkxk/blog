@@ -12,7 +12,7 @@ tags:
 
 ## 示例效果
 &emsp;这是3D可视化教程系列的文章，如果第一次阅读请先阅读[《3D可视化教程导读》](/blog/posts/30679)，这里展示简单的模型拆解效果，可访问[a-dismantling 展示网址](http://3d.scaugreen.cn/a-dismantling.html)：
-<img alt="3D模型拆解" src="../../blog_images/3d/3D模型拆解2.gif">
+<img alt="3D模型拆解" src="https://media.githubusercontent.com/media/alwxkxk/blog/gh-pages/blog_images/3d/3D模型拆解2.gif">
 
 &emsp;华为的网站上也有这种拆解示例，比我做的例子好看多了（毕竟我的模型是网上找的，该模型的物体分组有点问题，而我又懒得自己做一个，但并不影响大家了解学习。），原理基本上是一样的。[华为服务器拆解示例](https://support.huawei.com/onlinetoolweb/server-3D/res/server/1288hv5/index.html?lang=cn)
 
@@ -37,7 +37,7 @@ function move(obj,position) {
 
 ```
 &emsp;在模型制作上，必须是包含若干个子模型，这样才能分别控制不同的子模型做不同的事。
-<img alt="最小单元模型" src="../../blog_images/3d/最小单元模型.png">
+<img alt="最小单元模型" src="https://media.githubusercontent.com/media/alwxkxk/blog/gh-pages/blog_images/3d/最小单元模型.png">
 &emsp;可以看到，这个机箱的3D模型是包含了子模型，使用`scene.getObjectByName("Object_7")`就能得到`Object_7`这个模型，再设置其位置属性就可以实现位置变化`obj.position.set(x,y,z)`。最后让各个模块向各个方向移动即可做到拆解效果：
 
 ```js
