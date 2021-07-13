@@ -26,6 +26,5 @@ hexo\themes\maupassant\layout\_widget\navbar.pug
 - `hexo\themes\maupassant\layout\_widget\navbar.pug` 里的路径路径修改成`/blog/posts/38208`，在master分支里是`/posts/38208`
 - 图片路径全部从`/blog_images/xxx.jpg` 修改成`https://media.githubusercontent.com/media/alwxkxk/blog/gh-pages/blog_images/xxx.jpg`
 
-另外，gh-pages-dev分支上的png图片也是由lfs保存的，而master则暂时还没转换过来，抽空处理。
 
 建议准备两个目录，从master 增量地添加到 gh-pages-dev，这样子处理比两分支merge更方便，提交后自动由action部署。
