@@ -1,12 +1,27 @@
 ---
-title: demo1
+title: 把demo1跑起来
 toc: true
 abbrlink: 64786
 date: 2018-11-01 19:57:07
 donate: true
 tags:
-- IOT
 ---
+
+&emsp;在阅读本篇文章之前，你已经阅读了：
+- [导读](/posts/44755)
+- [NodeMCU基础](/posts/31494)
+## 本篇学习内容
+- 先看看已经部署到线上的demo1，及其能它来控制NodeMCU开发板开关灯。
+- 安装并使用Git拉取Github上的本项目的代码。
+- 安装最基本的软件开发环境（Chrome浏览器、vscode编辑器、NodeJs环境）。
+- 本地把demo1跑起来，实现在本机上能控制NodeMCU开发板开关灯。
+
+
+
+
+
+
+
 &emsp;大家尽量使用chrome浏览器，其它浏览器可能会出现问题。（比如说IE内核的浏览器不支持ES6。）
 &emsp;搭建一个最简单的物联网项目：通过手机控制LED灯开关。
 &emsp;从程序上来讲，nodemcu（TCP客户端）与TCP服务器通信，手机浏览器（HTTP客户端）与HTTP服务器通信，最终实现通过网页控制nodemcu的LED。
@@ -82,34 +97,6 @@ tags:
 - 硬件：nodemcu，使用Arduino IDE进行开发，与服务器使用TCP通信
 - 服务器：Nodejs，使用express4.x框架
 - 界面：HTML+CSS+JavaScript，Jquery与Bootstrap
-
-### 学习过程
-- [计算机网络基础](/posts/37707)
-&emsp;先了解基本的网络知识，半个小时吧。
-
-- [nodemcu基础](/posts/31494)
-&emsp;了解nodemcu与开发，两三个小时吧。
-
-- [HTML、CSS、JS基础](/posts/54080)
-&emsp;了解界面开发的三件套基础知识，__结合其它教程自学，大约两三个星期__，能做出基本的网页界面。
-
-- [nodejs基础](/posts/56793)
-&emsp;了解nodejs开发、ES6语法、express框架，__结合其它教程自学，大约两个星期__。
-
-- 学习并模仿[demo0.1](/posts/38208)
-&emsp;demo0.1是demo1的简化版，简化功能与不使用express框架，降低学习成本。
-
-- [chrome开发者工具](/posts/52429)
-&emsp;学习怎么调试网页，分析别人网页，__拥有分析并模仿别人的网页的能力__。
-
-- [Jquery、Bootstrap基础](/posts/27238)
-&emsp;学习Jquery、Bootstrap基础。__并尝试模仿别人网页，检验学习成果。__
-
-- 学习并模仿[demo1](/posts/64786)
-&emsp;尽可能地自行实现demo1效果，大约几天。
-
-- [linux基础](/posts/34982)
-&emsp;为了让后端程序部署到云服务器里，你还需要学习linux基础并购买云服务器。
 
 ## demo1程序讲解
 &emsp;demo1代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo1/myapp`里找到。整个代码就是由[Express 手脚架](http://www.expressjs.com.cn/starter/generator.html)使用`express --view=pug myapp`一健生成的。整个程序的入口启动文件就是`myapp/bin/www`，界面的代码是`myapp/views/index.pug`，其JS代码是`myapp/public/javascripts/index.js`。同时添加了TCP服务器的代码`myapp/bin/tcp-server.js`，用于接收TCP客户端的数据。
@@ -193,7 +180,7 @@ $.get("/equipmentArray",(res)=>{
 
 ## 下一个demo
 &emsp;demo1尽量追求简单入门，所以界面不好看（帅是第一生产力），性能也不足。先说说demo1的问题：
-- 每次刷新页面才会显示最新的tick值。（讨论HTTP轮询以及引入websocket协议）
+- HTTP轮询性能低，效果差。
 - 界面丑（优化并会引入图表库Echart，实现数据可视化）
 - 不能显示历史数据（引入数据库）
 &emsp;在实现下一个demo之前会讨论解决以上问题，之后会做出一个能看能用的demo，同时会介绍其它技术。

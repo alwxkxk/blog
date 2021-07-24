@@ -1,47 +1,55 @@
 ---
-title: nodemcu基础
+title: NodeMCU基础
 toc: true
 abbrlink: 31494
 date: 2018-10-13 17:05:22
 tags:
 - Arduino
 - ESP8266
-- nodemcu
+- NodeMCU
 ---
 
-&emsp;最近发现arduino IDE可以开发nodemcu，惊喜若狂，因为在以前，开发是十分麻烦的。先买一块nodemcu（超便宜的，最便宜十几块钱就能在淘宝上买到）,安装驱动精灵（用于安装串口驱动的），安装arduino-1.8版本以上[arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)
+&emsp;在阅读本篇文章之前，你已经阅读了：
+- [导读](/posts/44755)
+## 本篇学习内容
+- 认识、购买NodeMCU开发板
+- 安装Arduino IDE、ESP8266扩展开发板
+- 实现NodeMCU开发板LED灯闪烁例子
+- 实现NodeMCU开发板串口通信的例子
 
-## nodemcu简介
-&emsp;nodemcu本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
-![nodemcu引脚图](/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
+## NodeMCU简介
+&emsp;NodeMCU本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
+![NodeMCU引脚图](/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
 
-<img alt="淘宝nodemcu" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
+<img alt="淘宝NodeMCU" src="/blog_images/005BIQVbgy1fyy8y8neuij30rw0dbtfj.jpg" style="cursor:pointer;">
 
-&emsp;__特别注意：nodemcu分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
+&emsp;先买一块NodeMCU（超便宜的，最便宜十几块钱就能在淘宝上买到）,安装驱动精灵（用于安装串口驱动的），安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)
+
+&emsp;__特别注意：NodeMCU分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
 ![](/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
 # 使用Arduino编程
 &emsp;这里演示一下开发环境的搭建以及最简demo。
 ## 搭建开发环境
-- 安装串口驱动，USB转串口芯片有些用cpXX，有些是CHxx，插上nodemcu后让驱动精灵来安装对应驱动即可。
+- 安装串口驱动，USB转串口芯片有些用cpXX，有些是CHxx，插上NodeMCU后让驱动精灵来安装对应驱动即可。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1JK4y1o7Nc&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 
-- 安装arduino-1.8版本以上[arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。
+- 安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1dp4y1t75w&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 &emsp;如果实在速度太慢安装不了有其它办法安装，请看另一文章：[Arduino开发板管理安装失败解决办法](/posts/10960)。
-&emsp;安装完扩展开发板信息后，记得选择开发板为nodemcu。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。**大家不要急着跑demo1例程，应该先跑第一个例程：控制LED，上传代码后LED灯会一直闪烁，这就证明硬件没问题。如果LED灯不一直闪烁可能是V3版本，需要定义引脚或者硬件有问题。其次要学会看串口打印信息，根据打印信息判断代码执行到哪里，哪一环节出现异常。**
+&emsp;安装完扩展开发板信息后，记得选择开发板为NodeMCU。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。**大家不要急着跑demo1例程，应该先跑第一个例程：控制LED，上传代码后LED灯会一直闪烁，这就证明硬件没问题。如果LED灯不一直闪烁可能是V3版本，需要定义引脚或者硬件有问题。其次要学会看串口打印信息，根据打印信息判断代码执行到哪里，哪一环节出现异常。**
 
 ## 例程
 
 ### 控制LED
-&emsp;nodemcu板LED灯闪烁。
-&emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`，即把第二行代码取消注释。__
+&emsp;NodeMCU板LED灯闪烁。
+&emsp;__特别注意：NodeMCU分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`，即把第二行代码取消注释。__
 ```c
-//如果是nodemcu V3版，需要另外定义LED引脚
+//如果是NodeMCU V3版，需要另外定义LED引脚
 //#define LED_BUILTIN 2 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);     // Initialize the LED_BUILTIN pin as an output
@@ -154,12 +162,12 @@ void loop() {
 
 ### TCP通信-demo1
 &emsp;注意修改WIFI地址与密码。
-&emsp;__特别注意：nodemcu分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
+&emsp;__特别注意：NodeMCU分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
 &emsp;有网友问到，WIFI连接成功了，但提示连接失败，这个IP地址是需要填什么？ IP地址是需要填写TCP服务端的IP址，前期调试可以使用网络调试助手来充当TCP服务端：
 ![物联网项目](/blog_images/nodemcu与网络调试助手联调.jpg)
 
 ```c
-//如果是nodemcu V3版，需要另外定义LED引脚
+//如果是NodeMCU V3版，需要另外定义LED引脚
 //#define LED_BUILTIN 2 
 #include <ESP8266WiFi.h>
 //必须修改：填写你的WIFI帐号密码
@@ -240,7 +248,7 @@ void loop() {
 ```
 
 ### DHT11
-&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11。DHT11总共有三个引脚（电源、数据、地），电源与地分别接nodemcu的VCC（或3.3V）与地线，数据线所接引脚要与代码相符合。有位读者提供了相关的代码供大家参考：
+&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11。DHT11总共有三个引脚（电源、数据、地），电源与地分别接NodeMCU的VCC（或3.3V）与地线，数据线所接引脚要与代码相符合。有位读者提供了相关的代码供大家参考：
 
 ```c
 #include <dht11.h>
@@ -277,7 +285,7 @@ if(arr[0] === 'humidity'){
 // 这样就能识别出这个30是来自于humidity的值，继续做其它的事.....
 ```
 
-&emsp;要使用`<dht11.h>`，就要装第三方库或自行手动添加以下库文件，[Arduino IDE 库文件如何添加？](http://yfrobot.com/thread-11842-1-1.html)，将库文件放到至arduino IDE 所在文件夹的libraries文件夹中，如（/arduino/libraries）：
+&emsp;要使用`<dht11.h>`，就要装第三方库或自行手动添加以下库文件，[Arduino IDE 库文件如何添加？](http://yfrobot.com/thread-11842-1-1.html)，将库文件放到至Arduino IDE 所在文件夹的libraries文件夹中，如（/arduino/libraries）：
 
 ```H
 #ifndef dht11_h
@@ -403,18 +411,18 @@ int dht11::read(int pin)
 
 ## FAQ
 1. 错误提示：ESP8266WiFi.h:No such file or directory？
-__答：说明没有安装ESP8266扩展开发板信息或者没选择nodemcu开发板，导致找不到相关文件。__
+__答：说明没有安装ESP8266扩展开发板信息或者没选择NodeMCU开发板，导致找不到相关文件。__
 2. 在开发板管理器安装esp8266 by ES8266 Community 十分缓慢，有其它办法吗？
 __答：有解决办法，请看[Arduino开发板管理安装失败解决办法](/posts/10960)__
 3. 哪里可以看到API文档？
 答：
 - [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
-- [arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)
+- [Arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)
 
 ## 附录
-- [arduino 中文社区](https://www.arduino.cn/forum.php)
+- [Arduino 中文社区](https://www.arduino.cn/forum.php)
 - [Arduino core for ESP8266 WiFi chip - github](https://github.com/esp8266/Arduino)
 - [在Windows系统上入门Arduino](https://www.arduino.cc/en/Guide/Windows?setlang=cn)
 - [Quick Start to Nodemcu (ESP8266) on Arduino IDE](https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/)
 - [Arduino - ESP8266WiFi library](https://github.com/esp8266/Arduino/tree/master/doc/esp8266wifi)
-- [arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)
+- [Arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)
