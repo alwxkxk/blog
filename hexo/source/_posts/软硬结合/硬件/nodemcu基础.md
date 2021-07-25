@@ -10,7 +10,7 @@ tags:
 ---
 
 &emsp;在阅读本篇文章之前，你已经阅读了：
-- [导读](/posts/44755)
+- [软硬结合-导读](/posts/44755)
 ## 本篇学习内容
 - 认识、购买NodeMCU开发板
 - 安装Arduino IDE、ESP8266扩展开发板
@@ -18,7 +18,10 @@ tags:
 - 实现NodeMCU开发板串口通信的例子
 
 ## NodeMCU简介
-&emsp;NodeMCU本质就是ESP8266+USB转串口芯片，ESP8266是一块可编程的WIFI芯片。
+![ESP8266芯片模块开发板的区别](/blog_images/ESP8266芯片模块开发板的区别.jpg)
+&emsp;NodeMCU本质就是把ESP8266的引脚都引出来，配合USB转串口芯片，使其能快速开发验证想法。
+&emsp;在我的毕业设计里，ESP8266模块只是充当WIFI通信模块的作用，只做消息转发不做业务处理，传感器与STM32通信，STM32再与ESP8266模块通信。而在这个教程里，使用NodeMCU，省去了STM32这个中间商，传感器与STP8266直接相连，此时ESP8266芯片既是WIFI通信芯片，也做业务处理。
+
 ![NodeMCU引脚图](/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
 
@@ -26,23 +29,26 @@ tags:
 
 &emsp;先买一块NodeMCU（超便宜的，最便宜十几块钱就能在淘宝上买到）,安装驱动精灵（用于安装串口驱动的），安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)
 
-&emsp;__特别注意：NodeMCU分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
+&emsp;特别注意：NodeMCU分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`。别问我买哪个版本的，__买便宜的那一个!!!（好像是V3便宜些）__
 ![](/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
 # 使用Arduino编程
 &emsp;这里演示一下开发环境的搭建以及最简demo。
 ## 搭建开发环境
-- 安装串口驱动，USB转串口芯片有些用cpXX，有些是CHxx，插上NodeMCU后让驱动精灵来安装对应驱动即可。
+&emsp;安装串口驱动，USB转串口芯片有些用cpXX，有些是CHxx，插上NodeMCU后让驱动精灵来安装对应驱动即可。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1JK4y1o7Nc&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 
-- 安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。
+- 安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。但由于不可描述的原因，可能会安装失败，可请看另一文章进行解决：[Arduino开发板管理安装失败解决办法](/posts/10960)。
+
+
+![无法获取外面的资源](/blog_images/无法获取外面的资源.jpg)
+
+&emsp;验证一下是否已经安装扩展，如果烧录程序时提示`ESP8266WiFi.h:No such file or directory`，基本就代表没有安装或选择扩展。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1dp4y1t75w&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
-&emsp;如果实在速度太慢安装不了有其它办法安装，请看另一文章：[Arduino开发板管理安装失败解决办法](/posts/10960)。
-&emsp;安装完扩展开发板信息后，记得选择开发板为NodeMCU。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。**大家不要急着跑demo1例程，应该先跑第一个例程：控制LED，上传代码后LED灯会一直闪烁，这就证明硬件没问题。如果LED灯不一直闪烁可能是V3版本，需要定义引脚或者硬件有问题。其次要学会看串口打印信息，根据打印信息判断代码执行到哪里，哪一环节出现异常。**
-
+&emsp;安装完扩展开发板信息后，记得选择开发板为NodeMCU。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。__拿到开发板的第一件事，就是跑个例程，证明硬件是没问题的。__ 我们接下来要做的事就是，通过代码把开发板上的LED闪烁起来，证明板子没问题。然后就是实践串口通信收发消息与验证连接WIFI的功能。
 ## 例程
 
 ### 控制LED
@@ -160,98 +166,13 @@ void loop() {
 
 ```
 
-### TCP通信-demo1
-&emsp;注意修改WIFI地址与密码。
-&emsp;__特别注意：NodeMCU分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
-&emsp;有网友问到，WIFI连接成功了，但提示连接失败，这个IP地址是需要填什么？ IP地址是需要填写TCP服务端的IP址，前期调试可以使用网络调试助手来充当TCP服务端：
-![物联网项目](/blog_images/nodemcu与网络调试助手联调.jpg)
+
+
+### DHT11(可选学)
+&emsp;在我做的教程里，本来是通过程序生成随机数来模拟“从温度传感器上拿到的数据”，从而省少了温度传感器的费用。当然，有部分读者会觉得不踏实，不完整，所以有读者把连接DHT11，并把代码分享出来了。温湿度传感器DHT11总共有三个引脚（电源、数据、地），电源与地分别接NodeMCU的VCC（或3.3V）与地线，数据线所接引脚要与代码相符合。感谢该读者提供了相关的代码供大家参考：
 
 ```c
-//如果是NodeMCU V3版，需要另外定义LED引脚
-//#define LED_BUILTIN 2 
-#include <ESP8266WiFi.h>
-//必须修改：填写你的WIFI帐号密码
-const char* ssid = "you-wifi";
-const char* password = "you-wifi-password";
-
-const char* host = "42.192.168.165";
-const int port = 9002;//demo1 tcp 使用 9002端口
-
-const char* id = "1234abcd";
-int tick = 1000;
-
-
-WiFiClient client;
-
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(115200);
-  pinMode(LED_BUILTIN, OUTPUT);
-  //连接WIFI
-  WiFi.begin(ssid, password);
-
-  //设置读取socket数据时等待时间为100ms（默认值为1000ms，会显得硬件响应很慢）
-  
-  client.setTimeout(100);
-
-  //等待WIFI连接成功
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.println("WiFi connecting...");
-    delay(500);
-  }
-  Serial.println("WiFi connected!.");
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-  if (client.connect(host, port))
-  {
-    Serial.println("host connected!");
-    //发送第一条TCP数据，发送ID号
-    client.print(id);
-  }
-  else
-  {
-    // TCP连接异常
-    Serial.println("host connecting...");
-    delay(500);
-  }
-
-  while (client.connected()) {
-    //      接收到TCP数据
-    if (client.available())
-    {
-      // 有网友反应，使用client.read()速度会更快。我没实践过。
-      String line = client.readStringUntil('\n');
-      if (line == "1") {
-        Serial.println("command:open led.");
-        digitalWrite(LED_BUILTIN, LOW);
-        client.print("OK");
-      }
-      else if (line == "0") {
-        Serial.println("command:close led.");
-        digitalWrite(LED_BUILTIN, HIGH);
-        client.print("OK");
-      }
-    }
-    else {
-      //若没收到TCP数据，每隔一段时间打印并发送tick值
-      Serial.print("tick:");
-      Serial.println(tick);
-      client.print(tick);
-      tick++;
-      delay(1000);
-    }
-  }
-
-}
-```
-
-### DHT11
-&emsp;上面的例子是我自己写的，并且模拟出数据来。如果要产生真实的数据，就需要接上真实的传感器，温湿度传感器DHT11。DHT11总共有三个引脚（电源、数据、地），电源与地分别接NodeMCU的VCC（或3.3V）与地线，数据线所接引脚要与代码相符合。有位读者提供了相关的代码供大家参考：
-
-```c
-#include <dht11.h>
+#include <dht11.h> // 要使用dht11.h，需要引用，接下来后面有讲怎么引用。
 dht11 DHT11;
 // 这里定义了DHT11 要连接 的引脚
 #define DHT11_PIN 13
@@ -263,27 +184,14 @@ void setup() {
 void loop() {
   // 读取数值并打印到串口
   int chk = DHT11.read(DHT11_PIN);
-  Serial.print("Temperature = ");//温度
+  Serial.print("Temperature=");//温度
   Serial.println(DHT11.temperature);
-  Serial.print("Humidity = ");//湿度
+  Serial.print("Humidity=");//湿度
   Serial.println(DHT11.humidity);
   delay(1000);
 }
 ```
-&emsp;在demo2中，我们只传一个模拟生成的数值，如果要传两个值的话，就要想个办法让服务器识别出这两个不同类型的数据。方法有很多种，我举一个例子：上传时`temprature:24`,`humidity:30`，服务器解析时用 `split()`函数来拆解字符串，代码例子：
-```js
-let humidityValue = 0
-let temperatureValue = 0
-const valueString = 'humidity:30' // 从硬件上传的数据得到这个字符串
-const arr = valueString.split(':') // 此时arr = ['humidity','30']
-if(arr[0] === 'humidity'){
-  humidityValue = arr[1] // 判断 是湿度
-}else{
-  temperatureValue = arr[1] // 是温度
-}
 
-// 这样就能识别出这个30是来自于humidity的值，继续做其它的事.....
-```
 
 &emsp;要使用`<dht11.h>`，就要装第三方库或自行手动添加以下库文件，[Arduino IDE 库文件如何添加？](http://yfrobot.com/thread-11842-1-1.html)，将库文件放到至Arduino IDE 所在文件夹的libraries文件夹中，如（/arduino/libraries）：
 
@@ -407,6 +315,44 @@ int dht11::read(int pin)
 // END OF FILE
 //
 ```
+
+
+### 如何区分不同类型的数据（扩展补充）
+&emsp;那么问题来了，在demo中，我是使用程序生成模拟数来模拟温度的，所以我可以直接发数值，后端程序默认都当成是温度来处理：
+```
+24
+25
+23
+22
+```
+&emsp;但现在接上硬件后发现其实数据是两种，除了温度还有湿度，就要区分开来，如何区分在于看我们怎么定义，我们可以这么定义：
+```
+Temperature=24
+Humidity=30
+Temperature=25
+Humidity=31
+Temperature=26
+Humidity=32
+```
+&emsp;同时后端接收到这样的数据时，也要做对应的处理，JS可以使用 `split()`函数来拆解字符串，代码例子：
+```js
+let humidityValue = 0
+let temperatureValue = 0
+const valueString = 'Humidity=30' // 从硬件上传的数据得到这个字符串
+const arr = valueString.split('=') // 把字符串根据= 来分䣓，此时arr = ['humidity','30']
+if(arr[0] === 'Humidity'){
+  humidityValue = arr[1] // 判断 是湿度
+}else if(arr[0] === 'Temperature'){
+  temperatureValue = arr[1] // 是温度
+}
+```
+&emsp;当然，这样定义还是有问题，主要在于要上传的字节太多，在商业的角度来看就是浪费流量，成本高。所以为了省流量，一般都是用字节，比如说我可以传
+```
+0x2430 // 0x2430 是十六进制的写法，转换成二进制就是 0010 0100 0011 0000
+0x2531
+0x2632
+```
+&emsp;一个字节有八位，有两个数值，我可以把其中四位当作温度值十位，其中四位当作温度值的个位，这样温度值只花了一个字节，湿度值同理也只使用了一个字节，组合起来共使用了两个字节而已。更进一步地，这个在商用上还存在着一个扩展性差的问题，在工业界流行使用TVL格式（type,value,length），自行搜索学习，点到即止，不再深入扩展。
 
 
 ## FAQ
