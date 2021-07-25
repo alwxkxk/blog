@@ -20,7 +20,7 @@ tags:
 ## NodeMCU简介
 ![ESP8266芯片模块开发板的区别](/blog_images/ESP8266芯片模块开发板的区别.jpg)
 &emsp;NodeMCU本质就是把ESP8266的引脚都引出来，配合USB转串口芯片，使其能快速开发验证想法。
-&emsp;在我的毕业设计里，ESP8266模块只是充当WIFI通信模块的作用，只做消息转发不做业务处理，传感器与STM32通信，STM32再与ESP8266模块通信。而在这个教程里，使用NodeMCU，省去了STM32这个中间商，传感器与STP8266直接相连，此时ESP8266芯片既是WIFI通信芯片，也做业务处理。
+&emsp;在我的毕业设计里，ESP8266模块只是充当WIFI通信模块的作用，只做消息转发不做业务处理，传感器与STM32通信，STM32再与ESP8266模块通信。而在这个教程里，使用NodeMCU，省去了STM32这个中间商，传感器与STP8266直接相连，此时ESP8266芯片既是WIFI通信芯片，也做业务处理。NodeMCU的引脚如下：
 
 ![NodeMCU引脚图](/blog_images/005BIQVbgy1fw7hir4bdrj30si0fuwmo.jpg)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
@@ -39,7 +39,7 @@ tags:
 <iframe src="//player.bilibili.com/player.html?bvid=BV1JK4y1o7Nc&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 
-- 安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。但由于不可描述的原因，可能会安装失败，可请看另一文章进行解决：[Arduino开发板管理安装失败解决办法](/posts/10960)。
+&emsp;安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。但由于不可描述的原因，可能会安装失败，可请看另一文章进行解决：[Arduino开发板管理安装失败解决办法](/posts/10960)。
 
 
 ![无法获取外面的资源](/blog_images/无法获取外面的资源.jpg)
