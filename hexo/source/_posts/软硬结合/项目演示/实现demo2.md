@@ -1,0 +1,116 @@
+---
+title: 实现demo2
+toc: true
+abbrlink: 29864
+date: 2021-07-26 19:43:09
+tags:
+---
+
+
+## demo2主要流程图
+
+&emsp;相对于demo1，demo2添加了数据库、websocket协议、图表库Echart。demo2代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo2/myapp`里找到。
+![](/blog_images/005BIQVbgy1fzbotaayifj30lu0coab7.jpg)
+
+### 硬件变化
+&emsp;nodemcu代码相对于demo1没有太大改动，主要是改变了TCP端口以及每秒发送随机数（模拟传感器实时取得的温度值）。此代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`demo2/nodemcu`找到。
+```c
+const int port = 9003;//demo2 tcp 使用 9003端口
+
+// TCP发送20-29之间随机数
+client.print(20+random(0,10));
+```
+
+### HTTP客户端变化
+&emsp;demo1的界面是将所有连接的设备显示出来，手动刷新获取最新值，选中某个设备发送开/关灯命令。
+&emsp;demo2的界面是进入网页时就已经指定了某个单一设备，只要设备不断地上传数据，界面就实时地把数据在图表中显示出来，点击按钮发送开/关灯命令。
+![](/blog_images/005BIQVbgy1fz50jf130yj31co0qfqv5.jpg)
+&emsp;界面为了追求一定程序的美化，所以加了很多没有实质性作用只是单纯为了更好看的内容。此代码是在express框架内，可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`demo2/myapp/views/index.pug`找到界面代码，`demo2/myapp/public/javascripts/index.js`找到JS代码。JS代码主要做了几件事：
+1. 创建websocket连接，接收该设备的实时数据。
+2. 给开/关按钮添加POST请求代码。
+3. 初始化Echart图表，用于显示实时数据。
+4. 请求历史数据，在Echart上显示。
+
+### 服务器端变化
+&emsp;服务器端的代码在demo1上增加内容：
+1. 增加MongoDB数据库操作，TCP服务器接收到的所有数据都存入到数据库中（只保留一个小时的历史数据）。
+2. 增加websocket，给界面提供实时数据。
+3. 增加TCP客户端模拟器（`demo2/myapp/bin/tcp-client.js`，id号为`123456`），模拟硬件不断产生数据，方便在没有硬件的情况下也能从界面看到实时数据。
+
+### demo2程序讲解
+&emsp;由demo1扩展而来的，所以demo1程序讲解里讲过的东西就不再重复了，只讲变化过的内容。
+&emsp;浏览器打开网页时，由JS代码解析当前URL里的host用于创建websocket连接，解析URL里的设备ID用于向服务器订阅该设备的实时数据：
+```javascript
+// public\javascripts\index.js
+// 获取当前host，用于提供url以建立websocket
+const host = window.location.host
+// 从当前网址里获取设备id ,比如 https://127.0.0.1/equipmentId/789 分析得到设备ID为789，若没有则为123456
+let equipmentId = window.location.pathname.split("/")[2] || "123456"
+
+// 创建websocket连接
+const socket = new WebSocket('ws://'+host);
+// 如果建立连接
+socket.onopen=()=>{
+  console.log("websocket connect!")
+  let data = JSON.stringify({equipmentId:equipmentId})
+  socket.send(data)
+}
+```
+&emsp;初始化Echart图表，并且发起请求获取该设备的历史数据，由服务器从数据库取得数据，处理并返回数据。
+```javascript
+// public\javascripts\index.js
+//请求历史数据
+$.get('/history/'+equipmentId,(data)=>{
+  console.log("history:",data)
+  data.forEach((v)=>{
+    updateMyChart(v.time,v.value)
+  })
+})
+```
+
+```javascript
+// routes\index.js
+// 获取某设备的历史数据
+// GET /history/123456 取得设备id为12356的数据。
+router.get('/history/:id', function(req, res, next) {
+  mongodb.find({id:req.params.id},(err,docs)=>{
+    if(err){
+      res.send(err)
+    }
+    else{
+      let result = []
+      docs.forEach( (doc) => {
+        result.push({
+          time:moment(doc.createdAt).format('mm:ss'),
+          value:doc.data
+        })
+      });
+      result.reverse()
+      
+      res.send(result)
+    }
+    
+  })
+});
+```
+
+
+
+## 学习过程
+&emsp;在模仿demo2之前，需要学习：
+- [数据可视化基础](/posts/18173)
+- [HTTP协议基础](/posts/34265)：里面讨论了HTTP轮询的不足与websocket协议的最简例子。
+- [数据库基础](/posts/41347)
+
+&emsp;当修改了代码不知道怎么调试时，请看：
+- [软件结合调试技巧](/posts/54436)
+
+&emsp;以上是网页的制作，可接着阅读如何跨到其它平台，按需学习：
+- [微信小程序基础](/posts/15341)
+- [electron基础](/posts/1041)
+
+&emsp;MQTT协议在物联网应用中十分流行，可单独学习整合（为了不让demo2跨度过大，所以就不整合到demo2里演示）：
+- [MQTT协议基础](/posts/20945)
+
+&emsp;demo2学习完后，整个教程就到了尾声，所有关键技术都已经介绍完了，各位读者已经可以自行编写整个物联网系统，剩下的无非是业务逻辑代码编写（比如帐号注册登陆、页面设计等等，不同的业务不同的设计）。__整个教程看似内容很少，实质上是需要读者阅读七八本书以及结合其它教程一起学习，其实需要读者学习的内容是极其之多，本教程只是演示最简单的实例给大家一个例子以参考，有利于进行正确有效的学习，少走弯路。__ 如果大家在阅读教程的过程中感受到某一块学习上有困难，尽管提出来，我会完善对应的内容或编写FAQ。本教程到此为止，很荣幸能够帮到大家。
+![](/blog_images/005BIQVbgy1fz52yl0wqhj30f3044aa4.jpg)

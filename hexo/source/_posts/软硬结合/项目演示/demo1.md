@@ -1,9 +1,8 @@
 ---
-title: 把demo1跑起来
+title: demo1跑起来
 toc: true
 abbrlink: 64786
 date: 2018-11-01 19:57:07
-donate: true
 tags:
 ---
 
@@ -15,6 +14,7 @@ tags:
 - 先看看已经部署到线上的demo1，及其能它来控制NodeMCU开发板开关灯。
 - 安装最基本的软件开发环境（Chrome浏览器、vscode编辑器、NodeJs环境）。
 - 本地把demo1跑起来，实现在本机上能控制NodeMCU开发板开关灯。
+
 ## 拉取所有代码
 &emsp;Git是代码管理工具，我整个教程都放到Github上开源了，可以通过Git来拉取代码：[Github](https://github.com/alwxkxk/soft-and-hard)：
 ![获取全部源码](/blog_images/005BIQVbgy1fxa4jvz5xtj30ty0lvwi8.jpg)
@@ -26,14 +26,14 @@ tags:
 &emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以使用官方的国内镜像的URL替代（用`https://github.com.cnpmjs.org`代替`https://github.com`）即执行命令时是：`git clone  https://github.com.cnpmjs.org/alwxkxk/soft-and-hard`。
 ## 将NodeMCU连接线上的demo1
 &emsp;我已经把demo1部署到了我的云服务器，供大家测试：
-- 界面网址：http://42.192.168.165:8001/
+- 界面网址：[http://42.192.168.165:8001/](http://42.192.168.165:8001/)
 - TCP服务器：42.192.168.165:9002
 
-&emsp;界面网址是使用浏览器chrome访问，即可打对demo1的界面。TCP服务器是让NodeMCU连上去的。在demo1里实现连接发现硬件，并且能控制硬件开关灯。
+&emsp;界面网址是使用浏览器chrome访问，即可打对demo1的界面。TCP服务器是让NodeMCU连上去的。修改NodeMCU demo1的代码里的 __WIFI名称密码__，并烧录到NodeMCU中，就可以连接到线上demo1，并通过网页来控制硬件开关灯。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1hv411L7j3&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
-&emsp;__云服务器本质上依旧是一台电脑，所以在开发阶段，我们可以完全让自己的电脑来充当这个云服务器，来进行开发调试验证，最后成功了再部署到云服务器上。__ 接下来我们先本地调试：
+&emsp;__云服务器本质上依旧是一台电脑，所以在开发阶段，我们可以完全让自己的电脑来充当这个云服务器，来进行开发调试验证，最后成功了再部署到云服务器上。__ 接下来我们先本地调试。
 ## 搭建开发环境
 &emsp;开发环境主要包含：Chrome浏览器（不建议使用其它浏览器）、vscode编辑器、NodeJs环境。跟着视频操作即可：
 <iframe src="//player.bilibili.com/player.html?bvid=BV1H54y147cu&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>   
@@ -52,7 +52,14 @@ tags:
 
 &emsp;拥有公网IP的云服务器，本质就是一台能让世界连接上的电脑，跟你自己电脑本质差别仅仅是多了一个公网IP而已。在这台云服务器上，可以安装windows系统（不推荐）、linux系统，然后安装软件，部署代码等操作，以对外提供服务。
 
-### 瞎折腾
+## 让NodeMCU连上本地的demo1
+&emsp;要想NodeMCU连上本地的demo1，必须先知道自己电脑的IP地址，可以通过cmd命令行输入`ipconfig`来得到电脑的IP地址。
+![打开cmd](/blog_images/005BIQVbgy1fupe1tykypj314s0nawr3.jpg)
+![内网IP](/blog_images/005BIQVbgy1fupdzr3nbcj30rl0efwf7.jpg)
+
+&emsp;然后修改NodeMCU demo1的代码里的 __IP地址__，烧录到NodeMCU中，要确保NodeMCU与电脑是在同一个WIFI网络当中，就可以了在本地跑通demo1了。
+
+## 瞎折腾
 &emsp;虽然说读者可能到现在什么都不懂，但这里演示如何瞎折腾，让读者获得一下拥有感，演示一下修改网页内容：
 <iframe src="//player.bilibili.com/player.html?bvid=BV1GA411V7zf&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 

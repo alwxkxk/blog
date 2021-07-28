@@ -60,7 +60,7 @@ tags:
 
 ### 查看IP地址
 - 查看本机内网IP 
-打开命令提示符（win+R 输入cmd，或在菜单里输入cmd搜索）,输入ipconfig。
+打开命令提示符（win+R 输入cmd，或在菜单里输入cmd搜索）,输入`ipconfig`。
 ![打开cmd](/blog_images/005BIQVbgy1fupe1tykypj314s0nawr3.jpg)
 ![内网IP](/blog_images/005BIQVbgy1fupdzr3nbcj30rl0efwf7.jpg)
 - 查看本机外网IP
