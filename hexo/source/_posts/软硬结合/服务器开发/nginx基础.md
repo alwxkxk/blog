@@ -52,7 +52,8 @@ nginx -v
 &emsp;根据[官方文档新手指引](http://nginx.org/en/docs/beginners_guide.html)执行命令：
 ```bash
 # 启动nginx
-sudo service nginx start
+systemctl start nginx
+# centos 7 是 service nginx start
 
 # 使用telnet 进行HTTP访问测试 本地测试 nginx 80 端口
 telnet 127.0.0.1 80
