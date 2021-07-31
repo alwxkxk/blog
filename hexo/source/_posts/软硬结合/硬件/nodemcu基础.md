@@ -17,6 +17,9 @@ tags:
 - 实现NodeMCU开发板LED灯闪烁例子
 - 实现NodeMCU开发板串口通信的例子
 
+## 本篇视频
+<iframe src="//player.bilibili.com/player.html?aid=462062924&bvid=BV16L411n7Pi&cid=379908862&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
 ## NodeMCU简介
 ![ESP8266芯片模块开发板的区别](/blog_images/ESP8266芯片模块开发板的区别.jpg)
 &emsp;NodeMCU本质就是把ESP8266的引脚都引出来，配合USB转串口芯片，使其能快速开发验证想法。
@@ -31,24 +34,29 @@ tags:
 
 &emsp;特别注意：NodeMCU分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`。别问我买哪个版本的，__买便宜的那一个!!!（好像是V3便宜些）__
 ![](/blog_images/005BIQVbgy1fz9u3c3howj30my0bvdpc.jpg)
-# 使用Arduino编程
-&emsp;这里演示一下开发环境的搭建以及最简demo。
-## 搭建开发环境
-&emsp;安装串口驱动，USB转串口芯片有些用cpXX，有些是CHxx，插上NodeMCU后让驱动精灵来安装对应驱动即可。
+
+## 验证硬件是否正常
+&emsp;把NodeMCU接上USB线插上电脑，如果发现没有识别到端口的话，可能是线有问题，也有可能是板子有问题。如果你怀疑是板子有问题，请联系客服要求换货。
+&emsp;在演示时我的新电脑没有提示，如果需要安装串口驱动可看以下的视频。USB转串口芯片有些用cpXX，有些是CHxx，插上NodeMCU后让驱动精灵来安装对应驱动即可。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1JK4y1o7Nc&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 
-&emsp;安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。但由于不可描述的原因，可能会安装失败，可请看另一文章进行解决：[Arduino开发板管理安装失败解决办法](/posts/10960)。
+## 使用Arduino编程
+&emsp;这里演示一下开发环境的搭建以及最简demo。
+### 搭建开发环境
 
+
+
+&emsp;安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装SDK。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。但由于不可描述的原因，一般是安装失败的，可请看另一文章进行解决：[Arduino开发板管理安装失败解决办法](/posts/10960)。
 
 ![无法获取外面的资源](/blog_images/无法获取外面的资源.jpg)
 
-&emsp;验证一下是否已经安装扩展，如果烧录程序时提示`ESP8266WiFi.h:No such file or directory`，基本就代表没有安装或选择扩展。
+&emsp;验证一下是否已经安装扩展SDK，如果烧录程序时提示`ESP8266WiFi.h:No such file or directory`，基本就代表没有安装或选择扩展。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1dp4y1t75w&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
-&emsp;安装完扩展开发板信息后，记得选择开发板为NodeMCU。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。__拿到开发板的第一件事，就是跑个例程，证明硬件是没问题的。__ 我们接下来要做的事就是，通过代码把开发板上的LED闪烁起来，证明板子没问题。然后就是实践串口通信收发消息与验证连接WIFI的功能。
+&emsp;安装完扩展开发板信息后，记得选择开发板为`NodeMCU 1.0`。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。__拿到开发板的第一件事，就是跑个例程，证明硬件是没问题的。__ 我们接下来要做的事就是，通过代码把开发板上的LED闪烁起来，证明板子没问题。然后就是实践串口通信收发消息与验证连接WIFI的功能。
 ## 例程
 
 ### 控制LED
@@ -96,7 +104,8 @@ void loop() {
 
 
 ### TCP通信-串口打印
-&emsp;注意根据实际情况修改WIFI的标识号与密码（第3、4行），与TCP服务器的IP地址、端口号（第6、7行）。
+&emsp;演示中使用到的[网络调试助手-百度网盘](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)，自行安装。
+&emsp;注意根据实际情况 __修改WIFI的标识号与密码（第3、4行），与TCP服务器的IP地址、端口号（第6、7行）__ ，注意部分学校校园网是需要登陆学生帐号密码的，所以是用不了的，可以用手机发热点来代替。 演示中使用了网络调试助手开启了TCP服务器，`0.0.0.0`代表的是允许所有机器连接，如果`127.0.0.1`的话，则只允许本机的程序连接。`2424`端口对应着程序的代码端口。
 
 ```c
 #include <ESP8266WiFi.h>
@@ -366,6 +375,7 @@ __答：有解决办法，请看[Arduino开发板管理安装失败解决办法]
 - [Arduino Reference - WiFi library](https://www.arduino.cc/en/Reference/WiFi)
 
 ## 附录
+- [Arduino IDE 搭建 ESP8266 开发环境及项目演示](https://www.jianshu.com/p/cb0274d612b5)
 - [Arduino 中文社区](https://www.arduino.cn/forum.php)
 - [Arduino core for ESP8266 WiFi chip - github](https://github.com/esp8266/Arduino)
 - [在Windows系统上入门Arduino](https://www.arduino.cc/en/Guide/Windows?setlang=cn)

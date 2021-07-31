@@ -16,11 +16,13 @@ tags:
 ## 解决办法一：复制替换
 
 &emsp;Arduino 官方论坛讨论[能否手动安装开发板](https://forum.arduino.cc/index.php?PHPSESSID=25g88vvos46pi5vku2pf51stf0&topic=463573.msg3480758#msg3480758)里提到，可以从一台已经安装好了的，复制一份到自己电脑上就可以了。我windows10、64位电脑已经安装成功的package_esp8266com_index（[百度网盘链接](https://pan.baidu.com/s/1dqqfs-Ka2x3-b8SOoqJlGw) ，提取码：05gl ），可供大家复制替换。具体做法是：解压文件，找到 
-`C:\Users（在操作中是显示中文：用户）\alwxkxk（这是我的用户名，你找你的电脑用户名）\AppData\Local\Arduino15`
-&emsp;整个删除，把解压得到的文件替换过去,附加开发板管理器网址仍旧填 
-`http://arduino.esp8266.com/stable/package_esp8266com_index.json`
-&emsp;,就能发现已经安装成功2.5.0了。
-&emsp;这种方法可能对32位系统、ARM架构等等不同的电脑无法生效，那么就要下面的方法。
+`C:\Users（在操作中是显示中文：用户）\alwxkxk（这是我的用户名，你找你的电脑用户名）\AppData\Local\Arduino15`，演示的时候发现`AppData`是隐藏文件夹，需要手动设置显示隐藏文件夹才能显示出来（点击上方的查看，然后把右边的 隐藏的项目勾上。）。
+
+![显示隐藏文件](/blog_images/显示隐藏文件.png)
+
+&emsp;然后把整个`Arduino15`文件删除，把解压得到的文件替换过去,附加开发板管理器网址仍旧填 
+`http://arduino.esp8266.com/stable/package_esp8266com_index.json`,就能发现已经安装成功2.5.0了。
+&emsp;这种方法可能对32位系统、ARM架构等等不同的电脑无法生效，那么就要下面的终极方法。
 
 ## 解决办法二：本地代理
 
