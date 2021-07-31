@@ -15,6 +15,9 @@ tags:
 - 安装最基本的软件开发环境（Chrome浏览器、vscode编辑器、NodeJs环境）。
 - 本地把demo1跑起来，实现在本机上能控制NodeMCU开发板开关灯。
 
+## 本篇视频
+<iframe src="//player.bilibili.com/player.html?aid=462062924&bvid=BV16L411n7Pi&cid=379908862&page=3" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
 ## 拉取所有代码
 &emsp;Git是代码管理工具，我整个教程都放到Github上开源了，可以通过Git来拉取代码：[Github](https://github.com/alwxkxk/soft-and-hard)：
 ![获取全部源码](/blog_images/005BIQVbgy1fxa4jvz5xtj30ty0lvwi8.jpg)
@@ -23,7 +26,7 @@ tags:
 
 &emsp;Github作为程序员的神器之一，里面所有全世界的开源代码，你拥抱了世界，世界也就拥抱了你。建议大家注册账号并学习如何使用Git来管理你的代码，当然 __记得给我的项目点Star来支持我__ 。Git有比较好的教程：[Git教程-廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)，我就不再重复，这个是必学内容，__但它并不影响本教程学习，大家可以大胆先跳过，建议以后有时间抽空学习__。
 
-&emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以使用官方的国内镜像的URL替代（用`https://github.com.cnpmjs.org`代替`https://github.com`）即执行命令时是：`git clone  https://github.com.cnpmjs.org/alwxkxk/soft-and-hard`。
+&emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以使用官方的国内镜像的URL替代（用`https://github.com.cnpmjs.org`代替`https://github.com`）即执行命令时是：`git clone https://github.com.cnpmjs.org/alwxkxk/soft-and-hard`。如果这个还不行，那只能用国内的替代版Gitee，`git clone https://gitee.com/alwxkxk_admin/soft-and-hard.git`。(Gitee我不保证是最新的代码，有空我就去触发一下同步，Gitee用的人少。)
 ## 将NodeMCU连接线上的demo1
 &emsp;我已经把demo1部署到了我的云服务器，供大家测试：
 - 界面网址：[http://42.192.168.165:8001/](http://42.192.168.165:8001/)

@@ -21,6 +21,9 @@ date: 2018-11-03 10:05:02
 - 安装MongoDB，并把demo2在本地跑起来。
 - 用手机访问网页，进行控制。
 
+## 本篇视频
+<iframe src="//player.bilibili.com/player.html?aid=462062924&bvid=BV16L411n7Pi&cid=379908862&page=4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
+
 
 ## 先跑起来
 &emsp;demo2我已经部署到我自己的服务器，大家可在线浏览：
@@ -35,7 +38,7 @@ date: 2018-11-03 10:05:02
 <iframe src="//player.bilibili.com/player.html?bvid=BV1x64y1i7Lt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 ## 本地把demo2跑起来
-&emsp;由于demo2使用了MongoDB数据库来保存历史数据，所以要先安装数据库。
+&emsp;由于demo2使用了MongoDB数据库来保存历史数据，所以要先安装数据库。百度搜不出官网，我这里直接把网址放出来：[MongoDB](https://www.mongodb.com/try/download/community)，我选择的是版本4。在演示视频中，因为默认勾选了compase，导致一直卡在那里了。所以我们后面就不勾选它，手动下载[MongoDBCompass](https://www.mongodb.com/try/download/compass)再自行安装吧，这个是图形化界面来控制数据库的。
 &emsp;具体部署与demo1类似，进入到对应的目录，使用命令`npm install`安装依赖，`npm start`运行。
 &emsp;跑起来后，通过数据库客户端查看，大家可以看到demo2的模拟数据在不断地向数据库写入数据。
 ## 让NodeMCU连上本地的demo2
@@ -43,7 +46,7 @@ date: 2018-11-03 10:05:02
 
 
 ## 手机访问并控制
-&emsp;本地demo2跑起来后，可以尝试用手机来访问网页并控制，特别注意：手机与电脑及NodeMCU都必须在同一个WIFI里，否则手机无法访问电脑上所运行的demo2。（这是因为你自家的电脑是没有公有IP，无法通过外网访问的，只能在同一个局域网里通过IP地址来访问。）
+&emsp;本地demo2跑起来后，可以尝试用手机来访问网页并控制，特别注意：手机与电脑及NodeMCU都必须在同一个WIFI里，否则手机无法访问电脑上所运行的demo2。（这是因为你自家的电脑是没有公有IP，无法通过外网访问的，只能在同一个局域网里通过IP地址来访问。）注意，虽然电脑填写了`127.0.0.1`，但是手机不能填写`127.0.0.1`，因为这是代表本机的意思，电脑可以访问本机因为代码就跑在电脑上，但手机不可以，它必须要访问电脑，所以要写电脑的IP地址。
 
 
 ## FAQ
