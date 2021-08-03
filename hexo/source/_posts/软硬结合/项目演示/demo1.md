@@ -27,6 +27,8 @@ tags:
 &emsp;Github作为程序员的神器之一，里面所有全世界的开源代码，你拥抱了世界，世界也就拥抱了你。建议大家注册账号并学习如何使用Git来管理你的代码，当然 __记得给我的项目点Star来支持我__ 。Git有比较好的教程：[Git教程-廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)，我就不再重复，这个是必学内容，__但它并不影响本教程学习，大家可以大胆先跳过，建议以后有时间抽空学习__。
 
 &emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以使用官方的国内镜像的URL替代（用`https://github.com.cnpmjs.org`代替`https://github.com`）即执行命令时是：`git clone https://github.com.cnpmjs.org/alwxkxk/soft-and-hard`。如果这个还不行，那只能用国内的替代版Gitee，`git clone https://gitee.com/alwxkxk_admin/soft-and-hard.git`。(Gitee我不保证是最新的代码，有空我就去触发一下同步，Gitee用的人少。)
+
+&emsp;演示视频中使用了[站长工具-Ping检测](https://ping.chinaz.com/)来检测github.com是否可访问。一般来说，特殊时期会大规模不可访问，平时只是部分地区部分运营商不可访问。另外演示中我使用了特殊的办法来访问，因为不可描述的原因这个技能不教，请大家理解。
 ## 将NodeMCU连接线上的demo1
 &emsp;我已经把demo1部署到了我的云服务器，供大家测试：
 - 界面网址：[http://42.192.168.165:8001/](http://42.192.168.165:8001/)
