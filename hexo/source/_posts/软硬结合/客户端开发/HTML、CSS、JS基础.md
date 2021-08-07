@@ -105,8 +105,8 @@ __答：Javascript到底写不写`;`看个人习惯，写不写都行。 声明�
 ## 下一节
 - [chrome开发者工具](/posts/52429)
 &emsp;__强烈建议先学这个开发者工具，先学会调试自己的代码。__
-- [Jquery、Bootstrap基础](/posts/27238)
-&emsp;Jquery让JS操作DOM更加简单，Bootstrap提供优秀的样式供你直接使用，短时间内就能让页面变得十分漂亮。
+- [Bootstrap基础](/posts/27238)
+&emsp;Bootstrap提供优秀的样式供你直接使用，短时间内就能让页面变得十分漂亮。
 - [nodejs基础](/posts/56793)
 &emsp;本地打开网页，你可以注意到网址栏的协议是file，而不是http。要想让手机也能访问网页，就需要提供对外http服务，最终让手机访问网页。
 

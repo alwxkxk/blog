@@ -38,7 +38,7 @@ demo1流程图：
 &emsp;具体的技术选型不再讨论，可阅读[软硬结合](/posts/44755/)，结论就是：
 - 硬件：NodeMCU，使用Arduino IDE进行开发，与服务器使用TCP通信
 - 服务器：Nodejs，使用express4.x框架
-- 界面：HTML+CSS+JavaScript，Jquery与Bootstrap
+- 界面：HTML+CSS+JavaScript
 
 ## demo1程序讲解
 &emsp;demo1代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo1/myapp`里找到。整个代码就是由[Express 手脚架](http://www.expressjs.com.cn/starter/generator.html)使用`express --view=pug myapp`一健生成的。整个程序的入口启动文件就是`myapp/bin/www`，界面的代码是`myapp/views/index.pug`，其JS代码是`myapp/public/javascripts/index.js`。同时添加了TCP服务器的代码`myapp/bin/tcp-server.js`，用于接收TCP客户端的数据。
