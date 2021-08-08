@@ -86,9 +86,17 @@ setInterval(() => {
 ## 自学基本的JavaScript语法
 &emsp;在之前都是复制粘贴代码的，因为我们还没开始正式学如何写JavaScript代码，现在开始正式自学，学习过程中发现是属于高级难懂的东西可以跳过（比如说闭包一时半会理解不了，先放下，没关系的，后面会随着你不断积累就会突然理解。），__我们的学习目标：把所有提到的代码都能看懂，能随着自己的想法修改代码验证，最终能亲自写出来。__ 不同人所需要的时间不一样（有些人已经有其它语言的编程经验，这东西是一通百通，对于他们来说只是熟悉一下语法罢了，而对于萌新来说，是需要接触很多新概率），别人已经写好了优秀的教程，我不再做重复工作了：
 
-- [JavaScript教程-廖雪峰](https://www.liaoxuefeng.com/wiki/1022910821149312)（PS：里面有教Jquery的，这属于旧东西了，现在已经很少用了，可以不学习。）
+- [JavaScript教程-廖雪峰](https://www.liaoxuefeng.com/wiki/1022910821149312)（PS：里面有教Jquery的，这属于旧东西了，可以不学习。）
 - [JavaScript-菜鸟教程](http://www.runoob.com/js/js-tutorial.html)
 - 书籍：《JavaScript高级程序设计》
+
+
+- [《七天学会NodeJS》](https://github.com/nqdeng/7-days-nodejs)
+- [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
+- 书籍：《深入浅出Node.js》- 朴灵
+
+![nodejs入门](/blog_images/005BIQVbgy1fz2vwu5kckj30sq0dlacr.jpg)
+
 
 &emsp;同时，由于JavaScript的学习过程，有会提到HTML的内容，所以一般也会一同学习，大家可以进入下一课[HTML、CSS、JS基础](/posts/54080)。
 ![网页制作入门 推荐书籍](/blog_images/005BIQVbgy1fz2vbiidchj30sd0li7d7.jpg)
