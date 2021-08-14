@@ -22,10 +22,10 @@ tags:
 - 使用postman模拟HTTP客户端进行调试
 
 ## 学习Express框架
-&emsp;[Express框架-中文文档](http://expressjs.com/zh-cn/)是Node.js Web 应用程序框架，我们按着文档来一步步入门。
+&emsp;[Express框架-中文文档](http://expressjs.com/zh-cn/)是Node.js Web 应用程序框架，我们按着文档来一步步入门。根据文档（或者在`package.json`），我们知道当执行`npm run start`时对应的执行命令主就是`node ./bin/www`，所以Express框架的入口文件就是`./bin/www`这个文件（入口文件是指程序执行的第一个入口）。
 
 ## 解析body里的数据。
-&emsp;要想解析POST里body是有多种类型的（[四种常见的post请求中的参数形式](https://segmentfault.com/a/1190000014343759)），为了支持解析这些结构，还需要调用中间件进行解析：
+&emsp;要想解析POST里body是有多种类型的（[四种常见的post请求中的参数形式](https://segmentfault.com/a/1190000014343759)），为了支持解析这些结构，还需要调用中间件进行解析（PS：现在新版里是生成项目时默认使用了，以前还需要自行加入这些代码）：
 ```js
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded

@@ -5,175 +5,129 @@ abbrlink: 24742
 date: 2021-07-25 20:07:12
 tags:
 ---
-TODO：demo1里的程序讲解内容暂时放到这里，后面再整理。
+
+&emsp;在阅读本篇文章之前，你已经阅读了：
+- [NodeMCU基础](/posts/31494)
+- [demo1跑起来](/posts/64786/)
+- [计算机网络基础](/posts/37707)
+- [NodeMCU与网络调试助手联调](/posts/7602)
+- [使用NodeJs实现TCP服务器](/posts/58215)
+- [HTML、CSS、JS基础](/posts/54080)
+- [使用NodeJs实现HTTP服务器](/posts/33173) 
+- [亲手实现demo0.1](/posts/38208)
+- [Bootstrap基础](/posts/27238)
+- [Express框架](/posts/22339)
+
+## 本篇视频
+<iframe src="//player.bilibili.com/player.html?aid=462062924&bvid=BV16L411n7Pi&cid=379908862&page=14" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 
-&emsp;从程序上来讲，NodeMCU（TCP客户端）与TCP服务器通信，手机浏览器（HTTP客户端）与HTTP服务器通信，最终实现通过网页控制NodeMCU的LED。
-![demo1示例](/blog_images/005BIQVbgy1fwstl5y6srj30il0950tp.jpg)
-&emsp;搞物联网，首先要懂网，属于最重要的基础知识，暂时我们只要明白几个知识点：
-- IP地址：代表一个设备在网络中的地址
-- 端口号：代表设备上某个正在运行的程序
-- 两台设备之间的网络通信：代表着两个（IP地址+端口）在通信
-- 客户-服务器模型（client-server model）
-&emsp;从IP地址与端口号的角度来看，三台设备之间通信（这里IP地址与端口是随意配的以作演示），示意是这样的：
+## 本篇学习内容
+- 讲解demo1里服务器端代码、界面代码、NodeMCU代码
+- 阶段性作业：自行实现demo1效果
+## demo1总览
+&emsp;在之前的[demo1跑起来](/posts/64786/)里面已经介绍了demo1跑起来的效果了，这篇不再演示，而是直接讲解代码。（PS：图片中的IP地址根据实际情况变化，图里只是简单地举例。）
 ![demo1通信示意](/blog_images/005BIQVbgy1fwtxx9phabj30jk095jse.jpg)
-&emsp;在上图中（注意不同电脑的IP地址是不同的，你们跑的时候不一定跟我的一样），NodeMCU上跑的TCP客户端程序是`192.168.1.21.4567`，而电脑上跑的是
-
-
-
-demo1流程图：
+&emsp;整个demo1的整体代码流程图如下所示：
 ![demo1流程图](/blog_images/005BIQVbgy1fx3yhijxgkj30fb0b7aa6.jpg)
+&emsp;首先服务器端的代码要跑起来，整个代码就是由Express手脚架（generator）一健生成的。然后NodeMCU通电跑程序时，首先连接WIFI，连接WIFI成功后会连接TCP服务器，成功后会不断地发送`tick`数值，我用这个当作心跳（在之前的课程里：[亲手实现demo0.1](/posts/38208) 里有讨论过为什么要引入心跳机制），然后一直等待接收控制指令，执行开关灯。
+&emsp;服务器端跑起来后，可以访问网页界面，点击网页界面的按钮，服务器端程序接收到控制指令，进而转发到对应的硬件里，硬件接收到就执行开关灯。
 
+## demo1界面代码
+&emsp;demo1的界面极其简单，就是一个下拉框一个表格，两个按钮。界面代码在`demo1/myapp/views/index.html`，里面有引用的静态文件如`<script src="/javascripts/index.js"></script>`对应的位置就是在`demo1/myapp/public/javascripts/index.js`，这个对应着界面的逻辑代码，就是由它来获取在线设备数据，渲染到界面，点击按钮控制在线设备开关灯等业务。
+&emsp;为了获取在线设备列表，界面每次向服务器端发出一个请求（轮询）,服务端会返回所有的在线设备，格式就是数组，数组晨的每个设备的数据格式对应着`{addr:'...',id:'...'}`：
+```js
+function getData() {
+  var httpRequest = null;
+  if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+    httpRequest = new XMLHttpRequest();
+  } else if (window.ActiveXObject) { // IE 6 and older
+      httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+  }
 
+  httpRequest.onreadystatechange = ()=>{
+    if( httpRequest.readyState === 4){
+      // 0	UNSENT	代理被创建，但尚未调用 open() 方法。
+      // 1	OPENED	open() 方法已经被调用。
+      // 2	HEADERS_RECEIVED	send() 方法已经被调用，并且头部和状态已经可获得。
+      // 3	LOADING	下载中； responseText 属性已经包含部分数据。
+      // 4	DONE	下载操作已完成。
 
+      // 删除select里的旧数据（根据类名来找到那些元素）
+      var selectItems = document.getElementsByClassName('equipment-select-item')
+      for (var i = 0; i < selectItems.length; i++) {
+        selectItems[i].remove()
+      }
+      // 删除table里的旧数据（根据类名来找到那些元素）
+      var tableItems = document.getElementsByClassName('equipment-table-item')
+      for (var i = 0; i < tableItems.length; i++) {
+        tableItems[i].remove()
+      }
 
-&emsp;当然，如果你说不想买硬件，想通过直接通过软件模拟，看看效果，也是可以的。只需要用网络调试助手[（百度网盘下载）](https://pan.baidu.com/s/1XBpeUK9QcA0r90yZkIe6fg)，连接到demo1服务器端，连接成功后发送一条字符串当作设备id，也是可以模拟出来，只是没有硬件能直接控制LED灯开关那么直观而已。__大家一定要建立一种等效替换的意识，不管你手上是NodeMCU还是单片机+ESP8266，还是什么其它比如4G模块、NB-IOT模块，对于服务器来说本质都是TCP客户端，没有任何区别，所以在调试时完全可以单纯地使用软件来等效替换。__ 在实际调试开发中，经常都需要把硬件与软件各自分开来调试，直到两者都调试正常验证正确之后，才会把软件硬件一起联调。
+      var responseData = JSON.parse(httpRequest.responseText)
+      responseData.forEach(equipment=>{
+        // 给select 添加新数据
+        addSelectorData(equipment)
+        // 给table 添加新数据
+        addTableData(equipment)
+      })
 
-<img class="lazy" alt="网络调试助手模拟demo1" data-src="/blog_images/005BIQVbgy1fxuzdtrbasg31gy0rib2a.gif"></img>
-
-
-
-
-## 怎么做
-&emsp;具体的技术选型不再讨论，可阅读[软硬结合](/posts/44755/)，结论就是：
-- 硬件：NodeMCU，使用Arduino IDE进行开发，与服务器使用TCP通信
-- 服务器：Nodejs，使用express4.x框架
-- 界面：HTML+CSS+JavaScript
-
-## demo1程序讲解
-&emsp;demo1代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)的`/demo1/myapp`里找到。整个代码就是由[Express 手脚架](http://www.expressjs.com.cn/starter/generator.html)使用`express --view=pug myapp`一健生成的。整个程序的入口启动文件就是`myapp/bin/www`，界面的代码是`myapp/views/index.pug`，其JS代码是`myapp/public/javascripts/index.js`。同时添加了TCP服务器的代码`myapp/bin/tcp-server.js`，用于接收TCP客户端的数据。
-&emsp;当使用硬件连接到服务器时，硬件发出的第一条数据成为其设备id，所有数据都会存放到`socket.lastValue`中。为了防止不同的读者使用同一个设备ID操作时数据串扰，所以我还额外添加了IP地址以区分。所有超过10秒没有发数据的都会删除设备。（对应代码`myapp/bin/tcp-server.js`）
-```javascript
-  // receive data
-  socket.on("data",data=>{
-		let str = addr+" receive: " + data.toString('ascii')
-		socket.lastValue = data.toString('ascii')
-		console.log(str)
-
-    // demo1中，我们定义了，接收的第一条数据为设备id
-    if(!socket.id){
-			socket.id = data.toString('ascii')
-			socket.addr = addr
-			addEquipment(socket)
     }
-  })
-```
-&emsp;当浏览器打开网页时，发起HTTP请求（GET /），服务器代码进入到`myapp/routes/index.js`进行渲染，将已经连接到TCP服务器的设备数据都传入到模板`myapp/views/index.pug`中，渲染出对应的HTML页面再发送给浏览器进行显示。
-```javascript
-router.get('/', function(req, res, next) {
-  res.render('index', { title: '软硬结合demo1',tcpServer:tcpServer });
-});
-```
-&emsp;当浏览器选择某个设备，并发起开/关灯控制时，就会触发到界面的JS代码（对应`myapp/public/javascripts/index.js`），发出POST请求（POST /）：
-```javascript
-// 点击按钮事件
-$("#open").click(function(){
-  var equipment = getEquipmentInfo()
-  $.post("/", { action:"open",addr: equipment.addr, id: equipment.id } );
-});
- 
-$("#close").click(function(){
-  var equipment = getEquipmentInfo()
-  $.post("/", { action:"close",addr: equipment.addr, id: equipment.id } );
-});
-```
-&emsp;浏览器发出POST请求后，由服务器端代码`myapp/routes/index.js`进行处理，找到对应的设备，并发送控制命令，此时硬件接收到命令进行开关灯。`req.body.addr，req.body.id，req.body.action`这些数据就是来源于上面的代码，前端点击按钮后向后端发送的数据：
-```javascript
-// POST / 控制设备开关灯
-router.post('/',function(req, res, next) {
-  // req.body.addr，req.body.id，req.body.action这些是来源于上面刚提到的前端代码
-  let addr = req.body.addr
-  let id = req.body.id
-  let action = req.body.action
-  if(action === 'open' || action === 'close'){
-    tcpServer.sentCommand(id,addr,action)
-  }
-  res.json(req.body);
-})
-```
-
-### 不使用pug模板
-&emsp;pug模板以前叫做jade，可能搜索pug相关内容较少，可以搜索jade进行学习。在撑握html基础知识的前提下，学习使用pug模板不过是几个小时的事，十分简单。但毕竟是入门教程，理应引入较少的内容让新手尽快做出效果，以进入正循环，所以在demo1中还提供了不使用pug模板，直接使用html的做法。
-```js
-// demo1/myapp/routes/index.js
-// GET /no-pug-index 不使用pug模板，直接发送html文件
-router.get('/no-pug-index',function(req, res, next) {
-  //root 传入文件所在的目录路径
-  res.sendFile('no-pug-index.html',{root:"views"});
-});
-```
-&emsp;大家可以访问`/no-pug-index`即可看到效果。在demo1中，pug模板的作用是将后台的数据渲染（render）成html文件。而一旦使用html文件，要么自己通过JS代码根据数据拼装成html文件再发送（本质上pug模板的作用就是简化这个拼接过程），要么发送一份不包含数据的html文件，由前端向后端再进行请求数据进而把数据写入到页面当中（有点前后端分离的味道）。这里我演示了第二种做法。
-&emsp;大家看`demo1/myapp/views/no-pug-index.html`这个html文件，除了不包含数据其它内容基本与`index.pug`一致（pug语法更为简洁）。`no-pug-index.html`所引用的JS文件`demo1/myapp/public/javascripts/no-pug-index.js`，相对于`index.js`也仅仅是多了请求后台数据并写入到html文件的代码：
-```js
-$.get("/equipmentArray",(res)=>{
-  res.forEach(equipment => {
-    //将设备数据转换成html元素添加到页面中
-    //添加到选项中
-    $('select').append('<option>'+equipment.addr+' - '+equipment.id+'</option>')
-
-    //添加到列表中
-    $('table').append('<tbody><tr><td>0</td><td>'+equipment.addr+
-    '</td><td>'+equipment.id+' </td><td style="overflow: hidden;">'+equipment.lastValue||'无'+'</td></tr></tbody>')
-  });
-});
-```
-
-
-### TCP通信-demo1
-&emsp;注意修改WIFI地址与密码。
-&emsp;__特别注意：NodeMCU分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:__`#define LED_BUILTIN 2`
-&emsp;有网友问到，WIFI连接成功了，但提示连接失败，这个IP地址是需要填什么？ IP地址是需要填写TCP服务端的IP址，前期调试可以使用网络调试助手来充当TCP服务端：
-![物联网项目](/blog_images/nodemcu与网络调试助手联调.jpg)
-
-```c
-//如果是nodemcu V3版，需要另外定义LED引脚
-//#define LED_BUILTIN 2 
-#include <ESP8266WiFi.h>
-//必须修改：填写你的WIFI帐号密码
-const char* ssid = "you-wifi";
-const char* password = "you-wifi-password";
-
-const char* host = "42.192.168.165";
-const int port = 9002;//demo1 tcp 使用 9002端口
-
-const char* id = "1234abcd";
-int tick = 1000;
-
-
-WiFiClient client;
-
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(115200);
-  pinMode(LED_BUILTIN, OUTPUT);
-  //连接WIFI
-  WiFi.begin(ssid, password);
-  //设置读取socket数据时等待时间为100ms（默认值为1000ms，会显得硬件响应很慢）
-  client.setTimeout(100);
-
-  //等待WIFI连接成功
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.println("WiFi connecting...");
-    delay(500);
-  }
-  Serial.println("WiFi connected!.");
+  };
+  httpRequest.open('GET', '/equipmentArray');
+  httpRequest.send();
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  if (client.connect(host, port))
-  {
-    Serial.println("host connected!");
-    //发送第一条TCP数据，发送ID号
-    client.print(id);
-  }
-  else
-  {
-    // TCP连接异常
-    Serial.println("host connecting...");
-    delay(500);
-  }
+// 马上使用一次。
+getData()
 
+// 每一秒轮询一次
+setInterval(() => {
+  getData()
+}, 1000);
+
+```
+&emsp;JavaScript能控制界面的变化，本质就是操作DOM对象。新增了一个在线设备，我给下拉框添加一个选择，所以我就创建对应的`option`元素挂到`select`元素之下，所以下拉框就多了这个选项：
+```js
+function addSelectorData(equipment) {
+  // 给select 添加新数据
+  var selector = document.getElementById('dev-selector');
+  var option = document.createElement('option');
+  // 添加这个类名是方便后面删除时定位到这些元素
+  option.className = 'equipment-select-item' 
+  option.innerText = equipment.addr+' - '+equipment.id
+  selector.append(option)
+}
+```
+&emsp;给按钮绑定一个事件，当点击开灯按钮时就会向服务器端：
+```js
+function postData(equipment,actionString){
+  // 发送控制指令
+  if(!equipment){
+    return console.log('没设备，不可发送指令')
+  }
+  var httpRequest = null;
+  if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+    httpRequest = new XMLHttpRequest();
+  } else if (window.ActiveXObject) { // IE 6 and older
+      httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  var params = 'action='+actionString+'&addr='+equipment.addr+'&id='+equipment.id
+  httpRequest.open('POST', '/');
+  httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  httpRequest.send(params);
+}
+
+// 点击按钮事件
+document.getElementById('open').onclick = ()=>{
+  var equipment = getEquipmentInfo()
+  postData(equipment,'open')
+}
+
+```
+### demo1里NodeMCU代码
+&emsp;NodeMCU里的代码，就是不断尝试连接WIFI，连接成功后不断尝试连接TCP服务器，连接成功发送它的唯一ID，然后进入死循环，一直等待服务器端的控制指令，若有就执行开关灯，若无就发送`tick`值心跳（数字不断增加）。
+```c
   while (client.connected()) {
     //      接收到TCP数据
     if (client.available())
@@ -199,20 +153,94 @@ void loop() {
       delay(1000);
     }
   }
+```
 
-}
+&emsp;在实际使用时，设备往往拥有一个唯一ID，这个ID用来结合业务逻辑的，比如说我把ID值为001001作为广州市里的某一块设备，ID值002001作为中山市里的一块设备，当广州市的板子坏了，需要替换时，我依旧把ID写成001001，那么它就能继续它的业务逻辑。
+
+## demo1服务器端代码
+&emsp;整个程序的入口启动文件就是`myapp/bin/www`，界面的代码是`myapp/views/index.html`。HTTP服务器就是由Express框架生成的，我们额外添加了TCP服务器的代码`myapp/bin/tcp-server.js`。
+&emsp;当浏览器打开网页时，发起HTTP请求（GET /），服务器代码进入到`myapp/routes/index.js`发送界面文件：
+```javascript
+router.get('/', function(req, res, next) {
+  // 默认是使用pug模板的，为了减少不必要的学习与降低入门门槛，改使用html。
+  res.sendFile('index.html',{root:path.join(__dirname , '../views')});
+});
+```
+&emsp;当使用硬件连接到服务器时，硬件发出的第一条数据成为其设备id，所有数据都会存放到`socket.lastValue`中。为了防止不同的读者使用同一个设备ID操作时数据串扰，所以我还额外添加了IP地址以区分。在demo0.1直接使用一个tcpClient变量存放对象，所以它只能支持一个设备，现在改进后使用一个数组存放多个设备就支持多个设备了。所有超过心跳时间没有发数据的都会删除设备。
+```javascript
+  // receive data
+  socket.on("data",data=>{
+		let str = addr+" receive: " + data.toString('ascii')
+		socket.lastValue = data.toString('ascii')
+		console.log(str)
+
+    // demo1中，我们定义了，接收的第一条数据为设备id
+    if(!socket.id){
+			socket.id = data.toString('ascii')
+			socket.addr = addr
+			addEquipment(socket)
+    }
+  })
 
 ```
 
+```js
+// myapp\bin\tcp-server.js
+const equipmentArray = []
+// 给列表添加设备
+function addEquipment(socket) {
+	// 先从列表删除旧的同名连接
+	deleteEquipment(socket.id,socket.addr)
+	equipmentArray.push(socket)
+}
+```
 
 
-## 下一个demo
+&emsp;浏览器发出POST请求后，由服务器端代码`myapp/routes/index.js`进行处理，找到对应的设备，并发送控制命令，此时硬件接收到命令进行开关灯。根据POST里的body数据：`req.body.addr`,`req.body.id`,`req.body.action`找到对应的设备，转发控制命令数据：
+```js
+// POST / 控制设备开关灯
+router.post('/',function(req, res, next) {
+  let addr = req.body.addr
+  let id = req.body.id
+  let action = req.body.action
+  if(action === 'open' || action === 'close'){
+    tcpServer.sentCommand(id,addr,action)
+  }
+  res.json(req.body);
+})
+```
+&emsp;界面向服务器端发送的值是`open`字体符串，服务器端根据id与IP地址找到那个硬件（虽然代码上写的是数组可兼容多个设备，但理论上是唯一的，只有一个设备。），并向硬件转发时发的是`1`:
+```js
+// myapp\bin\tcp-server.js
+// 给设备发送控制命令
+function sentCommand(id,addr,command) {
+	let equipments = findEquipment(id,addr)
+	if(equipments.length === 0){
+		return;
+	}
+	if(command === 'open'){
+		equipments.forEach((socket)=>{
+			socket.write("1", 'ascii')
+		})
+	}
+	else if(command === 'close'){
+		equipments.forEach((socket)=>{
+			socket.write("0", 'ascii')
+		})
+	}
+}
+```
+
+## 补充说明
+&emsp;JS代码里时不时可以看到声明变量时使用的是`const`与`let`来取代`var`，那是ES6引入的语法，用来解决`var`本身的一些缺陷，具体可自行搜索学习。
+## 阶段性作业
+&emsp;光听课以为自己什么都懂，其实只有自己实践过才是真的懂，在实践的过程中才会发现自己不懂的地方。所以请读者自行实现demo1效果，有什么问题请提出来，我会全部解答。
+
+## 奔向demo2
 &emsp;demo1尽量追求简单入门，所以界面不好看（帅是第一生产力），性能也不足。先说说demo1的问题：
-- HTTP轮询性能低，效果差。
+- HTTP轮询性能低，性能低，时效性差（每一秒轮询代表着极限情况下是有可能2秒才得到最新数据）。
 - 界面丑（优化并会引入图表库Echart，实现数据可视化）
 - 不能显示历史数据（引入数据库）
-&emsp;在实现下一个demo之前会讨论解决以上问题，之后会做出一个能看能用的demo，同时会介绍其它技术。
 
-## FAQ
-1. 为什么在本地部署时，TCP监听`0.0.0.0`，但用浏览器访问的是`127.0.0.1`？
-__答：在服务器端，`0.0.0.0`代表的是本机所有的IP地址，`127.0.0.1`代表的是本机。监听`0.0.0.0`代表其它设备可以通过任一个本机的IP地址来访问通信，而访问`127.0.0.1`代表访问本机提供的服务。__
+
+&emsp;为了解决以上问题，我们正式奔向demo2。
