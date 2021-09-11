@@ -201,7 +201,7 @@ void loop() {
 ```
 
 
-&emsp;要使用`<dht11.h>`，就要装第三方库或自行手动添加以下库文件，[Arduino IDE 库文件如何添加？](http://yfrobot.com/thread-11842-1-1.html)，将库文件放到至Arduino IDE 所在文件夹的libraries文件夹中，如（/arduino/libraries）：
+&emsp;要使用`<dht11.h>`，就要装第三方库或自行手动添加以下库文件，[Arduino IDE 库文件如何添加？](https://jingyan.baidu.com/article/19192ad815730ee53e570797.html)，将库文件放到至Arduino IDE 所在文件夹的libraries文件夹中，如（/arduino/libraries）：
 
 ```H
 #ifndef dht11_h
