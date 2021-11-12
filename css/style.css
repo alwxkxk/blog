@@ -183,8 +183,9 @@ h1, h2, h3, h4, h5 {
   .post .post-title {
     margin: 0;
     color: #555;
-    text-align: left;
-    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
+    text-align: center;
+    border-left: 0;
+    font: bold 36px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
     .post .post-title a {
       color: #555;
       font-size: 36px; }
