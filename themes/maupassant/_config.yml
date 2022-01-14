@@ -1,0 +1,112 @@
+disqus: ## Your disqus_shortname, e.g. username
+uyan: ## Your uyan_id. e.g. 1234567
+livere: ## Your livere data-uid, e.g. MTAyMC8zMDAxOC78NTgz
+changyan:  ## Your changyan appid, e.g. cyrALsXc8
+changyan_conf:  ## Your changyan conf, e.g. prod_d8a508c2825ab57eeb43e7c69bba0e8b
+gitment:
+  enable: false ## If you want to use Gitment comment system please set the value to true.
+  owner: ## Your GitHub ID, e.g. username
+  repo: ## The repository to store your comments, make sure you're the repo's owner, e.g. imsun.github.io
+  client_id: ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret: ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+gitalk:
+  enable: false ## If you want to use Gitment comment system please set the value to true.
+  owner:  alwxkxk ## Your GitHub ID, e.g. username
+  repo: soft-and-hard ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
+  client_id: b2658d53fef2772bfb97 ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret: 6992bc1d20a2f738343c9526d957e4e7b5e64c9e ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+  admin: ['alwxkxk'] ## Github repo owner and collaborators, only these guys can initialize github issues.
+valine: ## https://valine.js.org
+  enable: true ## If you want to use Valine comment system, please set the value to true.
+  appid: dibwgE5SQgKyFS1KqM3C2WmQ-gzGzoHsz ## Your LeanCloud application App ID, e.g. pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
+  appkey: G24uL9Fw9oNCfheBorc3GjVB ## Your LeanCloud application App Key, e.g. tjczHpDfhjYDSYddzymYK1JJ
+  notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
+  verify: false ## Validation code.
+  placeholder: 欢迎留言交流 ## Comment box placeholders.
+  avatar: 'mm' ## Gravatar type, see https://github.com/xCss/Valine/wiki/avatar-setting-for-valine
+  pageSize: 10 ## Number of comments per page.
+  guest_info: nick,mail,link ## Attributes of reviewers.
+
+google_search: false ## Use Google search, true/false.
+baidu_search: true ## Use Baidu search, true/false.
+swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
+tinysou: ## Your tinysou_key, e.g. 4ac092ad8d749fdc6293
+self_search: false ## Use a jQuery-based local search engine, true/false.
+google_analytics: ## Your Google Analytics tracking id, e.g. UA-42425684-2
+baidu_analytics: 646acd4e6c74eb119c3d5d93c5bfde70 ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
+fancybox: false ## If you want to use fancybox please set the value to true.
+show_category_count: false ## If you want to show the count of categories in the sidebar widget please set the value to true.
+toc_number: true ## If you want to add list number to toc please set the value to true.
+shareto: false ## If you want to use the share button please set the value to true, and you must have hexo-helper-qrcode installed.
+busuanzi: true ## If you want to use Busuanzi page views please set the value to true.
+wordcount: false ## If you want to display the word counter and the reading time expected to spend of each post please set the value to true, and you must have hexo-wordcount installed.
+widgets_on_small_screens: false ## Set to true to enable widgets on small screens.
+canvas_nest:
+  enable: false ## If you want to use dynamic background please set the value to true, you can also fill the following parameters to customize the dynamic effect, or just leave them blank to keep the default effect.
+  color: ## RGB value of the color, e.g. "100,99,98"
+  opacity: ## Transparency of lines, e.g. "0.7"
+  zIndex: ## The z-index property of the background, e.g. "-1"
+  count: ## Quantity of lines, e.g. "150"
+donate:
+  enable: ## true ## If you want to display the donate button after each post, please set the value to true and fill the following items on your need. You can also enable donate button in a page by adding a "donate: true" item to the front-matter.
+  github: https://github.com/alwxkxk
+  alipay_qr: /img/AliPayQR.webp
+  wechat_qr: /img/WeChatQR.webp
+  btc_qr: ## Path of Bitcoin QRcode image, e.g. /img/BTCQR.png
+  btc_key: ## Bitcoin key, e.g. 1KuK5eK2BLsqpsFVXXSBG5wbSAwZVadt6L
+  paypal_url: ## Paypal URL, e.g. https://www.paypal.me/tufu9441
+post_copyright:
+  enable: false ## If you want to display the copyright info after each post, please set the value to true and fill the following items on your need.
+  author: 生子当如哈士奇 ## Your author name, e.g. tufu9441
+  copyright_text: 转载请附带原文链接，本博客内容可在我的github上找到。 ## Your copyright text, e.g. The author owns the copyright, please indicate the source reproduced.
+
+# menu:
+#   - page: soft-and-hard
+#     directory: /posts/44755/
+#     icon: fa-home
+#   - page: 3d-tutorial
+#     directory: /posts/30679/
+#     icon: fa-home
+#   - page: rambling
+#     directory: /posts/2077/
+#     icon: fa-home
+#   - page: archive
+#     directory: archives/
+#     icon: fa-archive
+#   - page: about
+#     directory: /posts/23630
+#     icon: fa-user
+
+
+widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.
+  - search
+  - category
+  - tag
+  - recent_posts
+  - recent_comments
+  - links
+
+links:
+  # - title: site-name1
+  #   url: http://www.example1.com/
+  # - title: site-name2
+  #   url: http://www.example2.com/
+  # - title: site-name3
+  #   url: http://www.example3.com/
+
+timeline:
+  - num: 1
+    word: 2014/06/12-Start
+  - num: 2
+    word: 2014/11/29-XXX
+  - num: 3
+    word: 2015/02/18-DDD
+  - num: 4
+    word: More
+
+# Static files
+js: js
+css: css
+
+# Theme version
+version: 0.0.0

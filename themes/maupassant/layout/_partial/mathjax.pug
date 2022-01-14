@@ -1,0 +1,6 @@
+script(type='text/x-mathjax-config').
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+
+script(type='text/javascript', src=url_for(theme.js)+'/MathJax.js?config=TeX-MML-AM_CHTML', async)

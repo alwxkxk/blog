@@ -1,0 +1,64 @@
+head
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+    meta(content='yes', name='apple-mobile-web-app-capable')
+    meta(content='black-translucent', name='apple-mobile-web-app-status-bar-style')
+    meta(content='telephone=no', name='format-detection')
+    meta(name='description', content=config.description)
+    //- 百度网站收录
+    meta(name='baidu-site-verification', content="xsF0k2IpTd") 
+    //- 360收录
+    meta(name='360-site-verification', content='17062a868693e9ab70b4c9543d98059b')
+    //- 搜狗收录
+    meta(name='sogou_site_verification', content='VAcZeTHOK4')
+    //- google收录
+    meta(name='google-site-verification', content='_1T1ah4LkGnFPqgYs6wQqN27O6PfrXJqG8gbFwh7ClM')
+
+
+    block title
+    script(type='text/javascript', src='/sw-init.js')
+    
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/style.css' + '?v=' + theme.version)
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/normalize.min.css')
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/pure-min.css')
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css)+'/grids-responsive-min.css')
+    link(rel='stylesheet', href=url_for(theme.css) + '/font-awesome.min.css')
+    script(type='text/javascript', src=url_for(theme.js)+'/jquery-3.3.1.min.js')
+    script(type='text/javascript', src=url_for(theme.js)+'/lazyload.8.16.0.min.js')
+
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/bootstrap.min.css')
+    script(type='text/javascript', src=url_for(theme.js) + '/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/bootstrap-treeview.min.css')
+    script(type='text/javascript', src=url_for(theme.js) + '/bootstrap-treeview.min.js' )
+
+    link(rel='Shortcut Icon', type='image/x-icon', href=url_for('favicon.ico'))
+    link(rel='apple-touch-icon', href=url_for('apple-touch-icon.png'))
+    link(rel='apple-touch-icon-precomposed', href=url_for('apple-touch-icon.png'))
+    if config.feed
+      link(rel='alternate', type=feed_type, href=url_for(config.feed.path))
+    if theme.google_analytics
+      script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create','#{theme.google_analytics}','auto');ga('send','pageview');
+
+    if theme.baidu_analytics
+      script.
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = 'https://hm.baidu.com/hm.js?' + '#{theme.baidu_analytics}';
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+          })();
+
+    //- slideout样式与脚本  
+    link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/index.css')
+    script(type='text/javascript', src=url_for(theme.js)+'/slideout.min.js')
+
+    script(type='text/javascript', src=url_for(theme.js)+'/image-fullscreen.js')
+
+
+
