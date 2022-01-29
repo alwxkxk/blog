@@ -19,7 +19,7 @@ tags:
 ## 使用Bootstrap
 &emsp;写CSS的时候，你是否会烦恼，挑什么颜色好看？字体要多大才合适？如此等等的问题，有没有最优的方案直接使用？有，那就是使用别人设计好的UI库，其中以前最流行的UI库是Bootstrap。（当然，各人有不同的审美观，所以有不同的设计方案，特别是大公司往往有自己的UI库。）
 &emsp;Bootstrap-V3效果：
-![Bootstrap效果](/blog_images/Bootstrap效果.webp)
+![Bootstrap效果](/blog/blog_images/Bootstrap效果.webp)
 
 
 &emsp;要学习一个新东西，就是看文档入门开始：[Bootstrap中文网 - 起步](https://v3.bootcss.com/getting-started/)，在使用时可以把相关的链接下载到本地然后引用本地的文件。

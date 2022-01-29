@@ -10,8 +10,8 @@ tags:
 
 ## HTTPS播放要开启Websockets
 &emsp;首先要开启https，并且要启用Websockets（否则会因为wss连接不成功而提示预览失败，这个卡了我很久最终领导试的时候才发现的，这玩意不放在一起真是坑死我了。），然后可以通过https来访问摄像头正常播放了：
-![hkvideo-https](/blog_images/未分类/hkvideo-https.webp)
-![hkvideo-wss](/blog_images/未分类/hkvideo-wss.webp)
+![hkvideo-https](/blog/blog_images/未分类/hkvideo-https.webp)
+![hkvideo-wss](/blog/blog_images/未分类/hkvideo-wss.webp)
 
 ## WEB无插件开发wss播放异常
 &emsp;开发时，我使用的是21年9月份的版本(WEB无插件开发包_20210918_20210922140917)，发现ws播放连接的是nginx，而wss播放是有问题的，经过修改了部分SDK的代码（经过压缩过的代码改起来是蛮麻烦的），终于连上去了。但经修改后的wss直接连接的是摄像头的地址而不是nginx地址导致了证书问题，会提示`failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID`(这里我使用的chrome只会提示`failed:`，用Edge才有完整的错误提示，这个也坑了我好久，之前我一直瞎尝试，用了Edge才发现真正的问题。 )，搜了一下是自签名证书会存在的问题，需要先让浏览器https访问摄像头让浏览器允许这个证书才能正常wss连接。（测试期间，发现我的电脑能播放，其它人的电脑不能播放，定位了大半天才发现原来是这个问题）

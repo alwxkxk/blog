@@ -14,8 +14,8 @@ date: 2020-06-05 20:04:02
 ### 调整图像大小
 &emsp; webGL1需要调整图片为POW大小（Power Of Two），即像素大小符合2的倍数（`32*32,64*64,128*128,...,1024*1024,...`）以获取更好的性能。
 &emsp;做法：1.创建时就指定像素。2.菜单栏：图像->图像大小。
-<img alt="POT" src="/blog_images/3d/photoshop-POT.webp" style="width:50%;">
-<img alt="POT" src="/blog_images/3d/photoshop-POT2.png" style="width:50%;">
+<img alt="POT" src="/blog/blog_images/3d/photoshop-POT.webp" style="width:50%;">
+<img alt="POT" src="/blog/blog_images/3d/photoshop-POT2.png" style="width:50%;">
 
 ### 钢笔工具练习
 &emsp; 大家可以通过[The Bezier Game](https://bezier.method.ac/)这个在线学习网站学习练习一下，PS的钢笔工具。
@@ -33,7 +33,7 @@ date: 2020-06-05 20:04:02
 
 ### 减淡加深工具
 &emsp;拍照实物时因光线、拍摄等问题，可能导致有明暗效果，这样去贴图在3D展示效果并不好，这时就需要减淡加深工具来调整，结合光照/对比度调整达到最好的效果：
-<img alt="PS减淡加深工具" src="/blog_images/3d/PS减淡加深工具.png" style="width:200px;">
+<img alt="PS减淡加深工具" src="/blog/blog_images/3d/PS减淡加深工具.png" style="width:200px;">
 
 ### 添加参考线
 &emsp;设计时参考线有利于定位，特别是做动态图而制作的雪碧图，参考线就特别重要。菜单栏：视图->新建参考线。也可以显示标尺后，直接使用鼠标有标尺那里拉出来。

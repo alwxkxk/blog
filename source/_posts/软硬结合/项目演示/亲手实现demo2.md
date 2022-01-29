@@ -29,7 +29,7 @@ tags:
 ## demo2主要流程图
 
 &emsp;相对于demo1，demo2添加了数据库、websocket协议、图表库Echart。demo2代码可在项目代码的`/demo2/myapp`里找到。
-![](/blog_images/demo2.webp)
+![](/blog/blog_images/demo2.webp)
 
 ## 硬件代码变化
 &emsp;nodemcu代码相对于demo1没有太大改动，主要是改变了TCP端口以及每秒发送随机数（模拟传感器实时取得的温度值，能产生20~30的数值）。此代码可在项目代码里的`demo2/nodemcu`找到。
@@ -43,7 +43,7 @@ client.print(20+random(0,10));
 ## 界面代码变化
 &emsp;demo1的界面是将所有在线的设备显示出来，选中某个设备发送开/关灯命令。
 &emsp;demo2的界面是进入网页时通过url指定特定的单一设备（取代demo1中的下拉框选择设备），只要设备不断地上传数据，界面就实时地把数据在图表中显示出来，点击按钮发送开/关灯命令。
-![](/blog_images/demo2演示图.webp)
+![](/blog/blog_images/demo2演示图.webp)
 &emsp;界面为了追求一定程序的美化，所以加了很多没有实质性作用只是单纯为了更好看的内容。此代码是在express框架内，可在项目代码里的`demo2/myapp/views/index.html`找到界面代码，`demo2/myapp/public/javascripts/index.js`找到JS代码。JS代码主要做了几件事：
 1. 创建websocket连接，接收该设备的实时数据。
 2. 给开/关按钮添加POST请求代码。
@@ -131,7 +131,7 @@ router.get('/history/:id', function(req, res, next) {
 ## 结束语
 &emsp;大家可以亲自实现demo2。
 &emsp;demo2学习完后，整个教程就到了尾声，所有关键技术都已经介绍完了，各位读者已经可以自行编写整个物联网系统，剩下的无非是业务逻辑代码编写（比如帐号注册登陆、页面设计等等，不同的业务不同的设计）。__整个教程看似内容很少，实质上是需要读者阅读七八本书以及结合其它教程一起学习，其实需要读者学习的内容是极其之多，本教程只是演示最简单的实例给大家一个例子以参考，有利于进行正确有效的学习，少走弯路。__ 如果大家在阅读教程的过程中感受到某一块学习上有困难，尽管提出来，我会完善对应的内容、编写FAQ。本教程到此为止，很荣幸能够帮到大家。
-![](/blog_images/很荣幸能够帮到大家.webp)
+![](/blog/blog_images/很荣幸能够帮到大家.webp)
 
 ## 其它扩展内容
 - [chrome开发者工具](/posts/52429)

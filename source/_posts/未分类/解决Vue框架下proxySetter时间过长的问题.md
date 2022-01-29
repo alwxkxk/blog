@@ -8,7 +8,7 @@ tags:
 
 &emsp;最近在对公司项目进行性能优化时，发现Vue框架下的proxySetter函数使用时间过长：
 
-![Vue中proxySetter时间过长](/blog_images/未分类/Vue中proxySetter时间过长问题.webp)
+![Vue中proxySetter时间过长](/blog/blog_images/未分类/Vue中proxySetter时间过长问题.webp)
 
 &emsp;这个时间花费也太猛了，竟然花了1点多秒，这个定位起来没有那么直接，因为这部分函数是同Vue框架执行的。不像公司开发人员自己写的函数，我就直接点进去，看他写的代码，瞄几眼就知道是哪几行代码有性能问题（大部分是在长数组里使用循环找东西，这种改用对象一下就解决了），直接上手改。
 &emsp;如果对Vue框架数据绑定原理有初步了解的话，可以从图中看到proxy、observe等等关键字可以联想到，就是数据绑定时花费了大量时间。

@@ -27,9 +27,9 @@ tags:
 - 阶段性作业：自行实现demo1效果
 ## demo1总览
 &emsp;在之前的[demo1跑起来](/posts/64786/)里面已经介绍了demo1跑起来的效果了，这篇不再演示，而是直接讲解代码。（PS：图片中的IP地址根据实际情况变化，图里只是简单地举例。）
-![demo1通信示意](/blog_images/demo1通信示意.webp)
+![demo1通信示意](/blog/blog_images/demo1通信示意.webp)
 &emsp;整个demo1的整体代码流程图如下所示：
-![demo1流程图](/blog_images/demo1流程图.webp)
+![demo1流程图](/blog/blog_images/demo1流程图.webp)
 &emsp;首先服务器端的代码要跑起来，整个代码就是由Express手脚架（generator）一健生成的。然后NodeMCU通电跑程序时，首先连接WIFI，连接WIFI成功后会连接TCP服务器，成功后会不断地发送`tick`数值，我用这个当作心跳（在之前的课程里：[亲手实现demo0.1](/posts/38208) 里有讨论过为什么要引入心跳机制），然后一直等待接收控制指令，执行开关灯。
 &emsp;服务器端跑起来后，可以访问网页界面，点击网页界面的按钮，服务器端程序接收到控制指令，进而转发到对应的硬件里，硬件接收到就执行开关灯。
 

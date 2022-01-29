@@ -29,7 +29,7 @@ tags:
 
 ## 介绍demo0.1
 &emsp;demo0.1示例代码在项目里可以找到。从程序上来讲，NodeMCU（TCP客户端）与TCP服务器通信，手机浏览器（HTTP客户端）与HTTP服务器通信，最终实现通过网页控制NodeMCU的LED。完成demo0.1，软硬件基本打通了，后面做的事就是锦上添花，不断完善。
-![demo1示例](/blog_images/demo1示例.webp)
+![demo1示例](/blog/blog_images/demo1示例.webp)
 
 ## NodeMCU突然断开连接
 &emsp;现在我们已经把TCP服务器端程序写好了，并且能定时控制NodeMCU开关灯了。这里提一个风险点，就是NodeMCU突然断开（网络通信突然挂了，或者NodeMCU突然断电了），会怎么样？
@@ -63,7 +63,7 @@ var tcpServer = net.createServer((socket)=>{
 ## 断点调试
 &emsp;我们之前一直都是通过打印信息来调试，看问题会出现在哪里。除了打印信息这个调试技巧之外，还有断点调试技巧也十分重要。在页面的JS可以在Chrome里设置断点，NodeJS的代码可以在vscode里打断点然后开启debug。
 
-![](/blog_images/vscode断点调试.webp)
+![](/blog/blog_images/vscode断点调试.webp)
 
 
 ## demo0.1的问题

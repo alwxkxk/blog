@@ -9,7 +9,7 @@ date: 2019-09-07 16:13:21
 
 ## 效果及代码
 &emsp;canvas两图片切换的渐变效果如下：
-<img alt="canvas两图片切换的渐变" src="/blog_images/canvas两图片切换渐变效果.webp" style="width:50%;">
+<img alt="canvas两图片切换的渐变" src="/blog/blog_images/canvas两图片切换渐变效果.webp" style="width:50%;">
 
 
 &emsp;canvas在绘制图片时，可以先设置透明度`ctx.globalAlpha = 0.1`，即可绘画出透明度为0.1的图片。新图片取代旧图片时，旧图片的透明度值不断减少，新图片的不断增加（配合tween实现），便 可以实现 两图片切换的渐变效果。代码如下：

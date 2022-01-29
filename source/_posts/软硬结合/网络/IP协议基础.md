@@ -9,7 +9,7 @@ tags:
 &emsp;网上快速阅读所获得的知识只是轮廓，要看清知识的面目就要啃书：《计算机网络》、《TCP/IP详解 卷一》 。
 
 &emsp;我们常常把一个复杂的问题分解成若干个相对简单的问题，然后再一个个解决。计算机网络是一个复杂的系统，所以使用分层来简化，各层各自负责自己的事：
-![TCP/IP协议模型](/blog_images/TCP-IP协议模型.webp)
+![TCP/IP协议模型](/blog/blog_images/TCP-IP协议模型.webp)
 
 &emsp;整个网络通信模型如上图所示：网络通信时可以大概划分成四层，上层依赖于下层。从下往上看，由第一层（链路层）解决通信时数据传输问题（它负责两个设备之间数据传输，可以理解为两台设备用网卡跟网线连接起来，能传输数据了）。由第二层（网络层）解决网络通信时的寻址问题（将数据设法从源端经过若干个中间节点传送到目的端，提供最基本的端到端的数据传送服务）。由第三层（传输层）解决程序间的通信问题（端口号区分程序就是在这一层）。第四层才是具体应用的数据通信问题（提供特定的应用服务）。
 
@@ -23,7 +23,7 @@ tags:
 - 帧：数据链路层的协议数据单元。
 
 &emsp;数据链路层把网络层交下来的数据构成帧发送到链路上，以及把接收到的帧中的数据去除并交给网络层。
-![《计算机网络》-数据链路层](/blog_images/数据链路层.webp)
+![《计算机网络》-数据链路层](/blog/blog_images/数据链路层.webp)
 
 &emsp;点对点信道的数据链路层在进行通信时的主要步骤如下：
 1. 结点A的数据链路层把网络层交下来的IP数据报添加到首部和尾部封装成帧。
@@ -36,16 +36,16 @@ tags:
 ——《linux系统编程手册》
 
 &emsp;链路层在接收网络层的数据时，会进行 __封装（encapsulation）__ 。封装即每一层接收上层数据时，都会添加自己特定的头部数据（有时也会有尾部数据）。 如下图所显，应用层到传输层时，应用数据的基础上添加了TCP的header，它就变成了一个TCP segment。传输层到网络层时，就在TCP segment的基础上添加IP header，整个数据变成了IP datagram。从网络层到链路层，Ip datagram的基础上添加 Ethnet header 与 Ethnet triler数据，整个变成了Ethernet frame。
-![数据封装](/blog_images/数据封装.webp)
+![数据封装](/blog/blog_images/数据封装.webp)
 
-![通信过程-数据封装](/blog_images/005BIQVbgy1fwa14u9cyog30zj0j4acu.gif)
+![通信过程-数据封装](/blog/blog_images/005BIQVbgy1fwa14u9cyog30zj0j4acu.gif)
 
 ## IP协议
 &emsp;IP协议提供非可靠，无连接的数据报传输服务。（IP provides an unreliable,connectionless datagram delivery service.）
 - 非可靠：这意味着它并不保证所要传输的数据一定会到达目的地。（当路由出错导致某个数据传输失败时，会丢掉此数据并发回一个ICMP信息回去。可靠性需要由更上层的协议提供，如TCP协议）
 - 无连接：这代表IP datagrams（数据报）在传输中没有连接起来，它们是一块一块各自分开的，分开独立处理。（比如需要向某个地方发送两个数据报：A、B，它们两个有可能会经由不同的路径去到达目的地，有可能B要先于A到达。）
 
-![IP协议-数据报字段](/blog_images/IP协议-数据报字段.webp)
+![IP协议-数据报字段](/blog/blog_images/IP协议-数据报字段.webp)
 &emsp;数据报字段如上图所示，IP头部(IP header)至少有20个字节（1字节等于8位,1 byte = 8 bit），我们一一解释。
 - 4-bit version：是IP协议的版本，当前版本是4。
 - 4-bit header length：代表IP header的长度。
@@ -65,18 +65,18 @@ tags:
 ### 查看IP地址
 - 查看本机内网IP 
 打开命令提示符（win+R 输入cmd，或在菜单里输入cmd搜索）,输入`ipconfig`。
-![打开cmd](/blog_images/打开cmd.webp)
-![内网IP](/blog_images/内网IP.webp)
+![打开cmd](/blog/blog_images/打开cmd.webp)
+![内网IP](/blog/blog_images/内网IP.webp)
 - 查看本机外网IP
 打开百度，搜索ip地址，会直接显示你本机的外网IP。（一般每隔一段时间就会变化一次）
-![百度搜索ip地址](/blog_images/百度搜索ip地址.webp)
+![百度搜索ip地址](/blog/blog_images/百度搜索ip地址.webp)
 - 查看一个网站的IP地址
 可以在命令提示符里ping网站的域名，能显示Ip地址。（部分是不可以显示IP地址的）
-![pingQQ网站](/blog_images/pingQQ网站.webp)
+![pingQQ网站](/blog/blog_images/pingQQ网站.webp)
 
 ### 外网IP与内网IP
 &emsp;首先看看常见的网络类型：
-![外网IP与内网IP](/blog_images/外网IP与内网IP.webp)
+![外网IP与内网IP](/blog/blog_images/外网IP与内网IP.webp)
 &emsp;想一下我们电脑怎么连接上网的。喊电信移动给家里装宽带，工作人员就会给你家里安装一台拨号器与路由器，路由器与拨号器相连，电脑与路由器相连。公司也一样，不过是电脑多一些，可能会有几台路由器，而这些路由器最终都会连接到拨号器。对应上图的C类。
 
 场景|是否接入互联网|是否向外提供服务|例子
@@ -98,5 +98,5 @@ C类|√|×|企业网络、家庭网络
 &emsp;另外一下，有一个IP地址很特别而且经常用到：__127.0.0.1__ ，__回环地址__，它通常分配给主机名localhost。发送到这个地址的数据报实际上不会到达网络，它会自动回环变成发送主机的输入。
 
 
-![计算机网络基础 入门书籍](/blog_images/计算机网络基础入门书籍.webp)
-![TCP/IP](/blog_images/TCP-IP书.webp)
+![计算机网络基础 入门书籍](/blog/blog_images/计算机网络基础入门书籍.webp)
+![TCP/IP](/blog/blog_images/TCP-IP书.webp)

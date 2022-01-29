@@ -31,7 +31,7 @@ tags:
 &emsp;为了重现问题，特意下载了便携版chrome(v88)来对比（为了防止中毒，还额外研究了windows下沙盒，在沙盒里运行这软件），如图所示（测试代码附在最后）：
 
 
-![issuehunt提交](/blog_images/未分类/chrome89更新带来的问题.webp)
+![issuehunt提交](/blog/blog_images/未分类/chrome89更新带来的问题.webp)
 
 
 &emsp;可以看到，在v88中，多出一个`/deep/`并不影响，但在v89里是不行的，搜索了一下，发现[chromestatus chromestatus](https://www.chromestatus.com/feature/6750456638341120)里有：

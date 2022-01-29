@@ -22,13 +22,13 @@ tags:
 ## WebSocket协议
 &emsp;建立TCP通信之后，服务器端是能向客户端随时随地主动发数据。__但HTTP协议的设计就是无连接，“一问一答，不问不答”，客户端不发起请求，服务器不能主动向客户端发送数据__。在一些追求实时性的应用场景下，硬是使用HTTP轮询的办法去获取最新的数据，这就有严重的性能问题。如果轮询时间太短，机器扛不住。如果轮询太长，那么数据更新得太慢。即HTTP协议缺乏实时性，能不能像TCP socket通信一样，建立通信后不断开连接，并且能让服务器主动向客户端发送数据。基于这样的理念，就诞生了WebSocket协议，允许在上HTTP协议基础之上，达到TCP socket通信一样的效果。
 &emsp;在追求实时性应用场景里，比如说聊天室，物联网应用要实时刷新数据，都会用到WebSocket协议，赋予界面实时更新数据的能力。举个例子，现在我想实时显示温度，若使用HTTP协议轮询，要更新十次数据就需要发起十次请求，“十问十答”。使用WebSocket协议只需要发起一次请求，就可以做到“一问十答”，由服务器主动推送数据给浏览器：
-![](/blog_images/HTTP轮询与websocket.webp)
+![](/blog/blog_images/HTTP轮询与websocket.webp)
 
 ## 使用、调试Websocket
 &emsp;[http://websocket.org/](http://websocket.org/)提供了一个websocket测试网址，会回复所接收的数据(echo:回声)，我们可以在JS里直接使用浏览器自带的API来使用websocket。我们每秒向websocket服务器端发送一个值，它就会回复相同的内容。源代码可在项目代码里的`\基础教程\WebSocket协议\WebSocket例子`找到:
 
-<img class="lazy" alt="WebSocket" data-src="/blog_images/005BIQVbgy1fydgd0oltfg31gy0ri4qp.gif">
-![](/blog_images/websocket例子.webp)
+<img class="lazy" alt="WebSocket" data-src="/blog/blog_images/005BIQVbgy1fydgd0oltfg31gy0ri4qp.gif">
+![](/blog/blog_images/websocket例子.webp)
 
 ```js
 // 创建websocket连接

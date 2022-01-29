@@ -20,7 +20,7 @@ tags:
 
 ## 拉取所有代码
 &emsp;Git是代码管理工具，我整个教程都放到Github上开源了，可以通过Git来拉取代码：[Github](https://github.com/alwxkxk/soft-and-hard)：
-![获取全部源码](/blog_images/获取全部源码.webp)
+![获取全部源码](/blog/blog_images/获取全部源码.webp)
 
 &emsp;当然，你可以直接如图所示 安装Git后通过命令`git clone https://github.com/alwxkxk/soft-and-hard`来拉取代码，也可以直接点击下载Zip压缩包。
 
@@ -59,8 +59,8 @@ tags:
 
 ## 让NodeMCU连上本地的demo1
 &emsp;要想NodeMCU连上本地的demo1，必须先知道自己电脑的IP地址，可以通过cmd命令行输入`ipconfig`来得到电脑的IP地址。
-![打开cmd](/blog_images/打开cmd.webp)
-![内网IP](/blog_images/内网IP.webp)
+![打开cmd](/blog/blog_images/打开cmd.webp)
+![内网IP](/blog/blog_images/内网IP.webp)
 
 &emsp;然后修改NodeMCU demo1的代码里的 __IP地址__，烧录到NodeMCU中，要确保NodeMCU与电脑是在同一个WIFI网络当中，就可以了在本地跑通demo1了。部分读者实践时，发现需要 __关闭windows的防火墙__ 才能连接成功。
 

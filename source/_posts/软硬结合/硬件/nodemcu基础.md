@@ -21,19 +21,19 @@ tags:
 <iframe src="//player.bilibili.com/player.html?aid=462062924&bvid=BV16L411n7Pi&cid=379908862&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 ## NodeMCU简介
-![ESP8266芯片模块开发板的区别](/blog_images/ESP8266芯片模块开发板的区别.webp)
+![ESP8266芯片模块开发板的区别](/blog/blog_images/ESP8266芯片模块开发板的区别.webp)
 &emsp;NodeMCU本质就是把ESP8266的引脚都引出来，配合USB转串口芯片，使其能快速开发验证想法。
 &emsp;在我的毕业设计里，ESP8266模块只是充当WIFI通信模块的作用，只做消息转发不做业务处理，传感器与STM32通信，STM32再与ESP8266模块通信。而在这个教程里，使用NodeMCU，省去了STM32这个中间商，传感器与STP8266直接相连，此时ESP8266芯片既是WIFI通信芯片，也做业务处理。NodeMCU的引脚如下：
 
-![NodeMCU引脚图](/blog_images/NodeMCU引脚图.webp)
+![NodeMCU引脚图](/blog/blog_images/NodeMCU引脚图.webp)
 &emsp;淘宝价大约在十几块钱，如果是第一次玩硬件，自己没有USB线的话，记得还要额外买 __一条线__ ：
 
-![淘宝NodeMCU](/blog_images/淘宝NodeMCU.webp)
+![淘宝NodeMCU](/blog/blog_images/淘宝NodeMCU.webp)
 
 &emsp;先买一块NodeMCU（超便宜的，最便宜十几块钱就能在淘宝上买到）,安装驱动精灵（用于安装串口驱动的），安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)
 
 &emsp;特别注意：NodeMCU分V2与V3版本（非官方承认），两者略有不同，其中V3略便宜且LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`。别问我买哪个版本的，__买便宜的那一个!!!（好像是V3便宜些）__
-![](/blog_images/nodemcu版本对比.webp)
+![](/blog/blog_images/nodemcu版本对比.webp)
 
 ## 验证硬件是否正常
 &emsp;把NodeMCU接上USB线插上电脑，如果发现没有识别到端口的话，可能是线有问题，也有可能是板子有问题。如果你怀疑是板子有问题，请联系客服要求换货。
@@ -47,7 +47,7 @@ tags:
 ### 搭建开发环境
 &emsp;安装Arduino-1.8版本以上[Arduino1.8.7（百度网盘）](https://pan.baidu.com/s/1E6wDSEYoeDoAm9GhUGwdaw)(安装过程一直next就是，我就不录视频了)，配置ESP8266扩展开发板网址并安装SDK。（我已经配置并安装了，你们自行安装一下，安装过程可能会比较慢。）扩展开发板网址:`http://arduino.esp8266.com/stable/package_esp8266com_index.json`。但由于不可描述的原因，一般是安装失败的，可请看另一文章进行解决：[Arduino开发板管理安装失败解决办法](/posts/10960)。
 
-![无法获取外面的资源](/blog_images/无法获取外面的资源.webp)
+![无法获取外面的资源](/blog/blog_images/无法获取外面的资源.webp)
 
 &emsp;验证一下是否已经安装扩展SDK，如果烧录程序时提示`ESP8266WiFi.h:No such file or directory`，基本就代表没有安装或选择扩展。
 

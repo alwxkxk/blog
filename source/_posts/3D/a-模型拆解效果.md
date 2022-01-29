@@ -38,7 +38,7 @@ function move(obj,position) {
 
 ```
 &emsp;在模型制作上，必须是包含若干个子模型，这样才能分别控制不同的子模型做不同的事。
-<img alt="最小单元模型" src="/blog_images/3d/最小单元模型.webp">
+<img alt="最小单元模型" src="/blog/blog_images/3d/最小单元模型.webp">
 &emsp;可以看到，这个机箱的3D模型是包含了子模型，使用`scene.getObjectByName("Object_7")`就能得到`Object_7`这个模型，再设置其位置属性就可以实现位置变化`obj.position.set(x,y,z)`。最后让各个模块向各个方向移动即可做到拆解效果：
 
 ```js

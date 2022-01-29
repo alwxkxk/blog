@@ -17,7 +17,7 @@ date: 2019-06-27 15:19:56
 
 ## one ploygon one picture
 &emsp;Take air conditioner as an example.Google a picture about air conditioner and crop it without padding:
-<img alt="air conditioner" src="/blog_images/air conditioner.jpg" style="width:40%;">
+<img alt="air conditioner" src="/blog/blog_images/air conditioner.jpg" style="width:40%;">
 1. Make the model editable.
 2. Add material with picture texture.
 3. Select one polygon and drag the material.

@@ -13,9 +13,9 @@ date: 2019-11-09 10:45:04
 &emsp;最近在工作中开发前端时，后端经常修改代码与数据表导致部分接口异常，而项目框架自带的mock.js由于是改写了`XMLHttpRequest`变成`MockXMLHttpRequest`导致很多异常（会导致很多第三方库出现问题，特别是加载文件这一块）。部分接口时常抽风，反复等待了几次感觉浪费太多时间，对我的开发进度不利，网上简单试了几个也不太好用，于是想折腾出mock-server。
 &emsp;我的需求很简单，就是mock部分接口，没有设置mock的接口正常调用。
 &emsp;当配置了mock的接口，就响应mock数据（图片来源于[mock-server](http://www.mock-server.com/)，这个工具符合需求，有nodejs模块，但折腾了几下也无法正常使用。）：
-![](/blog_images/后端/expectation_response_action.webp)
+![](/blog/blog_images/后端/expectation_response_action.webp)
 &emsp;没有配置mock的接口，就跳转至后端正常访问：
-![](/blog_images/后端/expectation_forward_action.webp)
+![](/blog/blog_images/后端/expectation_forward_action.webp)
 &emsp;网上说用Express框架自己搭就行了，但没有相关代码，我简单折腾了几下还真折腾出来了。
 ```bash
 # 创建项目

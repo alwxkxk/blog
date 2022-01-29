@@ -95,11 +95,11 @@ setInterval(() => {
 - [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
 - 书籍：《深入浅出Node.js》- 朴灵
 
-![nodejs入门](/blog_images/nodejs入门.webp)
+![nodejs入门](/blog/blog_images/nodejs入门.webp)
 
 
 &emsp;同时，由于JavaScript的学习过程，有会提到HTML的内容，所以一般也会一同学习，大家可以进入下一课[HTML、CSS、JS基础](/posts/54080)。
-![网页制作入门 推荐书籍](/blog_images/网页制作入门推荐书籍.webp)
+![网页制作入门 推荐书籍](/blog/blog_images/网页制作入门推荐书籍.webp)
 
 ## 搜索引擎是最好的老师
 &emsp;在学习、实践的过程中，会不断出现看不懂的名词，这时就需要用搜索引擎来搜索，它是你的24小时老师。不断使用搜索引擎来解决自己的疑惑，解决问题，这个过程会不断地提升自学能力，解决问题的能力。（百度经常搜出广告，大家可以使用必应，有条件的可以使用Google。）

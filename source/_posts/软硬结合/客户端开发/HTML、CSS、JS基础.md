@@ -29,7 +29,7 @@ tags:
 
 &emsp;关于HTML、CSS、JavaScript，网上有很多也很优秀的教程，我不再重复。别人写的教程会比我写的完整详细，我这里简单地起一个头。
 
-![不再重复造轮子](/blog_images/不再重复造轮子.webp)
+![不再重复造轮子](/blog/blog_images/不再重复造轮子.webp)
 
 &emsp;先放结论：
 - HTML用于描述网页内容。
@@ -108,7 +108,7 @@ __这是一个按钮__
 - 《JavaScript DOM编程艺术》
 - 《JavaScript高级程序设计》
 
-![网页制作入门 推荐书籍](/blog_images/网页制作入门推荐书籍.webp)
+![网页制作入门 推荐书籍](/blog/blog_images/网页制作入门推荐书籍.webp)
 
 API查询工具: 
 - [devdocs](https://devdocs.io/javascript/)

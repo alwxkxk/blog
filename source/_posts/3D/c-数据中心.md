@@ -26,7 +26,7 @@ tags:
 &emsp;浏览器的响应式设计，比较简单，利用CSS中`vh`与`vw`便可实现动态计算浏览器界面的高宽，我利用PS制作了一张背景图是4：3比例的，所以按以下CSS代码即可实现响应式缩放。
 
 
-<img alt="board" src="/blog_images/3d/board.png">
+<img alt="board" src="/blog/blog_images/3d/board.png">
 ```css
 width: 20vw;
 height: 15vw;

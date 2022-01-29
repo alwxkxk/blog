@@ -9,7 +9,7 @@ tags:
 ---
 
 &emsp;可以通过从Google地图里抓图获取城市建筑数据，相对于osm这种傻傻地显示方块显示建筑，rdc生成的数据更真实（当然也更复杂）。不能访问Google的小伙伴们是无法尝试的。别问我怎么访问Google，这技术不能教，只能靠缘分获取。导入rdc最终效果：
-![导入rdc效果](/blog_images/3d/导入rdc效果.webp)
+![导入rdc效果](/blog/blog_images/3d/导入rdc效果.webp)
 
 ## 操作
 &emsp;具体操作看视频：特别注意使用renderDoc注入前，要先退出所有浏览器否则注入失败。

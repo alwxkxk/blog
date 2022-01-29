@@ -43,11 +43,11 @@ tags:
 
 &emsp;除了JS代码可以打断点,还有DOM变化，XHR请求，事件监听：
 - DOM变化
-![DOM变化](/blog_images/DOM变化.webp)
+![DOM变化](/blog/blog_images/DOM变化.webp)
 - XHR请求
-![XHR请求](/blog_images/XHR请求.webp)
+![XHR请求](/blog/blog_images/XHR请求.webp)
 - 事件监听
-![事件监听](/blog_images/事件监听.webp)
+![事件监听](/blog/blog_images/事件监听.webp)
 
 # 网络面板
 &emsp;网络面板（Network）功能是：

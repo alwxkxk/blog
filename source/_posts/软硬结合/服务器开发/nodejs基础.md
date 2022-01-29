@@ -11,9 +11,9 @@ tags:
 ## 安装nodejs
 1. 搜索nodejs官网
 2. 下载nodejs，大家下载稳定版本（LTS: Long Term Support ）。安装一直点下一步即可。
-![下载nodejs](/blog_images/下载nodejs.webp)
+![下载nodejs](/blog/blog_images/下载nodejs.webp)
 3. 在cmd里运行`node -v`与`npm -v`验证nodejs安装成功。
-![验证nodejs安装成功](/blog_images/验证nodejs安装成功.webp)
+![验证nodejs安装成功](/blog/blog_images/验证nodejs安装成功.webp)
 验证安装成功就代表了：1.程序安装成功。2.环境变量（PATH） 设置正确。
 
 ## 其它nodejs教程
@@ -25,7 +25,7 @@ tags:
 [《七天学会NodeJS》](https://github.com/nqdeng/7-days-nodejs)
 [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)
 
-![nodejs入门](/blog_images/nodejs入门.webp)
+![nodejs入门](/blog/blog_images/nodejs入门.webp)
 
 ## 搭建最简TCP服务器
 &emsp;先简单地了解一下[TCP/IP协议基础](/posts/19508)，至少先学会怎么使用网络调试助手。这里，我简单地写一个tcp服务器端脚本[nodejs HTTP-API中文文档](http://nodejs.cn/api/net.html)，再使用网络调试助手充当客户端连接服务器进行通信：（源码可在github上的base/tcp里找到）
