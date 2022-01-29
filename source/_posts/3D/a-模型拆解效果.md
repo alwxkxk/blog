@@ -12,7 +12,8 @@ tags:
 
 ## 示例效果
 &emsp;这是3D可视化教程系列的文章，如果第一次阅读请先阅读[《3D可视化教程导读》](/posts/30679)，这里展示简单的模型拆解效果，可访问[a-dismantling 展示网址](http://3d.scaugreen.cn/a-dismantling.html)：
-<img alt="3D模型拆解" src="/blog_images/3d/3D模型拆解2.gif">
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1XF411n76c&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  class="bilibili-video"> </iframe>
 
 &emsp;华为的网站上也有这种拆解示例，比我做的例子好看多了（毕竟我的模型是网上找的，该模型的物体分组有点问题，而我又懒得自己做一个，但并不影响大家了解学习。），原理基本上是一样的。[华为服务器拆解示例](https://support.huawei.com/onlinetoolweb/server-3D/res/server/1288hv5/index.html?lang=cn)
 
