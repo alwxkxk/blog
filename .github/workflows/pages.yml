@@ -17,12 +17,11 @@ jobs:
       - name: Cache NPM dependencies
         uses: actions/cache@v2
         with:
-          path: hexo/node_modules
+          path: node_modules
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        working-directory: hexo
         run: npm install
       - name: Build
         working-directory: hexo
@@ -31,5 +30,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./hexo/public
+          publish_dir: ./public
           publish_branch: gh-pages  # deploying branch
