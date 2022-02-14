@@ -1,5 +1,5 @@
 ---
-title: chrome89不再支持deep
+title: chrome89不再支持嵌套使用deep
 toc: true
 abbrlink: 5208
 date: 2021-03-09 18:35:37
