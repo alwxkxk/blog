@@ -26,6 +26,7 @@ valine: ## https://valine.js.org
   avatar: 'mm' ## Gravatar type, see https://github.com/xCss/Valine/wiki/avatar-setting-for-valine
   pageSize: 10 ## Number of comments per page.
   guest_info: nick,mail,link ## Attributes of reviewers.
+  server_urls: https://leancloud.scaugreen.cn
 
 google_search: false ## Use Google search, true/false.
 baidu_search: true ## Use Baidu search, true/false.
