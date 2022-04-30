@@ -67,6 +67,7 @@ jobs:
 
 ```
 
+server-pages-dev则是不用修改，用于编译生成server-pages，服务器上切换到该分支就可以了。
 
 ## 修改
 hexo 模板来源于[maupassant-hexo](https://github.com/tufu9441/maupassant-hexo)。
