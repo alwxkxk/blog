@@ -1,5 +1,5 @@
 ---
-title: NodeMCU基础
+title: 【软硬结合】NodeMCU基础
 toc: true
 abbrlink: 31494
 date: 2018-10-13 17:05:22
@@ -49,11 +49,13 @@ tags:
 
 ![无法获取外面的资源](/blog/blog_images/无法获取外面的资源.webp)
 
-&emsp;验证一下是否已经安装扩展SDK，如果烧录程序时提示`ESP8266WiFi.h:No such file or directory`，基本就代表没有安装或选择扩展。
+&emsp;如果烧录程序时提示`ESP8266WiFi.h:No such file or directory`，基本就代表没有安装或选择扩展。
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1dp4y1t75w&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
-&emsp;安装完扩展开发板信息后，记得选择开发板为`NodeMCU 1.0`。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。__拿到开发板的第一件事，就是跑个例程，证明硬件是没问题的。__ 我们接下来要做的事就是，通过代码把开发板上的LED闪烁起来，证明板子没问题。然后就是实践串口通信收发消息与验证连接WIFI的功能。
+&emsp;安装完扩展开发板信息后，记得选择开发板为`NodeMCU 1.0`(如果没得选，那么就代表上一步没安装成功)。如果连接上开发板并可以看到开发板信息，说明连接正常，可以编程了。__拿到开发板的第一件事，就是跑个例程，证明硬件是没问题的。__ 我们接下来要做的事就是，通过代码把开发板上的LED闪烁起来，证明板子没问题。然后就是实践串口通信收发消息与验证连接WIFI的功能。
+![nodemcu开发板扩展安装](/blog_images/nodemcu开发板扩展安装.webp)
+
 ## 例程
 
 ### 控制LED

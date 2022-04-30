@@ -1,5 +1,7 @@
 # README
 生子当如哈士奇的个人博客，包含若干技术文章，以及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。
+- 网址：[博客](https://www.scaugreen.cn/)
+- 后备访问：[gh-pages](https://alwxkxk.github.io/blog/posts/23630/)
 
 ## 运行
 ```bash
@@ -10,9 +12,9 @@ hexo new 新文章标题
 hexo generate // hexo V4.2.1 以上才兼容nodeV14，否则生成空白文件。
 
 # 运行
-hexo server
+npm run dev 
 # 打包
-hexo build
+npm run build 
 ```
 
 ## gh-page
@@ -50,21 +52,19 @@ jobs:
       - name: Cache NPM dependencies
         uses: actions/cache@v2
         with:
-          path: hexo/node_modules
+          path: node_modules
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        working-directory: hexo
         run: npm install
       - name: Build
-        working-directory: hexo
         run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./hexo/public
+          publish_dir: ./public
           publish_branch: gh-pages  # deploying branch
 
 ```
@@ -74,5 +74,5 @@ jobs:
 hexo 模板来源于[maupassant-hexo](https://github.com/tufu9441/maupassant-hexo)。
 
 修改领航栏：
-hexo\themes\maupassant\layout\_widget\navbar.pug
+themes\maupassant\layout\_widget\navbar.pug
 
