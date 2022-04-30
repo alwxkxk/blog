@@ -244,3 +244,30 @@ function sentCommand(id,addr,command) {
 
 
 &emsp;为了解决以上问题，我们正式奔向demo2。
+
+
+## FAQ
+1. 有好几个读者提问过引用文件的路径问题，估计是相关教程没有提到，这里简单说一下：
+
+```xml
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+```
+有读者问，引用外部文件时为什么是`/xxx`这样子，而不是`./xxx`或者`../xxx`。`/`代表根路径，`./`代表当前路径,`../`代表当前路径的上一级。为了方便举例，假设我的HTTP服务器所设置的文件如下：
+```bash
+index.html
+--javascripts
+----jquery.min.js 
+--pages
+----user.html
+```
+如果我访问index.html，它想引用javascripts文件夹下的jquery.min.js，那么我浏览器打开的网址是`http://127.0.0.1`或者`http://127.0.0.1/index.html`，而index.html里就要写`<script src="/javascripts/jquery.min.js"></script>`或者`<script src="./javascripts/jquery.min.js"></script>`
+
+如果我访问user.html，它想引用javascripts文件夹下的jquery.min.js，那么我浏览器打开的网址是`http://127.0.0.1/pages/user.html`，而user.html里就要写`<script src="/javascripts/jquery.min.js"></script>`或者`<script src="../javascripts/jquery.min.js"></script>`
+
+
+在HTTP服务器中，访问`/`就是访问根路径，一般我们会在这个位置上放`index.html`，因为浏览器访问`/`默认等效为`/index.html`。要想拿到jquery.min.js这文件，要么写绝对路径`/javascripts/jquery.min.js`，要么写相对路径。对于index.html来说，它的相对路径是当前路径的文件夹下，所以是`./javascripts/jquery.min.js`，但对于user.html来说，它的相对路径是上一级路径的文件夹下，所以是`../javascripts/jquery.min.js`
+
+而在demo1中，虽然从文件结构上看路径是相距很远，但其实我们使用express框架时使用了代码`app.use(express.static(path.join(__dirname, 'public')));`声明了这个文件是静态文件路径，它就会把这些文件夹放到`/`里。

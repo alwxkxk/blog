@@ -18,6 +18,12 @@ tags:
 ## 本篇视频
 <iframe src="//player.bilibili.com/player.html?aid=462062924&bvid=BV16L411n7Pi&cid=379908862&page=3" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
+&emsp;有读者反映安装依赖时会出现这种情况：
+![安装依赖异常](/blog_images/安装依赖异常.webp)
+&emsp;这个情况主要是powershell本身的问题，可以如下图所示处理，切换到cmd或者git来执行命令：
+![安装依赖异常解决1](/blog_images/安装依赖异常解决1.webp)
+![安装依赖异常解决2](/blog_images/安装依赖异常解决2.webp)
+
 ## 拉取所有代码
 &emsp;Git是代码管理工具，我整个教程都放到Github上开源了，可以通过Git来拉取代码：[Github](https://github.com/alwxkxk/soft-and-hard)：
 ![获取全部源码](/blog_images/获取全部源码.webp)
