@@ -1,0 +1,132 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+nav {
+  overflow: auto !important;
+}
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 256px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+
+
+.navbar-custom{
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  border: 0;
+}
+
+@media (min-width: 768px){
+  .navbar-custom{
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+  }
+}
+
+.navbar-default{
+  border: none;
+}
+/*  引入 bootstrap 该版本 缺失的 submenu样式*/
+.dropdown-submenu {
+  position: relative
+}
+
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 4px 4px
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block
+}
+
+@media (max-width: 767px) {
+  .dropdown-submenu>.dropdown-menu {
+      display:block
+  }
+
+  .dropdown-submenu>a {
+      padding: 14px 20px 3px!important;
+      font-size: 12px;
+      line-height: 1.428571429!important;
+      color: #777!important;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 9px
+  }
+}
+
+.dropdown-submenu>a>.caret {
+  display: inline-block;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  position: absolute;
+  margin-top: -2px;
+  right: 8px;
+  top: 50%
+}
+
+@media (max-width: 767px) {
+  .dropdown-submenu>a>.caret {
+      display:none!important
+  }
+
+  .break-xs {
+      width: 100%!important
+  }
+}
+
+.navbar-fixed-bottom .dropdown-submenu>.dropdown-menu {
+  bottom: 0;
+  border-radius: 4px 4px 4px 0
+}
+
+.navbar-fixed-bottom .dropdown-submenu>a>.caret {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.navbar-right .dropdown-submenu>.dropdown-menu {
+  right: 100%;
+  left: auto;
+  margin-left: 10px;
+  border-radius: 4px 0 4px 4px
+}
