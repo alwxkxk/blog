@@ -67,6 +67,7 @@ jobs:
 
 ```
 
+server-page则是由master提交就更新，用于部署静态文件到服务器上。
 
 ## 修改
 hexo 模板来源于[maupassant-hexo](https://github.com/tufu9441/maupassant-hexo)。
