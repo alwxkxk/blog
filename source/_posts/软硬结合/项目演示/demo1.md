@@ -32,7 +32,7 @@ tags:
 
 &emsp;Github作为程序员的神器之一，里面所有全世界的开源代码，你拥抱了世界，世界也就拥抱了你。建议大家注册账号并学习如何使用Git来管理你的代码，当然 __记得给我的项目点Star来支持我__ 。Git有比较好的教程：[Git教程-廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)，我就不再重复，这个是必学内容，__但它并不影响本教程学习，大家可以大胆先跳过，建议以后有时间抽空学习__。
 
-&emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以使用官方的国内镜像的URL替代（用`https://github.com.cnpmjs.org`代替`https://github.com`）即执行命令时是：`git clone https://github.com.cnpmjs.org/alwxkxk/soft-and-hard`。如果这个还不行，那只能用国内的替代版Gitee，`git clone https://gitee.com/alwxkxk_admin/soft-and-hard.git`。(Gitee我不保证是最新的代码，有空我就去触发一下同步，Gitee用的人少。)
+&emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以用国内的替代版Gitee，`git clone https://gitee.com/alwxkxk_admin/soft-and-hard.git`。(由于最新要求，Gitee也被迫要求要申请才能公布，我的这个仓库应该是公布的了，能下载的。)。如果你想访问github，有好心人提供了修改host的办法来解决：[hellogithub](https://raw.hellogithub.com/hosts)，把网页上的hosts写到你电脑上的Host文件即可。
 
 &emsp;演示视频中使用了[站长工具-Ping检测](https://ping.chinaz.com/)来检测github.com是否可访问。一般来说，特殊时期会大规模不可访问，平时只是部分地区部分运营商不可访问。另外演示中我使用了特殊的办法来访问，因为不可描述的原因这个技能不教，请大家理解。
 ## 将NodeMCU连接线上的demo1
@@ -102,5 +102,8 @@ __答：根本原因是你的设备“没有连接到你本地电脑的demo1，�
 
 8. 我自己创建的项目，运行`npm run start`时报错`ENOENT: no such file or directory, open '...\package.json'`
 __答：实现认真看一下报错信息就容易看到哪里出问题了，这报错就是说无法打开`package.json`文件。如果有学node.js就知道，`npm run start`其实是根据`package.json`里配置的来执行对应的命令。__
+
+9. Github国内镜像源？
+__答：[有 GitHub 的国内镜像源吗？ - 知乎](https://www.zhihu.com/question/38192507)，有好心人提供了修改host的办法来解决：[hellogithub](https://raw.hellogithub.com/hosts)，把网页上的hosts写到你电脑上的Host文件即可。之前国内镜像源是可以使用的，但现在也不可以了，举例子使用官方的国内镜像的URL替代（用`https://github.com.cnpmjs.org`代替`https://github.com`）即执行命令时是：`git clone https://github.com.cnpmjs.org/alwxkxk/soft-and-hard`。__
 
 
