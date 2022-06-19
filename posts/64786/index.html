@@ -20,7 +20,7 @@
 <h2 id="拉取所有代码"><a href="#拉取所有代码" class="headerlink" title="拉取所有代码"></a>拉取所有代码</h2><p>&emsp;Git是代码管理工具，我整个教程都放到Github上开源了，可以通过Git来拉取代码：<a target="_blank" rel="noopener" href="https://github.com/alwxkxk/soft-and-hard">Github</a>：<br><img src="/blog_images/获取全部源码.webp" alt="获取全部源码"></p>
 <p>&emsp;当然，你可以直接如图所示 安装Git后通过命令<code>git clone https://github.com/alwxkxk/soft-and-hard</code>来拉取代码，也可以直接点击下载Zip压缩包。</p>
 <p>&emsp;Github作为程序员的神器之一，里面所有全世界的开源代码，你拥抱了世界，世界也就拥抱了你。建议大家注册账号并学习如何使用Git来管理你的代码，当然 <strong>记得给我的项目点Star来支持我</strong> 。Git有比较好的教程：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程-廖雪峰</a>，我就不再重复，这个是必学内容，<strong>但它并不影响本教程学习，大家可以大胆先跳过，建议以后有时间抽空学习</strong>。</p>
-<p>&emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以使用官方的国内镜像的URL替代（用<code>https://github.com.cnpmjs.org</code>代替<code>https://github.com</code>）即执行命令时是：<code>git clone https://github.com.cnpmjs.org/alwxkxk/soft-and-hard</code>。如果这个还不行，那只能用国内的替代版Gitee，<code>git clone https://gitee.com/alwxkxk_admin/soft-and-hard.git</code>。(Gitee我不保证是最新的代码，有空我就去触发一下同步，Gitee用的人少。)</p>
+<p>&emsp;Github由于不可描述的原因，有可能会抽风连不上或者速度太慢，可以用国内的替代版Gitee，<code>git clone https://gitee.com/alwxkxk_admin/soft-and-hard.git</code>。(由于最新要求，Gitee也被迫要求要申请才能公布，我的这个仓库应该是公布的了，能下载的。)。如果你想访问github，有好心人提供了修改host的办法来解决：<a target="_blank" rel="noopener" href="https://raw.hellogithub.com/hosts">hellogithub</a>，把网页上的hosts写到你电脑上的Host文件即可。</p>
 <p>&emsp;演示视频中使用了<a target="_blank" rel="noopener" href="https://ping.chinaz.com/">站长工具-Ping检测</a>来检测github.com是否可访问。一般来说，特殊时期会大规模不可访问，平时只是部分地区部分运营商不可访问。另外演示中我使用了特殊的办法来访问，因为不可描述的原因这个技能不教，请大家理解。</p>
 <h2 id="将NodeMCU连接线上的demo1"><a href="#将NodeMCU连接线上的demo1" class="headerlink" title="将NodeMCU连接线上的demo1"></a>将NodeMCU连接线上的demo1</h2><p>&emsp;我已经把demo1部署到了我的云服务器，供大家测试：</p>
 <ul>
@@ -62,6 +62,8 @@
 <li><p>为什么我本地运行的demo1没有看到我的设备，但在博主的demo1示例网站上能看到我的设备？<br><strong>答：根本原因是你的设备“没有连接到你本地电脑的demo1，而是连接到我云服务器上的demo1。”，请检查硬件代码是否连接到你本地的demo1。（保证在同一网络之中，这样硬件才能连接到你本地的demo1。）</strong></p>
 </li>
 <li><p>我自己创建的项目，运行<code>npm run start</code>时报错<code>ENOENT: no such file or directory, open &#39;...\package.json&#39;</code><br><strong>答：实现认真看一下报错信息就容易看到哪里出问题了，这报错就是说无法打开<code>package.json</code>文件。如果有学node.js就知道，<code>npm run start</code>其实是根据<code>package.json</code>里配置的来执行对应的命令。</strong></p>
+</li>
+<li><p>Github国内镜像源？<br><strong>答：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38192507">有 GitHub 的国内镜像源吗？ - 知乎</a>，有好心人提供了修改host的办法来解决：<a target="_blank" rel="noopener" href="https://raw.hellogithub.com/hosts">hellogithub</a>，把网页上的hosts写到你电脑上的Host文件即可。之前国内镜像源是可以使用的，但现在也不可以了，举例子使用官方的国内镜像的URL替代（用<code>https://github.com.cnpmjs.org</code>代替<code>https://github.com</code>）即执行命令时是：<code>git clone https://github.com.cnpmjs.org/alwxkxk/soft-and-hard</code>。</strong></p>
 </li>
 </ol>
 </div><div class="tags"></div><div id="vcomment"></div><script src="/js/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
