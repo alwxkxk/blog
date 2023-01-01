@@ -205,14 +205,27 @@ function traverseTree (data, callback, childrenKey = 'children') {
         if (!this.showRowNum) {
           this.showRowNum = Math.ceil((this.tableHeight - this.headerHeight) / this.rowHeight)
         }
+        // 最大的起始行
+        if(rowStartNum>tableViewData.length-this.showRowNum){
+          rowStartNum = tableViewData.length-this.showRowNum
+        }
+        // 最大的结束行
         let rowEndNum = rowStartNum + this.showRowNum
         if(rowEndNum>tableViewData.length){
           rowEndNum = tableViewData.length
         }
-        console.log('updateTableView row:', rowStartNum, '-', rowEndNum, ',', this.showRowNum)
+        
+        console.log('updateTableView row:', rowStartNum, '-', rowEndNum, ',', this.showRowNum,tableViewData.length)
         // 计算上下占位元素的高度
-        const top = rowStartNum * this.rowHeight + 'px'
-        const bottom = (tableViewData.length + 1 - rowEndNum)  * this.rowHeight + 'px'
+        // const top = rowStartNum * this.rowHeight + 'px'
+        // const bottom = (tableViewData.length + 1 - rowEndNum)  * this.rowHeight + 'px'
+
+        let top = Math.round(scrollTop) + 'px'
+        const bottom = (tableViewData.length +1 - rowEndNum) * this.rowHeight + 'px'
+        // 如果到尾了，上占位达到最大高度
+        if(rowStartNum ===  tableViewData.length-this.showRowNum){
+          top = (tableViewData.length-this.showRowNum) * this.rowHeight + 'px'
+        }
         console.log('top',top,bottom)
         // 调整占位元素的高度
         this.topElement.style.height = top
