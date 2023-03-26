@@ -30,7 +30,7 @@
 <p>&emsp;界面网址是使用浏览器chrome访问，即可打对demo1的界面。TCP服务器是让NodeMCU连上去的。修改NodeMCU demo1的代码里的 <strong>WIFI名称密码</strong>，并烧录到NodeMCU中，就可以连接到线上demo1，并通过网页来控制硬件开关灯。</p>
 <iframe src="//player.bilibili.com/player.html?bvid=BV1hv411L7j3&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
-<p>&emsp;<strong>云服务器本质上依旧是一台电脑，所以在开发阶段，我们可以完全让自己的电脑来充当这个云服务器，来进行开发调试验证，最后成功了再部署到云服务器上。</strong> 接下来我们先本地调试。</p>
+<p>&emsp;<strong>云服务器本质上依旧是一台电脑，所以在开发阶段，我们可以完全让自己的电脑来充当这个云服务器，来进行开发调试验证，最后成功了再部署到云服务器上。</strong> 接下来我们先本地调试。<br>&emsp;经常有学习的网友很容易搞混，一会云服务器的IP地址，一会又是本地的电脑IP地址，学习的时候必须要保证：<strong>网页访问与硬件代码所填的IP地址必须一致</strong>，说明连的是同一台服务器。（有几个网友学习时就出现过：网页访问我的云服务器，但硬件连的却是他们本地的电脑，就问我为啥没数据，硬件跟软件连的都不一样，当然没数据啦。）<br><img src="/blog_images/指向一致.webp" alt="获取全部源码"></p>
 <h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><p>&emsp;开发环境主要包含：Chrome浏览器（不建议使用其它浏览器）、vscode编辑器、NodeJs环境。跟着视频操作即可：</p>
 <iframe src="//player.bilibili.com/player.html?bvid=BV1H54y147cu&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>   
 
@@ -47,7 +47,7 @@
 
 <p>&emsp;到这里，你已经把demo1跑起来了，虽然现在还不懂是什么东西，但是不用急，后面会教你怎么从零实现demo1，这里就是演示一下你学习后能达到的效果之一。接下来，会演示如何把demo2跑起来，一样是不教太多知识，先跑起来，让读者先看到效果，好让读者知道学完后能达到什么的程度，最后才教实现demo1，进而实现demo2。</p>
 <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><ol>
-<li><p>为什么我点击按钮没能控制LED灯亮灭？<br><strong>答：原因一：NodeMCU可能是V3版本需要定义引脚，或者硬件异常，请到<a href="/posts/31494">NodeMCU基础</a>跑第一个例程，让LED灯一直闪烁确保硬件正常再跑demo1。原因二：使用了错误的浏览器（比如说IE这种旧的浏览器，360浏览器兼容模式等待），建议大家请改用chrome浏览器。</strong></p>
+<li><p>为什么我点击按钮没能控制LED灯亮灭？<br><strong>答：原因一：NodeMCU可能是V3版本需要定义引脚，或者硬件异常，请到<a href="/posts/31494">NodeMCU基础</a>跑第一个例程，让LED灯一直闪烁确保硬件正常再跑demo1。原因二：使用了错误的浏览器（比如说IE这种旧的浏览器，360浏览器兼容模式等待），建议大家请改用chrome浏览器。现在新版的Edge也使用了chrome浏览器内核，Edge浏览器也是可以的。</strong></p>
 </li>
 <li><p>把项目部署到云服务器linux中，但把SSH一关网站就访问不了了，怎么才能一直打开?<br><strong>答：学习 nodejs部署工具 PM2，可以让程序一直跑着。另外在linux系统里关闭SSH后，系统会给这个pty所关联的session中的所有进程发送SIGHUP信号，SIGHUP的默认信号处理程序是终止进程，除非进程自己处理了 SIGHUP。可以学习并使用linux 命令 <code>screen</code> ，解决这个问题。</strong></p>
 </li>
