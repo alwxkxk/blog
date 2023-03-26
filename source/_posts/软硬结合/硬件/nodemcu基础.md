@@ -60,7 +60,7 @@ tags:
 
 ### 控制LED
 &emsp;NodeMCU板LED灯闪烁。
-&emsp;__特别注意：NodeMCU分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`，即把第二行代码取消注释。__
+&emsp;__特别注意：NodeMCU分V2与V3版本，两者略有不同，其中V3的LED引脚略有不同，写代码需要另外定义引脚:`#define LED_BUILTIN 2`，即把第二行代码取消注释。__ 另外提示一下，曾经有网友在学习的过程中，误以为烧录过程中的灯闪烁一会就是对了，但其实烧录完程序后，灯会一直闪烁不会停，只要灯停下来了说明就是错了，可能是NodeMCU V3版，需要取消注释第二行代码。
 ```c
 //如果是NodeMCU V3版，需要另外定义LED引脚
 //#define LED_BUILTIN 2 

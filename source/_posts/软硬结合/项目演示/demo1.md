@@ -45,6 +45,11 @@ tags:
 <iframe src="//player.bilibili.com/player.html?bvid=BV1hv411L7j3&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 &emsp;__云服务器本质上依旧是一台电脑，所以在开发阶段，我们可以完全让自己的电脑来充当这个云服务器，来进行开发调试验证，最后成功了再部署到云服务器上。__ 接下来我们先本地调试。
+&emsp;经常有学习的网友很容易搞混，一会云服务器的IP地址，一会又是本地的电脑IP地址，学习的时候必须要保证：__网页访问与硬件代码所填的IP地址必须一致__，说明连的是同一台服务器。（有几个网友学习时就出现过：网页访问我的云服务器，但硬件连的却是他们本地的电脑，就问我为啥没数据，硬件跟软件连的都不一样，当然没数据啦。）
+![获取全部源码](/blog_images/指向一致.webp)
+
+
+
 ## 搭建开发环境
 &emsp;开发环境主要包含：Chrome浏览器（不建议使用其它浏览器）、vscode编辑器、NodeJs环境。跟着视频操作即可：
 <iframe src="//player.bilibili.com/player.html?bvid=BV1H54y147cu&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>   
@@ -80,7 +85,7 @@ tags:
 
 ## FAQ
 1. 为什么我点击按钮没能控制LED灯亮灭？
-__答：原因一：NodeMCU可能是V3版本需要定义引脚，或者硬件异常，请到[NodeMCU基础](/posts/31494)跑第一个例程，让LED灯一直闪烁确保硬件正常再跑demo1。原因二：使用了错误的浏览器（比如说IE这种旧的浏览器，360浏览器兼容模式等待），建议大家请改用chrome浏览器。__
+__答：原因一：NodeMCU可能是V3版本需要定义引脚，或者硬件异常，请到[NodeMCU基础](/posts/31494)跑第一个例程，让LED灯一直闪烁确保硬件正常再跑demo1。原因二：使用了错误的浏览器（比如说IE这种旧的浏览器，360浏览器兼容模式等待），建议大家请改用chrome浏览器。现在新版的Edge也使用了chrome浏览器内核，Edge浏览器也是可以的。__
 
 2. 把项目部署到云服务器linux中，但把SSH一关网站就访问不了了，怎么才能一直打开?
 __答：学习 nodejs部署工具 PM2，可以让程序一直跑着。另外在linux系统里关闭SSH后，系统会给这个pty所关联的session中的所有进程发送SIGHUP信号，SIGHUP的默认信号处理程序是终止进程，除非进程自己处理了 SIGHUP。可以学习并使用linux 命令 `screen` ，解决这个问题。__
