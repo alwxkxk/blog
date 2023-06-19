@@ -110,5 +110,27 @@ Uncaught RuntimeError: memory access out of bounds
 ### vsplayer播放回放视频
 &emsp;海康的回放视频下载到本地之后，一般的播放器是无法播放的，要用官方的播放器vsplayer。在客户现场安装时发现部分电脑运行失败，会提示`由于找不到VCRUNTIME140.dll，无法继续执行代码。重新安装程序可能会解决此问题。`重装了几次还是不行，搜了一下发现是window的通病，可以下载对应的修复工具，更好的办法是去可以的电脑里找到`C:\Windows\System32`下对应的dll文件，复制到不可以的电脑上，就可以解决问题了。
 
+### 再次转发
+&emsp;要想正常播放视频，就要保证Nginx所运行的软件所处的服务器，与摄像头或NVR网络是能通的。如果不通，那么就无法播放。有时出于网络安全考虑，服务器A与摄像头或NVR的网络是通的，但服务器B只与服务器A网络联通但与摄像头或NVR不通，那么可以让服务器B先转发至服务器A。
+
+```
+# 服务器A nginx配置
+if ($http_cookie ~ "webVideoCtrlProxy=(.+)") {
+    proxy_pass http://$cookie_webVideoCtrlProxy;
+    break;
+}
+```
+```
+# 服务器B nginx配置
+if ($http_cookie ~ "webVideoCtrlProxy=(.+)") {
+    # 填写服务器A的IP地址，进行再次转发
+    proxy_pass http://1.2.3.4;
+    break;
+}
+```
+
+&emsp;另外，当出现部分通过http接口拿的数据能正常响应，但通过websocket播放的视频数据无法播放时，也有可能是因为网络安全的设置禁用了其它端口导致的。
+
+
 ## 附录
 - [知乎-H.264输出的时候，码率设置多少合适？](https://www.zhihu.com/question/49460691/answer/221679991)
