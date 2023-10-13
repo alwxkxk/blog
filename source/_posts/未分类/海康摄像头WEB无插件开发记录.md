@@ -101,6 +101,7 @@ Uncaught RuntimeError: memory access out of bounds
     at 003b9596:0xac806
     at 003b9596:0x154e
 ```
+&emsp;2023年海康卫视新增了V3.3插件版，是可以支持新版的Chrome，可以播放高清视频，不再受限于浏览器的性能限制。但这个原理是另开了一个进程，跟踪浏览器的元素位置来进行播放，这导致了这个视频播放永远在浏览器之上，无法通过CSS控制层级，所以无法做到在播放视频之上显示任何HTML元素。所以我这边是新开了一个标签页面来显示。
 
 ## 其它问题
 
@@ -109,6 +110,41 @@ Uncaught RuntimeError: memory access out of bounds
 
 ### vsplayer播放回放视频
 &emsp;海康的回放视频下载到本地之后，一般的播放器是无法播放的，要用官方的播放器vsplayer。在客户现场安装时发现部分电脑运行失败，会提示`由于找不到VCRUNTIME140.dll，无法继续执行代码。重新安装程序可能会解决此问题。`重装了几次还是不行，搜了一下发现是window的通病，可以下载对应的修复工具，更好的办法是去可以的电脑里找到`C:\Windows\System32`下对应的dll文件，复制到不可以的电脑上，就可以解决问题了。
+
+### 播放次数过多导致无法再播放
+&emsp;在现场部署发现，当播放视频次数太多，就无法再播放了，经定位是因为Cookie太多导致的（怀疑摄像头无法处理大量的Cookie的http请求所以直接返回失败）。并且这些Cookie是HttpOnly的，所以无法通过JS删除，必须要关闭浏览器软件重新打开才能恢复，解决办法如下：
+&emsp;首先nginx配置解决HttpOnly(参考 [Nginx 删除 HttpOnly、Secure（nginx map 的一个应用场景）](https://blog.csdn.net/catoop/article/details/113737763))：
+```
+# 删除Cookie中的HttpOnly
+map $sent_http_set_cookie $resp_cookie {
+    ~*(?<CK>.+)HttpOnly $CK;
+}
+    
+server {
+    listen 80;
+    server_name  *.test.com;
+    
+    location / {
+    
+        add_header Set-Cookie $resp_cookie;
+        
+        proxy_pass  http://xxxxx;
+   }
+}
+```
+&emsp;然后在JS代码里，每次加载页面都清除相关的Cookie：
+```js
+// 删除播放视频时创建的WebSession_xxxxxx cookies
+// 由于摄像头的cookies 是httpOnly ，所以还要配合nginx将httpOnly字段去除，才能由JS删除cookie。
+const cookiesList = Cookies.get()
+Object.keys(cookiesList).forEach(key => {
+  if (key && key.includes('WebSession_')) {
+    console.log('删除视频cookie:', key)
+    Cookies.remove(key)
+  }
+})
+```
+&emsp;这样子就可以通过刷新网页也能恢复视频播放功能，对于客户来说是这个是可以接受的。（至少比关闭浏览器这种操作好得多。）
 
 ### 再次转发
 &emsp;要想正常播放视频，就要保证Nginx所运行的软件所处的服务器，与摄像头或NVR网络是能通的。如果不通，那么就无法播放。有时出于网络安全考虑，服务器A与摄像头或NVR的网络是通的，但服务器B只与服务器A网络联通但与摄像头或NVR不通，那么可以让服务器B先转发至服务器A。
@@ -130,7 +166,41 @@ if ($http_cookie ~ "webVideoCtrlProxy=(.+)") {
 ```
 
 &emsp;另外，当出现部分通过http接口拿的数据能正常响应，但通过websocket播放的视频数据无法播放时，也有可能是因为网络安全的设置禁用了其它端口导致的。
+&emsp;进一步地，当需要根据不同摄像头的IP地址分网段区域地跳转，可以这样配置：
+&emsp;日志格式可使用`$upstream_addr`来记录要跳转到的IP地址。
+```
+log_format  proxy_log_format  '$remote_addr - $remote_user [$time_local] "$host$request_uri" $status'
+                ' --> "$http_x_forwarded_for" "$upstream_addr"';
+```
+&emsp;由于nginx不能使用if嵌套，所以只能用设置变量的方法来模拟出switch方效果：
+```
+location ~ /ISAPI|SDK/ {
+    set $flag 0;
+    access_log      logs/proxy_video_access.log proxy_log_format;
+    if ($http_cookie ~ "webVideoCtrlProxy=(.+)") {
+        set $flag 1;
+    }
 
+    # IP网段匹配 10.20.xxx.xxx:80的cookie值。对于webVideoCtrlProxy，要使用端口7681。
+    if ($cookie_webVideoCtrlProxy ~ "10\.20\.\d{1,3}\.\d{1,3}:80"){
+        set $flag 2;
+    }
+
+    if ($flag = 1){
+        # 默认跳
+        proxy_pass http://1.2.3.4;
+        break;
+    }
+
+    if ($flag = 2){
+        # IP网段匹配 10.20.xxx.xxx跳转
+        proxy_pass http://10.20.3.4;
+        break;
+    }
+
+}            
+```
 
 ## 附录
 - [知乎-H.264输出的时候，码率设置多少合适？](https://www.zhihu.com/question/49460691/answer/221679991)
+- [Nginx 删除 HttpOnly、Secure（nginx map 的一个应用场景）](https://blog.csdn.net/catoop/article/details/113737763)
