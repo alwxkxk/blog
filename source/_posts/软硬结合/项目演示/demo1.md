@@ -111,4 +111,5 @@ __答：实现认真看一下报错信息就容易看到哪里出问题了，这
 9. Github国内镜像源？
 __答：[有 GitHub 的国内镜像源吗？ - 知乎](https://www.zhihu.com/question/38192507)，有好心人提供了修改host的办法来解决：[hellogithub](https://raw.hellogithub.com/hosts)，把网页上的hosts写到你电脑上的Host文件即可。之前国内镜像源是可以使用的，但现在也不可以了，举例子使用官方的国内镜像的URL替代（用`https://github.com.cnpmjs.org`代替`https://github.com`）即执行命令时是：`git clone https://github.com.cnpmjs.org/alwxkxk/soft-and-hard`。__
 
-
+9. 安装过程中提示`Error: EPERM: operation not permitted`
+__答：这是没有操作权限的报错信息，这一般是因为把代码放到C盘或者桌面导致安装依赖时没有权限操作，需要把代码项目文件移到D盘再尝试。__
