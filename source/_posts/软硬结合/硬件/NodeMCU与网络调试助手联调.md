@@ -57,7 +57,7 @@ tags:
 const char* ssid = "you-wifi";
 const char* password = "you-wifi-password";
 
-const char* host = "42.192.168.165";
+const char* host = "43.134.115.73";
 const int port = 9002;//demo1 tcp 使用 9002端口
 
 const char* id = "1234abcd";

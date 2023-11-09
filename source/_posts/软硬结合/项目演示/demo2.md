@@ -27,13 +27,13 @@ date: 2018-11-03 10:05:02
 
 ## 先跑起来
 &emsp;demo2我已经部署到我自己的服务器，大家可在线浏览：
-- 界面网址：[http://42.192.168.165:8002/equipmentId/123456](http://42.192.168.165:8002/equipmentId/123456)
-- TCP服务器：42.192.168.165:9003
+- 界面网址：[http://43.134.115.73:8002/equipmentId/123456](http://43.134.115.73:8002/equipmentId/123456)
+- TCP服务器：43.134.115.73:9003
 
-&emsp;[http://42.192.168.165:8002/equipmentId/123456](http://42.192.168.165:8002/equipmentId/123456)
+&emsp;[http://43.134.115.73:8002/equipmentId/123456](http://43.134.115.73:8002/equipmentId/123456)
 ![](/blog_images/demo2效果图.webp)
 &emsp;这里的`123456`就是客户端ID，这是为了方便调试验证想法，使用JS代码模拟出一个TCP客户端来，模拟成是“NodeMCU”在不断上传数据，访问这个页面只是在看“模拟数据”，并不是真实的硬件。
-&emsp;NodeMCU的demo2例程，程序中id设置为`1234abcd`，所以使用NodeMCU连接到线上的demo2之后，就需要访问[http://42.192.168.165:8002/equipmentId/1234abcd](http://42.192.168.165:8002/equipmentId/1234abcd)，这个页面才是真实的你的硬件的数据（当然也有可能是，同一时间有其它读者使用这个相同的id，导致相互干扰，所以你可以尝试把id修改成你喜欢的值，再去访问对应的网页）。结合硬件的演示如下：
+&emsp;NodeMCU的demo2例程，程序中id设置为`1234abcd`，所以使用NodeMCU连接到线上的demo2之后，就需要访问[http://43.134.115.73:8002/equipmentId/1234abcd](http://43.134.115.73:8002/equipmentId/1234abcd)，这个页面才是真实的你的硬件的数据（当然也有可能是，同一时间有其它读者使用这个相同的id，导致相互干扰，所以你可以尝试把id修改成你喜欢的值，再去访问对应的网页）。结合硬件的演示如下：
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1x64y1i7Lt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
