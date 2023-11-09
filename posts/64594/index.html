@@ -27,10 +27,10 @@
 
 <h2 id="先跑起来"><a href="#先跑起来" class="headerlink" title="先跑起来"></a>先跑起来</h2><p>&emsp;demo2我已经部署到我自己的服务器，大家可在线浏览：</p>
 <ul>
-<li>界面网址：<a target="_blank" rel="noopener" href="http://42.192.168.165:8002/equipmentId/123456">http://42.192.168.165:8002/equipmentId/123456</a></li>
-<li>TCP服务器：42.192.168.165:9003</li>
+<li>界面网址：<a target="_blank" rel="noopener" href="http://43.134.115.73:8002/equipmentId/123456">http://43.134.115.73:8002/equipmentId/123456</a></li>
+<li>TCP服务器：43.134.115.73:9003</li>
 </ul>
-<p>&emsp;<a target="_blank" rel="noopener" href="http://42.192.168.165:8002/equipmentId/123456">http://42.192.168.165:8002/equipmentId/123456</a><br><img src="/blog_images/demo2效果图.webp" alt=""><br>&emsp;这里的<code>123456</code>就是客户端ID，这是为了方便调试验证想法，使用JS代码模拟出一个TCP客户端来，模拟成是“NodeMCU”在不断上传数据，访问这个页面只是在看“模拟数据”，并不是真实的硬件。<br>&emsp;NodeMCU的demo2例程，程序中id设置为<code>1234abcd</code>，所以使用NodeMCU连接到线上的demo2之后，就需要访问<a target="_blank" rel="noopener" href="http://42.192.168.165:8002/equipmentId/1234abcd">http://42.192.168.165:8002/equipmentId/1234abcd</a>，这个页面才是真实的你的硬件的数据（当然也有可能是，同一时间有其它读者使用这个相同的id，导致相互干扰，所以你可以尝试把id修改成你喜欢的值，再去访问对应的网页）。结合硬件的演示如下：</p>
+<p>&emsp;<a target="_blank" rel="noopener" href="http://43.134.115.73:8002/equipmentId/123456">http://43.134.115.73:8002/equipmentId/123456</a><br><img src="/blog_images/demo2效果图.webp" alt=""><br>&emsp;这里的<code>123456</code>就是客户端ID，这是为了方便调试验证想法，使用JS代码模拟出一个TCP客户端来，模拟成是“NodeMCU”在不断上传数据，访问这个页面只是在看“模拟数据”，并不是真实的硬件。<br>&emsp;NodeMCU的demo2例程，程序中id设置为<code>1234abcd</code>，所以使用NodeMCU连接到线上的demo2之后，就需要访问<a target="_blank" rel="noopener" href="http://43.134.115.73:8002/equipmentId/1234abcd">http://43.134.115.73:8002/equipmentId/1234abcd</a>，这个页面才是真实的你的硬件的数据（当然也有可能是，同一时间有其它读者使用这个相同的id，导致相互干扰，所以你可以尝试把id修改成你喜欢的值，再去访问对应的网页）。结合硬件的演示如下：</p>
 <iframe src="//player.bilibili.com/player.html?bvid=BV1x64y1i7Lt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 <h2 id="本地把demo2跑起来"><a href="#本地把demo2跑起来" class="headerlink" title="本地把demo2跑起来"></a>本地把demo2跑起来</h2><p>&emsp;由于demo2使用了MongoDB数据库来保存历史数据，所以要先安装数据库。百度搜不出官网，我这里直接把网址放出来：<a target="_blank" rel="noopener" href="https://www.mongodb.com/try/download/community">MongoDB</a>，我选择的是版本4。在演示视频中，因为默认勾选了compase，导致一直卡在那里了。所以我们后面就不勾选它，手动下载<a target="_blank" rel="noopener" href="https://www.mongodb.com/try/download/compass">MongoDBCompass</a>再自行安装吧，这个是图形化界面来控制数据库的。<br>&emsp;具体部署与demo1类似，进入到对应的目录，使用命令<code>npm install</code>安装依赖，<code>npm start</code>运行。<br>&emsp;跑起来后，通过数据库客户端查看，大家可以看到demo2的模拟数据在不断地向数据库写入数据。</p>
