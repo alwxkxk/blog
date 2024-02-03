@@ -9,7 +9,7 @@ date: 2018-12-30 11:28:10
 
 &emsp;阅读要求：会Linux基本操作、会编辑文本（比如会vi）。
 &emsp;在学习一个新东西新技术之前，一般会先去搜索关键字，了解这个东西是为了解决什么问题，具体的应用场景是什么。
-[Nginx 相关介绍(Nginx是什么?能干嘛?) - 蔷薇Nina - 博客园](https://www.cnblogs.com/wcwnina/p/8728391.html)
+[Nginx 相关介绍(Nginx是什么?能干嘛?) - 蔷薇Nina](https://www.cnblogs.com/wcwnina/p/8728391.html)
 
 ## CentOS安装nginx
 &emsp;这里演示一下如何在centOS安装nginx，并且能访问网址。如果是本地虚拟机，注意要先保证能Ping通（保证网络连通），以及开放80端口或者关闭防火墙（可参考[centOS 7防火墙相关命令](/posts/34982/#centOS-7防火墙相关命令)）。

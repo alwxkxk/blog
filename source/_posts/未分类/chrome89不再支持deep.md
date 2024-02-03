@@ -92,8 +92,8 @@ tags:
 
 
 ## 附录
-- [/deep/深度作用选择器作用及使用_努力吧灰灰兔的博客-CSDN博客](https://blog.csdn.net/weixin_45842655/article/details/103547362)
+- [/deep/深度作用选择器作用及使用_努力吧灰灰兔 CSDN](https://blog.csdn.net/weixin_45842655/article/details/103547362)
 - [说一说VUE中的/deep/用法 - 知乎](https://zhuanlan.zhihu.com/p/77112977)
-- [自己制作Chrome便携版实现多版本共存 - xiangyuecn - 博客园](https://www.cnblogs.com/xiangyuecn/p/10583788.html)
+- [自己制作Chrome便携版实现多版本共存 - xiangyuecn](https://www.cnblogs.com/xiangyuecn/p/10583788.html)
 - [Win10开启沙盒功能和使用方法 - zeruns的文章 - 知乎](https://zhuanlan.zhihu.com/p/114057705)
 - [html - What do /deep/ and ::shadow mean in a CSS selector? - Stack Overflow](https://stackoverflow.com/questions/25609678/what-do-deep-and-shadow-mean-in-a-css-selector)

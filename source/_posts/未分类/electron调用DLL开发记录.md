@@ -48,5 +48,5 @@ let win = new BrowserWindow({
 ```
 
 ## 附录
-- [electron教程(三): 使用ffi-napi引入C++的dll - Silenzio - 博客园](https://www.cnblogs.com/silenzio/p/11606389.html)
+- [electron教程(三): 使用ffi-napi引入C++的dll - Silenzio ](https://www.cnblogs.com/silenzio/p/11606389.html)
 - [dll教程1：如何编写dll,一步一步，全部可行](https://blog.csdn.net/qq_23100787/article/details/51241103)

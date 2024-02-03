@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 生子当如哈士奇的个人博客
+title: 生子当如哈士奇的小空间
 subtitle: 技术记录与心得分享，及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。
 description: 技术记录与心得分享，及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。
 keywords: JavaScript
@@ -112,8 +112,8 @@ live2d:
   debug: false # 调试, 是否在控制台输出日志
   model:
     use: live2d-widget-model-hijiki # npm-module package name
-    # use: wanko # 博客根目录/live2d_models/ 下的目录名
-    # use: ./wives/wanko # 相对于博客根目录的路径
+    # use: wanko # 站点根目录/live2d_models/ 下的目录名
+    # use: ./wives/wanko # 相对于站点根目录的路径
     # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
 
 

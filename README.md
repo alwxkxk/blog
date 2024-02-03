@@ -1,6 +1,6 @@
 # README
-生子当如哈士奇的个人博客，包含若干技术文章，以及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。
-- 网址：[博客](https://www.scaugreen.cn/)
+生子当如哈士奇的个人站点，包含若干技术文章，以及《软硬结合——从零打造物联网》、《3D可视化教程》两个系列教程。
+- 网址：[个人站点](https://www.scaugreen.cn/)
 - 后备访问：[gh-pages](https://alwxkxk.github.io/blog/posts/23630/)
 
 ## 运行
