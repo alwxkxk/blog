@@ -20,10 +20,10 @@ cd electron-quick-start
 # 特别注意，由于国内网络问题，需要配置使用国内镜像才能正常安装（阿里巴巴镜像）
 # 创建文件 .npmrc 并添加以下内容：
 # PS:运行electron时会出现 Alibaba PC Safe service进程，作用不明。
-registry=https://registry.npm.taobao.org
-sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
-phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs
-ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+registry=https://registry.npmmirror.com
+sass_binary_site=https://npmmirror.com/mirrors/node-sass/
+phantomjs_cdnurl=http://npmmirror.com/mirrors/phantomjs
+ELECTRON_MIRROR=http://npmmirror.com/mirrors/electron/
 
 # 安装依赖库
 npm install
@@ -100,10 +100,10 @@ ipcRenderer.send('asynchronous-message', 'ping')
 答：可能是墙的原因，国内淘宝官方做出了相关镜像：
 在根目录新建文件`.npmrc`，填入：
 ```
-registry=https://registry.npm.taobao.org
-sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
-phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs
-ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+registry=https://registry.npmmirror.com
+sass_binary_site=https://npmmirror.com/mirrors/node-sass/
+phantomjs_cdnurl=http://npmmirror.com/mirrors/phantomjs
+ELECTRON_MIRROR=http://npmmirror.com/mirrors/electron/
 ```
 
 
