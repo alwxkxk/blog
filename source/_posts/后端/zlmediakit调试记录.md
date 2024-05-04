@@ -17,3 +17,8 @@ tags:
 ### FLV播放H265的问题
 &emsp;在播放时H265时会提示：FLV播放器一船只支持H264和AAC编码，该编码格式可能不被播放器支持：H265。
 &emsp;使用VLC player 与 flv.js确实都播不出来，[github issues讨论](https://github.com/ZLMediaKit/ZLMediaKit/issues/364)提到了[jessibuca播放器](https://jessibuca.com/)，测试了一下确实可以播放。
+
+
+### 其它
+#### vcpkg找不到文件
+在执行`vcpkg install zlmediakit`提示`vcpkg error: while looking for zlmediakit:x86-windows:`，找了一下没相关的讨论，这其实是vcpkg没找到zlmediakit的配置信息，可以执行`vcpkg search zlmediakit`就知道有没有这个库了，我发现没有，就去vcpkg里执行`git pull`重新拉代码，就恢复正常了。另外如果想要在cmd显示英文内容，可以执行`chcp 437`。
