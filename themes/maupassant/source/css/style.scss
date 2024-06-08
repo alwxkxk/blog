@@ -25,6 +25,15 @@ specific font stacks to ensure the greatest OS/browser compatibility.
     }
 }
 
+// 隐藏评论区的输入与回复
+.hide-comment-input{
+    .vwrap{
+        display: none !important;
+    }
+    .vat{
+        display: none !important;
+    }
+}
 
 
 
@@ -222,6 +231,7 @@ h1,h2,h3,h4,h5{
         color: #555;
         text-align: center;
         border-left: 0;
+        border-left: 16px solid #efb5b5;
         font: bold 36px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
         a {
             color: #555;

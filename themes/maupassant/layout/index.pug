@@ -7,7 +7,6 @@ block title
     title= config.title
 
 block content
-
   for post in page.posts.toArray()
     .post
       h1.post-title
@@ -46,10 +45,7 @@ block content
         a(href=url_for(post.path))= __('Readmore')
 
   include _partial/paginator.pug
-  if theme.disqus
-    script(id='dsq-count-scr', src='//'+ theme.disqus + '.disqus.com/count.js', async)
-  if theme.changyan
-    script#cy_cmt_num(src='https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=' + theme.changyan, async)
+  include _widget/all_comments.pug
   if config.mathjax
     include _partial/mathjax.pug
   if config.mathjax2

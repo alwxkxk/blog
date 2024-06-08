@@ -51,8 +51,8 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 5
-  order_by: date
+  per_page: 8
+  order_by: -date
   
 # Category & Tag
 default_category: uncategorized
