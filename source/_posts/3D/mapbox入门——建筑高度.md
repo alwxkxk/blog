@@ -7,7 +7,7 @@ tags:
 - 3D
 - GIS
 - mapbox
-
+img: /blog_images/3d/openStreepMap下载osm.webp
 ---
 
 &emsp;在入门mapbox时，在[mapbox studio](https://studio.mapbox.com/)创建建筑高度，按着官方文档（[Add 3D buildings to a Mapbox Studio style](https://docs.mapbox.com/help/tutorials/add-3d-buildings-studio/)）来都折腾了很久，录个视频记录一下：

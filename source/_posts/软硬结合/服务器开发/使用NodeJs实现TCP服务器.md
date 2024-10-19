@@ -4,6 +4,7 @@ toc: true
 abbrlink: 58215
 date: 2021-08-06 21:26:22
 tags:
+img: /blog_images/nodejs入门.webp
 ---
 &emsp;在阅读本篇文章之前，你已经阅读了：
 - [软硬结合-导读](/posts/44755)

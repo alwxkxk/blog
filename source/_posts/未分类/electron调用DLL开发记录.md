@@ -6,6 +6,7 @@ tags:
   - DLL
 abbrlink: 11026
 date: 2020-01-22 20:58:44
+img: /blog_images/未分类/生成DLL.webp
 ---
 
 &emsp;最近开发 TSC打印机，需要实现使用electron调用DLL给打印机发送命令。

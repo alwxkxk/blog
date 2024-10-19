@@ -4,6 +4,7 @@ toc: true
 abbrlink: 21192
 date: 2021-08-14 15:03:06
 tags:
+img: /blog_images/HTTP轮询与websocket.webp
 ---
 &emsp;在阅读本篇文章之前，你已经阅读了：
 - [计算机网络基础](/posts/37707)
@@ -27,7 +28,6 @@ tags:
 ## 使用、调试Websocket
 &emsp;[http://websocket.org/](http://websocket.org/)提供了一个websocket测试网址，会回复所接收的数据(echo:回声)，我们可以在JS里直接使用浏览器自带的API来使用websocket。我们每秒向websocket服务器端发送一个值，它就会回复相同的内容。源代码可在项目代码里的`\基础教程\WebSocket协议\WebSocket例子`找到:
 
-<img class="lazy" alt="WebSocket" data-src="/blog_images/005BIQVbgy1fydgd0oltfg31gy0ri4qp.gif">
 ![](/blog_images/websocket例子.webp)
 
 ```js

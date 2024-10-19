@@ -6,6 +6,7 @@ date: 2020-05-23 15:45:29
 tags:
 - blender
 - 3D
+img: /blog_images/3d/导入osm效果.webp
 ---
 
 &emsp;在做3D可视化时，有时需要一堆建筑来衬托，现在演示一下如何导入城市建筑，操作视频如下：

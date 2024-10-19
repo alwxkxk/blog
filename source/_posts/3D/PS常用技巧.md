@@ -5,6 +5,7 @@ tags:
   - photoshop
 abbrlink: 27566
 date: 2020-06-05 20:04:02
+img: /blog_images/3d/photoshop-POT.webp
 ---
 
 &emsp; 做3D贴图时，时常需要利用PS来调整图片：

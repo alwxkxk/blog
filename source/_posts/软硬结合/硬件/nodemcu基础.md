@@ -7,6 +7,7 @@ tags:
 - Arduino
 - ESP8266
 - NodeMCU
+img: /blog_images/ESP8266芯片模块开发板的区别.webp
 ---
 
 &emsp;在阅读本篇文章之前，你已经阅读了：

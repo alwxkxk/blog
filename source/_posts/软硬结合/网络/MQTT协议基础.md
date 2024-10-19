@@ -5,6 +5,7 @@ abbrlink: 20945
 date: 2018-12-14 19:39:28
 tags:
 - MQTT
+img: /blog_images/MQTT-订阅主题1.webp
 ---
 
 &emsp;有读者问我MQTT相关问题，我搜索MQTT教程竟然没发现比较好的教程，想偷懒都不行，只能自己写详细点了。

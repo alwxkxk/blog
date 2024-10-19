@@ -4,6 +4,7 @@ toc: true
 abbrlink: 28808
 date: 2023-12-05 08:59:42
 tags:
+img: /blog_images/AI/打开csm-ai模型.webp
 ---
 
 

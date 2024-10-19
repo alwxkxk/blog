@@ -4,6 +4,7 @@ toc: true
 abbrlink: 47064
 date: 2020-09-13 15:47:44
 tags:
+img: /blog_images/3d/photoshop-POT.webp
 ---
 
 &emsp;科技感界面主要的特点是：偏深暗色的背景，机甲风格几何图形，光感效果，全息投影的虚幻感。其中机甲风格几何图形，光感效果，利用PS能简单地制作出来。

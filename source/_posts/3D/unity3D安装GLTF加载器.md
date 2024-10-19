@@ -4,6 +4,7 @@ toc: true
 abbrlink: 34437
 date: 2024-02-03 20:47:05
 tags:
+img: /blog_images/3d/交互式计算机图形学.webp
 ---
 
 &emsp;unity3D 软件默认不能加载gltf/glb文件格式的，需要额外安装插件：[UnityGLTF](https://github.com/KhronosGroup/UnityGLTF.git)。按它的操作来发现，总是装不上，看报错信息提示github 443超时了，所以我又转去研究让unity3D使用代理软件来访问网络。

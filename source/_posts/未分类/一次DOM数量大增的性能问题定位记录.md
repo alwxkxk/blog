@@ -4,6 +4,7 @@ toc: true
 abbrlink: 40736
 date: 2023-06-19 11:23:53
 tags:
+img: /blog_images/未分类/复制DOM元素.webp
 ---
 
 &emsp;最近开发时，发现有个页面使用一个canvas库：[konvajs](https://konvajs.org/)加载图纸时，发现用时比较久，而且在Chrome性能监测面板Performance monitor发现会有DOM数量大增的问题。在几千DOM元素，一下子增加了几万DOM元素。

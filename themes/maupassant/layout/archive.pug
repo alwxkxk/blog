@@ -8,14 +8,25 @@ block title
   if page.archive
      title= __('archive') + ' | ' + config.title
 block content
-  if page.category || page.tag
-      h1.label-title=  __('reading_label', page.category || page.tag)
-  .post
-    .post-archive
-        for post in page.posts.toArray()
-          li
-            span.date= post.date.format('YYYY/MM/DD')
+  //- if page.category || page.tag
+  //-     h1.label-title=  __('reading_label', page.category || page.tag)
+  //- .post
+  //-   .post-archive
+  //-       for post in page.posts.toArray()
+  //-         li
+  //-           span.date= post.date.format('YYYY/MM/DD')
+  //-           a(href=url_for(post.path), title=post.title)
+  //-             +title(post)
+
+  .post-v2
+    .post-archive-v2 
+      for post in page.posts.toArray()
+        .post-box
+          .post-title
             a(href=url_for(post.path), title=post.title)
               +title(post)
+          img.post-img-v2(src=post.img || "/blog_images/未分类/默认壁纸.webp", alt="", srcset="")
+
+
   include _partial/paginator.pug
   include _widget/all_comments.pug

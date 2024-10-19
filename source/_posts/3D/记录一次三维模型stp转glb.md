@@ -4,6 +4,7 @@ toc: true
 abbrlink: 10771
 date: 2024-05-24 09:54:14
 tags:
+img: /blog_images/3d/线框实体效果.webp
 ---
 
 &emsp;帮公司工作期间，别人公司提供一个stp三维文件，需要我调整加载到网络里。

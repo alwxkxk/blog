@@ -4,6 +4,7 @@ toc: true
 abbrlink: 23602
 date: 2023-06-23 17:11:56
 tags:
+img: /blog_images/3d/交互式计算机图形学.webp
 ---
 
 ## webgl基本知识

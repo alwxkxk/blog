@@ -4,6 +4,7 @@ toc: true
 abbrlink: 13044
 date: 2022-08-03 15:20:07
 tags:
+img: /blog_images/3d/apng-texture.webp
 ---
 
 &emsp;在3D场景中，经常出来动态图作为地板，来提升整体动态效果。
@@ -13,7 +14,9 @@ tags:
 &emsp; 源码：[threejs-example](https://github.com/alwxkxk/threejs-example)
 
 ## 效果
-&emsp; 可在线访问看效果[9-容量模式](http://3d.scaugreen.cn/apng-texture.html)。根据所设置百分比，用颜色填充物体的效果。
+&emsp; 可在线访问看效果[apng材质](http://3d.scaugreen.cn/apng-texture.html)。
+
+![apng-texture](/blog_images/3d/apng-texture.webp)
 
 
 ## 使用AE制作动态图
@@ -21,6 +24,7 @@ tags:
 &emsp;经测试，21张图片转换成apng图片，空间从6M多变成5M多。
 
 ## 材质播放apng动态图
+
 &emsp;three.js材质播放gif图片的demo比较少([THREE.ComposedTexture - play GIF, APNG etc as texture](https://discourse.threejs.org/t/three-composedtexture-play-gif-apng-etc-as-texture/12876))。原理就是，将动态图记录下来一张张图片，再给材质不断更新即可。我使用了[UPNG](https://github.com/photopea/UPNG.js)来解析apng。
 &emsp;具体过程是通过xhr获取apng文件数据，再通过UPNG解析到的图片通过ImageData写到canvas里，进一步转换成texture：
 

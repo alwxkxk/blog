@@ -5,6 +5,7 @@ tags:
   - nginx
 abbrlink: 19114
 date: 2018-12-30 11:28:10
+img: /blog_images/nginx默认页面.webp
 ---
 
 &emsp;阅读要求：会Linux基本操作、会编辑文本（比如会vi）。

@@ -9,6 +9,7 @@ tags:
   - UV
 abbrlink: 51700
 date: 2019-06-27 15:19:56
+img: /blog_images/air conditioner.jpg
 ---
 
 &emsp;I'm a programmer and need to make some simple 3D model to showing in web,such as [iot-visualization-examples](https://github.com/alwxkxk/iot-visualization-examples).UV map is one of the most important for making 3D model.There are so many relative tutorial on [YouTube](https://www.youtube.com/results?search_query=c4d+uv+texture+tutorial).However,some ways is so complex while I just want to map a simple model.There are so many things can make just by box model mapping with relative picture.

@@ -7,6 +7,7 @@ tags:
   - 3D
 abbrlink: 57656
 date: 2019-01-07 17:36:22
+img: /blog_images/chrome安装离线插件.webp
 ---
 
 &emsp;折腾了一天`WebGL-Inspector`，怎么搞都不行。上google应用商城找，又找不到。没想到chrome插件网竟然还有，亲测有效。

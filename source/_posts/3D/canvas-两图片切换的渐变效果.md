@@ -5,6 +5,7 @@ tags:
   - canvas
 abbrlink: 20665
 date: 2019-09-07 16:13:21
+img: /blog_images/canvas两图片切换渐变效果.webp
 ---
 
 ## 效果及代码

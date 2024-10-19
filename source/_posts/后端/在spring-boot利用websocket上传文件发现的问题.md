@@ -5,6 +5,7 @@ tags:
   - java
 abbrlink: 38508
 date: 2022-03-06 19:47:50
+img: /blog_images/后端/expectation_response_action.webp
 ---
 
 &emsp;最近在研究java在spring boot(V2.5.4) 通过 websocket上传文件。最终发现这条方案不可行。

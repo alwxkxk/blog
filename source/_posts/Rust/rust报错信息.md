@@ -4,6 +4,7 @@ toc: true
 abbrlink: 49540
 date: 2022-09-20 20:04:00
 tags:
+img: /blog_images/学习技巧.webp
 ---
 
 ## 函数外使用let

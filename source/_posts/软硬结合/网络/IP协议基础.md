@@ -4,6 +4,7 @@ toc: true
 abbrlink: 37286
 date: 2018-10-11 19:26:41
 tags:
+img: /blog_images/005BIQVbgy1fwa14u9cyog30zj0j4acu.gif
 ---
 
 &emsp;网上快速阅读所获得的知识只是轮廓，要看清知识的面目就要啃书：《计算机网络》、《TCP/IP详解 卷一》 。

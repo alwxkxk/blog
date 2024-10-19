@@ -7,6 +7,7 @@ tags:
 - Arduino
 - ESP8266
 - nodemcu
+img: /blog_images/显示隐藏文件.webp
 ---
 
 &emsp;有读者学习nodemcu时，通过Arduino IDE开发板管理器安装esp8266开发板时发现安装速度极慢，甚至安装不下来。

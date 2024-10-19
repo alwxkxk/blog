@@ -4,6 +4,7 @@ toc: true
 abbrlink: 10564
 date: 2022-01-14 20:30:22
 tags:
+img: /blog_images/未分类/github-lfs额度问题.webp
 ---
 
 &emsp;最近收到github的邮件告知我的LFS额度已经使用超过80%，看了一下文档发现这个LFS的额度还蛮坑的，额度只有1G不说，别人下载还会占用我的额度（这太坑了），而且超额后就比较麻烦，以后只能尽量不使用LFS了：

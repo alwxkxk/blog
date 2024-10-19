@@ -4,6 +4,7 @@ toc: true
 abbrlink: 3097
 date: 2024-05-04 20:43:08
 tags:
+img: /blog_images/后端/expectation_response_action.webp
 ---
 
 &emsp;五一小长假，想着手上还有个轻量云还闲置着，折腾一下玩意后端服务平台系统。好几年前我简单测试过parse-server，最近看看别的有其它方案：[appwrite](https://appwrite.io/)、supabase、nhost。看了一下，感觉supabase太复杂，appwrite好像蛮简单，star数也多，界面也美观，只可惜里面有一部分是PHP写的，这语言我不太熟悉，就先部署测试看看。

@@ -5,6 +5,7 @@ abbrlink: 56793
 date: 2018-09-08 21:24:50
 tags:
 - Nodejs
+img: /blog_images/下载nodejs.webp
 ---
 &emsp;nodejs语法是基于JavaScript的，所以要学习nodejs需要拥有基本的JavaScript使用经验。
 

@@ -6,6 +6,7 @@ tags:
   - blender
 abbrlink: 46886
 date: 2020-05-05 09:17:45
+img: /blog_images/3d/导出透明度.webp
 ---
 
 ## blender常用操作

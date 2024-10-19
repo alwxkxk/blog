@@ -5,6 +5,7 @@ abbrlink: 34265
 date: 2018-09-16 20:05:01
 tags:
 - HTTP
+img: /blog_images/网络调试助手假装成HTTP客户端.gif
 ---
 
 &emsp;HTTP协议是基于TCP/IP协议之上的应用层协议，用于创建网页的标准标记语言。

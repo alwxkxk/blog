@@ -4,6 +4,7 @@ toc: true
 abbrlink: 64786
 date: 2018-11-01 19:57:07
 tags:
+img: /blog_images/指向一致.webp
 ---
 
 &emsp;在阅读本篇文章之前，你已经阅读了：

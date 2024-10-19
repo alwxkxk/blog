@@ -4,6 +4,8 @@ toc: true
 abbrlink: 42542
 date: 2024-04-02 17:31:26
 tags:
+img: /blog_images/学习技巧.webp
+
 ---
 
 &emsp;最近公司安排我研究zlmediakit来实现将监控视频转换成FLV视频流进行播放，试了一下功能确实强大。
