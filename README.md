@@ -5,7 +5,10 @@
 
 ## 运行
 ```bash
-npm install hexo -g
+# 需要使用nvm 1.1.12 安装node 14来使用
+# nvm install 14
+# nvm use 14
+npm install hexo@5.4 -g
 npm install -g hexo-cli
 npm install
 hexo new 新文章标题

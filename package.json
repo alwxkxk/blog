@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build":"hexo generate",
-    "dev":"hexo server"
+    "build": "hexo generate",
+    "dev": "hexo server"
   },
   "hexo": {
-    "version": "5.4.0"
+    "version": "5.4.2"
   },
   "dependencies": {
     "hexo": "^5.4.0",
