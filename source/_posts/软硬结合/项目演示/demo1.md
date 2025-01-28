@@ -56,6 +56,12 @@ img: /blog_images/指向一致.webp
 <iframe src="//player.bilibili.com/player.html?bvid=BV1H54y147cu&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>   
 
 ## 本地把demo1跑起来
+&emsp;【2025年更新补充说明】已测试最新版node.js V22可行，这里也提供对应版本的百度网盘安装地址：
+```
+通过网盘分享的文件：node-v22.13.0-x64.msi
+链接: https://pan.baidu.com/s/1EFKProq1ohYaTxd0mO7Z9A?pwd=a6w2 提取码: a6w2
+```
+
 &emsp;先不用急着学，让这个项目能在你手上完整地跑起来，先拥有它，能不能驾驭是另一回事。下面傻瓜式演示怎么把demo1在自己电脑上跑起来。
 &emsp;如果你有nodejs与git的使用经验就会知道，默认的作法是只上传源码，而依赖包自行安装以减少git文件体积。注意需要进入到对应的目录，使用命令`npm install`安装依赖，`npm start`运行，可以看视频操作：
 

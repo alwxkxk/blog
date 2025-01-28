@@ -39,7 +39,16 @@ img: /blog_images/demo2效果图.webp
 <iframe src="//player.bilibili.com/player.html?bvid=BV1x64y1i7Lt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
 ## 本地把demo2跑起来
-&emsp;由于demo2使用了MongoDB数据库来保存历史数据，所以要先安装数据库。百度搜不出官网，我这里直接把网址放出来：[MongoDB](https://www.mongodb.com/try/download/community)，我选择的是版本4。在演示视频中，因为默认勾选了compase，导致一直卡在那里了。所以我们后面就不勾选它，手动下载[MongoDBCompass](https://www.mongodb.com/try/download/compass)再自行安装吧，这个是图形化界面来控制数据库的。
+&emsp;【2025年更新补充】已测试最新的版本8，我把数据库与客户端都放到网盘地址供大家使用：
+```
+通过网盘分享的文件：mongodb-windows-x86_64-8.0.4-signed.msi
+链接: https://pan.baidu.com/s/1B4U5ahDtoGbBW2Q3sEo3pw?pwd=9rqy 提取码: 9rqy
+
+通过网盘分享的文件：mongodb-compass-1.45.1-win32-x64.exe
+链接: https://pan.baidu.com/s/1Ppk0siudr3OAcpj0R8Ti5A?pwd=av8r 提取码: av8r
+```
+
+&emsp;由于demo2使用了MongoDB数据库来保存历史数据，所以要先安装数据库。百度搜不出官网，我这里直接把网址放出来：[MongoDB](https://www.mongodb.com/try/download/community)，我选择的是版本4(2025年更新为版本8)。在演示视频中，因为默认勾选了compase，导致一直卡在那里了。所以我们后面就不勾选它，手动下载[MongoDBCompass](https://www.mongodb.com/try/download/compass)再自行安装吧，这个是图形化界面来控制数据库的。
 &emsp;具体部署与demo1类似，进入到对应的目录，使用命令`npm install`安装依赖，`npm start`运行。
 &emsp;跑起来后，通过数据库客户端查看，大家可以看到demo2的模拟数据在不断地向数据库写入数据。
 ## 让NodeMCU连上本地的demo2

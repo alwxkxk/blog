@@ -6,7 +6,7 @@ date: 2019-02-07 20:24:45
 tags:
 - electron
 ---
-
+&emsp;【2025年更新补充说明】该版本还是相对比较旧，需要使用node 14左右来运行，请结合nvm（nodejs 版本管理器，可以安装多个版本的nodejs）来安装node 14来运行。
 
 &emsp;[electron](https://electronjs.org/)使创建桌面端应用变得很简单，如果你可以建一个网站，你就可以用同样的技术建一个桌面应用程序。从开发的角度来看, Electron application 本质上是一个 Node. js 应用程序。(备注：electron网站访问需要梯子。)
 
