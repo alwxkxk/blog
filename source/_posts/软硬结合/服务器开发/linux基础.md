@@ -29,8 +29,8 @@ img: /blog_images/linux书籍.webp
 ![](/blog_images/linux书籍.webp)
 
 
-
-&emsp;有那么多的linux操作系统，到底学哪个呢？答：新手学习用得最多的系统，理应用ubuntu。然而入门教程《鸟哥的linux私房菜》是基于centOS的，两者命令还是有点不一样的，最后决定用 __centOS__ 来演示。（ubuntu用起来更方便，而centOS更稳定所以商业上主要用它。）学习的时候，切记需要什么学什么，不要一脑子学全部，学不完的。命令行常用的不超过30个，而且都是写在笔记软件中，需要哪个查哪个，反正我又不是运维人员，不是天天都用，所以也没去记。
+&emsp;【2025年更新补充说明】教程由CentOS8转换成Ubuntu24。
+&emsp;（入门教程《鸟哥的linux私房菜》是基于CentOS的，Ubuntu24部分命令不同，而且更简单。）学习的时候，切记需要什么学什么，不要一脑子学全部，学不完的。命令行常用的不超过30个，而且都是写在笔记软件中，需要哪个查哪个，反正我又不是运维人员，不是天天都用，所以也没去记。
 
 ## 本地虚拟机安装linux
 &emsp;要学习linux，先学习怎么搭一个环境出来，方便反复折腾。虚拟机软件我以[虚拟机virtualbox-官网](https://www.virtualbox.org/)，[-百度网盘](https://pan.baidu.com/s/1vCcrdepimiI9Pu3A7Zo3rw)演示。（记住一件事，不管你在虚拟机上怎么折腾，都不会把电脑搞坏的，事实上学习Linux的过程中会不断地折腾重装linux。）安装时选择中文界面，安装完后新建虚拟机：
@@ -38,7 +38,7 @@ img: /blog_images/linux书籍.webp
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1Xi4y1A7CY&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
 
-
+&emsp;【2025年更新补充说明】请自行上网搜索Ubuntu24镜像进行安装。
 &emsp;[centos镜像下载-官网](https://www.centos.org/download/):使用迅雷下载比较快。(超8G了不能放网盘)。安装过程如下：（按右边的Ctrl+鼠标就能让鼠标离开虚拟机的绑定。）
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1q5411c7Pt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="bilibili-video"> </iframe>
@@ -108,7 +108,7 @@ sz
 ```
 
 ## 使用Xshell终端登陆
-
+&emsp;【2025年补充说明】现在更推荐使用[MobaXterm](https://mobaxterm.mobatek.net/download.html)代替Xshell,有个人免费版供下载，Xshell总是强制要求更新才能使用。
 &emsp;阅读所需知识：会基本的linux命令与文本编辑（vi操作）
 &emsp;登陆服务器会使用终端，比较方便的工具是Xshell。这里我演示怎么通过Xshell登陆linux。安装[Xshell6个人免费版-百度网盘](https://pan.baidu.com/s/1qE8JSm6eP0uwyUmTjBiH7Q)。要登陆一台服务器，你只需要两样东西：__1.服务器的ip地址。2.拥有登陆服务器所需的密码或钥匙__
 &emsp;一般直接购买云服务器，就会有一个公网IP。而我们学习用的在虚拟机上的centos，还要额外地设置，才能有内网ip：
