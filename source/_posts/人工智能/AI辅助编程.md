@@ -37,4 +37,8 @@ img: /blog_images/杂文/cursor截图.webp
 &emsp; 总体使用下来就是，tab使用量使用得很快，很快就会超过免费额度，所以我就转向了免费版tab不限额的windsurf。
 
 ## 使用Windsurf
-&emsp; 由于免费版本tab不限额度，使用感觉还不错。
+&emsp; 由于免费版本tab不限额度，使用感觉还不错。至25年12月，我已经使用了大半年了，无意中发现梯子开了tun模式好像tab响应会更快些。
+
+## 使用codex
+&emsp; 25年11月开始研究codex，使用调用第三方api来辅助编程。
+
