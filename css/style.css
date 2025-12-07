@@ -262,7 +262,6 @@ h1, h2, h3, h4, h5 {
     .post .post-content p {
       margin: 0 0 1.234em; }
       .post .post-content p code {
-        display: inline-block;
         margin: 0 5px;
         padding: 0 5px;
         background: #f7f8f8;
