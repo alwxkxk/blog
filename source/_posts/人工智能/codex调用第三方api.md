@@ -7,7 +7,7 @@ tags:
 img: /blog_images/AI/头像建模.webp
 ---
 &emsp;部分网址需要有科学上网。
-&emsp;25年11月，谷歌发布Antigravity编辑器，我意识到使用AI来控制浏览器编程前端将在不久的将来会广泛使用。Mac电脑卡在登陆跳转回编辑器没响应，没解决成功。windows电脑倒是成功登进去了，但我现在主力电脑是Mac，所以就去研究别的，发现codex好像也不错。
+&emsp;25年11月，谷歌发布Antigravity编辑器，我意识到使用AI来控制浏览器编程前端将在不久的将来会广泛使用。Mac电脑卡在登陆跳转回编辑器没响应，没解决成功。windows电脑倒是成功登进去了，但我现在主力电脑是Mac，所以就去研究别的，发现codex好像也不错。（codex IDE扩展，版本号为0.4.47）
 &emsp;[codex](https://openai.com/codex/)就是OpenAi搞的（ChatGPT就是他家大模型），注册后（不使用他们的模型接口，其实也不需要注册。可以直接配置第三方接口）并在vscode安装codex插件，开始配置使用第三方api。
 
 ## 先使用cherry studio测试
@@ -65,7 +65,7 @@ requires_openai_auth = true
 ## 最后总结
 1. 可以发现，三家api，在codex里配置，其后缀全是不一样的。
 2. ai接口，还得要小心使用，不要在敏感的项目上使用，避免信息泄漏。
-3. 暂时没找到codex，cherry studio调用第三方接口时所发出的请求日志。我准备用ai找找源代码里有没有写。
+3. 暂时没找到codex，cherry studio调用第三方接口时所发出的请求日志。（ 看源代码好像是没有，准备折腾[litellm](https://github.com/BerriAI/litellm)。 )
 4. 我准备用ai来写一下完整项目来验证一下各项功能。
 
 ## 附录
