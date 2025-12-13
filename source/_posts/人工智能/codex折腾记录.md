@@ -4,6 +4,7 @@ toc: true
 abbrlink: 55249
 date: 2025-12-07 09:41:01
 tags:
+img: /blog_images/AI/使用AI工具.webp
 ---
 &emsp;我的开发环境是mac os。
 
@@ -14,4 +15,60 @@ tags:
 &emsp;所以又折腾回去用npm安装，想起可以有国内代码，用`npm i -g @openai/codex --registry=https://registry.npmmirror.com`，确实安装得很快。
 &emsp;但奇怪的是，折腾了半天第三方api，都连不上，又重新研究了[issue](https://github.com/openai/codex/issues/7051)，发现从0.59开始版本有bug，配置的第三方的base_url不生效。
 &emsp;于是退回旧版本,`npm install -g @openai/codex@0.58 --registry=https://registry.npmmirror.com`最终折腾成功，能连上第三方api了，并且能显示出speckit所生成的指令prompts。
-&emsp;事实证明，新玩意还得关注版本号，日志没把baseUrl记录下来真的很浪费时间，准备折腾[litellm](https://github.com/BerriAI/litellm)。
+&emsp;事实证明，新玩意还得关注版本号，日志没把baseUrl记录下来真的很浪费时间，准备折腾准备折腾nginx配置（或OpenResty），代理转发一下,便能看清所发的url是否正确。
+
+## 异常命令进入死循环刷token。
+找不到文件，就一直执行，导致token一直在刷。
+```
+• Ran cat '>' my-code/test-code/AGENTS.md
+  └ cat: >: No such file or directory
+    cat: my-code/test-code/AGENTS.md: No such file or directory
+• Ran cat '>' my-code/test-code/AGENTS.md
+  └ cat: >: No such file or directory
+    cat: my-code/test-code/AGENTS.md: No such file or directory
+• Ran cat '>' my-code/test-code/AGENTS.md
+  └ cat: >: No such file or directory
+    cat: my-code/test-code/AGENTS.md: No such file or directory
+
+```
+
+当时每次请求都需要75K token，10分钟就刷掉了8M的token。如果我没注意到的话，就会刷掉不少钱了。（虽然我还在用免费的模型。）
+
+当我问：
+```
+为什么cat: >: No such file or directory
+      cat: my-code/test-code/AGENTS.md: No such file or directory.文件是存在的
+```
+它就在那里尝试：
+```
+• Explored
+  └ List bim-unity-code
+    Read AGENTS.md
+
+• Ran echo 'Repository Guidelines'
+  └ Repository Guidelines
+
+• Ran echo '"Repository Guidelines" > my-code/test-code/AGENTS.md'
+  └ "Repository Guidelines" > my-code/test-code/AGENTS.md
+
+• Explored
+  └ Read AGENTS.md
+
+• Ran touch my-code/test-code/AGENTS.md
+  └ (no output)
+
+• Explored
+  └ Read AGENTS.md
+
+• Ran echo '"Repository Guidelines" > my-code/test-code/AGENTS.md'
+  └ "Repository Guidelines" > my-code/test-code/AGENTS.md
+```
+
+又在那里死循环了，我手动测试了一下，这个命令才是可以的：
+```
+echo "Repository Guidelines" > my-code/test-code/AGENTS.md
+```
+
+可见如果大模型生成了一个 异常命令，真是很危险，轻则死循环消耗token，重则删除重要文件（已经上过新闻了）。
+
+然后想起来可以通过mcp来避免这个文件操作不顺的问题，就安装了[DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP)，就能正常读写文件了。

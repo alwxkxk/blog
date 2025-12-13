@@ -65,7 +65,7 @@ requires_openai_auth = true
 ## 最后总结
 1. 可以发现，三家api，在codex里配置，其后缀全是不一样的。
 2. ai接口，还得要小心使用，不要在敏感的项目上使用，避免信息泄漏。
-3. 暂时没找到codex，cherry studio调用第三方接口时所发出的请求日志。（ 看源代码好像是没有，准备折腾[litellm](https://github.com/BerriAI/litellm)。 )
+3. 暂时没找到codex，cherry studio调用第三方接口时所发出的请求日志。（ 暂时的解决办法是使用[nginx代理转发](/posts/17417)，记录日志。 ）
 4. 我准备用ai来写一下完整项目来验证一下各项功能。
 
 ## 附录
