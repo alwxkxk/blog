@@ -39,7 +39,12 @@ img: /blog_images/杂文/cursor截图.webp
 
 ## 使用Windsurf
 &emsp; 由于免费版本tab不限额度，使用感觉还不错。至25年12月，我已经使用了大半年了，无意中发现梯子开了tun模式好像tab响应会更快些。
+&emsp; 有一段时间tab响应没了，我还以为是网络问题没管它，后来注意了一下发现是帐号过期了需要重新登陆，登陆后tab功能又正常了。
 
 ## 使用codex
-&emsp; 25年11月开始研究codex，使用调用第三方api来辅助编程。
+&emsp; 25年11月开始研究codex，使用调用第三方api来辅助编程。总体感觉是这个工具还在快速迭代中。
+
+## 使用claude code
+&emsp; 26年1月 由于codex 折腾mcp体验不好，于是就试试claude code。claude模型果然是很好用（同时也是很贵）的模型，claude code 使用下来的感觉也比 codex成熟多了。
+&emsp; 当前我使用 claude code 的免费公益站[anyrouter](https://anyrouter.top/register?aff=Gl4x),需要科学上网，先注册[L站](https://linux.do/)拿到帐号。注意使用AI时，尤其是公益站的免费资源，不要跑公司的项目，要假设它会漏泄一切信息。
 

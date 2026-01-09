@@ -32,5 +32,5 @@ img: /blog_images/AI/使用AI工具.webp
   └ Could not find Google Chrome executable for channel 'canary' at:
      - /Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary.
 ```
-&emsp;折腾了好久，才发现他调用的是`Google Chrome Canary`，而我电脑使用的是`Google Chrome`，于是我额外安装了`Google Chrome Canary`。（备注：丝雀版（Canary），Chrome Canary每天自动更新一次，率先集成谷歌正在研发的实验性功能。）但用起来还是有点问题，这时我才注意mcp router里录的参数，一个`"--channel=canary"`，这个是标记使用`Google Chrome Canary`，如果不传或者传`"--channel=stable"`，那么就会正常调用`Google Chrome`。另一个参数`"--headless=true"`，这个意味着是命令模式，不会显示窗口，如果不传或者`"--headless=false"`就能正常看到AI是如何操控浏览器了，我就奇怪为什么总不弹窗操控。
+&emsp;折腾了好久，才发现他调用的是`Google Chrome Canary`，而我电脑使用的是`Google Chrome`，于是我额外安装了`Google Chrome Canary`。（备注：丝雀版（Canary），Chrome Canary每天自动更新一次，率先集成谷歌正在研发的实验性功能。苹果电脑安装：`brew install --cask google-chrome@canary` ）但用起来还是有点问题，这时我才注意mcp router里录的参数，一个`"--channel=canary"`，这个是标记使用`Google Chrome Canary`，如果不传或者传`"--channel=stable"`，那么就会正常调用`Google Chrome`。另一个参数`"--headless=true"`，这个意味着是命令模式，不会显示窗口，如果不传或者`"--headless=false"`就能正常看到AI是如何操控浏览器了，我就奇怪为什么总不弹窗操控。
 &emsp;折腾了这么久，原来是传参的问题。
