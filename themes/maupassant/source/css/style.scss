@@ -266,22 +266,6 @@ h1,h2,h3,h4,h5{
             }
         }
     }
-    .ds-thread-count {
-        padding: 0;
-        margin: 15px 0 0;
-        color: #6E7173;
-        float: right;
-        display: inline;
-        text-indent: .15em;
-        &:before {
-          font-family: "FontAwesome";
-          content: "\f0e5";
-          padding-right: 0.3em;
-        }
-        &:hover {
-            color: #444;
-        }
-    }
     .disqus-comment-count {
         padding: 0;
         margin: 15px 0 0;
