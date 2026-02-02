@@ -4,6 +4,7 @@ toc: true
 abbrlink: 11446
 date: 2021-10-08 22:14:15
 tags:
+img: /blog_images/前端/nginx.webp
 ---
 
 在nginx配置了Allow-Credentials为true时,且Allow-Origin为通配符`*`时：

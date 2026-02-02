@@ -4,7 +4,7 @@ toc: true
 abbrlink: 55249
 date: 2025-12-07 09:41:01
 tags:
-img: /blog_images/AI/使用AI工具.webp
+img: /blog_images/AI/codex1.webp
 ---
 &emsp;我的开发环境是mac os。
 

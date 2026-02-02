@@ -4,7 +4,7 @@ toc: true
 abbrlink: 57125
 date: 2026-01-09 08:59:05
 tags:
-img: /blog_images/AI/使用AI工具.webp
+img: /blog_images/AI/claude-codex.webp
 ---
 
 

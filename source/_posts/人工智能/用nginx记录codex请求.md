@@ -4,7 +4,7 @@ toc: true
 abbrlink: 17417
 date: 2025-12-13 17:00:19
 tags:
-img: /blog_images/AI/使用AI工具.webp
+img: /blog_images/AI/codex1.webp
 ---
 
 

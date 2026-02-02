@@ -70,3 +70,12 @@ img: /blog_images/3d/导出透明度.webp
 &emsp;在[7-开关门(不动点)](/posts/48386)，有详细的操作视频。
 
 - [Blender 2.8-如何更改枢轴点 - YouTube](https://www.youtube.com/watch?v=RGrXpBB_ekk)
+
+
+## blender修改别人模型常用操作
+
+### 批量改名
+&emsp;多选物体，然后按`ctrl + F2`，就可以批量替换名称。
+
+### 脱离父级且不改变位置
+&emsp;优化别人模型时，经常把子模型重新拉出来，但受父级影响，会影响到坐标变化。可以`右键 -> parent -> clear and keep transformation` ，让模型脱离出来。

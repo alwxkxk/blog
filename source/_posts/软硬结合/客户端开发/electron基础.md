@@ -5,6 +5,7 @@ abbrlink: 1041
 date: 2019-02-07 20:24:45
 tags:
 - electron
+img: /blog_images/前端/electron.webp
 ---
 &emsp;【2025年更新补充说明】该版本还是相对比较旧，需要使用node 14左右来运行，请结合nvm（nodejs 版本管理器，可以安装多个版本的nodejs）来安装node 14来运行。
 

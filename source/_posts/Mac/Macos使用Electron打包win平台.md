@@ -4,6 +4,7 @@ toc: true
 abbrlink: 57586
 date: 2025-06-29 09:48:11
 tags:
+img: /blog_images/前端/electron.webp
 ---
 
 &emsp;最近研究在Macos上使用Electron打包win平台的软件，折腾了大半天，总是报错，看了一下github上的讨论，说在Macos打包windows平台的软件，不太行，从23年起就讨论到25年中还是没解决。解决的办法是，推荐在window上开发。
