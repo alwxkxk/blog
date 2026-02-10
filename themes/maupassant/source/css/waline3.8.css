@@ -795,7 +795,7 @@
     position: relative;
     margin-bottom: .75em;
     padding-top: .625em;
-    font-size: .875em;
+    font-size: 16px;
     line-height: 2;
     overflow-wrap: break-word
 }

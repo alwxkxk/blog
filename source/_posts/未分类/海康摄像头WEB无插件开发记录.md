@@ -7,7 +7,107 @@ tags:
 img: /blog_images/未分类/浏览器打开自签名证书的网页.webp
 ---
 
+
 &emsp;最近在研究海康摄像头WEB无插件开发（在此之前使用转码工具转RTSP来播放，比较吃服务器的性能），使用下来感觉这玩意还没成熟稳定，所以还有蛮多问题的，记录一下。
+
+## 2026年更新提醒
+&emsp;当时我联调时是21年年底，后面对接了有插件版后（23年），本以为官方已经不维护了无插件版了。现场调试发现无插件摄像头播放有问题，于是就再上去看看有没有SDK更新（WebSDK_noPlugin_V3.4.0_251202_20251204103656），竟然发现有更新。更新之后已经支持H265格式了，以前大部分的问题应该已经解决掉了。对接新的SDK就是发现必须要获取设备信息与通信信息后，才能正常播放：
+```js
+  var iRet = WebVideoCtrl.I_Login(
+    szIP,
+    window.location.protocol.includes('https') ? 2 : 1,
+    szPort,
+    szUsername,
+    szPassword,
+    {
+      success: function (xmlDoc) {
+        showOPInfo(szIP + ' 登录成功！')
+        // 登陆成功后，需要加延时才能获取通道信息，获取通道信息后才能开始播放
+        setTimeout(()=>{
+            getDevicePort()
+            getChannelInfo().then(() => {
+            console.log('获取通道结束')
+              clickStartRealPlay(options)
+            }).catch(err=>{
+                console.log('获取通道失败',err)
+            })
+        },500)
+
+      },
+      error: function (status, xmlDoc) {
+        showOPInfo(szDeviceIdentify + ' 登录失败！', status, xmlDoc)
+      }
+    })
+
+
+// 获取通道
+function getChannelInfo () {
+  var szDeviceIdentify = ip
+  console.log('getChannelInfo',szDeviceIdentify)
+
+  if (szDeviceIdentify == null) {
+    return
+  }
+  
+
+  const promise1 = new Promise((resolve) => {
+  // 模拟通道，应该部分旧设备只有模拟通道
+    WebVideoCtrl.I_GetAnalogChannelInfo(szDeviceIdentify, {
+      async: false,
+      success: function (xmlDoc) {
+        showOPInfo(szDeviceIdentify + ' 获取模拟通道成功！')
+        console.log('模拟通道 xmlDoc',xmlDoc)
+        resolve()
+      },
+      error: function (status, xmlDoc) {
+        showOPInfo(szDeviceIdentify + ' 获取模拟通道失败！', status, xmlDoc)
+        resolve()
+      }
+    })
+  })
+
+  const promise2 = new Promise((resolve) => {
+  // 数字通道
+    WebVideoCtrl.I_GetDigitalChannelInfo(szDeviceIdentify, {
+      async: false,
+      success: function (xmlDoc) {
+        showOPInfo(szDeviceIdentify + ' 获取数字通道成功！')
+        var oChannels = $(xmlDoc).find("InputProxyChannelStatus");
+        $.each(oChannels, function (i) {
+            const id = $(this).find("id").eq(0).text()
+            const ipAddress = $(this).find("ipAddress").eq(0).text()
+            // console.log('ip地址：',ipAddress)
+            cameraIpMap.set(ipAddress,id)
+        });
+        console.log('cameraIpMap',cameraIpMap)
+        resolve()
+      },
+      error: function (status, xmlDoc) {
+        showOPInfo(szDeviceIdentify + ' 获取数字通道失败！', status, xmlDoc)
+        resolve()
+      }
+    })
+  })
+
+  const promise3 = new Promise((resolve) => {
+  // 零通道
+    WebVideoCtrl.I_GetZeroChannelInfo(szDeviceIdentify, {
+      async: false,
+      success: function (xmlDoc) {
+        showOPInfo(szDeviceIdentify + ' 获取零通道成功！')
+        resolve()
+      },
+      error: function (status, xmlDoc) {
+        showOPInfo(szDeviceIdentify + ' 获取零通道失败！', status, xmlDoc)
+        resolve()
+      }
+    })
+  })
+
+  return Promise.all([promise1, promise2, promise3])
+}
+```
+
 
 ## HTTPS播放要开启Websockets
 &emsp;首先要开启https，并且要启用Websockets（否则会因为wss连接不成功而提示预览失败，这个卡了我很久最终领导试的时候才发现的，这玩意不放在一起真是坑死我了。），然后可以通过https来访问摄像头正常播放了：
