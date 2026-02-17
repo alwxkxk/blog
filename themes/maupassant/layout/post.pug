@@ -33,7 +33,8 @@ block content
       != page.content
     if theme.donate.enable == true || page.donate == true
       h1 打赏支持
-      p(style="font-size: 24px;text-indent: 2em;") 请博主喝个饮料：
+      p(style="font-size: 24px;text-indent: 2em;") 请博主喝个
+        a(href='/posts/59565') 饮料:
       div(style="display:flex;justify-content: space-around;")
         img(src=theme.donate.alipay_qr, alt="", srcset="" style="width:340px;")
         img(src=theme.donate.wechat_qr, alt="", srcset="" style="width:340px;")
