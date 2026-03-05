@@ -7,7 +7,8 @@ tags:
 img: /blog_images/AI/AI疲劳.webp
 ---
 
-&emsp;之前折腾了好久的Codex，然后最终发现Claude Code还是成熟一点（靠白嫖anyRouter，不需要花钱。），就开始想着做个简单的项目来测试一下。从anyRouter里的记录来看，我大概花费了100多美元。这已经是我一直使用最便宜的Haiku模型(每百万输入输出$1/$5，再乘0.5倍)，中间有用Opus 4.5模型操作了几下（每百万输入输出$5/$25，再乘2.5倍）。
+&emsp;之前折腾了好久的Codex，然后最终发现Claude Code还是成熟一点（靠白嫖anyRouter，不需要花钱。），就开始想着做个简单的项目来测试一下。从[anyRouter](https://anyrouter.top/)里的记录来看，我大概花费了100多美元。这已经是我一直使用最便宜的Haiku模型(每百万输入输出$1/$5，再乘0.5倍)，中间有用Opus 4.5模型操作了几下（每百万输入输出$5/$25，再乘2.5倍）。
+![anyrouter公益站](/blog_images/AI/anyrouter公益站.webp)
 
 ## 构建项目
 &emsp;一开始，我想着做一个AI对话，生成echart图表渲染到页面，于是在[GLM4.6网页](https://chat.z.ai/)上先让AI出一个场景，调整了一下作为我的项目简介放到`CLAUDE.md`：
