@@ -36,7 +36,7 @@ requires_openai_auth = true
 &emsp;每次修改base_url需要退出vscode重启codex才生效，其它修改模型与等级的可以直接编辑修改生效。
 
 ## new api
-&emsp;有很多大佬提供免费的公益api供大家免费使用，不保证稳定性与长久性。当前在[L站](https://linux.do/)有很多公益站，都是基于new-api来搭建的。其中有一个据说持续时间最久的[薄荷公益站](https://linux.do/t/topic/1170760)([L站主贴](https://linux.do/t/topic/1170760),注意分组规则，新用户低等级的用户被限制使用一些模型)，我就尝试对接了一下codex调用，折腾了好久才对接成功（主要是因为我从openRouter的配置拷下来修改）。总结下来就是，主要的注意事项是看`wire_api = "chat"`还是`wire_api = "responses"`。
+&emsp;有很多大佬提供免费的公益api供大家免费使用，不保证稳定性与长久性。当前在[L站](https://linux.do/)有很多公益站，都是基于new-api来搭建的。其中有一个据说持续时间最久的[薄荷公益站](https://linux.do/t/topic/1170760)([L站主贴](https://linux.do/t/topic/1170760)（这个我现在用得比较少）,注意分组规则，新用户低等级的用户被限制使用一些模型)，我就尝试对接了一下codex调用，折腾了好久才对接成功（主要是因为我从openRouter的配置拷下来修改）。总结下来就是，主要的注意事项是看`wire_api = "chat"`还是`wire_api = "responses"`。
 &emsp;如果提示：
 `unexpected status 404 Not Found: {"error":{"message":"Invalid URL (POST /v1/chat/completions/responses)","type":"invalid_request_error","param":"","code":""}}`
 ，可以注意到是因为这个请求url是有问题的，正常是要么`/v1/chat/completions`，不会拼上`/responses`的，所以修改成了`base_url = "https://x666.me/v1"`
@@ -66,7 +66,8 @@ requires_openai_auth = true
 1. 可以发现，三家api，在codex里配置，其后缀全是不一样的。
 2. ai接口，还得要小心使用，不要在敏感的项目上使用，避免信息泄漏。
 3. 暂时没找到codex，cherry studio调用第三方接口时所发出的请求日志。（ 暂时的解决办法是使用[nginx代理转发](/posts/17417)，记录日志。 ）
-4. 我准备用ai来写一下完整项目来验证一下各项功能。
+4. 26年3月起，codex基本上只支持responses格式了，各个公益站的base_url区别基本上就是有的带`/v1`有的不带。
+5. 得益于我投了大量的时间去折腾配置，所以后续我使用各公益站免费资源时，不会因为配置问题而被卡住。
 
 ## 附录
 - [Chat 与 Responses对比](https://help.apiyi.com/openai-responses-vs-chat-completions-api-guide.html)

@@ -232,3 +232,6 @@ read_text_file, search_files, write_file
 ```
 
 &emsp;个人感觉达到预期效果。
+
+## 其它
+&emsp;26年4月更新：做成skill会更加合理。
