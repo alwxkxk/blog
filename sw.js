@@ -1,45 +1,39 @@
-var CACHE_NAME = 'my-site-cache-2021-02-14';
-var regExp = new RegExp(/\.(png|jpg|svg|mp4|gif|json|mtn|woff|tff|moc|min.js|ico)/)
+'use strict';
 
-self.addEventListener('fetch', function(event) {
-  if (event.request.method != 'GET') return;
-  // 不符合条件的直接返回
-  if(!regExp.test(event.request.url)){
-    console.log('GET:',event.request.url)
-    return;
-  }
+const CACHE_PREFIX = 'my-site-cache-';
+const CACHE_NAME = `${CACHE_PREFIX}2026-10-08-hexo8`;
+const ASSET_PATH = /\.(?:png|jpe?g|svg|mp4|gif|json|mtn|woff2?|ttf|moc|ico)$|\.min\.js$/i;
 
-  event.respondWith(
-    // 先检查缓存，若有直接返回缓存数据
-    caches.match(event.request)
-      .then(function(response) {
-        // Cache hit - return response
-        if (response) {
-          // console.log('cache return:',response.url)
-          return response;
-        }
+self.addEventListener('install', event => {
+  event.waitUntil(self.skipWaiting());
+});
 
-        var fetchRequest = event.request.clone();
-        // 发出请求
-        return fetch(fetchRequest).then(
-          function(response) {
-            // 不成功直接返回
-            if(!response || response.status !== 200 || response.type !== 'basic') {
-              // response.type: basic,cors,error,opaque,opaqueredirect
-              // https://developer.mozilla.org/en-US/docs/Web/API/Response/type
-              console.log('cache fail response:',event.request.url)
-              return response;
-            }
-            
-            // console.log('add cache:',response.url)
-            var responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then(function(cache) {
-                cache.put(event.request, responseToCache);
-              });
-            return response;
-          }
-        );
-      })
-    );
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const names = await caches.keys();
+    await Promise.all(names.filter(name => name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME)
+      .map(name => caches.delete(name)));
+    await self.clients.claim();
+  })());
+});
+
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+  if (event.request.method !== 'GET' || url.origin !== self.location.origin || !ASSET_PATH.test(url.pathname)) return;
+
+  // Fetch updates online; fall back only to this release's cache when offline.
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    try {
+      const response = await fetch(event.request);
+      if (response.ok && response.type === 'basic') {
+        await cache.put(event.request, response.clone()).catch(() => {});
+      }
+      return response;
+    } catch (error) {
+      const cached = await cache.match(event.request);
+      if (cached) return cached;
+      throw error;
+    }
+  })());
 });
