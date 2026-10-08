@@ -53,3 +53,8 @@ if page.mathjax2
 
 script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js' + '?v=' + theme.version)
 script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js' + '?v=' + theme.version)
+
+if config.live2d && config.live2d.enable
+  script(src=url_for('live2dw/lib/L2Dwidget.min.js'))
+  script.
+    L2Dwidget.init({model: {jsonPath: !{JSON.stringify(url_for('live2dw/assets/hijiki.model.json'))}}});

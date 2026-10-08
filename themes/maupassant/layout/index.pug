@@ -1,6 +1,8 @@
 extends base-without-sidebar
 
 block title
+  if !page.category && !page.tag && !page.archive
+     title= config.title
   if page.category
      title= page.category + ' | ' + config.title
   if page.tag
@@ -21,4 +23,3 @@ block content
 
   include _partial/paginator.pug
   
-

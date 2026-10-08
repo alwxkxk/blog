@@ -3,31 +3,33 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
-    "dev": "hexo server"
+    "build": "node tools/build.cjs",
+    "dev": "hexo server",
+    "test": "node --test test/*.test.cjs"
   },
   "hexo": {
-    "version": "5.4.2"
+    "version": "8.1.2"
+  },
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11 <12"
   },
   "dependencies": {
-    "hexo": "^5.4.0",
-    "hexo-abbrlink": "^2.0.5",
-    "hexo-directory-category": "^1.0.5",
-    "hexo-generator-archive": "^0.1.5",
-    "hexo-generator-baidu-sitemap": "^0.1.9",
-    "hexo-generator-category": "^0.1.3",
-    "hexo-generator-index": "^0.2.1",
-    "hexo-generator-sitemap": "^1.2.0",
-    "hexo-generator-tag": "^0.2.0",
-    "hexo-helper-live2d": "^3.1.0",
-    "hexo-hide-posts": "^0.1.0",
-    "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-marked": "^0.3.2",
-    "hexo-renderer-pug": "0.0.5",
-    "hexo-renderer-sass": "^0.3.2",
-    "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.3.1",
-    "live2d-widget-model-hijiki": "^1.0.5",
-    "node-sass": "^5.0.0"
+    "hexo": "8.1.2",
+    "hexo-abbrlink": "2.2.1",
+    "hexo-directory-category": "1.1.4",
+    "hexo-generator-archive": "2.0.0",
+    "hexo-generator-category": "2.0.0",
+    "hexo-generator-index": "4.0.0",
+    "hexo-generator-sitemap": "3.0.1",
+    "hexo-generator-tag": "2.0.0",
+    "hexo-hide-posts": "0.4.3",
+    "hexo-renderer-marked": "7.0.1",
+    "hexo-renderer-pug": "3.0.0",
+    "hexo-server": "3.0.0",
+    "sass": "1.105.1"
+  },
+  "devDependencies": {
+    "jsdom": "25.0.1"
   }
 }

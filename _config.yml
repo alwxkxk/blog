@@ -39,6 +39,7 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+syntax_highlighter: highlight.js
 highlight:
   enable: true
   line_number: true
@@ -83,8 +84,8 @@ deploy:
 
 
 auto_dir_categorize:
-	enable: true  # options:true, false; default is true
-	force: true # options:true, false; default is false
+  enable: true
+  force: false # Preserve the old plugin's effective default; keep manual categories.
 
 # abbrlink config
 abbrlink:
@@ -94,27 +95,14 @@ abbrlink:
 #hexo sitemap
 sitemap:
   path: sitemap.xml
+  tags: false
+  categories: false
 baidusitemap:
   path: baidusitemap.xml
 
-## https://github.com/EYHN/hexo-helper-live2d
+# Vendored widget/model assets live in themes/maupassant/source/live2dw/.
 live2d:
   enable: true
-  # enable: false
-  scriptFrom: local # 默认
-  pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)
-  pluginJsPath: lib/ # 脚本文件相对与插件根目录路径
-  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
-  # scriptFrom: jsdelivr # jsdelivr CDN
-  # scriptFrom: unpkg # unpkg CDN
-  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
-  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
-  debug: false # 调试, 是否在控制台输出日志
-  model:
-    use: live2d-widget-model-hijiki # npm-module package name
-    # use: wanko # 站点根目录/live2d_models/ 下的目录名
-    # use: ./wives/wanko # 相对于站点根目录的路径
-    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
 
 
 # hexo-hide-posts
@@ -123,6 +111,6 @@ hide_posts:
   filter: hidden
   # Generators which you want to expose all posts (include hidden ones) to.
   # Common generators: index, tag, category, archive, sitemap, feed, etc.
-  public_generators: []
+  allowlist_generators: []
   # Add "noindex" meta tag to prevent hidden posts from being indexed by search engines
   noindex: true

@@ -67,6 +67,7 @@ Cookie: Hm_lvt_646acd4e6c74eb119c3d5d93c5bfde70=1543030512; connect.sid=s%3AFxuA
 &emsp;`http://websocket.org/`提供了一个websocket测试网址，会回复所接收的数据(echo:回声)，源代码可在[项目代码](https://github.com/alwxkxk/soft-and-hard)里的`\基础教程\HTTP协议基础\WebSocket例子`找到:
 
 <img class="lazy" alt="WebSocket" data-src="/blog_images/WebSocket.gif">
+
 ![](/blog_images/websocket例子.webp)
 
 &emsp;服务器端可以使用[ws模块](https://github.com/websockets/ws)搭建WebSocket服务器，然后就可以使用从浏览器直接调用 WebSocket API进行连接。而在平时开发使用，一般开发者会使用[socket.io模块](https://github.com/socketio/socket.io)，这个是在WebSocket协议基础之上，增加了一系列功能如：支持命名空间、超时重连、若浏览器不支持WebSocket则自动降级使用HTTP轮询等等。使用socket.io时，并不能直接使用浏览器的WebSocket API连接，必须使用socket.io库。为方便学习，不增加太多新概念，服务器端我们使用ws模块进行演示。具体代码可查看[源代码](https://github.com/alwxkxk/soft-and-hard)`\基础教程\HTTP协议基础\Websocket服务器端例子`，运行前先阅读该目录下的`README`。
