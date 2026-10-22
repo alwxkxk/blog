@@ -296,6 +296,9 @@ h1, h2, h3, h4, h5 {
 .post .post-content h3 {
   margin: 1.4em 0 1.1em;
 }
+.post .post-content h4, .post .post-content h5, .post .post-content h6 {
+  font-size: 24px;
+}
 .post .post-content pre code {
   padding: 0 2em;
 }
