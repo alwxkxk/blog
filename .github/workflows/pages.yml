@@ -17,18 +17,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  pages:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
-      contents: write
+      contents: read
     env:
       TMPDIR: ${{ github.workspace }}/tmp
     steps:
-      - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Prepare temporary directory
         run: mkdir -p tmp
       - name: Use Node.js 24 LTS
-        uses: actions/setup-node@v7.0.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version-file: .nvmrc
           check-latest: true
@@ -38,13 +41,36 @@ jobs:
         run: npm ci
       - name: Test
         run: npm test
+      - name: Audit dependencies and verify local security patches
+        run: npm run audit:security
       - name: Build
         run: npm run build
       - name: Check source files were not rewritten
         run: git diff --exit-code -- source
-      - name: Deploy
+      - name: Upload verified static files
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
-        uses: peaceiris/actions-gh-pages@v4.1.0
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: blog-public
+          path: public/
+          if-no-files-found: error
+          retention-days: 3
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Download verified static files
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: blog-public
+          path: public/
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@1ef5a1b1df4c63fe21a2242edbee6cac921ece01 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public

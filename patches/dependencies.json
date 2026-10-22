@@ -1,0 +1,81 @@
+[
+  {
+    "name": "braces",
+    "version": "3.0.3",
+    "files": [
+      {
+        "path": "lib/parse.js",
+        "originalSha256": "e572166565f15fa6ad9865ae49d678218e32aabfd1b3720f6d0d43d39800d310",
+        "patchedSha256": "755153b4ce5093155c2558431d97d136dede73832302a1c296d02f4eccbc707d",
+        "replacements": [
+          [
+            "  const push = node => {\n",
+            "  const push = node => {\n    if (node.nodes && stack.length > 128) {\n      throw new SyntaxError('Brace nesting exceeds security limit (128).');\n    }\n"
+          ]
+        ]
+      },
+      {
+        "path": "lib/compile.js",
+        "originalSha256": "dc98f22eee3d511785d92a00758d5f0d48efed5f5813bdecc2de430c529b5c9f",
+        "patchedSha256": "c715d81c73e2ba3a1f117053dd38c8354a3a47adb2ffbb53104d68447d94069d",
+        "replacements": [
+          [
+            "  const walk = (node, parent = {}) => {\n",
+            "  const walk = (node, parent = {}, depth = 0) => {\n    if (depth > 128) throw new SyntaxError('Brace nesting exceeds security limit (128).');\n"
+          ],
+          [
+            "output += walk(child, node);",
+            "output += walk(child, node, depth + 1);"
+          ]
+        ]
+      },
+      {
+        "path": "lib/expand.js",
+        "originalSha256": "41ccc196ebfa7b7781a634e721eb744e4e7bcb54cba427a7e3d6806a1b9e58f7",
+        "patchedSha256": "d47ed67b0ff7ee9093ef75271e624b2fc0f31bd99ad191431a1c5a51f7c1a96a",
+        "replacements": [
+          [
+            "  const walk = (node, parent = {}) => {\n",
+            "  const walk = (node, parent = {}, depth = 0) => {\n    if (depth > 128) throw new SyntaxError('Brace nesting exceeds security limit (128).');\n"
+          ],
+          [
+            "walk(child, node);",
+            "walk(child, node, depth + 1);"
+          ]
+        ]
+      },
+      {
+        "path": "lib/stringify.js",
+        "originalSha256": "379f22d77bfa1478341ccd49c5e4267464aabcbba03558bab332aac23fc6f23a",
+        "patchedSha256": "16a40d69269f86125edd52d9f5d9e7825e54ac4b525206d039c2d30ffa1f8c09",
+        "replacements": [
+          [
+            "  const stringify = (node, parent = {}) => {\n",
+            "  const stringify = (node, parent = {}, depth = 0) => {\n    if (depth > 128) throw new SyntaxError('Brace nesting exceeds security limit (128).');\n"
+          ],
+          [
+            "output += stringify(child);",
+            "output += stringify(child, {}, depth + 1);"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "sprintf-js",
+    "version": "1.1.3",
+    "files": [
+      {
+        "path": "src/sprintf.js",
+        "originalSha256": "95add43f116385be221745307fae02d06751b01d4f939df1debb17dbe2ebf4eb",
+        "patchedSha256": "3f16a59124d62d76cef349a856fa3b0fb52bfb3edc83a198b1584e4e3fa630aa",
+        "replacements": [
+          [
+            "            else if ((match = re.placeholder.exec(_fmt)) !== null) {\n",
+            "            else if ((match = re.placeholder.exec(_fmt)) !== null) {\n                // Local security bounds: reject before invoking argument coercion or padding.\n                if (Number(match[6]) > 10000 || Number(match[7]) > 100) {\n                    throw new RangeError('[sprintf] width or precision exceeds security limit')\n                }\n"
+          ]
+        ]
+      }
+    ]
+  }
+]

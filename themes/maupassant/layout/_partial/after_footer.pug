@@ -45,12 +45,6 @@ if theme.canvas_nest.enable == true
     - var count=theme.canvas_nest.count || "50"
     script(type='text/javascript', color=color, opacity=opacity, zIndex=zIndex, count=count,src=url_for(theme.js)+'/canvas-nest.min.js')
 
-if page.mathjax
-  include mathjax.pug
-
-if page.mathjax2
-  include mathjax2.pug
-
 script(type='text/javascript', src=url_for(theme.js) + '/codeblock-resizer.js' + '?v=' + theme.version)
 script(type='text/javascript', src=url_for(theme.js) + '/smartresize.js' + '?v=' + theme.version)
 

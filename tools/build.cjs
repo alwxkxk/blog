@@ -3,11 +3,13 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const Hexo = require('hexo');
+const { patchDependencies } = require('./patch-dependencies.cjs');
 const { verifySite } = require('./verify-site.cjs');
 
 async function build(base = path.resolve(__dirname, '..')) {
   assert.equal(Number(process.versions.node.split('.')[0]), 24, 'Use Node.js 24 LTS (see .nvmrc).');
+  patchDependencies({ check: true });
+  const Hexo = require('hexo');
   const hexo = new Hexo(path.resolve(base));
   const errors = [];
   const logError = hexo.log.error.bind(hexo.log);

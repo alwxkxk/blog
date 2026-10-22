@@ -21,7 +21,13 @@ function verifySite(hexo) {
   assert.ok(posts.length, 'No posts generated.');
   assert.equal(new Set(posts.map(post => post.path)).size, posts.length, 'Duplicate post URLs.');
   read('css/style.css');
-  read('js/jquery-3.3.1.min.js');
+  read('js/jquery.min.js');
+  read('js/echarts.min.js');
+  read('js/navigation.js');
+  for (const removed of ['donate/index.html', 'js/donate.js', 'js/jquery-3.3.1.min.js',
+    'js/bootstrap.min.js', 'js/bootstrap-treeview.min.js', 'js/MathJax.js']) {
+    assert.ok(!fs.existsSync(path.join(hexo.public_dir, removed)), `Retired unsafe asset was published: ${removed}`);
+  }
   read('js/waline3.8.js');
   const home = html('index.html');
   assert.equal(home.window.document.title, hexo.config.title, 'Missing or incorrect homepage title.');

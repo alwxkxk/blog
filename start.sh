@@ -1,1 +1,4 @@
-hexo s -p 3000
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")"
+exec npm run dev -- --port 3000

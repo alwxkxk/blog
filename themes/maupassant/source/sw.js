@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'my-site-cache-';
-const CACHE_NAME = `${CACHE_PREFIX}2026-10-08-hexo8`;
+const CACHE_NAME = `${CACHE_PREFIX}2026-10-08-security1`;
 const ASSET_PATH = /\.(?:png|jpe?g|svg|mp4|gif|json|mtn|woff2?|ttf|moc|ico)$|\.min\.js$/i;
 
 self.addEventListener('install', event => {
